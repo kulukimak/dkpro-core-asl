@@ -1,4 +1,4 @@
-# Setting up DKPro Core ASL with Eclipse Mylyn.
+#summary Setting up DKPro Core ASL with Eclipse Mylyn.
 
 The following information worked with Eclipse 3.6 Galileo.
 
