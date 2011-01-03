@@ -16,7 +16,7 @@ We use the following tools for development:
 
 *Note:* On your machine the Java path may be different, e.g. because you are using a localized Windows version it may be `C:\Programme\...` -or- because you may have a Java version other than 1.6.0.01.
 
-   1 Edit your eclipse.ini and add / change the following lines (the `-vmargs` line should be present already):
+   1 Edit your `eclipse.ini` and add/change the following lines (the `-vmargs` line should be present already):
 {{{
 -vm
 C:/Program Files/Java/jdk1.6.0_01/bin/javaw.exe
@@ -28,7 +28,7 @@ C:/Program Files/Java/jdk1.6.0_01/bin/javaw.exe
       * Go to *Java -> Installed JREs*
       * Click *Search* and choose your Java directory
       * *Close* the preferences and *re-open* them
-      * Select "jdk1.6.0_01" as your JRE (this should match the entry you added in the eclipse.ini)
+      * *Select* _jdk1.6.0_01_ as your JRE (this should match the entry you added in the eclipse.ini)
 
 = Checking out =
 
