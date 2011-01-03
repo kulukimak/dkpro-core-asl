@@ -1,6 +1,6 @@
-= Building from source =
+#summary Setting up Eclipse for DKPro Core development
 
-== Eclipse & Plugins ==
+= Eclipse Setup =
 
 We use the following tools for development:
 
@@ -12,7 +12,25 @@ We use the following tools for development:
     * Maven SCM handler for Subclipse
         * update site: `http://m2eclipse.sonatype.org/sites/m2e-extras`
 
-== Checking out ==
+=== For Windows Users ===
+
+*Note:* On your machine the Java path may be different, e.g. because you are using a localized Windows version it may be =C:\Programme\...= -or- because you may have a Java version other than 1.6.0.01.
+
+   1 Edit your eclipse.ini and add / change the following lines (the `-vmargs`line should be present already):
+{{{
+-vm
+C:/Program Files/Java/jdk1.6.0_01/bin/javaw.exe
+-vmargs
+}}}
+      * Make sure that the linebreaks are as shown above (the formatting is actually necessary)
+   1 Open Eclipse
+      * Open the *preferences *
+      * Go to *Java -> Installed JREs*
+      * Click *Search* and choose your Java directory
+      * *Close* the preferences and *re-open* them
+      * Select "jdk1.6.0_01" as your JRE (this should match the entry you added in the eclipse.ini)
+
+= Checking out =
 
    * Open the *SVN Repositories* perspective in Eclipse (Menu -> Window -> Show View -> Other... -> SVN -> SVN Repositories)
    * *Add* a SVN repository with the URL `http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl`
