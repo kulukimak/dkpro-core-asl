@@ -1,0 +1,35 @@
+= Building from source =
+
+== Eclipse & Plugins ==
+
+We use the following tools for development:
+
+    * [http://eclipse.org/ Eclipse] 3.5 or higher. We recommend the _Eclipse Classic_ distribution.
+    * [http://subclipse.tigris.org/ Subclipse] 1.6.x
+        * update site: `http://subclipse.tigris.org/update_1.6.x`
+    * [http://m2eclipse.sonatype.org/ m2eclipse] 0.10.0 or higher.
+        * update site: `http://m2eclipse.sonatype.org/sites/m2e`
+    * Maven SCM handler for Subclipse
+        * update site: `http://m2eclipse.sonatype.org/sites/m2e-extras`
+
+== Checking out ==
+
+   * Open the *SVN Repositories* perspective in Eclipse (Menu -> Window -> Show View -> Other... -> SVN -> SVN Repositories)
+   * *Add* a SVN repository with the URL `http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl` (without `trunk`!)
+   * *Expand* the new repository node in the SVN Repositories view
+   * Right-click on *trunk* and select *Check out as Maven project*
+      * *Note:* if you do not see this menu item, make sure you have installed the _Maven SCM handler for Subclipse_.
+   * (optional) Eclipse will create a large number of projects now. We recommend to group these projects into a _working set_:
+      * Select *Next*
+      * Check *Add project(s) to working set*
+      * Click *More...*
+      * Click *New...*
+      * Double-click *Java*
+      * Enter the working set name `DKPro Core ASL`
+      * Click *Finish*
+      * Click *OK*
+      * Select the working set DKPro Core ASL`from the working set drop-down box
+      * *Note:* when you are completely through with these and the following steps, remember to go to the Package Explorer view. There is a small triangular icon in its top right corner. Click on that and select Top Level Elements -> Working Sets.
+   * Click *Finish*.
+
+However, Eclipse displays them as projects at the same node level as uimafit-parent in the _Package Explorer_ view.
