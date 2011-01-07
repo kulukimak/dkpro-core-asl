@@ -1,4 +1,5 @@
 #summary Setting up DKPro Core ASL with Eclipse Mylyn.
+#sidebar TableOfContents
 
 The following information worked with Eclipse 3.6 Galileo.
 
