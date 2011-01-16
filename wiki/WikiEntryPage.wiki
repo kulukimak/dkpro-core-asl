@@ -3,3 +3,4 @@
 
   * [DeveloperSetup Developer Setup]
   * [EclipseMylynConfiguration Eclipse Mylyn]	
+  * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
