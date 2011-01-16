@@ -1,0 +1,5 @@
+#summary Wiki entry page
+#sidebar TableOfContents
+
+  * [DeveloperSetup Developer Setup]
+  * [EclipseMylynConfiguration Eclipse Mylyn]	
