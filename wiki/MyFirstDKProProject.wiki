@@ -1,4 +1,4 @@
-#First Programming Steps with DKPro
+#summary First Programming Steps with DKPro
 
 <h1>First Programming Steps with DKPro</h1>
 
