@@ -1,0 +1,259 @@
+#First Programming Steps with DKPro
+
+<h1>First Programming Steps with DKPro</h1>
+
+_by Erik-Lân Do Dinh, 2011_ <br/>
+_by Michael Matuschek, 2009_
+
+<wiki:toc max_depth="2" />
+
+This small tutorial will show you how to build your first small application with DKPro Core, from creating a new project to your first annotated document. Please make sure your environment is properly set up as described [DeveloperSetup here] before you start.
+
+== Create a project ==
+
+   * Go to the *Package Explorer* in Eclipse and create new a *Maven Project*. On the first page of the properties dialogue, tick *Create a simple project (skip archetype selection)*.
+   * On the next page, you have to choose a *group id* and *artifact id* for your project. Since this is only an experimental setup for playing around, your project should be kept seperate from the actual DKPro stuff. I suggest *de.tudarmstadt.ukp.experiments.XX* as group id and *de.tudarmstadt.ukp.experiments.XX.gettingStarted* as artifact id, where XX would be your initials.
+   * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *core-asl*, and you should find the *de.tudarmstadt.ukp.dkpro.core-asl* artifact. Make sure you pick the newest version by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
+
+== Package !TreeTagger ==
+
+In this example we use the !TreeTagger to tag and lemmatize a sample text. Since !TreeTagger and its models cannot be distributed with DKPro Core, you need to download it yourself. For your convenience we included an Apache Ant script which downloads the !TreeTagger binaries and models and packages them as artifacts, allowing you to simply add them as dependencies in Maven
+
+To run the build script, you need to have Ant 1.8.x installed and configured in Eclipse. 
+
+   * Download the latest Ant binaries from the website and unpack them in a directory of your choice.
+   * Start Eclipse and go to *Window > Preferences > Ant > Runtime* and press *Ant Home...*.
+   * Select the Ant directory you just unpacked, then confirm. 
+
+Now you are ready to build the !TreeTagger artifacts.
+
+   * Locate the Ant build script (=build.xml=) in the *scripts* directory of the *de.tudarmstadt.ukp.dkpro.core.treetagger* module.
+   * Right-click, choose *Run As > External Tools Configurations*. In the *Target* tab, select *separate-jars*, run.
+   * Read the license in the Ant console and - if you care - accept the license terms. 
+   * Wait for the build process to finish
+   * To install the JAR files in your local repository open a console/bash window where you change to the *target* of the *de.tudarmstadt.ukp.dkpro.core.treetagger* module. 
+   * Iinstall the !TreeTagger binary artifact: <br/>{{{mvn install:install-file -Dfile=treetagger-bin-}}}<font color="red">{{{%BIN_VERSION%}}}</font>{{{.jar -DgroupId=de.tudarmstadt.ukp.dkpro.core -DartifactId=de.tudarmstadt.ukp.dkpro.core.treetagger-bin -Dversion=}}}<font color="red">{{{%BIN_VERSION%}}}</font>{{{ -Dpackaging=jar}}}
+   * install the tagger and chunker model artifacts: <br/>{{{mvn install:install-file -Dfile=treetagger-models-en-}}}<font color="red">{{{%MODELS_VERSION%}}}</font>{{{.jar -DgroupId=de.tudarmstadt.ukp.dkpro.core -DartifactId=de.tudarmstadt.ukp.dkpro.core.treetagger-models-en -Dversion=}}}<font color="red">{{{%MODELS_VERSION%}}}</font>{{{ -Dpackaging=jar}}}
+
+For <font color="red">%BIN_VERSION%</font> and <font color="red">%MODELS_VERSION%</font> refer to versions of the JAR files in the *target* directory“.
+   
+== Configure the POM ==
+
+   * Now that your project is created, open *pom.xml* from your project's root directory. Jump to the *Dependencies* tab right away and don't worry about the other stuff now. Click *Add...* to browse for the artifacts we need for this tutorial. Make sure you select the latest version that does not end in *-SNAPSHOT* and that the version of all DKPro dependencies is the same:
+      * *de.tudarmstadt.ukp.dkpro.core.io.text-asl*
+      * *de.tudarmstadt.ukp.dkpro.core.tokit-asl*
+      * *de.tudarmstadt.ukp.dkpro.core.treetagger-asl*
+      * *de.tudarmstadt.ukp.dkpro.core.treetagger-bin*
+      * *de.tudarmstadt.ukp.dkpro.core.treetagger-models-en*
+      * *junit*
+      * *log4j*
+   * Check that all dependencies have the type *jar* and the scope *compile*.
+   * For the JUnit dependency, set the scope to *test*, and leave the default scope for the others. We'll use JUnit later on to test if everything works.
+   * Save the POM (Ctrl + S) and let Maven automatically resolve the dependencies.
+      * As a last step, <span class="red">you have to exclude three artifacts</span> which are not available due to licencing issues (and which are not needed for this tutorial anyway). In order to do so, click on the *Dependence Hierarchy* tab. Now right click on *jmxtools* in the list on the left side and choose *Exclude Maven Artifact*. Repeat this with the  *jmxri* and the *jms* artifacts. The three artifacts should now be exluded from log4j (you can check this in the *Dependencies* tab). ([http://unitstep.net/blog/2009/05/18/resolving-log4j-1215-dependency-problems-in-maven-using-exclusions/ more info...])
+   * This is all we need for a very basic application. Now save the POM (Ctrl + S) and let Maven automatically resolve the dependencies. Congratulations, you're all set, now let's jump into it. 
+
+== Create your first experiment ==
+   
+   * The folder structure for the project has automatically been created. We'll start by writing a test to check if the project is set up properly, so we put our code into *src/test/java*. Create a new package here with the same name as your project, *de.tudarmstadt.ukp.experiments.XX.gettingstarted*.
+   * Now create a Java class in this package to finally start coding. I suggest picking a telling name like *InitialProjectTest*, but it's up to you. Leave the default setting for all other options.
+   * Before writing any method, you should include a static block to configure the logging framework. It simply looks like this:
+   {{{
+   static {
+      org.apache.log4j.BasicConfigurator.configure();
+   }
+   }}}
+   * Now it's time to finally create the test method. The JUnit attribute is necessary so we can test our method later on. Eclipse will complain that it does not know @Test. Right-click into your editor pane and select *Source->Organize Imports* to fix that.
+   {{{
+   @Test
+   public void initialProjectTest() throws Exception {
+   
+   }
+   }}}
+   
+   * Now we can start processing some documents. We will read files from the file system, we use a *TextReader*, tell it where to find the documents and select a language which language they are in. Add the *import* lines - you know where. I won't mention that from now on.
+   {{{
+   import org.apache.uima.collection.CollectionReader;
+   import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
+   import static org.uimafit.factory.CollectionReaderFactory.*;
+
+   CollectionReader cr = createCollectionReader(
+         TextReader.class,
+         TextReader.PARAM_PATH, "src/test/resources",
+         TextReader.PARAM_LANGUAGE, "en",
+         TextReader.PARAM_PATTERNS, new String[] {"[+]*.txt"});
+   }}}
+   * Next we want to analyze the documents. For this we need the description of the analysis engines we want to use, and they can be created like this:
+   {{{
+   import org.apache.uima.analysis_engine.AnalysisEngineDescription;
+   import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
+   import static org.uimafit.factory.AnalysisEngineFactory.*;
+
+   AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
+   }}}
+   This particular analysis engine is responsible for breaking a document into sentences and words (tokens). Now we'll create a description for an engine which annotates the words with their part of speech (e.g. as a verb, noun, etc.):
+   {{{
+   import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
+   
+   AnalysisEngineDescription tt = createPrimitiveDescription(TreeTaggerPosLemmaTT4J.class);
+   }}}
+   * Now we want to save our analysis results, so we can actually look at them. For this purpose we use the *CASDumpWriter* to write all the information to a file (output.txt).
+   {{{
+   import org.uimafit.component.xwriter.CASDumpWriter;
+   
+   AnalysisEngineDescription cc = createPrimitiveDescription(
+         CASDumpWriter.class,
+         CASDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
+   }}}
+   * Finally, we need to consecutively read the documents, analyses them and then writes the analysis results to a file. Hence, we combine these separate parts into a pipeline:
+   {{{
+   import static org.uimafit.pipeline.SimplePipeline.*;
+
+   runPipeline(cr, seg,tt,cc);
+   }}}
+
+   Congratulations, well done! The complete program should look like this:
+   {{{
+   package de.tudarmstadt.ukp.experiments.eldd.gettingStarted;
+   
+   import org.junit.Test;
+   
+   import static org.uimafit.factory.CollectionReaderFactory.*;
+   import static org.uimafit.factory.AnalysisEngineFactory.*;
+   import static org.uimafit.pipeline.SimplePipeline.*;
+   import org.uimafit.component.xwriter.CASDumpWriter;
+   
+   import org.apache.uima.collection.CollectionReader;
+   import org.apache.uima.analysis_engine.AnalysisEngineDescription;
+   
+   import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
+   import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
+   import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
+   
+   public class InitialProjectTest {
+      
+      static {
+           org.apache.log4j.BasicConfigurator.configure();
+      }
+   
+      @Test
+      public void initialProjectTest() throws Exception {
+          CollectionReader cr = createCollectionReader(
+                TextReader.class,
+                TextReader.PARAM_PATH, "src/test/resources", 
+                TextReader.PARAM_LANGUAGE, "en",
+                TextReader.PARAM_PATTERNS, new String[] {"[+]*.*"});
+          
+          AnalysisEngineDescription seg = createPrimitiveDescription(
+                BreakIteratorSegmenter.class);
+          
+          AnalysisEngineDescription tt = createPrimitiveDescription(
+                TreeTaggerPosLemmaTT4J.class);
+          
+          AnalysisEngineDescription cc = createPrimitiveDescription(
+                CASDumpWriter.class,
+                CASDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
+          
+          runPipeline(cr, seg, tt, cc);
+      }
+   }
+   }}}
+   * If there are no documents in your specified input folder, the test will fail. Create a text document called *text01.txt* in your *src/test/resources* folder and add the following content:
+   {{{
+This is a testing file for my pipeline.
+   }}} 
+
+== Running the test ==
+   * To run the test, right-click on the class in the Package Explorer and select *Run As -> JUnit Test*.
+   * Open the target folder in the package explorer.
+   * If the test works out fine, your output file _output.txt_ should look something like this:
+   {{{
+======== CAS 0 begin ==================================
+
+-------- View _InitialView begin ----------------------------------
+
+DocumentMetaData
+   sofa: _InitialView
+   begin: 0
+   end: 39
+   language: "en"
+   documentTitle: "text01.txt"
+   documentId: "text01.txt"
+   isLastSegment: false
+
+CAS-Text:
+This is a testing file for my pipeline.
+[This is a testing file for my pipeline.]
+Sentence
+   sofa: _InitialView
+   begin: 0
+   end: 39
+[This]
+Lemma
+   sofa: _InitialView
+   begin: 0
+   end: 4
+   value: "this"
+[This]
+Token
+   sofa: _InitialView
+   begin: 0
+   end: 4
+   Parent: <null>
+   lemma: Lemma
+      sofa: _InitialView
+      begin: 0
+      end: 4
+      value: "this"
+   stem: <null>
+   pos: ART
+      sofa: _InitialView
+      begin: 0
+      end: 4
+      PosValue: "DT"
+[This]
+ART
+   sofa: _InitialView
+   begin: 0
+   end: 4
+   PosValue: "DT"
+[is]
+Lemma
+   sofa: _InitialView
+   begin: 5
+   end: 7
+   value: "be"
+[is]
+V
+   sofa: _InitialView
+   begin: 5
+   end: 7
+   PosValue: "VBZ"
+[is]
+Token
+   sofa: _InitialView
+   begin: 5
+   end: 7
+   Parent: <null>
+   lemma: Lemma
+      sofa: _InitialView
+      begin: 5
+      end: 7
+      value: "be"
+   stem: <null>
+   pos: V
+      sofa: _InitialView
+      begin: 5
+      end: 7
+      PosValue: "VBZ"
+      
+...
+
+------- View _InitialView end ---------------------------
+
+======== CAS 0 end ==================================
+   }}} 
+   Here you see the different annotations which have been made.
+   
+Congratulations, you've built your first simple pipeline, now feel free to modify your program and maybe play with the other annotators that come with DKPro to see how they work.
+For further experimentation, you can add other methods to this file and annotate them with the *@Test* annotation, or you can create additional test classes such as this. It is a good idea to start out creating your experiments as unit tests. You can easily run them using Eclipse without having to write *main()* methods.
