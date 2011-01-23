@@ -27,7 +27,7 @@ To run the build script, you need to have Ant 1.8.x installed and configured in 
 
 Now you are ready to build the !TreeTagger artifacts.
 
-   * Locate the Ant build script (=build.xml=) in the *scripts* directory of the *de.tudarmstadt.ukp.dkpro.core.treetagger* module.
+   * Locate the Ant build script (`build.xml`) in the *scripts* directory of the *de.tudarmstadt.ukp.dkpro.core.treetagger* module.
    * Right-click, choose *Run As > External Tools Configurations*. In the *Target* tab, select *separate-jars*, run.
    * Read the license in the Ant console and - if you care - accept the license terms. 
    * Wait for the build process to finish
