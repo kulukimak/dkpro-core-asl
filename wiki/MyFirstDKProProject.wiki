@@ -56,7 +56,7 @@ For <font color="red">%BIN_VERSION%</font> and <font color="red">%MODELS_VERSION
 == Create your first experiment ==
    
    * The folder structure for the project has automatically been created. We'll start by writing a test to check if the project is set up properly, so we put our code into *src/test/java*. Create a new package here with the same name as your project, *de.tudarmstadt.ukp.experiments.XX.gettingstarted*.
-   * Now create a Java class in this package to finally start coding. I suggest picking a telling name like *InitialProjectTest*, but it's up to you. Leave the default setting for all other options.
+   * Now create a Java class in this package to finally start coding. I suggest picking a telling name like *!InitialProjectTest*, but it's up to you. Leave the default setting for all other options.
    * Before writing any method, you should include a static block to configure the logging framework. It simply looks like this:
    {{{
    static {
