@@ -71,7 +71,7 @@ For <font color="red">%BIN_VERSION%</font> and <font color="red">%MODELS_VERSION
    }
    }}}
    
-   * Now we can start processing some documents. We will read files from the file system, we use a *TextReader*, tell it where to find the documents and select a language which language they are in. Add the *import* lines - you know where. I won't mention that from now on.
+   * Now we can start processing some documents. We will read files from the file system, we use a *!TextReader*, tell it where to find the documents and select a language which language they are in. Add the *import* lines - you know where. I won't mention that from now on.
    {{{
    import org.apache.uima.collection.CollectionReader;
    import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
