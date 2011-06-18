@@ -23,7 +23,9 @@ This projects makes use of some libraries that are not readily available in publ
             <checksumPolicy>warn</checksumPolicy>
           </releases>
           <snapshots>
-            <enabled>false</enabled>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
           </snapshots>
         </repository>
       </repositories>
