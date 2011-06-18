@@ -23,7 +23,7 @@ This projects makes use of some libraries that are not readily available in publ
             <checksumPolicy>warn</checksumPolicy>
           </releases>
           <snapshots>
-            <enabled>false</enabled>
+            <enabled>true</enabled>
           </snapshots>
         </repository>
       </repositories>
