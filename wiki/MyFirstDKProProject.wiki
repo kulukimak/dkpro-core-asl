@@ -90,7 +90,9 @@ For <font color="red">%BIN_VERSION%</font> and <font color="red">%MODELS_VERSION
    import static org.uimafit.factory.AnalysisEngineFactory.*;
 
    AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
-   }}}
+   }}} 
+*Note on quality:* The _BreakIteratorSegmenter_ tokenizes text in a different manner than the English model for the !TreeTagger expects. If you need high quality and have the possibility to used GPL code, we recommend using the _[http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.1.0/apidocs/index.html StanfordSegmenter]_ from [http://dkpro-core-gpl.googlecode.com DKPro Core GPL] instead.
+
    This particular analysis engine is responsible for breaking a document into sentences and words (tokens). Now we'll create a description for an engine which annotates the words with their part of speech (e.g. as a verb, noun, etc.):
    {{{
    import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
