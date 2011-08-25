@@ -2,7 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.eml.mmax2</groupId>
   <artifactId>org.eml.mmax2</artifactId>
+  <name>MMAX2</name>
   <version>1.13.003</version>
+  <url>http://mmax.org</url>
   <dependencies>
 		<dependency>
 			<groupId>jung</groupId>
