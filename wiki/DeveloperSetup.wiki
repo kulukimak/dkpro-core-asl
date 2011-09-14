@@ -15,8 +15,8 @@ This projects makes use of some libraries that are not readily available in publ
       <id>ukp-oss</id>
       <repositories>
         <repository>
-          <id>ukp-central</id>
-          <url>http://zoidberg.tk.informatik.tu-darmstadt.de/artifactory/repo/</url>
+          <id>ukp-oss</id>
+          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/repo/</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>never</updatePolicy>
