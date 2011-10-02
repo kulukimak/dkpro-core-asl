@@ -1,6 +1,7 @@
 #summary Wiki entry page
 #sidebar TableOfContents
 
+  * [CHANGES]
   * [DeveloperSetup Developer Setup]
   * [EclipseMylynConfiguration Eclipse Mylyn]	
   * [MyFirstDKProProject First Steps with DKPro Core]
