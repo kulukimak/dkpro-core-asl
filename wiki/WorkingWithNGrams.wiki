@@ -38,7 +38,7 @@ The user of this component then needs to bind a !FrequencyCountResource to the a
      );
   }}}
 
-The {{{Web1TFrequencyCountResource} in DKPro directly supports the format of the [http://www.ldc.upenn.edu/Catalog/docs/LDC2006T13/readme.txt Google Web1T web size n-gram corpus].
+The {{{Web1TFrequencyCountResource}}} in DKPro directly supports the format of the [http://www.ldc.upenn.edu/Catalog/docs/LDC2006T13/readme.txt Google Web1T web size n-gram corpus].
 
 == Creating Web1T data files ==
 You can create your own n-gram frequency count models using the Web1TFormatWriter provided by DKPro.
