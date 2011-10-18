@@ -10,6 +10,13 @@ If the n-grams are only needed locally but not by downstream components, it is m
 
 If you are just interested in the String representation of the n-grams, you can also use {{{NGramStringIterable}}}.
 
+  {{{
+    String[] tokens = StringUtils.split("This is a simple example sentence .");
+    for (String ngram : new NGramStringIterable(tokens, 2, 2)) {
+        System.out.println(ngram);
+    }
+}}}
+
 = n-gram Frequency Counts =
 
 Many applications require to determine the number of occurrences of a certain n-gram (or phrase) in a collection. DKPro supports that by providing special external resources.
