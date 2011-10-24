@@ -33,10 +33,10 @@ The frequency count can then be accessed using:
     long freq = frequencyProvider.getFrequency(phrase);
   }}}
 
-The user of this component then needs to bind a !FrequencyCountResource to the aggregate containing this component, specifying where to find the data files.
+The user of this component then needs to bind a !FrequencyCountResource to the analysis engine, specifying where to find the data files.
   {{{
      bindResource(
-                someAggregate,
+                someAE,
                 SomeComponent.FREQUENCY_COUNT_RESOURCE,
                 Web1TFrequencyCountResource.class,
                 Web1TFrequencyCountResource.PARAM_MIN_NGRAM_LEVEL, "1",
