@@ -29,6 +29,22 @@ This projects makes use of some libraries that are not readily available in publ
           </snapshots>
         </repository>
       </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>ukp-oss</id>
+          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/repo/</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
     </profile>
   </profiles>
   <activeProfiles>
