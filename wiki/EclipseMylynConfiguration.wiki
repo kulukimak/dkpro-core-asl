@@ -3,7 +3,7 @@
 
 The following information worked with Eclipse 3.6 Galileo.
 
-  * Install *Mylyn Connector: Web Templates (Advanced)* plugin from `http://download.eclipse.org/mylyn/incubator/3.7` (Eclipse 3.6, 3.7, 3.8)
+  * Install *Mylyn Connector: Web Templates (Advanced)* plugin from `http://download.eclipse.org/mylyn/incubator/3.7` (Eclipse 3.6, 3.7, 3.8). It is possible that you also need to add the respective Mylyn snapshot update site, e.g.`http://download.eclipse.org/mylyn/snapshots/3.7`.
   * Open *Task Repositories* view
   * Add new repository
   * Select *Eclipse Outliner (Google Code)* from the *Server* dropdown box
