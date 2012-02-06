@@ -71,10 +71,6 @@ Actual  : ${@{prop.verify.md5.actual}}
 		</sequential>
 	</macrodef>
 
-	<target name="test">
-		<generate-pom groupId="muahah" artifactId="lala" version="huaua"/>
-	</target>
-	
 	<macrodef name="generate-pom">
 		<attribute name="groupId"/>
 		<attribute name="artifactId"/>
