@@ -1,0 +1,90 @@
+<project>
+	<macrodef name="install-artifact">
+		<attribute name="file"/>
+		<attribute name="groupId"/>
+		<attribute name="artifactId"/>
+		<attribute name="version"/>
+		<attribute name="enable" default="yes"/>
+		<sequential>
+			<antcall target="install-artifact-decide">
+				<param name="file" value="@{file}"/>
+				<param name="groupId" value="@{groupId}"/>
+				<param name="artifactId" value="@{artifactId}"/>
+				<param name="version" value="@{version}"/>
+			</antcall>
+		</sequential>
+	</macrodef>
+					
+	<target name="install-artifact-decide">
+		<condition property="enable" value="yes" else="no">
+			<istrue value="${install-artifact-enable}"/>
+	    </condition>
+		<antcall target="install-artifact-${enable}"/>
+	</target>
+		    			
+	<target name="install-artifact-yes">
+		<delete dir="target/install-artifact-staging"/>
+		<!-- Copy the POM -->
+		<unzip src="${file}" dest="target/install-artifact-staging">
+    		<patternset>
+    			<include name="META-INF/maven/**/pom.xml"/>		
+			</patternset>
+    		<chainedmapper>
+	    		<mapper type="flatten"/>
+	    		<firstmatchmapper>
+					<globmapper from="*" to="${groupId}.pom"/>
+				</firstmatchmapper>
+    		</chainedmapper>
+    	</unzip>
+		<copy todir="${user.home}/.m2/repository" verbose="yes">
+    		<fileset dir="target/install-artifact-staging">
+    			<include name="${groupId}.pom"/>		
+			</fileset>
+			<filtermapper>
+				<replacestring from="." to="/"/> 
+				<replaceregex pattern="(.*)/pom" replace="\1/${artifactId}/${version}/${artifactId}-${version}.pom"/>
+			</filtermapper>
+		</copy>
+		<!-- Copy the JAR -->
+		<copy todir="${user.home}/.m2/repository" verbose="yes">
+			<file file="${file}"/>
+			<filtermapper>
+				<replaceregex pattern="(.*)" replace="${groupId}/jar"/>
+				<replacestring from="." to="/"/> 
+				<replaceregex pattern="(.*)/jar" replace="\1/${artifactId}/${version}/${artifactId}-${version}.jar"/>
+			</filtermapper>
+		</copy>
+		<delete dir="target/install-artifact-staging"/>
+		<echo>Artifact installed into local Maven repository at [${user.home}/.m2/repository].</echo>
+	</target>
+	
+	<target name="install-artifact-no">
+		<echo>Artifact not installed into local Maven repository.</echo>
+	</target>
+
+	<macrodef name="generate-pom">
+		<attribute name="groupId"/>
+		<attribute name="artifactId"/>
+		<attribute name="version"/>
+		<sequential>
+			<mkdir dir="target/model-staging/META-INF/maven/@{groupId}/@{artifactId}"/>
+			<echo file="target/model-staging/META-INF/maven/@{groupId}/@{artifactId}/pom.xml"><![CDATA[<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>@{groupId}</groupId>
+	<artifactId>@{artifactId}</artifactId>
+	<version>@{version}</version>
+</project>
+]]></echo>
+			<echo file="target/model-staging/META-INF/maven/@{groupId}/@{artifactId}/pom.properties"><![CDATA[version=@{version}
+groupId=@{groupId}
+artifactId=@{artifactId}
+]]></echo>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="clean-pom">
+		<sequential>
+			<delete dir="target/model-staging/META-INF"/>
+		</sequential>
+	</macrodef>
+</project>
