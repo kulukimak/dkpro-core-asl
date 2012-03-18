@@ -4,9 +4,9 @@ DKPro Core ASL 1.3.0 is a major release. It is not expected to be binary backwar
 
 == General ==
 
-   * Fixed several issues with DocumentMetaData.
+   * Fixed several issues with `DocumentMetaData`.
    * Changed features of some DKPro Types so that they start with a lower-case letter. Breaks XMI file compatibility with older DKPro versions.
-   * Added new base class JCasFileWriter_ImplBase
+   * Added new base class `JCasFileWriter_ImplBase`
 
 == Analysis modules ==
 
@@ -19,12 +19,12 @@ DKPro Core ASL 1.3.0 is a major release. It is not expected to be binary backwar
 
 === British National Corpus Support ===
 
-   * Added BncReader.
+   * Added `BncReader`.
 
 === IMS Open Corpus Workbench Support ===
 
-   * Added ImsCwbReader and ImsCwbWriter.
-   * ImsCwbWriter can use a local CWB installation to directly write the index format.
+   * Added `ImsCwbReader` and `ImsCwbWriter`.
+   * `ImsCwbWriter` can use a local CWB installation to directly write the index format.
 
 === !NeGra Export Format support ===
 
@@ -33,13 +33,13 @@ DKPro Core ASL 1.3.0 is a major release. It is not expected to be binary backwar
 
 == TEI support ==
 
-   * Added TeiReader mainly to be able to read text from the TEI version of the Brown Corpus for now.
+   * Added `TeiReader` mainly to be able to read text from the TEI version of the Brown Corpus for now.
 
 == Web1t support ==
 
-   * New Web1TFormatWriter which uses an external sort mechanism to support larger n-gram models.
+   * New `Web1TFormatWriter` which uses an external sort mechanism to support larger n-gram models.
 
 == Wikipedia support ==
  
    * Upgraded to JWPL 0.9.0.
-   * Added WikipediaPageReader, which reads articles and discussion pages.
+   * Added `WikipediaPageReader`, which reads articles and discussion pages.
