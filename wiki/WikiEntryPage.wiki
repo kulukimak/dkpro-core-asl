@@ -1,8 +1,9 @@
 #summary Wiki entry page
 #sidebar TableOfContents
 
-  * [CHANGES]
   * [DeveloperSetup Developer Setup]
   * [EclipseMylynConfiguration Eclipse Mylyn]	
   * [MyFirstDKProProject First Steps with DKPro Core]
   * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
+
+  * [ReleaseNotes_1_3_0 DKPro Core ASL 1.3.0 release notes] 
