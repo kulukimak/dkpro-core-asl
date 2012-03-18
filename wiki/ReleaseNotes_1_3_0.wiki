@@ -10,7 +10,7 @@ DKPro Core ASL 1.3.0 is a major release. It is not expected to be binary backwar
 
 == Analysis modules ==
 
-=== TreeTagger integration ===
+=== !TreeTagger integration ===
 
    * Upgraded to TT4J 1.0.16 to support chinese model.
    * Works with any model now, even if no mapping is provided.
@@ -26,7 +26,7 @@ DKPro Core ASL 1.3.0 is a major release. It is not expected to be binary backwar
    * Added ImsCwbReader and ImsCwbWriter.
    * ImsCwbWriter can use a local CWB installation to directly write the index format.
 
-=== NeGra Export Format support ===
+=== !NeGra Export Format support ===
 
    * Can now read version 3 files (TIGER Corpus).
    * Fixed several issues.
