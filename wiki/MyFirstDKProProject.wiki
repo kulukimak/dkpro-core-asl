@@ -13,7 +13,7 @@ This small tutorial will show you how to build your first small application with
 
    * Go to the *Package Explorer* in Eclipse and create new a *Maven Project*. On the first page of the properties dialogue, tick *Create a simple project (skip archetype selection)*.
    * On the next page, you have to choose a *group id* and *artifact id* for your project. Since this is only an experimental setup for playing around, your project should be kept seperate from the actual DKPro stuff. I suggest *de.tudarmstadt.ukp.experiments.XX* as group id and *de.tudarmstadt.ukp.experiments.XX.gettingStarted* as artifact id, where XX would be your initials.
-   * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *core-asl*, and you should find the *de.tudarmstadt.ukp.dkpro.core-asl* artifact. Make sure you pick the newest version by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
+   * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *core-asl*, and you should find the *de.tudarmstadt.ukp.dkpro.core-asl* artifact. Make sure you pick the newest version not ending in *-SNAPSHOT* by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
 
 == Package !TreeTagger ==
 
