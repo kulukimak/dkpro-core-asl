@@ -45,8 +45,8 @@ For <font color="red">%BIN_VERSION%</font> and <font color="red">%MODELS_VERSION
       * *de.tudarmstadt.ukp.dkpro.core.treetagger-asl*
       * *de.tudarmstadt.ukp.dkpro.core.treetagger-bin*
       * *de.tudarmstadt.ukp.dkpro.core.treetagger-models-en*
-      * *junit*
-      * *log4j*
+      * *[http://search.maven.org/#artifactdetails%7Cjunit%7Cjunit%7C4.10%7Cjar junit]*
+      * *[http://search.maven.org/#artifactdetails%7Clog4j%7Clog4j%7C1.2.16%7Cjar log4j]*
    * Check that all dependencies have the type *jar* and the scope *compile*.
    * For the JUnit dependency, set the scope to *test*, and leave the default scope for the others. We'll use JUnit later on to test if everything works.
    * Save the POM (Ctrl + S) and let Maven automatically resolve the dependencies.
