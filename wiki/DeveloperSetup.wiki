@@ -10,45 +10,28 @@ This projects makes use of some libraries that are not readily available in publ
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <localRepository>/Users/bluefire/UKP/Library/Maven/repository-oss</localRepository>
   <profiles>
     <profile>
-      <id>ukp-oss</id>
+      <id>ukp-oss-releases</id>
       <repositories>
         <repository>
-          <id>ukp-oss</id>
-          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/repo/</url>
+          <id>ukp-oss-releases</id>
+          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>never</updatePolicy>
             <checksumPolicy>warn</checksumPolicy>
           </releases>
           <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
-            <checksumPolicy>warn</checksumPolicy>
+            <enabled>false</enabled>
           </snapshots>
         </repository>
       </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <id>ukp-oss</id>
-          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/repo/</url>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-            <checksumPolicy>warn</checksumPolicy>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
-            <checksumPolicy>warn</checksumPolicy>
-          </snapshots>
-        </pluginRepository>
-      </pluginRepositories>
     </profile>
   </profiles>
   <activeProfiles>
-    <activeProfile>ukp-oss</activeProfile>
+    <activeProfile>ukp-oss-releases</activeProfile>
   </activeProfiles>
 </settings>
 }}}
