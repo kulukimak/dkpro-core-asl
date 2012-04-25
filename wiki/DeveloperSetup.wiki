@@ -10,7 +10,6 @@ This projects makes use of some libraries that are not readily available in publ
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <localRepository>/Users/bluefire/UKP/Library/Maven/repository-oss</localRepository>
   <profiles>
     <profile>
       <id>ukp-oss-releases</id>
