@@ -1,5 +1,7 @@
 #summary First Programming Steps with DKPro Core
 
+<font size="4" color="red">This page is currently outdated. We are working on a new DKPro Core release which makes several steps of this tutorial obsolete and changes others. Please bear with us.</font>
+
 <h1>First Programming Steps with DKPro Core</h1>
 
 _by Erik-Lân Do Dinh, 2011_ <br/>
