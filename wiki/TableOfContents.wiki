@@ -1,7 +1,10 @@
 #summary Sidebar
 
   * [http://code.google.com/p/dkpro-core-asl ↑ Home]
-  * [DeveloperSetup Developer Setup]
-  * [MyFirstDKProProject First Steps with DKPro Core]
-  * [EclipseMylynConfiguration Eclipse Mylyn]	
-  * [WorkingWithNGrams]	
+  * Users
+    * [UserSetup User Setup]
+    * [MyFirstDKProProject First Steps with DKPro Core]
+    * [WorkingWithNGrams]	 
+  * Developers
+    * [DeveloperSetup Developer Setup]
+    * [EclipseMylynConfiguration Eclipse Mylyn]	
