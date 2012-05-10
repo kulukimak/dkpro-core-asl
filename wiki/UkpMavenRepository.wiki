@@ -21,11 +21,23 @@ We have set up a Maven repository which provides these libraries as well as rele
             <enabled>false</enabled>
           </snapshots>
         </repository>
+        <repository>
+          <id>ukp-oss-snapshots</id>
+          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
       </repositories>
     </profile>
   </profiles>
   <activeProfiles>
     <activeProfile>ukp-oss-releases</activeProfile>
+    <!-- Uncomment the following entry to if you need SNAPSHOT versions. -->
+    <!--activeProfile>ukp-oss-releases</activeProfile-->
   </activeProfiles>
 </settings>
 }}}
