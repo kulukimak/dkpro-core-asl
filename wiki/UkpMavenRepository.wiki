@@ -1,0 +1,31 @@
+We have set up a Maven repository which provides these libraries as well as releases our open source projects. To use this repository, we suggest you use the [http://maven.apache.org/settings.html settings.xml] in the hidden subdirectory `.m2` of your home directory and augment it with the following sections:
+
+{{{
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <profiles>
+    <profile>
+      <id>ukp-oss-releases</id>
+      <repositories>
+        <repository>
+          <id>ukp-oss-releases</id>
+          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>ukp-oss-releases</activeProfile>
+  </activeProfiles>
+</settings>
+}}}
