@@ -3,49 +3,20 @@
 
 = Maven Setup = 
 
-This projects makes use of some libraries that are not readily available in public Maven repositories. Therefore we have set up a Maven repository which provides these libraries as well as releases of this project. To use this repository, we suggest you use the [http://maven.apache.org/settings.html settings.xml] in the hidden subdirectory `.m2` of your home directory and augment it with the following sections:
-
-{{{
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
-                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <profiles>
-    <profile>
-      <id>ukp-oss-releases</id>
-      <repositories>
-        <repository>
-          <id>ukp-oss-releases</id>
-          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-            <checksumPolicy>warn</checksumPolicy>
-          </releases>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-        </repository>
-      </repositories>
-    </profile>
-  </profiles>
-  <activeProfiles>
-    <activeProfile>ukp-oss-releases</activeProfile>
-  </activeProfiles>
-</settings>
-}}}
+This projects makes use of some libraries that are not readily available in public Maven repositories. Therefore we have set up a Maven repository which provides these libraries as well as releases of this project. To use this repository, follow [[UkpMavenRepository these instructions]].
 
 = Eclipse Setup =
 
 We use the following tools for development:
 
-    * [http://eclipse.org/ Eclipse] 3.5 or higher. We recommend the _Eclipse Classic_ distribution.
+    * [http://eclipse.org/ Eclipse] 3.7 or higher. We recommend the _Eclipse Classic_ distribution.
     * [http://subclipse.tigris.org/ Subclipse] 1.6.x
         * update site: `http://subclipse.tigris.org/update_1.6.x`
-    * [http://m2eclipse.sonatype.org/ m2eclipse] 0.10.0 or higher.
-        * update site: `http://m2eclipse.sonatype.org/sites/m2e`
+    * [http://m2eclipse.sonatype.org/ m2e] 1.0.100.20110804-1717 or higher.
+        * available in the Eclipse "Install new software"
     * Maven SCM handler for Subclipse
-        * update site: `http://m2eclipse.sonatype.org/sites/m2e-extras`
+        * after installing m2e, go to Preferences -> Maven -> Discovery -> Open Catalog
+        * search for "subclipse"
 
 === For Windows Users ===
 
