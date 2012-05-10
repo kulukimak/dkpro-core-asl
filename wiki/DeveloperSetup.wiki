@@ -4,7 +4,8 @@
 = Basic setup =
 
    * Follow the [UserSetup user setup] instructions
-   * Change the`<enabled>true</enabled>` in the `<snapshots>` sections
+   * Uncomment the line `<activeProfile>ukp-oss-releases</activeProfile>`
+   * If you are in Eclipse, restart it
 
 = Checking out =
 
