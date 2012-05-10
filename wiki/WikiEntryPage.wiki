@@ -1,12 +1,27 @@
 #summary Wiki entry page
 #sidebar TableOfContents
 
-  * [UserSetup User Setup] - for people who want to use DKPro
-  * [DeveloperSetup Developer Setup] - for people who want to work on the DKPro source code
-  * [EclipseMylynConfiguration Eclipse Mylyn]	
+= User documentation =
+
+For people who want to use a DKPro release version.
+
+  * [UserSetup User Setup]
   * [MyFirstDKProProject First Steps with DKPro Core]
-  * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
+
+= Developer documentation =
+
+ For people who want to work on the DKPro source code or like to live on the bleeding edge.
+
+  * [DeveloperSetup Developer Setup] -
+  * [EclipseMylynConfiguration Eclipse Mylyn]	
+
+= Releases =
 
   * DKPro Core 1.3.0
      * [ReleaseNotes_1_3_0 DKPro Core ASL 1.3.0 release notes] 
      * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_3_0 DKPro Core GPL 1.3.0 release notes] 
+
+= Miscellaneous =
+
+  * [UkpMavenRepository Public UKP-OSS Maven repository]
+  * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
