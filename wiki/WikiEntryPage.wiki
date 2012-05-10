@@ -1,7 +1,8 @@
 #summary Wiki entry page
 #sidebar TableOfContents
 
-  * [DeveloperSetup Developer Setup]
+  * [UserSetup User Setup] - for people who want to use DKPro
+  * [DeveloperSetup Developer Setup] - for people who want to work on the DKPro source code
   * [EclipseMylynConfiguration Eclipse Mylyn]	
   * [MyFirstDKProProject First Steps with DKPro Core]
   * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
