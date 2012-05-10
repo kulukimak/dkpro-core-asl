@@ -3,7 +3,7 @@
 
 = Maven Setup = 
 
-This projects makes use of some libraries that are not readily available in public Maven repositories. Therefore we have set up a Maven repository which provides these libraries as well as releases of this project. To use this repository, follow [[UkpMavenRepository these instructions]].
+This projects makes use of some libraries that are not readily available in public Maven repositories. Therefore we have set up a Maven repository which provides these libraries as well as releases of this project. To use this repository, follow [UkpMavenRepository these instructions].
 
 = Eclipse Setup =
 
