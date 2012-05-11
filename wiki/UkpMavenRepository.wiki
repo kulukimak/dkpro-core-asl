@@ -55,7 +55,7 @@ We have set up a Maven repository which provides these libraries as well as rele
   </profiles>
   <activeProfiles>
     <activeProfile>ukp-oss-releases</activeProfile>
-    <!-- Uncomment the following entry to if you need SNAPSHOT versions. -->
+    <!-- Uncomment the following entry if you need SNAPSHOT versions. -->
     <!--activeProfile>ukp-oss-snapshots</activeProfile-->
   </activeProfiles>
 </settings>
