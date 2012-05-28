@@ -1,0 +1,109 @@
+#summary Using the Resource Provider API to build self-configuring DKPro components
+
+= Resources =
+
+The architecture for resources (e.g. parser models, POS tagger models, etc.) in DKPro is still work in progress. However, there are a couple of corner points that have already been established.
+
+   * *REQ-1 - Addressable by URL*: Resources must be addressable using an URL, typically a classpath URL (`classpath:/de/tudarmstadt/.../model.bin`) or a file URL (`file:///home/model.bin`). Remote URLs like HTTP should not be used and may not be supported.
+   * *REQ-2 - Maven compatible*: Resources are packaged in JARs and can be downloaded from our Maven repositories (if the license permits).
+   * *REQ-3 - Document-sensitive*: A component should dynamically determine at runtime which resource to use based on properties of a processed document, e.g. based on the document language. This may change from one document to the next.
+   * *REQ-4 - Overridable*: The user should be able to override the model or provide additional information as to what specific variant of a resource should be used. E.g. if there are two resources for the language `de`, `de-fast` and `de-accurate`, the component could use `de-fast` per default unless the user specifies to use variante `accurate` or specifies a different model altogether.
+   * *REQ-5 - Loadable from classpath*: Due to REQ-1, REQ-2, and REQ-3 models must be resolvable from the classpath. 
+      * `ResourceUtils.resolveLocation(String, Object, UimaContext)`
+      * Resource Providers (see below)
+      * `PathMatchingResourcePatternResolver`
+
+= Packaging resources as JARs =
+
+Models are usually large and we therefore package them separately from the components that use them. Each model becomes a JAR that is uploaded to our Maven repositories and added as a dependency in the projects that use them.
+
+Often, models are single files, e.g. serialize Java objects that represent a parser model, POS tagger model, etc. The simplest case is that these files are distributed from some website. We use an ANT script then to download the file and package it as a JAR. We defined custom ANT macros like install-model-file that make the process very convenient. The following code shows how we import the custom macros and define two targets, local-maven and separate-jars. The first just sets a property to cause install-model-file to copy the finished JAR into the local Maven repository (~.m2/repository). 
+
+The model building ANT script goes to =src/scripts/build.xml= with the project.
+
+{{{
+<project basedir="../.." default="separate-jars">
+	<import>
+		<url url="http://dkpro-core-asl.googlecode.com/svn/built-ant-macros/tags/0.2.0/ant-macros.xml"/>
+	</import>
+	
+	<target name="local-maven">
+		<property name="install-artifact-enable" value="true"/>
+		<antcall target="separate-jars"/>
+	</target>
+	
+	<target name="separate-jars">
+		<property name="outputDir" value="target/model-staging/de/tudarmstadt/ukp/dkpro/core/opennlp"/>
+
+		<mkdir dir="target/download/tagger"/>
+		
+    	<get src="http://opennlp.sourceforge.net/models-1.5/da-pos-maxent.bin" dest="target/download/tagger/da-pos-maxent.bin" skipexisting="true"/>
+    	<install-model-file groupId="de.tudarmstadt.ukp.dkpro.core" artifactIdBase="de.tudarmstadt.ukp.dkpro.core.opennlp"
+    		file="target/download/tagger/da-pos-maxent.bin" md5="5194e5c81bde38b7df95a1550e3f4998"
+    		tool="tagger" language="da" variant="maxent" extension="bin" version="1.5"/>				
+	</target>
+</project>
+}}}
+
+The separate-jars target frist defines an output directory. This must start with "target/model-staging" and then follows the package name for the component to which the model belongs, here our DKPro OpenNLP package.
+
+Next, the model file "da-pos-maxent.bin" is downloaded from the OpenNLP website and stored in a local cache directory "target/download/tagger/da-pos-maxent.bin". From there, install-model-file picks it up and packages it as a JAR. The JAR file name derives from the artifactIdBase, tool, language, variant and version parameters. These parameters along with the extension parameter are also used to determine the package name and file name of the model in the JAR. They are determined as follows (mind that dots in the artifactBase turn to slashes, e.g. "de.tud" turns "de/tud":
+
+{{{
+    {artifactIdBase}/lib/{tool}-{language}-{variant}.{extension}
+}}}
+
+The following values are commonly used for *tool*:
+
+   * *tagger* - part-of-speech tagger
+   * *ner* - named-entity recognizer
+   * *parser* - syntactic or dependency parser
+   * *coref* - coreference resolver
+
+The values for *variant* are very tool-dependent. Typically, the variant encodes parameters that were used during the creation of a model, e.g. which machine learning algorithm was used, which parameters it had, and on which data set is has been created. 
+
+An md5 sum for the remote file must be specified to make sure we notice if the remote file changes or if the download is corrupt. 
+
+= Using Resource Providers =
+
+The CasConfigurableProviderBase class provides some support for the above requirements. The following code is taken from the OpenNlpPosTagger component. It shows how the POS Tagger model is addressed using a parametrized classpath URL with parameters for language and variant. The produceResource() method is called with the URL of the model once it has been located by CasConfigurableProviderBase.
+
+_This is an illustrative code example. See [http://code.google.com/p/dkpro-core-asl/source/browse/de.tudarmstadt.ukp.dkpro.core-asl/trunk/de.tudarmstadt.ukp.dkpro.core.opennlp-asl/src/main/java/de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpPosTagger.java OpenNlpPosTagger] for the complete code._
+
+{{{
+modelProvider = new CasConfigurableProviderBase<POSTagger>() {
+    {
+        // These are the default values
+        setDefault(LOCATION, "classpath:/de/tudarmstadt/ukp/dkpro/core/opennlp/lib/" +
+                "tagger-${language}-${variant}.bin");
+        setDefault(VARIANT, "maxent");
+				
+        // These are parameters the user may have set on the component, they may be null
+        setOverride(LOCATION, modelLocation);
+        setOverride(LANGUAGE, language);
+        setOverride(VARIANT, variant);
+    }
+			
+    @Override
+    protected POSTagger produceResource(URL aUrl) throws IOException
+    {
+        InputStream is = null;
+        try {
+            is = aUrl.openStream();
+            POSModel model = new POSModel(is);
+            return new POSTaggerME(model);
+        }
+        finally {
+            closeQuietly(is);
+        }
+    }
+};
+
+// Here the language is picked up from the CAS.
+modelProvider.configure(cas);
+
+// Here we get the tagger according to the language, variant and location chosen.
+// A new instance is only created if necessary (e.g. if the current CAS has a different
+// language than the previous).
+POSTagger tagger = modelProvider.getResource();
+}}}
