@@ -10,7 +10,7 @@ _by Michael Matuschek, 2009_
 
 <wiki:toc max_depth="2" />
 
-This small tutorial will show you how to build your first small application with DKPro Core, from creating a new project to your first annotated document. Please make sure your environment is properly set up as described [DeveloperSetup here] before you start.
+This small tutorial will show you how to build your first small application with DKPro Core, from creating a new project to your first annotated document. Please make sure your environment is properly set up as described [UserSetup here] before you start.
 
 == Prerequisites ==
 
