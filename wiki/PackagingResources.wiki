@@ -29,6 +29,8 @@ Now to build the !TreeTagger artifacts:
    * Wait for the build process to finish
    * Restart Eclipse
 
+To use the packaged !TreeTagger resources, add them as Maven dependencies to your project (or add them to the classpath if you do not use Maven). Note, that in order to use !TreeTagger you must have add at least the JAR with the !TreeTagger binaries and one JAR with the models for the language you want to work with. A model JAR for !TreeTagger contains POS tagger and chunker models.
+
 == MD5 checksum check fails ==
 
 Not all of the resources are properly versioned by their maintainers (in particular !TreeTagger binaries and models). We observe that resources change from one day to the next without any announcement or increase of the version number (if present at all). Thus, we validate all resources against an MD5 checksums stored in the `build.xml`file. This way we can notice if a remote resource has been changed. When this happens, we add a note to the build.xml file indicating when we noticed the MD5 change update the version of the corresponding resource. 
