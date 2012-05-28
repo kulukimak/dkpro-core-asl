@@ -1,0 +1,27 @@
+#summary Packaging resources as Maven Artifacts
+
+Resources needed by DKPro components (e.g. parser models or POS tagger models) are not packaged with the corresponding analysis components, but as separate JARs, one per language and model variant. Due to license restrictions, we may not redistribute all of these resources. But, we offer Ant scripts to automatically download the resources and package them as DKPro-compatible JARs. When the license permits, we upload these to our public Maven repository.
+
+If you need a non-redistributable resource (e.g. TreeTagger models) or just want to package the models yourself, here is how you do it.
+
+== Package !TreeTagger ==
+
+!TreeTagger and its models cannot be distributed with DKPro Core, you need to download it yourself. For your convenience we included an Apache Ant script which downloads the !TreeTagger binaries and models and packages them as artifacts, allowing you to simply add them as dependencies in Maven
+
+To run the build script, you need to have Ant 1.8.x installed and configured in Eclipse. 
+
+   * Download the latest Ant binaries from the website and unpack them in a directory of your choice.
+   * Start Eclipse and go to *Window > Preferences > Ant > Runtime* and press *Ant Home...*.
+   * Select the Ant directory you just unpacked, then confirm. 
+
+Now you are ready to build the !TreeTagger artifacts.
+
+   * Locate the Ant build script (`build.xml`) in the *scripts* directory of the *de.tudarmstadt.ukp.dkpro.core.treetagger* module.
+   * Right-click, choose *Run As > External Tools Configurations*. In the *Target* tab, select *separate-jars*, run.
+   * Read the license in the Ant console and - if you care - accept the license terms. 
+   * Wait for the build process to finish
+   * To install the JAR files in your local repository open a console/bash window where you change to the *target* of the *de.tudarmstadt.ukp.dkpro.core.treetagger* module. 
+   * Iinstall the !TreeTagger binary artifact: <br/>{{{mvn install:install-file -Dfile=treetagger-bin-}}}<font color="red">{{{%BIN_VERSION%}}}</font>{{{.jar -DgroupId=de.tudarmstadt.ukp.dkpro.core -DartifactId=de.tudarmstadt.ukp.dkpro.core.treetagger-bin -Dversion=}}}<font color="red">{{{%BIN_VERSION%}}}</font>{{{ -Dpackaging=jar}}}
+   * install the tagger and chunker model artifacts: <br/>{{{mvn install:install-file -Dfile=treetagger-models-en-}}}<font color="red">{{{%MODELS_VERSION%}}}</font>{{{.jar -DgroupId=de.tudarmstadt.ukp.dkpro.core -DartifactId=de.tudarmstadt.ukp.dkpro.core.treetagger-models-en -Dversion=}}}<font color="red">{{{%MODELS_VERSION%}}}</font>{{{ -Dpackaging=jar}}}
+
+For <font color="red">%BIN_VERSION%</font> and <font color="red">%MODELS_VERSION%</font> refer to versions of the JAR files in the *target* directory“.
