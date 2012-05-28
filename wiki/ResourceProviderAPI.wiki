@@ -1,5 +1,7 @@
 #summary Using the Resource Provider API to build self-configuring DKPro components
 
+<wiki:toc max_depth="2" />
+
 = Resources =
 
 The architecture for resources (e.g. parser models, POS tagger models, etc.) in DKPro is still work in progress. However, there are a couple of corner points that have already been established.
