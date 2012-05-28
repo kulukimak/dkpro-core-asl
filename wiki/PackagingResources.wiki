@@ -2,7 +2,7 @@
 
 Resources needed by DKPro components (e.g. parser models or POS tagger models) are not packaged with the corresponding analysis components, but as separate JARs, one per language and model variant. Due to license restrictions, we may not redistribute all of these resources. But, we offer Ant scripts to automatically download the resources and package them as DKPro-compatible JARs. When the license permits, we upload these to our public Maven repository.
 
-If you need a non-redistributable resource (e.g. TreeTagger models) or just want to package the models yourself, here is how you do it.
+If you need a non-redistributable resource (e.g. !TreeTagger models) or just want to package the models yourself, here is how you do it.
 
 == build.xml Ant script ==
 
