@@ -146,7 +146,11 @@ POS posAnno = (POS) cas.createAnnotation(posTag, t.getBegin(), t.getEnd());
 
 It is possible a different default variant needs to be used depending on the language. This
 can be configured by placing a properties file in the classpath and setting its location using
-`setDefaultVariantsLocation(String)`. The key in the properties is the language and the value is used a default variant.
+`setDefaultVariantsLocation(String)`. The key in the properties is the language and the value is used a default variant. These file should always reside in the `lib`sub-package of a component and use the naming convention:
+
+{{{
+{tool}-default-variants.map
+}}}
 
 _This is an illustrative code example. See [http://code.google.com/p/dkpro-core-gpl/source/browse/de.tudarmstadt.ukp.dkpro.core-gpl/trunk/de.tudarmstadt.ukp.dkpro.core.stanfordnlp/src/main/java/de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordPosTagger.java StanfordPosTagger] for the complete code._
 
