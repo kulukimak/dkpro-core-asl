@@ -24,13 +24,15 @@ This tutorial assumes that you have:
 
 == Create a project ==
 
+*Note:* When adding dependencies, make sure you do not add *SNAPSHOT* versions. We recommend you always use the latest non-SNAPSHOT version.
+
    * Go to the *Package Explorer* in Eclipse and create new a *Maven Project*. On the first page of the properties dialogue, tick *Create a simple project (skip archetype selection)*.
    * On the next page, you have to choose a *group id* and *artifact id* for your project. Since this is only an experimental setup for playing around, your project should be kept seperate from the actual DKPro stuff. I suggest *de.tudarmstadt.ukp.experiments.XX* as group id and *de.tudarmstadt.ukp.experiments.XX.gettingStarted* as artifact id, where XX would be your initials.
-   * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *dkpro-parent-pom*, and you should find the *dkpro-parent-pom* artifact. Make sure you pick the newest version not ending in *-SNAPSHOT* by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
+   * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *dkpro-parent-pom*, and you should find the *dkpro-parent-pom* artifact. Make sure you pick the newest version by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
    
 == Configure the POM ==
 
-   * Now that your project is created, open *pom.xml* from your project's root directory. Jump to the *Dependencies* tab right away and don't worry about the other stuff now. In the *Dependency Management* pane, click *Add...* to browse for the DKPro Core ASL aggregator artifact *de.tudarmstadt.ukp.dkpro.core-asl*. Add it in the latest non-SNAPSHOT version, then change the type to *pom* and the scope to *import*. By doing this, you may omit specifying the version when adding dependencies on processing components. Maven will automatically use the right versions for the DKPro version that you have imported.
+   * Now that your project is created, open *pom.xml* from your project's root directory. Jump to the *Dependencies* tab right away and don't worry about the other stuff now. In the *Dependency Management* pane, click *Add...* to browse for the DKPro Core ASL aggregator artifact *de.tudarmstadt.ukp.dkpro.core-asl*. Add it in the latest version, then change the type to *pom* and the scope to *import*. By doing this, you may omit specifying the version when adding dependencies on processing components. Maven will automatically use the right versions for the DKPro version that you have imported.
    * Save the POM now.
    * Now add the actual dependencies for the processing components:
       * *de.tudarmstadt.ukp.dkpro.core.io.text-asl*
