@@ -7,7 +7,7 @@ This projects makes use of some libraries that are not readily available in publ
 
 = Eclipse Setup =
 
-We use the following tools for development:
+We use the following tools to integrate Maven in Eclipse:
 
     * [http://eclipse.org/ Eclipse] 3.7 or higher. We recommend the _Eclipse Classic_ distribution.
     * [http://m2eclipse.sonatype.org/ m2e] 1.0.200.20111228-1245 or higher.
