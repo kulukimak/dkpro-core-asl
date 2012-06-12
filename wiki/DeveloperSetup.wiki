@@ -7,6 +7,16 @@
    * Uncomment the line `<activeProfile>ukp-oss-releases</activeProfile>`
    * If you are in Eclipse, restart it
 
+= Eclipse Setup =
+
+We use the following tools for development:
+
+    * [http://subclipse.tigris.org/ Subclipse] 1.6.x
+        * update site: `http://subclipse.tigris.org/update_1.6.x`
+    * Maven SCM handler for Subclipse
+        * after installing m2e, go to Preferences -> Maven -> Discovery -> Open Catalog
+        * search for "subclipse"
+
 = Checking out =
 
    * Open the *SVN Repositories* perspective in Eclipse (Menu -> Window -> Show View -> Other... -> SVN -> SVN Repositories)
