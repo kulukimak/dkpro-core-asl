@@ -10,13 +10,8 @@ This projects makes use of some libraries that are not readily available in publ
 We use the following tools for development:
 
     * [http://eclipse.org/ Eclipse] 3.7 or higher. We recommend the _Eclipse Classic_ distribution.
-    * [http://subclipse.tigris.org/ Subclipse] 1.6.x
-        * update site: `http://subclipse.tigris.org/update_1.6.x`
     * [http://m2eclipse.sonatype.org/ m2e] 1.0.100.20110804-1717 or higher.
         * available in the Eclipse "Install new software"
-    * Maven SCM handler for Subclipse
-        * after installing m2e, go to Preferences -> Maven -> Discovery -> Open Catalog
-        * search for "subclipse"
 
 === For Windows Users ===
 
