@@ -31,6 +31,14 @@ Now to build the !TreeTagger artifacts:
 
 To use the packaged !TreeTagger resources, add them as Maven dependencies to your project (or add them to the classpath if you do not use Maven). Note, that in order to use !TreeTagger you must have add at least the JAR with the !TreeTagger binaries and one JAR with the models for the language you want to work with. A model JAR for !TreeTagger contains POS tagger and chunker models.
 
+== Versioning scheme ==
+
+The version our packaged models, we use a date (yyyymmdd) and a counter (x). We use a date, because it often no (reliable) upstream version is available. E.g. with the Stanford NLP tools, the same model is sometimes included in different pacakges with different versions (e.g. parser models are included with the CoreNLP package and the parser package). TreeTagger models are not versioned at all. With the OpenNLP version, we are not sure if they are versioned - it seems they are just versioned for compatibility with a particular OpenNLP version (e.g. 1.5.) but have no proper version of their own. Thus, we use the date when we first package a new model and update it when observe a model change. 
+
+We include additional metadata with the packaged model (e.g. which tagset is used) and we sometimes want to release packaged models with new metadata though the upstream model itself has not changed. In such case, we increment the counter. The counter starts at 0 if a new model is incorporated.
+
+Thus, a model version has the format "yyyymmdd.x".
+
 == MD5 checksum check fails ==
 
 Not all of the resources are properly versioned by their maintainers (in particular !TreeTagger binaries and models). We observe that resources change from one day to the next without any announcement or increase of the version number (if present at all). Thus, we validate all resources against an MD5 checksums stored in the `build.xml`file. This way we can notice if a remote resource has been changed. When this happens, we add a note to the build.xml file indicating when we noticed the MD5 change update the version of the corresponding resource. 
