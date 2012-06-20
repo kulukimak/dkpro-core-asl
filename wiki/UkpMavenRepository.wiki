@@ -1,7 +1,3 @@
-<font size="5" color="red">The repository is currently offline. <br/>
-This notice will be removed when the maintenance is over. <br/>
--- 2012-06-20, 20:11</font>
-
 We have set up a Maven repository which provides these libraries as well as releases our open source projects. To use this repository, we suggest you use the [http://maven.apache.org/settings.html settings.xml] in the hidden subdirectory `.m2` of your home directory and augment it with the following sections:
 
 {{{
