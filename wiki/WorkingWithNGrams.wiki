@@ -33,16 +33,17 @@ The frequency count can then be accessed using:
     long freq = frequencyProvider.getFrequency(phrase);
   }}}
 
-The user of this component then needs to bind a !FrequencyCountResource to the analysis engine, specifying where to find the data files.
+The user of this component then just needs to add the resource as a configuration parameter:
   {{{
-     bindResource(
-                someAE,
-                SomeComponent.FREQUENCY_COUNT_RESOURCE,
+        AnalysisEngineDescription desc = AnalysisEngineFactory.createPrimitiveDescription(
+            Annotator.class,
+            Annotator.FREQUENCY_COUNT_RESOURCE, ExternalResourceFactory.createExternalResourceDescription(
                 Web1TFrequencyCountResource.class,
                 Web1TFrequencyCountResource.PARAM_MIN_NGRAM_LEVEL, "1",
-                Web1TFrequencyCountResource.PARAM_MAX_NGRAM_LEVEL, "1",
+                Web1TFrequencyCountResource.PARAM_MAX_NGRAM_LEVEL, "3",
                 Web1TFrequencyCountResource.PARAM_INDEX_PATH, indexPath
-     );
+            )
+        );
   }}}
 
 The {{{Web1TFrequencyCountResource}}} in DKPro directly supports the format of the [http://www.ldc.upenn.edu/Catalog/docs/LDC2006T13/readme.txt Google Web1T web size n-gram corpus].
@@ -74,9 +75,11 @@ public class CreateAclNgrams
  
         AnalysisEngineDescription ngramWriter = createPrimitiveDescription(
                 Web1TFormatWriter.class,
-                Web1TFormatWriter.PARAM_TARGET_LOCATION, OUTPUT_PATH,
+                Web1TFormatWriter.PARAM_TARGET_LOCATION,  OUTPUT_PATH,
+                Web1TFormatWriter.PARAM_INPUT_TYPES, new String[] { Token.class.getName() },
                 Web1TFormatWriter.PARAM_MIN_NGRAM_LENGTH, 1,
-                Web1TFormatWriter.PARAM_MAX_NGRAM_LENGTH, 3
+                Web1TFormatWriter.PARAM_MAX_NGRAM_LENGTH, 3,
+                Web1TFormatWriter.PARAM_MIN_FREQUENCY, 2                
         );
         
         SimplePipeline.runPipeline(
@@ -84,6 +87,12 @@ public class CreateAclNgrams
                 segmenter,
                 ngramWriter
         );
+
+        // create the necessary indexes
+        JWeb1TIndexer indexCreator = new JWeb1TIndexer("target/web1t/", 3);
+        indexCreator.create();
     }
 }
    }}}
+
+Finally, you 
