@@ -21,35 +21,45 @@ Models are usually large and we therefore package them separately from the compo
 
 Often, models are single files, e.g. serialize Java objects that represent a parser model, POS tagger model, etc. The simplest case is that these files are distributed from some website. We use an ANT script then to download the file and package it as a JAR. We defined custom ANT macros like install-model-file that make the process very convenient. The following code shows how we import the custom macros and define two targets, local-maven and separate-jars. The first just sets a property to cause install-model-file to copy the finished JAR into the local Maven repository (~.m2/repository). 
 
+The versioning scheme for models is "yyyymmdd.x" where "yyyymmdd" is the date of the last model change (if known) or the date of packaging and "x" is a counter unique per date starting a 0. Please refer to the [[PackagingResources#Versioning_scheme versioning scheme documentation] for more information.
+
 The model building ANT script goes to =src/scripts/build.xml= with the project.
 
 {{{
 <project basedir="../.." default="separate-jars">
-	<import>
-		<url url="http://dkpro-core-asl.googlecode.com/svn/built-ant-macros/tags/0.2.0/ant-macros.xml"/>
-	</import>
+  <import>
+    <url url="http://dkpro-core-asl.googlecode.com/svn/built-ant-macros/tags/0.4.0/ant-macros.xml"/>
+  </import>
 	
-	<target name="local-maven">
-		<property name="install-artifact-enable" value="true"/>
-		<antcall target="separate-jars"/>
-	</target>
-	
-	<target name="separate-jars">
-		<property name="outputDir" value="target/model-staging/de/tudarmstadt/ukp/dkpro/core/opennlp"/>
+  <property name="outputDir" value="target/model-staging/de/tudarmstadt/ukp/dkpro/core/opennlp"/>
 
-		<mkdir dir="target/download/tagger"/>
-		
-    	<get src="http://opennlp.sourceforge.net/models-1.5/da-pos-maxent.bin" dest="target/download/tagger/da-pos-maxent.bin" skipexisting="true"/>
-    	<install-model-file groupId="de.tudarmstadt.ukp.dkpro.core" artifactIdBase="de.tudarmstadt.ukp.dkpro.core.opennlp"
-    		file="target/download/tagger/da-pos-maxent.bin" md5="5194e5c81bde38b7df95a1550e3f4998"
-    		tool="tagger" language="da" variant="maxent" extension="bin" version="1.5"/>				
-	</target>
+  <target name="local-maven">
+    <property name="install-artifact-enable" value="true"/>
+    <antcall target="separate-jars"/>
+  </target>
+	
+  <target name="separate-jars">
+    <mkdir dir="target/download"/>
+	
+    <!-- FILE: models-1.5/en-pos-maxent.bin - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      - 2012-06-16 | now        | db2cd70395b9e2e4c6b9957015a10607
+      -->
+    <get src="http://opennlp.sourceforge.net/models-1.5/en-pos-maxent.bin" dest="target/download/en-pos-maxent.bin" skipexisting="true"/>
+    <install-model-file groupId="de.tudarmstadt.ukp.dkpro.core" artifactIdBase="de.tudarmstadt.ukp.dkpro.core.opennlp"
+        file="target/download/en-pos-maxent.bin" md5="db2cd70395b9e2e4c6b9957015a10607"
+        tool="tagger" language="en" variant="maxent" extension="bin" version="20120616.0">
+        <metadata>
+          <entry key="tagger.tagset" value="ptb"/>
+        </metadata>
+    </install-model-file>
+    <delete dir="target/model-staging"/> <!-- Clean up after each model -->
+  </target>
 </project>
 }}}
 
 The separate-jars target frist defines an output directory. This must start with "target/model-staging" and then follows the package name for the component to which the model belongs, here our DKPro OpenNLP package.
 
-Next, the model file "da-pos-maxent.bin" is downloaded from the OpenNLP website and stored in a local cache directory "target/download/tagger/da-pos-maxent.bin". From there, install-model-file picks it up and packages it as a JAR. The JAR file name derives from the artifactIdBase, tool, language, variant and version parameters. These parameters along with the extension parameter are also used to determine the package name and file name of the model in the JAR. They are determined as follows (mind that dots in the artifactBase turn to slashes, e.g. "de.tud" turns "de/tud":
+Next, the model file "en-pos-maxent.bin" is downloaded from the OpenNLP website and stored in a local cache directory "target/download/tagger/da-pos-maxent.bin". From there, install-model-file picks it up and packages it as a JAR. The JAR file name derives from the artifactIdBase, tool, language, variant and version parameters. These parameters along with the extension parameter are also used to determine the package name and file name of the model in the JAR. They are determined as follows (mind that dots in the artifactBase turn to slashes, e.g. "de.tud" turns "de/tud":
 
 {{{
     {artifactIdBase}/lib/{tool}-{language}-{variant}.{extension}
