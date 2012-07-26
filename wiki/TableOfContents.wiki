@@ -4,6 +4,7 @@
   * Users
     * [UserSetup User Setup]
     * [MyFirstDKProProject First Steps with DKPro Core]
+    * [PackagingResources Packaging resources]
     * [WorkingWithNGrams]	 
   * Developers
     * Setup
