@@ -51,7 +51,7 @@ For any given module supporting packaged resources, there is always the `build.x
 
 For !TreeTagger, you should always use the version from SVN trunk. Here, it is least likely that the MD5 checksums are outdated and you will always get the latest and greatest version of !TreeTagger.
 
-For all other modules (e.g. !OpenNLP or !StanfordNLP) you should use the `build.xml` for your DKPro Core version. Thus, if you are working with the latest DKPro Core SNAPSHOT, use the one from SVN trunk and if you use DKPro Core 1.3.0, then look in the 1.3.0 tag in SVN.
+For all other modules (e.g. OpenNLP or StanfordNLP) you should use the `build.xml` for your DKPro Core version. Thus, if you are working with the latest DKPro Core SNAPSHOT, use the one from SVN trunk and if you use DKPro Core 1.3.0, then look in the 1.3.0 tag in SVN.
 
 We do not ship the `build.xml` files in any other way than via SVN.  
 
