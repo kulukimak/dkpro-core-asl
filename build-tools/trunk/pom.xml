@@ -2,16 +2,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 	<artifactId>build-tools</artifactId>
-	<version>4</version>
+	<version>5-SNAPSHOT</version>
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
 	</parent>
 	<scm>
-		<connection>scm:svn:http://dkpro-core-asl.googlecode.com/svn/build-toolstrunk/tags/build-tools-4</connection>
-		<developerConnection>scm:svn:https://dkpro-core-asl.googlecode.com/svn/build-tools/tags/build-tools-4</developerConnection>
-		<url>http://code.google.com/p/dkpro-core-asl/source/browse/build-tools/tags/build-tools-4</url>
+		<connection>scm:svn:http://dkpro-core-asl.googlecode.com/svn/build-toolstrunk/</connection>
+		<developerConnection>scm:svn:https://dkpro-core-asl.googlecode.com/svn/build-tools/trunk/</developerConnection>
+		<url>http://code.google.com/p/dkpro-core-asl/source/browse/build-tools</url>
 	</scm>
 	<build>
 		<extensions>
