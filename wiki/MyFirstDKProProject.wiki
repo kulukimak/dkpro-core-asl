@@ -1,7 +1,5 @@
 #summary First Programming Steps with DKPro Core
 
-<font size="3" color="red">This page requires to a version of DKPro that has not yet been released. You may still use it by activating the *ukp-oss-snapshots* profile in your [UkpMavenRepository settings.xml] and choosing the version *1.4.0-SNAPSHOT* for the aggregator artifact *de.tudarmstadt.ukp.dkpro.core-asl*.</font>
-
 <h1>First Programming Steps with DKPro Core</h1>
 
 _by Richard Eckart de Castilho, 2012_ <br/>
@@ -20,7 +18,6 @@ This tutorial assumes that you have:
    * Eclipse 3.7.x
    * Maven Integration for Eclipse (M2E) plugin installed in version 1.0.200.x or higher
    * DKPro Core ASL 1.4.0 or higher
-   * performed the [UserSetup user setup]
 
 == Create a project ==
 
@@ -30,6 +27,11 @@ This tutorial assumes that you have:
    * On the next page, you have to choose a *group id* and *artifact id* for your project. Since this is only an experimental setup for playing around, your project should be kept seperate from the actual DKPro stuff. I suggest *de.tudarmstadt.ukp.experiments.XX* as group id and *de.tudarmstadt.ukp.experiments.XX.gettingStarted* as artifact id, where XX would be your initials.
    * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *dkpro-parent-pom*, and you should find the *dkpro-parent-pom* artifact. Make sure you pick the newest version by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
    
+*Note*: If Eclipse fails to find the *dkpro-parent-pom* when you search for it, enter the following fields manually:
+   * *groupId:* de.tudarmstadt.ukp.dkpro.core
+   * *artifactId:* dkpro-parent-pom
+   * *version:* 3
+
 == Configure the POM ==
 
    * Now that your project is created, open *pom.xml* from your project's root directory. Jump to the *Dependencies* tab right away and don't worry about the other stuff now. In the *Dependency Management* pane, click *Add...* to browse for the DKPro Core ASL aggregator artifact *de.tudarmstadt.ukp.dkpro.core-asl*. Add it in the latest version, then change the type to *pom* and the scope to *import*. By doing this, you may omit specifying the version when adding dependencies on processing components. Maven will automatically use the right versions for the DKPro version that you have imported.
@@ -43,6 +45,11 @@ This tutorial assumes that you have:
    * For the JUnit dependency, set the scope to *test*, and leave the default scope for the others. We'll use JUnit later on to test if everything works.
    * Save the POM (Ctrl + S) and let Maven automatically resolve the dependencies.
    * Congratulations, you're all set, now let's jump into it. 
+
+*Note*: If Eclipse fails to find the artifacts listed above when you search for it, enter the following fields manually:
+   * *groupId:* de.tudarmstadt.ukp.dkpro.core
+   * *artifactId:* _dependency name given above_
+   * *version:* 1.4.0, except for the tagger model which should be 20120616.0
 
 == Create your first experiment ==
    
