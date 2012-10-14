@@ -26,15 +26,15 @@ DKPro Core ASL 1.4.0 is a major release. It is not expected to be binary backwar
    * Fixed several bugs
    * Improved performance (slightly)
 
-=== !JWordSplitter integration module ===
+=== JWordSplitter integration module ===
 
    * Changed to current !JWordSplitter version
 
-=== !LanguageTool integration module ===
+=== LanguageTool integration module ===
 
    * Changed to !LanguageTool 1.9
 
-=== !OpenNLP integration module ===
+=== OpenNLP integration module ===
 
    * Added !OpenNlpParser
    * Added !OpenNlpPosTagger
