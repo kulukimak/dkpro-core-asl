@@ -28,7 +28,7 @@ DKPro Core ASL 1.4.0 is a major release. It is not expected to be binary backwar
 
 === JWordSplitter integration module ===
 
-   * Changed to current !JWordSplitter version
+   * Changed to current JWordSplitter version
 
 === !LanguageTool integration module ===
 
@@ -39,7 +39,7 @@ DKPro Core ASL 1.4.0 is a major release. It is not expected to be binary backwar
    * Added !OpenNlpParser
    * Added !OpenNlpPosTagger
    * Added !OpenNlpSegmenter
-   * Added tokenizer using LanguageTool - supports many languages
+   * Added tokenizer using !LanguageTool - supports many languages
 
 === Tokenizer module ===
 
