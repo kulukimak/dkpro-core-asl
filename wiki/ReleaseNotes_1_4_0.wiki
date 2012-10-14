@@ -58,7 +58,7 @@ DKPro Core ASL 1.4.0 is a major release. It is not expected to be binary backwar
 
    * Added support compressing using cwb-huffcode and cwb-compress-rdx
    * Added support to write coarse part-of-speech tags (DKPro type names)
-   * Added support to better handle WaCky corpora, e.g. to generate document IDs
+   * Added support to better handle !WaCky corpora, e.g. to generate document IDs
 
 == PDF support ==
 
