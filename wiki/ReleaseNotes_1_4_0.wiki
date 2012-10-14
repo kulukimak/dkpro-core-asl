@@ -33,13 +33,13 @@ DKPro Core ASL 1.4.0 is a major release. It is not expected to be binary backwar
 === !LanguageTool integration module ===
 
    * Changed to !LanguageTool 1.9
+   * Added !LanguageToolSegmenter - supports many languages
 
 === OpenNLP integration module ===
 
    * Added !OpenNlpParser
    * Added !OpenNlpPosTagger
    * Added !OpenNlpSegmenter
-   * Added tokenizer using !LanguageTool - supports many languages
 
 === Tokenizer module ===
 
