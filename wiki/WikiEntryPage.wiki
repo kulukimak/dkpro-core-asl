@@ -22,7 +22,9 @@ For people who want to use a DKPro release version.
 
 = Releases =
 
-  * DKPro Core 1.3.0
+  * DKPro Core 1.4.0
+     * [ReleaseNotes_1_4_0 DKPro Core ASL 1.4.0 release notes] 
+     * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_4_0 DKPro Core GPL 1.4.0 release   * DKPro Core 1.3.0
      * [ReleaseNotes_1_3_0 DKPro Core ASL 1.3.0 release notes] 
      * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_3_0 DKPro Core GPL 1.3.0 release notes] 
 
