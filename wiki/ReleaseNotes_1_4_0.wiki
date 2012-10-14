@@ -73,7 +73,7 @@ DKPro Core ASL 1.4.0 is a major release. It is not expected to be binary backwar
 
 == TEI support ==
 
-   * Added support for Digitale Bibliothek of TextGrid
+   * Added support for Digitale Bibliothek of !TextGrid
    * Added support for TEI documents with multiple texts inside.
 
 == Web1t support ==
