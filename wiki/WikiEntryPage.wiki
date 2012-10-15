@@ -14,7 +14,7 @@ For people who want to use a DKPro release version.
  For people who want to work on the DKPro source code or like to live on the bleeding edge.
 
 *Setup*
-  * [DeveloperSetup Developer Setup] -
+  * [DeveloperSetup Developer Setup]
   * [EclipseMylynConfiguration Eclipse Mylyn]	
 
 *APIs*
