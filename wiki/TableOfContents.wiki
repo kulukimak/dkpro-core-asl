@@ -4,11 +4,11 @@
   * Users
     * [UserSetup User Setup]
     * [MyFirstDKProProject First Steps with DKPro Core]
-    * [PackagingResources Packaging resources]
     * [WorkingWithNGrams]	 
   * Developers
     * Setup
       * [DeveloperSetup Developer Setup]
       * [EclipseMylynConfiguration Eclipse Mylyn]
     * APIs
-      * [ResourceProviderAPI Resource Providers] 	
+      * [ResourceProviderAPI Resource Providers]
+      * [PackagingResources Packaging resources]
