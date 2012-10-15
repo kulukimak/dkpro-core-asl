@@ -7,7 +7,6 @@ For people who want to use a DKPro release version.
 
   * [UserSetup User Setup]
   * [MyFirstDKProProject First Steps with DKPro Core]
-  * [PackagingResources Packaging resources]
 
 = Developer documentation =
 
@@ -19,6 +18,7 @@ For people who want to use a DKPro release version.
 
 *APIs*
   * [ResourceProviderAPI Resource Provider API] 
+  * [PackagingResources Packaging resources]
 
 = Releases =
 
