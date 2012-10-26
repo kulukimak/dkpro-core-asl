@@ -25,14 +25,14 @@ This tutorial assumes that you have:
 
    * Go to the *Package Explorer* in Eclipse and create new a *Maven Project*. On the first page of the properties dialogue, tick *Create a simple project (skip archetype selection)*.
    * On the next page, you have to choose a *group id* and *artifact id* for your project. Since this is only an experimental setup for playing around, your project should be kept seperate from the actual DKPro stuff. I suggest *de.tudarmstadt.ukp.experiments.XX* as group id and *de.tudarmstadt.ukp.experiments.XX.gettingStarted* as artifact id, where XX would be your initials.
-   * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *dkpro-parent-pom*, and you should find the *dkpro-parent-pom* artifact. Make sure you pick the newest version by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
+   * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *de.tudarmstadt.ukp.dkpro.core-asl*, and you should find the *de.tudarmstadt.ukp.dkpro.core-asl* artifact. Make sure you pick the newest version by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
    
-*Note*: If Eclipse fails to find the *dkpro-parent-pom* when you search for it, enter the following fields manually:
+*Note*: If Eclipse fails to find the *de.tudarmstadt.ukp.dkpro.core-asl* POM when you search for it, enter the following fields manually:
    * *groupId:* de.tudarmstadt.ukp.dkpro.core
-   * *artifactId:* dkpro-parent-pom
-   * *version:* 3
+   * *artifactId:* de.tudarmstadt.ukp.dkpro.core-asl
+   * *version:* 1.4.0 (or higher)
 
-*Note*: If you do not wish to inherit from the *dkpro-parent-pom*, you need to perform [UkpMavenRepository#Configuring_a_project_for_access_to_models an extra step] to be able to access the models (e.g. parser models, tagger models, etc.) from the public UKP Maven repository.
+*Note*: If you do not wish to inherit from the *de.tudarmstadt.ukp.dkpro.core-asl* POM, you need to perform [UkpMavenRepository#Configuring_a_project_for_access_to_models an extra step] to be able to access the models (e.g. parser models, tagger models, etc.) from the public UKP Maven repository.
 
 == Configure the POM ==
 
