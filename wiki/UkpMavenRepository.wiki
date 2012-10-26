@@ -1,4 +1,27 @@
-We have set up a Maven repository which provides these libraries as well as releases our open source projects. To use this repository, we suggest you use the [http://maven.apache.org/settings.html settings.xml] in the hidden subdirectory `.m2` of your home directory and augment it with the following sections:
+= Configuring a project for access to models =
+
+If you project uses the DKPro Core ASL master POM as parent, you automatically inherit access to the UKP model repository. The coordinates of this POM are:
+
+  * groupId: *de.tudarmstadt.ukp.dkpro.core*
+  * artifactId: *dkpro-parent-pom*
+  * version: *3* (or higher)
+
+Otherwise, you have to add the following repository section to your project in order to get access to the models:
+
+{{{
+<repositories>
+  <repository>
+    <id>ukp-oss-model-releases</id>
+    <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local</url>
+   </repository>
+</repositories>
+}}}
+
+If you have a multi-module project, it is sufficient to add this section to the POM of the top-level project.
+
+= Configuring Maven for full access to the UKP Maven Repository =
+
+We have set up a Maven repository which provides third-party libraries that are not available via Maven Central as well as SNAPSHOT versions our open source projects. To use this repository, we suggest you use the [http://maven.apache.org/settings.html settings.xml] in the hidden subdirectory `.m2` of your home directory and augment it with the following sections:
 
 {{{
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
