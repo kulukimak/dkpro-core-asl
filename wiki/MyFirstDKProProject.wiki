@@ -32,6 +32,8 @@ This tutorial assumes that you have:
    * *artifactId:* dkpro-parent-pom
    * *version:* 3
 
+*Note*: If you do not wish to inherit from the *dkpro-parent-pom*, you need to perform [an extra step http://code.google.com/p/dkpro-core-asl/wiki/UkpMavenRepository#Configuring_a_project_for_access_to_models] to be able to access the models (e.g. parser models, tagger models, etc.) from the public UKP Maven repository.
+
 == Configure the POM ==
 
    * Now that your project is created, open *pom.xml* from your project's root directory. Jump to the *Dependencies* tab right away and don't worry about the other stuff now. In the *Dependency Management* pane, click *Add...* to browse for the DKPro Core ASL aggregator artifact *de.tudarmstadt.ukp.dkpro.core-asl*. Add it in the latest version, then change the type to *pom* and the scope to *import*. By doing this, you may omit specifying the version when adding dependencies on processing components. Maven will automatically use the right versions for the DKPro version that you have imported.
