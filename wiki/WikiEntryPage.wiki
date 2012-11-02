@@ -8,6 +8,11 @@ For people who want to use a DKPro release version.
   * [UserSetup User Setup]
   * [MyFirstDKProProject First Steps with DKPro Core]
 
+= Reference documentation =
+
+  * [https://docs.google.com/spreadsheet/pub?
+key=0ApGcdapz0xSYdGh2azY2ODMtZDRNczUySEZJUFpXM2c&single=true&gid=0&output=html Models] (ASL/GPL)
+
 = Developer documentation =
 
  For people who want to work on the DKPro source code or like to live on the bleeding edge.
