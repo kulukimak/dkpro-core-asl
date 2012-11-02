@@ -14,7 +14,7 @@ For people who want to use a DKPro release version.
 
 = Developer documentation =
 
- For people who want to work on the DKPro source code or like to live on the bleeding edge.
+For people who want to work on the DKPro source code or like to live on the bleeding edge.
 
 *Setup*
   * [DeveloperSetup Developer Setup]
