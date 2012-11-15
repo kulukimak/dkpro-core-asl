@@ -142,6 +142,43 @@ Actual  : ${@{prop.verify.md5.actual}}
 		</sequential>
 	</macrodef>
 	
+	<macrodef name="install-model-folder">
+        <attribute name="folder"/>
+        <attribute name="groupId"/>
+        <attribute name="artifactIdBase"/>
+        <attribute name="variant"/>
+        <attribute name="tool"/>
+        <attribute name="language"/>
+        <attribute name="version"/>
+        <attribute name="comment" default=""/>
+        <element name="metadata" optional="yes"/>
+        <sequential>
+            <fail unless="outputDir">No output directory set.</fail>
+            <mkdir dir="${outputDir}/lib/@{tool}/@{language}/@{variant}"/>
+            <copy todir="${outputDir}/lib/@{tool}/@{language}/@{variant}">
+            	<fileset dir="@{folder}">
+                    <include name="**/*"/>
+            	</fileset>
+            </copy>
+            
+            <clean-pom/>
+            <generate-pom version="@{version}" groupId="@{groupId}" 
+                artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}"/>
+            
+            <jar destfile="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar" compress="true">
+                <fileset dir="target/model-staging">
+                    <include name="META-INF/**/*"/>
+                    <include name="**/lib/@{tool}/@{language}/@{variant}/**/*"/>
+                </fileset>
+            </jar>
+            
+            <install-artifact file="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar"
+                groupId="@{groupId}" artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}" version="@{version}"/>
+            
+            <clean-pom/>
+        </sequential>
+    </macrodef>
+
 	<macrodef name="generate-model-properties">
 		<attribute name="tool"/>
 		<attribute name="language"/>
