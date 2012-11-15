@@ -1,0 +1,209 @@
+<project>
+	<macrodef name="install-artifact">
+		<attribute name="file"/>
+		<attribute name="groupId"/>
+		<attribute name="artifactId"/>
+		<attribute name="version"/>
+		<attribute name="enable" default="yes"/>
+		<sequential>
+			<antcall target="install-artifact-decide">
+				<param name="file" value="@{file}"/>
+				<param name="groupId" value="@{groupId}"/>
+				<param name="artifactId" value="@{artifactId}"/>
+				<param name="version" value="@{version}"/>
+			</antcall>
+		</sequential>
+	</macrodef>
+					
+	<target name="install-artifact-decide">
+		<condition property="enable" value="yes" else="no">
+			<istrue value="${install-artifact-enable}"/>
+	    </condition>
+		<antcall target="install-artifact-${enable}"/>
+	</target>
+		    			
+	<target name="install-artifact-yes">
+		<delete dir="target/install-artifact-staging"/>
+		<!-- Copy the POM -->
+		<unzip src="${file}" dest="target/install-artifact-staging">
+    		<patternset>
+    			<include name="META-INF/maven/**/pom.xml"/>		
+			</patternset>
+    		<chainedmapper>
+	    		<mapper type="flatten"/>
+	    		<firstmatchmapper>
+					<globmapper from="*" to="${groupId}.pom"/>
+				</firstmatchmapper>
+    		</chainedmapper>
+    	</unzip>
+		<copy todir="${user.home}/.m2/repository" verbose="yes">
+    		<fileset dir="target/install-artifact-staging">
+    			<include name="${groupId}.pom"/>		
+			</fileset>
+			<filtermapper>
+				<replacestring from="." to="/"/> 
+				<replaceregex pattern="(.*)/pom" replace="\1/${artifactId}/${version}/${artifactId}-${version}.pom"/>
+			</filtermapper>
+		</copy>
+		<!-- Copy the JAR -->
+		<copy todir="${user.home}/.m2/repository" verbose="yes">
+			<file file="${file}"/>
+			<filtermapper>
+				<replaceregex pattern="(.*)" replace="${groupId}/jar"/>
+				<replacestring from="." to="/"/> 
+				<replaceregex pattern="(.*)/jar" replace="\1/${artifactId}/${version}/${artifactId}-${version}.jar"/>
+			</filtermapper>
+		</copy>
+		<delete dir="target/install-artifact-staging"/>
+		<echo>Artifact installed into local Maven repository at [${user.home}/.m2/repository].</echo>
+	</target>
+	
+	<target name="install-artifact-no">
+		<echo>Artifact not installed into local Maven repository.</echo>
+	</target>
+
+	<macrodef name="generate-pom">
+		<attribute name="groupId"/>
+		<attribute name="artifactId"/>
+		<attribute name="version"/>
+		<sequential>
+			<mkdir dir="target/model-staging/META-INF/maven/@{groupId}/@{artifactId}"/>
+			<echo file="target/model-staging/META-INF/maven/@{groupId}/@{artifactId}/pom.xml"><![CDATA[<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>@{groupId}</groupId>
+	<artifactId>@{artifactId}</artifactId>
+	<version>@{version}</version>
+</project>
+]]></echo>
+			<echo file="target/model-staging/META-INF/maven/@{groupId}/@{artifactId}/pom.properties"><![CDATA[version=@{version}
+groupId=@{groupId}
+artifactId=@{artifactId}
+]]></echo>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="clean-pom">
+		<sequential>
+			<delete dir="target/model-staging/META-INF"/>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="install-model-file">
+		<attribute name="file"/>
+		<attribute name="groupId"/>
+		<attribute name="artifactIdBase"/>
+		<attribute name="extension"/>
+		<attribute name="variant"/>
+		<attribute name="tool"/>
+		<attribute name="language"/>
+		<attribute name="version"/>
+		<attribute name="md5"/>
+		<attribute name="comment" default=""/>
+		<element name="metadata" optional="yes"/>
+		<attribute name="prop.verify.md5" default="verify.md5.@{tool}.@{language}.@{variant}"/>
+		<attribute name="prop.verify.md5.actual" default="verify.md5.actual.@{tool}.@{language}.@{variant}"/>
+		<sequential>
+			<fail unless="outputDir">No output directory set.</fail>
+	    	<mkdir dir="${outputDir}/lib"/>
+			<copy file="@{file}" tofile="${outputDir}/lib/@{tool}-@{language}-@{variant}.@{extension}"/>
+			<copy file="@{file}.props" tofile="${outputDir}/lib/@{tool}-@{language}-@{variant}.@{extension}.props" failonerror="false"/>
+			
+			<generate-model-properties tool="@{tool}" language="@{language}" variant="@{variant}"
+				extension="@{extension}">
+				<metadata/>
+			</generate-model-properties>
+			<clean-pom/>
+			<generate-pom version="@{version}" groupId="@{groupId}" 
+				artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}"/>
+			
+			<checksum file="${outputDir}/lib/@{tool}-@{language}-@{variant}.@{extension}" property="@{md5}" verifyproperty="@{prop.verify.md5}"/>
+			<checksum file="${outputDir}/lib/@{tool}-@{language}-@{variant}.@{extension}" property="@{prop.verify.md5.actual}"/>
+			<condition property="checksum.mismatch">
+				<equals arg1="false" arg2="${@{prop.verify.md5}}"/>
+			</condition>
+			<fail if="checksum.mismatch">
+MD5 checksum mismatch for @{tool}-@{language}-@{variant}.@{extension}.
+Please verify the checksum and if necessary update this script.
+Expected: @{md5}
+Actual  : ${@{prop.verify.md5.actual}}
+			</fail>
+
+			<jar destfile="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar" compress="true">
+				<fileset dir="target/model-staging">
+					<include name="META-INF/**/*"/>
+					<include name="**/lib/@{tool}-@{language}-@{variant}*"/>
+				</fileset>
+			</jar>
+			
+			<install-artifact file="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar"
+				groupId="@{groupId}" artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}" version="@{version}"/>
+			
+			<clean-pom/>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="install-model-folder">
+        <attribute name="folder"/>
+        <attribute name="groupId"/>
+        <attribute name="artifactIdBase"/>
+        <attribute name="variant"/>
+        <attribute name="tool"/>
+        <attribute name="language"/>
+        <attribute name="version"/>
+        <attribute name="comment" default=""/>
+        <element name="metadata" optional="yes"/>
+        <sequential>
+            <fail unless="outputDir">No output directory set.</fail>
+            <mkdir dir="${outputDir}/lib/@{tool}/@{language}/@{variant}"/>
+            <copy todir="${outputDir}/lib/@{tool}/@{language}/@{variant}">
+            	<fileset dir="@{folder}">
+                    <include name="**/*"/>
+            	</fileset>
+            </copy>
+            
+            <clean-pom/>
+            <generate-pom version="@{version}" groupId="@{groupId}" 
+                artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}"/>
+            
+            <jar destfile="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar" compress="true">
+                <fileset dir="target/model-staging">
+                    <include name="META-INF/**/*"/>
+                    <include name="**/lib/@{tool}/@{language}/@{variant}/**/*"/>
+                </fileset>
+            </jar>
+            
+            <install-artifact file="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar"
+                groupId="@{groupId}" artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}" version="@{version}"/>
+            
+            <clean-pom/>
+        </sequential>
+    </macrodef>
+
+	<macrodef name="generate-model-properties">
+		<attribute name="tool"/>
+		<attribute name="language"/>
+		<attribute name="extension"/>
+		<attribute name="variant"/>
+		<attribute name="comment" default=""/>
+		<element name="metadata" implicit="yes" optional="yes"/>
+		<attribute name="prop.checksum.md5" default="checksum.md5.@{tool}-@{language}-@{variant}"/>
+		<attribute name="prop.checksum.sha1" default="checksum.sha1.@{tool}-@{language}-@{variant}"/>
+		<sequential>
+			<checksum file="${outputDir}/lib/@{tool}-@{language}-@{variant}.@{extension}" 
+				property="@{prop.checksum.md5}" algorithm="MD5"/>
+			<checksum file="${outputDir}/lib/@{tool}-@{language}-@{variant}.@{extension}" 
+				property="@{prop.checksum.sha1}" algorithm="SHA"/>
+			<propertyfile file="${outputDir}/lib/@{tool}-@{language}-@{variant}.properties"
+				comment="@{comment}">
+				<entry key="downloaded" type="date" value="now"/>
+				<entry key="tool" value="@{tool}"/>
+				<entry key="language" value="@{language}"/>
+				<entry key="variant" value="@{variant}"/>
+				<entry key="md5" value="${@{prop.checksum.md5}}"/>
+				<entry key="sha1" value="${@{prop.checksum.sha1}}"/>
+				<metadata/>
+			</propertyfile>
+			<echo>Installed @{tool} model file for @{language} in variant @{variant}</echo>
+		</sequential>
+	</macrodef>
+</project>
