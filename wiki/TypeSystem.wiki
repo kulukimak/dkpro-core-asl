@@ -1,0 +1,7 @@
+#summary DKPro Core Type System
+
+<h1>DKPro Core Type System</h1>
+
+This graphics gives an overview of the most important types in the DKPro Core type system.
+
+https://dkpro-core-asl.googlecode.com/svn/wiki/images/DKProCoreTypeSystem.png
