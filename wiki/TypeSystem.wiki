@@ -2,6 +2,6 @@
 
 <h1>DKPro Core Type System</h1>
 
-This graphics gives an overview of the most important types in the DKPro Core type system. All types shown here interit from the UIMA `Annotation` type which provides `start` and `end` offsets.
+This graphics gives an overview of the most important types in the DKPro Core type system. All types shown here inherit from the UIMA `Annotation` type which provides `start` and `end` offsets.
 
 https://dkpro-core-asl.googlecode.com/svn/wiki/images/DKProCoreTypeSystem.png
