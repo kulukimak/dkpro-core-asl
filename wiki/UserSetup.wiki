@@ -5,7 +5,7 @@
 
 *Since version 1.4.0, DKPro Core is available from [http://search.maven.org/#search%7Cga%7C1%7Cde.tudarmstadt.ukp.dkpro Maven Central].* 
 
-Only if you need to use old versions, it is necessary to configure the [UkpMavenRepository public UKP Maven repository].
+If you want to use our pre-packaged models or if you need to use old versions, it is necessary to configure the [UkpMavenRepository public UKP Maven repository].
 
 = Eclipse Setup =
 
