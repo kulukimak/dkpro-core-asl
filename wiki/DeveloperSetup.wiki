@@ -39,6 +39,6 @@ We use the following tools for development:
 
 However, Eclipse displays them as projects at the same node level as uimafit-parent in the _Package Explorer_ view.
 
-= Checking out (GPL) =
+= Checking out (GPL projects) =
 
    * Repeat the above instructions replacing all instances of "asl" with "gpl".
