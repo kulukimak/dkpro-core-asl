@@ -24,7 +24,7 @@ This tutorial assumes that you have:
 *Note:* When adding dependencies, make sure you do not add *SNAPSHOT* versions. We recommend you always use the latest non-SNAPSHOT version.
 
    * Go to the *Package Explorer* in Eclipse and create new a *Maven Project*. On the first page of the properties dialogue, tick *Create a simple project (skip archetype selection)*.
-   * On the next page, you have to choose a *group id* and *artifact id* for your project. Since this is only an experimental setup for playing around, your project should be kept seperate from the actual DKPro stuff. I suggest *de.tudarmstadt.ukp.experiments.xx* as group id and *de.tudarmstadt.ukp.experiments.xx.gettingstarted* as artifact id, where xx would be your initials.
+   * On the next page, you have to choose a *group id* and *artifact id* for your project. Since this is only an experimental setup for playing around, your project should be kept seperate from the actual DKPro stuff. I suggest *de.tudarmstadt.ukp.experiments.xx* as group id and *de.tudarmstadt.ukp.experiments.xx.gettingstarted* as artifact id, where xx would be your initials, all in lowercase.
    * Set a parent project which will already configure some aspects of your code (e.g. UTF-8 as source encoding, Java 1.6, etc.). Browse for *de.tudarmstadt.ukp.dkpro.core-asl*, and you should find the *de.tudarmstadt.ukp.dkpro.core-asl* artifact. Make sure you pick the newest version by clicking on the small arrow next to the search result. Leave all other options on default and click *finish*.
    
 *Note*: If Eclipse fails to find the *de.tudarmstadt.ukp.dkpro.core-asl* POM when you search for it, enter the following fields manually:
