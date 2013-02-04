@@ -2,10 +2,7 @@
 
 <h1>First Programming Steps with DKPro Core</h1>
 
-_by Steven Burrows, 2013_ <br/>
-_by Richard Eckart de Castilho, 2012_ <br/>
-_by Erik-Lân Do Dinh, 2011_ <br/>
-_by Michael Matuschek, 2009_
+_by Steven Burrows (2013), Richard Eckart de Castilho (2012),  Erik-Lân Do Dinh (2011), and Michael Matuschek (2009)_
 
 <wiki:toc max_depth="2" />
 
