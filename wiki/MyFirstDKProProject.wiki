@@ -108,7 +108,7 @@ This tutorial assumes that you have:
 
    Congratulations, well done! The complete program should look like this:
    {{{
-   package de.tudarmstadt.ukp.experiments.REC.gettingStarted;
+   package de.tudarmstadt.ukp.experiments.XX.gettingStarted;
 
    import static org.uimafit.factory.AnalysisEngineFactory.*;
    import static org.uimafit.factory.CollectionReaderFactory.*;
