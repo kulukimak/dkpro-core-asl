@@ -2,6 +2,7 @@
 
 <h1>First Programming Steps with DKPro Core</h1>
 
+_by Steven Burrows, 2013_ <br/>
 _by Richard Eckart de Castilho, 2012_ <br/>
 _by Erik-Lân Do Dinh, 2011_ <br/>
 _by Michael Matuschek, 2009_
@@ -353,4 +354,4 @@ Token
    
 Congratulations, you've built your first simple pipeline, now feel free to modify your program and maybe play with the other annotators that come with DKPro to see how they work.
 
-*Note on quality:* _The _!BreakIteratorSegmenter_ may text in a different manner than the other analysis components expect. If you need high quality and have the possibility to used GPL code, we recommend using the _[http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.3.0/apidocs/index.html StanfordSegmenter]_ from [http://dkpro-core-gpl.googlecode.com DKPro Core GPL] instead. Add  _de.tudarmstadt.ukp.dkpro.core-gpl_ with type *pom* and scope *import* to dependency management and _de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl_ to the dependencies.
+*Note on quality:* _The _!BreakIteratorSegmenter_ may segment text in a different manner than the other analysis components expect. If you need high quality and have the possibility to used GPL code, we recommend using the _[http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.3.0/apidocs/index.html StanfordSegmenter]_ from [http://dkpro-core-gpl.googlecode.com DKPro Core GPL] instead. Add  _de.tudarmstadt.ukp.dkpro.core-gpl_ with type *pom* and scope *import* to dependency management and _de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl_ to the dependencies.
