@@ -130,15 +130,15 @@ This tutorial assumes that you have:
             TextReader.PARAM_LANGUAGE, "en",
             TextReader.PARAM_PATTERNS, new String[] {"[+]*.txt"});
 		
-            AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
+         AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
 	   
-            AnalysisEngineDescription tagger = createPrimitiveDescription(OpenNlpPosTagger.class);
+         AnalysisEngineDescription tagger = createPrimitiveDescription(OpenNlpPosTagger.class);
 	   
-            AnalysisEngineDescription cc = createPrimitiveDescription(
-               CASDumpWriter.class,
-               CASDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
+         AnalysisEngineDescription cc = createPrimitiveDescription(
+            CASDumpWriter.class,
+            CASDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
 	   
-            runPipeline(cr, seg, tagger, cc);
+         runPipeline(cr, seg, tagger, cc);
       }
    }
    }}}
