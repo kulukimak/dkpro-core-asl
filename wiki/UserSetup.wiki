@@ -11,7 +11,7 @@ If you want to use our pre-packaged models or if you need to use old versions, i
 
 We use the following tools to integrate Maven in Eclipse:
 
-    * [http://eclipse.org/ Eclipse] 3.7 or higher. We recommend the _Eclipse Classic_ distribution.
+    * [http://eclipse.org/ Eclipse] 3.7 or higher. We recommend the _Eclipse Classic_ distribution, version 4.2 or higher..
     * [http://m2eclipse.sonatype.org/ m2e] 1.0.200.20111228-1245 or higher.
         * available in the Eclipse "Install new software"
 
