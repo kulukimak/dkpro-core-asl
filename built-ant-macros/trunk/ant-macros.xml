@@ -485,7 +485,7 @@ Actual  : ${@{prop.verify.md5.actual}}
 	 -   target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar
 	 -->
 	<macrodef name="install-stub-and-upstream-folder">
-		<attribute name="file"/>
+		<attribute name="folder"/>
 		<attribute name="groupId"/>
 		<attribute name="artifactIdBase"/>
 		<attribute name="metaDataVersion"/>
