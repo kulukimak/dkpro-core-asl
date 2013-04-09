@@ -28,13 +28,21 @@ The model building ANT script goes to =src/scripts/build.xml= with the project.
 {{{
 <project basedir="../.." default="separate-jars">
   <import>
-    <url url="http://dkpro-core-asl.googlecode.com/svn/built-ant-macros/tags/0.4.0/ant-macros.xml"/>
+    <url url="http://dkpro-core-asl.googlecode.com/svn/built-ant-macros/tags/0.6.0/ant-macros.xml"/>
   </import>
 	
-  <property name="outputDir" value="target/model-staging/de/tudarmstadt/ukp/dkpro/core/opennlp"/>
+  <!-- 
+      - Output package configuration
+    -->
+  <property name="outputPackage" value="de/tudarmstadt/ukp/dkpro/core/opennlp/lib"/>
 
   <target name="local-maven">
-    <property name="install-artifact-enable" value="true"/>
+    <property name="install-artifact-mode" value="local"/>
+    <antcall target="separate-jars"/>
+   </target>
+
+  <target name="remote-maven">
+    <property name="install-artifact-mode" value="remote"/>
     <antcall target="separate-jars"/>
   </target>
 	
@@ -44,22 +52,30 @@ The model building ANT script goes to =src/scripts/build.xml= with the project.
     <!-- FILE: models-1.5/en-pos-maxent.bin - - - - - - - - - - - - - - - - - - - - - - - - - - 
       - 2012-06-16 | now        | db2cd70395b9e2e4c6b9957015a10607
       -->
-    <get src="http://opennlp.sourceforge.net/models-1.5/en-pos-maxent.bin" dest="target/download/en-pos-maxent.bin" skipexisting="true"/>
-    <install-model-file groupId="de.tudarmstadt.ukp.dkpro.core" artifactIdBase="de.tudarmstadt.ukp.dkpro.core.opennlp"
-        file="target/download/en-pos-maxent.bin" md5="db2cd70395b9e2e4c6b9957015a10607"
-        tool="tagger" language="en" variant="maxent" extension="bin" version="20120616.0">
+    <get 
+      src="http://opennlp.sourceforge.net/models-1.5/en-pos-maxent.bin"
+      dest="target/download/en-pos-maxent.bin"
+      skipexisting="true"/>
+    <install-stub-and-upstream-file 
+      file="target/download/en-pos-maxent.bin"
+      md5="db2cd70395b9e2e4c6b9957015a10607"
+      groupId="de.tudarmstadt.ukp.dkpro.core"
+      artifactIdBase="de.tudarmstadt.ukp.dkpro.core.opennlp"
+      upstreamVersion="20120616"
+      metaDataVersion="1"
+      tool="tagger"
+      language="en" 
+      variant="maxent" 
+      extension="bin" >
         <metadata>
           <entry key="pos.tagset" value="ptb"/>
         </metadata>
     </install-model-file>
-    <delete dir="target/model-staging"/> <!-- Clean up after each model -->
   </target>
 </project>
 }}}
 
-The separate-jars target frist defines an output directory. This must start with "target/model-staging" and then follows the package name for the component to which the model belongs, here our DKPro OpenNLP package.
-
-Next, the model file "en-pos-maxent.bin" is downloaded from the OpenNLP website and stored in a local cache directory "target/download/tagger/da-pos-maxent.bin". From there, install-model-file picks it up and packages it as a JAR. The JAR file name derives from the artifactIdBase, tool, language, variant and version parameters. These parameters along with the extension parameter are also used to determine the package name and file name of the model in the JAR. They are determined as follows (mind that dots in the artifactBase turn to slashes, e.g. "de.tud" turns "de/tud":
+The model file "en-pos-maxent.bin" is downloaded from the OpenNLP website and stored in a local cache directory "target/download/tagger/da-pos-maxent.bin". From there, _install-stub-and-upstream-file_ picks it up and packages it as two JARs, 1) a JAR containing the DKPro Core meta data and a POM referencing the second JAR, 2) a JAR containing the actual model file(s). The JAR file names derive from the _artifactIdBase_, _tool_, _language_, _variant_, _upstreamVersion_ and _metaDataVersion_ parameters. These parameters along with the extension parameter are also used to determine the package name and file name of the model in the JAR. They are determined as follows (mind that dots in the artifactBase turn to slashes, e.g. "de.tud" turns "de/tud":
 
 {{{
     {artifactIdBase}/lib/{tool}-{language}-{variant}.{extension}
@@ -83,7 +99,7 @@ The `CasConfigurableProviderBase` class provides some support for the above requ
 _This is an illustrative code example. See [http://code.google.com/p/dkpro-core-asl/source/browse/de.tudarmstadt.ukp.dkpro.core-asl/trunk/de.tudarmstadt.ukp.dkpro.core.opennlp-asl/src/main/java/de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpPosTagger.java OpenNlpPosTagger] for the complete code._
 
 {{{
-modelProvider = new CasConfigurableProviderBase<POSTagger>() {
+modelProvider = new CasConfigurableStreamProviderBase<POSTagger>() {
     {
         // These are the default values
         setDefault(LOCATION, "classpath:/de/tudarmstadt/ukp/dkpro/core/opennlp/lib/" +
@@ -97,17 +113,10 @@ modelProvider = new CasConfigurableProviderBase<POSTagger>() {
     }
 			
     @Override
-    protected POSTagger produceResource(URL aUrl) throws IOException
+    protected POSTagger produceResource(InputStream aStream) throws Exception
     {
-        InputStream is = null;
-        try {
-            is = aUrl.openStream();
-            POSModel model = new POSModel(is);
-            return new POSTaggerME(model);
-        }
-        finally {
-            closeQuietly(is);
-        }
+        POSModel model = new POSModel(aStream);
+        return new POSTaggerME(model);
     }
 };
 
