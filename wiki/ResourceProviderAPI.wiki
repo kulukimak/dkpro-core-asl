@@ -154,7 +154,7 @@ _This is an illustrative code example. See [http://code.google.com/p/dkpro-core-
 // General setup of the mapping provider in initialize()
 mappingProvider = new MappingProvider();
 mappingProvider.setDefault(MappingProvider.LOCATION, "classpath:/de/tudarmstadt/ukp/dkpro/" +
-    "core/api/lexmorph/tagset/${language}-tagger.map");
+    "core/api/lexmorph/tagset/${language}-pos.map");
 mappingProvider.setDefault(MappingProvider.BASE_TYPE, POS.class.getName());
 mappingProvider.setOverride(MappingProvider.LOCATION, mappingLocation);
 mappingProvider.setOverride(MappingProvider.LANGUAGE, language);
