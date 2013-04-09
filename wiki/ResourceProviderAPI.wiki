@@ -49,7 +49,7 @@ The model building ANT script goes to =src/scripts/build.xml= with the project.
         file="target/download/en-pos-maxent.bin" md5="db2cd70395b9e2e4c6b9957015a10607"
         tool="tagger" language="en" variant="maxent" extension="bin" version="20120616.0">
         <metadata>
-          <entry key="tagger.tagset" value="ptb"/>
+          <entry key="pos.tagset" value="ptb"/>
         </metadata>
     </install-model-file>
     <delete dir="target/model-staging"/> <!-- Clean up after each model -->
@@ -130,8 +130,12 @@ The DKPro type system design provides two levels of abstraction on most annotati
  DKPro maintains mappings for commonly used tagsets, e.g. in the module `de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl`. They are named:
 
 {{{
-{language}-{tool}.map
+{language}-{layer}.map
 }}}
+
+The following values are commonly used for *layer*:
+
+   * *pos* - part-of-speech tag mapping
 
 Mapping providers are a convenient way of fetching a mapping between the original tag value and the high-level types.
 
