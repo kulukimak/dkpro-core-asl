@@ -11,7 +11,8 @@ For those module where we support packaging resources as JARs, there is a file `
 Depending on the script, various build targets are supported. Two of them are important: *separate-jars* and *local-maven*:
 
    * *separate-jars* downloads all resource from the internet, validates them against MD5 checksums and packages them as DKPro-compatible JARs. The JARs are stored to the `target` folder. You can easily update them to an Artifactory Maven repository. Artifactory automatically recognizes their group ID, artifact ID and version. This may not work with other Maven repositories.
-   * *local-maven* additionally installs the JARs into your the local Maven repository on your computer. It assumes the default location of the repository at `~/.m2/repository`.
+   * *local-maven* additionally installs the JARs into your the local Maven repository on your computer. It assumes the default location of the repository at `~/.m2/repository`. If you keep your repository in a different folder, specify it via the _alt.maven.repo.path_ system property.
+   * *remote-maven* additionally installs the JARS into a remote Maven repository. The repository to deploy to can be controlled via the system property _alt.maven.repo.url_. If the remote repo also requires authentication, use the system property _alt.maven.repo.id_ to configure the credentials from the `settings.xml` that should be used. An alternative settings file can be configured using  _alt.maven.settings_ . *Note:* this target requires that you have installed [http://repo1.maven.org/maven2/org/apache/maven/maven-ant-tasks/2.1.3/maven-ant-tasks-2.1.3.jar maven-ant-tasks-2.1.3.jar] in `~/.ant/lib`.
 
 It is recommended to open the `build.xml` file in Eclipse, run the `local-maven`target, and then restart Eclipse. Upon restart, Eclipse should automatically scan your local Maven repository. Thus, The new resource JARs should be available in the search dialog when you add dependencies to the POM.
 
