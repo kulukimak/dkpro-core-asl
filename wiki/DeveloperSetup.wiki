@@ -43,6 +43,10 @@ However, Eclipse displays them as projects at the same node level as uimafit-par
 
    * Repeat the above instructions replacing all instances of "asl" with "gpl".
 
+= Code style =
+
+We use [http://code.google.com/p/dkpro-core-asl/downloads/detail?name=DKProCoreStyle_20120326.xml this] code style in Eclipse.
+
 = Setting up Subversion =
 
 To avoid spurious changes in files when committing files, e.g. changes in line endings from developers on different platforms, please set *enable-auto-props = yes* and set the following *auto-props* in your `~/.subversion/config` file:
