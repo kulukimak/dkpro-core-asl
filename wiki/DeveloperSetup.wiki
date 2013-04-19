@@ -4,7 +4,7 @@
 = Basic setup =
 
    * Follow the [UserSetup user setup] instructions
-   * Uncomment the line `<activeProfile>ukp-oss-releases</activeProfile>` in the `settings.xml` file
+   * Uncomment the line `<activeProfile>ukp-oss-snapshots</activeProfile>` in the [UkpMavenRepository settings.xml] file.
    * If you are in Eclipse, restart it
 
 = Eclipse Setup =
