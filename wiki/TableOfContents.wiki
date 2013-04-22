@@ -12,3 +12,4 @@
     * APIs
       * [ResourceProviderAPI Resource Providers]
       * [PackagingResources Packaging resources]
+      * [GermanDecompounding German Decompounding]
