@@ -1,0 +1,19 @@
+Component for decompounding words in German. Still in development phase.
+
+= Splitters =
+
+There are four different splitters within the de.tudarmstadt.ukp.dkpro.core.decompounding-nonfree project. Every splitter returns a [https://scruffy.ukp.informatik.tu-darmstadt.de/svn/dkpro_ng/dkpro/core/trunk/de.tudarmstadt.ukp.dkpro.core.decompounding/src/main/java/de/tudarmstadt/ukp/dkpro/core/decompounding/splitter/SplitTree.java SplitTree]. Its class diagram is shown bellow:
+
+   * [https://scruffy.ukp.informatik.tu-darmstadt.de/svn/dkpro_ng/dkpro/core/trunk/de.tudarmstadt.ukp.dkpro.core.decompounding/src/main/java/de/tudarmstadt/ukp/dkpro/core/decompounding/splitter/LeftToRightSplitter.java LeftToRightSplitter]
+      * This splitter receives one word as input and returns a [https://scruffy.ukp.informatik.tu-darmstadt.de/svn/dkpro_ng/dkpro/core/trunk/de.tudarmstadt.ukp.dkpro.core.decompounding/src/main/java/de/tudarmstadt/ukp/dkpro/core/decompounding/splitter/SplitTree.java SplitTree] as output. The first thing the splitter does is to create a [https://scruffy.ukp.informatik.tu-darmstadt.de/svn/dkpro_ng/dkpro/core/trunk/de.tudarmstadt.ukp.dkpro.core.decompounding/src/main/java/de/tudarmstadt/ukp/dkpro/core/decompounding/splitter/SplitTree.java SplitTree], having a root node containing a [https://scruffy.ukp.informatik.tu-darmstadt.de/svn/dkpro_ng/dkpro/core/trunk/de.tudarmstadt.ukp.dkpro.core.decompounding/src/main/java/de/tudarmstadt/ukp/dkpro/core/decompounding/splitter/Split.java Split] with the original word as its value, in its compounding form. Then it starts to move from the left to the right, searching for a word. Whenever it finds it, it splits the word in two chunks, adds a child node containing this split and then repeats the same process for the chunk in the right.
+   * !BananaSplitter
+   * !DataDrivenSplitter
+   * JWordSplitter
+
+= Rankers =
+
+Besides the splitter, 3 different rankers can also be found in the decompounding-nonfree project:
+
+   * !FrequencyRanker
+   * !MutualInformationRanker
+   * !ProbabilityRanker
