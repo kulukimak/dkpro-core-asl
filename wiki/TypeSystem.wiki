@@ -5,3 +5,44 @@
 This graphics gives an overview of the most important types in the DKPro Core type system. All types shown here inherit from the UIMA `Annotation` type which provides `start` and `end` offsets.
 
 https://dkpro-core-asl.googlecode.com/svn/wiki/images/DKProCoreTypeSystem.png
+
+
+<h3> Segmentation </h3>
+
+<h4> Compound </h4>
+
+This type represents a decompounding word, i.e.: <i>flowerpot</i>. Each Compound one have at least two Splits.
+
+<h4> Split </h4>
+
+This type represents a part of a decompounding word. A Split can be either a !CompoundPart or a !LinkingMorpheme.
+
+<h4> !LinkingMorpheme </h4>
+
+This type represents a linking morpheme between two CompoundParts.
+
+<h4> !CompoundPart </h4>
+
+A !CompoundPart represents one fragment from the compounding word. Besides that, it can store other !CompoundParts if it can be split again. The way it stores a decompounding word represents a decompounding tree. I.e.: 
+
+<i> Getränkautomat </i>
+
+(Compound:
+   coveredText: getränkeautomat
+   splits:
+     (!CompoundPart
+        coveredText: getränk
+        splits:())
+     (!LinkingMorpheme
+        coveredText: e)
+     (!CompoundPart
+        coveredText: automat
+        splits:
+           (!CompoundPart
+               coveredText: auto
+               splits:())
+           (!CompoundPart
+               coveredText: mat
+               splits:())
+     )
+)
