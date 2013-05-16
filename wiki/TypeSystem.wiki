@@ -19,7 +19,7 @@ This type represents a part of a decompounding word. A Split can be either a !Co
 
 <h4> !LinkingMorpheme </h4>
 
-This type represents a linking morpheme between two CompoundParts.
+This type represents a linking morpheme between two !CompoundParts.
 
 <h4> !CompoundPart </h4>
 
