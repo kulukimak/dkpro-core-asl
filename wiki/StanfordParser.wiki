@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This tutorial describes how to use the [http://www-nlp.stanford.edu/software/CRF-NER.shtml StanfordParser] component of !DkPro.
+This tutorial describes how to use the [http://www-nlp.stanford.edu/software/lex-parser.shtml StanfordParser] component of !DkPro.
 
 
 = Pre-requisites =
@@ -11,7 +11,7 @@ Either, create a new Maven project or incorporate the following to your existing
 
 You'll need the following dependency:
 
-  * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
+  * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordparser
 
 = Create your experiment =
 
