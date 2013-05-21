@@ -8,7 +8,6 @@ This tutorial describes how to use the NamedEntityRecognizer component of DkPro.
 
 Either, create a new Maven project or incorporate the following to your existing Maven project.
 
-You'll need the following dependencies:
+You'll need the following dependency:
 
   * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
-  * de.tudarmstadt.ukp.dkpro.core.segmenter.breakiteratorsegmenter
