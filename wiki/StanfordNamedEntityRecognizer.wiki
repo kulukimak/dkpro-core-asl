@@ -67,3 +67,19 @@ public class Pipeline
     }
 }
   }}}
+
+= Output =
+An example output of the sentence "We live in Berlin." looks like this:
+  {{{
+-- Document Text --
+We live in Berlin.
+-- Annotations --
+[DocumentAnnotation] (0, 18) We live in Berlin.
+[Sentence] (0, 18) We live in Berlin.
+[Token] (0, 2) We
+[Token] (3, 7) live
+[Token] (8, 10) in
+[Location] (11, 17) Berlin
+[Token] (11, 17) Berlin
+[Token] (17, 18) .
+  }}}
