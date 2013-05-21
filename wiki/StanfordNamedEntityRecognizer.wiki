@@ -2,7 +2,11 @@
 
 = Introduction =
 
-This tutorial describes how to use the !StanfordNamedEntityRecognizer component of !DkPro.
+This tutorial describes how to use the [http://www-nlp.stanford.edu/software/CRF-NER.shtml StanfordNamedEntityRecognizer] component of !DkPro.
+
+= Types = 
+
+
 
 = Pre-requisites =
 
