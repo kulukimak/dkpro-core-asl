@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This tutorial describes how to use the StanfordNamedEntityRecognizer component of DkPro.
+This tutorial describes how to use the !StanfordNamedEntityRecognizer component of DkPro.
 
 = Pre-requisites =
 
