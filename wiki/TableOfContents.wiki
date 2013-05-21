@@ -6,6 +6,7 @@
     * [MyFirstDKProProject First Steps with DKPro Core]
     * [WorkingWithNGrams]
     * [StanfordNamedEntityRecognizer]	 
+    * [StanfordParser]	 
   * Developers
     * Setup
       * [DeveloperSetup Developer Setup]
