@@ -2,7 +2,7 @@
 
 = Introduction =
 
-<h1>This tutorial describes how to use the NamedEntityRecognizer component of DkPro.</h1>
+This tutorial describes how to use the NamedEntityRecognizer component of DkPro.
 
 = Details =
 
