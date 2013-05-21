@@ -5,7 +5,7 @@
     * [UserSetup User Setup]
     * [MyFirstDKProProject First Steps with DKPro Core]
     * [WorkingWithNGrams]
-    * [NER]	 
+    * [StanfordNamedEntityRecognizer]	 
   * Developers
     * Setup
       * [DeveloperSetup Developer Setup]
