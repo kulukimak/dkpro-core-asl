@@ -2,14 +2,11 @@
 
 = Introduction =
 
-Add your content here.
-
+This tutorial describe how to use the NamedEntityRecognizer component of DkPro.
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Either, create a new Maven project or incorporate the following to your existing Maven project.
 
-Test
+You'll need the following dependencies:
+* de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
