@@ -9,7 +9,7 @@ This tutorial describes how to use the [http://www-nlp.stanford.edu/software/CRF
 Using the standard named entity recognizers for English there are three classes:
 
   * PERSON (e.g. "Anna")
-  * ORGANIZATION
+  * ORGANIZATION (e.g. "UN")
   * LOCATION (e.g. "Berlin")
 
 = Pre-requisites =
