@@ -6,7 +6,7 @@ This tutorial describes how to use the [http://www-nlp.stanford.edu/software/CRF
 
 = Types = 
 
-
+Using the standard named entity recognizers for English there are three classes: PERSON, ORGANIZATION, LOCATION 
 
 = Pre-requisites =
 
