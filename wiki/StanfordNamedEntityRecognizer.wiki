@@ -12,6 +12,8 @@ Using the standard named entity recognizers for English there are three classes:
   * ORGANIZATION (e.g. "UN")
   * LOCATION (e.g. "Berlin")
 
+The corresponding !UIMA annotation types are called "Person", "Organization" and "Location", from the package *de.tudarmstadt.ukp.dkpro.core.type.ner.*.
+
 = Pre-requisites =
 
 Either, create a new Maven project or incorporate the following to your existing Maven project.
