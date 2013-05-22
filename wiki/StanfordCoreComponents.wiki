@@ -25,7 +25,7 @@ Dependencies:
 
 = !StanfordSegmenter = 
 
-The Stanford Segmenter performs tokenizations and makes sentence and token annotations and can serve as an alternative for other components like the _!BreakIteratorSegmenter_.
+The Stanford Segmenter performs tokenizations and makes sentence and token annotations and can serve as a high quality alternative for other segmenter components like the _!BreakIteratorSegmenter_.
 
 == Pipeline ==
 
