@@ -98,4 +98,6 @@ The headquarters of the UN is a complex in New York City.
 
 = !StanfordParser = 
 
+The Stanford Parser ([http://www-nlp.stanford.edu/software/lex-parser.shtml website]) is 
+
 = Create your experiment =
