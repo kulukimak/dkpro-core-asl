@@ -12,13 +12,16 @@ All these components are UIMA annotators for the *Stanford CoreNLP* software ([h
 
 = Pre-requisites =
 
-Either, create a new Maven project or incorporate the following to your existing Maven project. It is expected that you read the [http://code.google.com/p/dkpro-core-asl/wiki/MyFirstDKProProject basic tutorial].
+Either, create a new Maven project or incorporate the following to your existing Maven project. It is expected that you read the [http://code.google.com/p/dkpro-core-asl/wiki/MyFirstDKProProject basic tutorial]. You'll need the following dependencies.
 
-You'll need the following dependencies:
+Dependency Management:
 
-  * de.tudarmstadt.ukp.dkpro.core-asl (Dependency Management)
-  * de.tudarmstadt.ukp.dkpro.core.tokit-asl (Dependencies)
+  * de.tudarmstadt.ukp.dkpro.core-asl
   * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl
+
+Dependencies:
+
+  * de.tudarmstadt.ukp.dkpro.core.tokit-asl
 
 = !StanfordSegmenter = 
 
