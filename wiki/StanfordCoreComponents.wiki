@@ -21,7 +21,7 @@ You'll need the following dependencies:
 
 = !StanfordSegmenter = 
 
-The Stanford Segmenter performs tokenizations and makes sentence and token annotations.
+The Stanford Segmenter performs tokenizations and makes sentence and token annotations and can serve as an alternative for other components like the _!BreakIteratorSegmenter_.
 
 == Pipeline ==
 
