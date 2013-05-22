@@ -10,7 +10,7 @@ This page describes processing a small paragraph with Stanford CoreNLP component
 
 Either, create a new Maven project or incorporate the following to your existing Maven project.
 
-You'll need the following dependency:
+You'll need the following dependencies:
 
   * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
   * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordsegmenter
