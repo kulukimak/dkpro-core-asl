@@ -8,7 +8,7 @@ This page describes processing a small paragraph with Stanford CoreNLP component
   * *NP*   the new product of UKP Lab   *NE* UKP Lab
   * *NP*   the latest announcements in the news   *NE* -
 
-All these components are UIMA annotators for the Stanford !CoreNLP software ([http://www-nlp.stanford.edu/software/corenlp.shtml website]).
+All these components are UIMA annotators for the *Stanford CoreNLP* software ([http://www-nlp.stanford.edu/software/corenlp.shtml website]).
 
 = Pre-requisites =
 
