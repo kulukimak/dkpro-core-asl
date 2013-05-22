@@ -4,8 +4,7 @@
   * Users
     * [UserSetup User Setup]
     * [MyFirstDKProProject First Steps with DKPro Core]
-    * [WorkingWithNGrams]
-    * [StanfordNamedEntityRecognizer]	 
+    * [WorkingWithNGrams] 
     * [StanfordParser]	 
     * [StanfordCoreComponents]
   * Developers
