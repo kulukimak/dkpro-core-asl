@@ -1,8 +1,8 @@
-#summary This page describes processing a small paragraph with Stanford CoreNLP components: !StanfordSegmenter , !StanfordNamedEntityRecognizer , !StanfordParser .
+#summary This page describes processing a small paragraph with Stanford CoreNLP components: StanfordSegmenter, StanfordNamedEntityRecognizer, StanfordParser.
 
 = Introduction =
 
-This page describes processing a small paragraph with Stanford CoreNLP components (StanfordSegmenter, StanfordNamedEntityRecognizer, StanfordParser) and writing out the noun phrases (NP) and Named Entities (NE) ocurring in the NPs into a file (CSV format), such as e.g.
+This page describes processing a small paragraph with Stanford CoreNLP components (!StanfordSegmenter, !StanfordNamedEntityRecognizer, !StanfordParser) and writing out the noun phrases (NP) and Named Entities (NE) ocurring in the NPs into a file (CSV format), such as e.g.
   * *NP*   the new product of UKP Lab   *NE* UKP Lab
   * *NP*   the latest announcements in the news   *NE* -
 
