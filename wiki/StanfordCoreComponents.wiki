@@ -8,6 +8,8 @@ This page describes processing a small paragraph with Stanford CoreNLP component
   * *NP*   the new product of UKP Lab   *NE* UKP Lab
   * *NP*   the latest announcements in the news   *NE* -
 
+All these components are UIMA annotators for the Stanford !CoreNLP software ([http://www-nlp.stanford.edu/software/corenlp.shtml website]).
+
 = Pre-requisites =
 
 Either, create a new Maven project or incorporate the following to your existing Maven project.
@@ -18,6 +20,8 @@ You'll need the following dependencies:
   * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
 
 = !StanfordSegmenter = 
+
+The Stanford Segmenter ([http://www-nlp.stanford.edu/software/segmenter.shtml website] 
 
 = !StanfordNamedEntityRecognizer = 
 
