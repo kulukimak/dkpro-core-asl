@@ -33,6 +33,32 @@ Include the component into your pipeline this way:
   );
    }}}
 
+== Output == 
+
+An example annotations output may look like this:
+
+   {{{
+INFO: === CAS ===
+-- Document Text --
+The headquarters of the UN is a complex in New York City.
+-- Annotations --
+[DocumentAnnotation] (0, 57) The headquarters of the UN is a complex in New York City.
+[Sentence] (0, 57) The headquarters of the UN is a complex in New York City.
+[Token] (0, 3) The
+[Token] (4, 16) headquarters
+[Token] (17, 19) of
+[Token] (20, 23) the
+[Token] (24, 26) UN
+[Token] (27, 29) is
+[Token] (30, 31) a
+[Token] (32, 39) complex
+[Token] (40, 42) in
+[Token] (43, 46) New
+[Token] (47, 51) York
+[Token] (52, 56) City
+[Token] (56, 57) .
+   }}}
+
 = !StanfordNamedEntityRecognizer = 
 
 The Stanford NER ([http://nlp.stanford.edu/software/CRF-NER.shtml website]) is a CRFClassifier implementation of a Named Entity Recognizer to label sequences of words in a text which are the names of things, such as person and company names, or gene and protein names.
