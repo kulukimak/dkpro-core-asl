@@ -5,7 +5,6 @@
     * [UserSetup User Setup]
     * [MyFirstDKProProject First Steps with DKPro Core]
     * [WorkingWithNGrams] 
-    * [StanfordParser]	 
     * [StanfordCoreComponents]
   * Developers
     * Setup
