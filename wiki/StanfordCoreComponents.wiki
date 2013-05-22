@@ -21,7 +21,17 @@ You'll need the following dependencies:
 
 = !StanfordSegmenter = 
 
-The Stanford Segmenter ([http://www-nlp.stanford.edu/software/segmenter.shtml website] 
+The Stanford Segmenter performs tokenizations and makes sentence and token annotations.
+
+== Pipeline ==
+
+Include the component into your pipeline this way:
+
+   {{{
+  AnalysisEngineDescription ner = createPrimitiveDescription(
+    StanfordSegmenter.class
+  );
+   }}}
 
 = !StanfordNamedEntityRecognizer = 
 
