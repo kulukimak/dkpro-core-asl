@@ -17,12 +17,12 @@ Either, create a new Maven project or incorporate the following to your existing
 Dependency Management:
 
   * de.tudarmstadt.ukp.dkpro.core-asl
-  * de.tudarmstadt.ukp.dkpro.core-gpl
   * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl
 
 Dependencies:
 
   * de.tudarmstadt.ukp.dkpro.core.tokit-asl
+  * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl
 
 = !StanfordSegmenter = 
 
