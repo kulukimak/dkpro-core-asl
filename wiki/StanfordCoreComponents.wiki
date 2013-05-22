@@ -17,7 +17,7 @@ You'll need the following dependencies:
 
 == !StanfordNamedEntityRecognizer == 
 
-== Types ==
+=== Types ===
 
 Using the standard named entity recognizers for English there are three classes:
 
