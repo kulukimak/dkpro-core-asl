@@ -15,4 +15,16 @@ You'll need the following dependencies:
   * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
   * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordsegmenter
 
+== StanfordNamedEntityRecognizer == 
+
+== Types ==
+
+Using the standard named entity recognizers for English there are three classes:
+
+  * PERSON (e.g. "Anna")
+  * ORGANIZATION (e.g. "UN")
+  * LOCATION (e.g. "Berlin")
+
+The corresponding UIMA annotation types are called "Person", "Organization" and "Location", from the package *de.tudarmstadt.ukp.dkpro.core.type.ner*.
+
 = Create your experiment =
