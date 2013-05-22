@@ -22,6 +22,7 @@ Dependency Management:
 Dependencies:
 
   * de.tudarmstadt.ukp.dkpro.core.tokit-asl
+  * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl.stanfordsegmenter
 
 = !StanfordSegmenter = 
 
