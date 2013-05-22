@@ -13,5 +13,6 @@ Either, create a new Maven project or incorporate the following to your existing
 You'll need the following dependency:
 
   * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
+  * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordsegmenter
 
 = Create your experiment =
