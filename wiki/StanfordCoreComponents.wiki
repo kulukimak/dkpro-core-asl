@@ -44,23 +44,18 @@ An example annotations output may look like this:
    {{{
 INFO: === CAS ===
 -- Document Text --
-The headquarters of the UN is a complex in New York City.
+The UN resides in New York City.
 -- Annotations --
-[DocumentAnnotation] (0, 57) The headquarters of the UN is a complex in New York City.
-[Sentence] (0, 57) The headquarters of the UN is a complex in New York City.
+[DocumentAnnotation] (0, 32) The UN resides in New York City.
+[Sentence] (0, 32) The UN resides in New York City.
 [Token] (0, 3) The
-[Token] (4, 16) headquarters
-[Token] (17, 19) of
-[Token] (20, 23) the
-[Token] (24, 26) UN
-[Token] (27, 29) is
-[Token] (30, 31) a
-[Token] (32, 39) complex
-[Token] (40, 42) in
-[Token] (43, 46) New
-[Token] (47, 51) York
-[Token] (52, 56) City
-[Token] (56, 57) .
+[Token] (4, 6) UN
+[Token] (7, 14) resides
+[Token] (15, 17) in
+[Token] (18, 21) New
+[Token] (22, 26) York
+[Token] (27, 31) City
+[Token] (31, 32) .
    }}}
 
 = !StanfordNamedEntityRecognizer = 
