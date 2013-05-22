@@ -6,10 +6,12 @@ This page describes processing a small paragraph with Stanford CoreNLP component
   * *NP*   the new product of UKP Lab   *NE* UKP Lab
   * *NP*   the latest announcements in the news   *NE* -
 
-= Details =
+= Pre-requisites =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-test
+Either, create a new Maven project or incorporate the following to your existing Maven project.
+
+You'll need the following dependency:
+
+  * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
+
+= Create your experiment =
