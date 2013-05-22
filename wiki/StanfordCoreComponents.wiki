@@ -16,8 +16,7 @@ Either, create a new Maven project or incorporate the following to your existing
 
 You'll need the following dependencies:
 
-  * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordsegmenter
-  * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
+  * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-asl
 
 = !StanfordSegmenter = 
 
