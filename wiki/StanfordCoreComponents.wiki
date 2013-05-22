@@ -17,9 +17,9 @@ You'll need the following dependencies:
   * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
   * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordsegmenter
 
-== !StanfordNamedEntityRecognizer == 
+= !StanfordNamedEntityRecognizer = 
 
-=== Types ===
+== Types ==
 
 Using the standard named entity recognizers for English there are three classes:
 
@@ -29,7 +29,7 @@ Using the standard named entity recognizers for English there are three classes:
 
 The corresponding UIMA annotation types are called "Person", "Organization" and "Location", from the package *de.tudarmstadt.ukp.dkpro.core.type.ner*.
 
-=== Output ===
+== Output ==
 
 An example annotations output may look like this:
 
