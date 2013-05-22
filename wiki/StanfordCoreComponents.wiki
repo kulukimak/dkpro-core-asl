@@ -1,5 +1,7 @@
 #summary This page describes processing a small paragraph with Stanford CoreNLP components: StanfordSegmenter, StanfordNamedEntityRecognizer, StanfordParser.
 
+<wiki:toc max_depth="1" />
+
 = Introduction =
 
 This page describes processing a small paragraph with Stanford CoreNLP components (*!StanfordSegmenter*, *!StanfordNamedEntityRecognizer*, *!StanfordParser*) and writing out the *noun phrases* (NP) and *Named Entities* (NE) ocurring in the NPs into a file (CSV format), such as e.g.
