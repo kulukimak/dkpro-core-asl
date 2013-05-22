@@ -14,12 +14,14 @@ Either, create a new Maven project or incorporate the following to your existing
 
 You'll need the following dependencies:
 
-  * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
   * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordsegmenter
+  * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
 
 = !StanfordSegmenter = 
 
 = !StanfordNamedEntityRecognizer = 
+
+The Stanford NER ([http://nlp.stanford.edu/software/CRF-NER.shtml website]) is a CRFClassifier implementation of a Named Entity Recognizer to label sequences of words in a text which are the names of things, such as person and company names, or gene and protein names.
 
 == Types ==
 
