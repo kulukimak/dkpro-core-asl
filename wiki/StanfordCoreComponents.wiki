@@ -12,7 +12,7 @@ All these components are UIMA annotators for the *Stanford CoreNLP* software ([h
 
 = Pre-requisites =
 
-Either, create a new Maven project or incorporate the following to your existing Maven project.
+Either, create a new Maven project or incorporate the following to your existing Maven project. It is expected that you read the [http://code.google.com/p/dkpro-core-asl/wiki/MyFirstDKProProject basic tutorial].
 
 You'll need the following dependencies:
 
