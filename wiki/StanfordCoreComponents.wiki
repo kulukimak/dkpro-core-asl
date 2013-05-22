@@ -17,6 +17,8 @@ You'll need the following dependencies:
   * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
   * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordsegmenter
 
+= !StanfordSegmenter = 
+
 = !StanfordNamedEntityRecognizer = 
 
 == Types ==
@@ -52,5 +54,7 @@ The headquarters of the UN is a complex in New York City.
 [Organization] (24, 26) UN
 [Location] (43, 56) New York City
    }}}
+
+= !StanfordParser = 
 
 = Create your experiment =
