@@ -15,7 +15,7 @@ You'll need the following dependencies:
   * de.tudarmstadt.ukp.dkpro.core.stanford.namedentityrecognizer
   * de.tudarmstadt.ukp.dkpro.core.stanford.stanfordsegmenter
 
-== StanfordNamedEntityRecognizer == 
+== !StanfordNamedEntityRecognizer == 
 
 == Types ==
 
