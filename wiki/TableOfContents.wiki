@@ -7,6 +7,7 @@
     * [WorkingWithNGrams]
     * [StanfordNamedEntityRecognizer]	 
     * [StanfordParser]	 
+    * [StanfordCoreComponents]
   * Developers
     * Setup
       * [DeveloperSetup Developer Setup]
