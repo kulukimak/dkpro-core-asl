@@ -31,10 +31,12 @@ The corresponding UIMA annotation types are called "Person", "Organization" and 
 
 == Pipeline ==
 
+Include the component into your pipeline this way:
+
    {{{
-AnalysisEngineDescription ner = createPrimitiveDescription(
-        		StanfordNamedEntityRecognizer.class
-        );
+  AnalysisEngineDescription ner = createPrimitiveDescription(
+    StanfordNamedEntityRecognizer.class
+  );
    }}}
 
 == Output ==
