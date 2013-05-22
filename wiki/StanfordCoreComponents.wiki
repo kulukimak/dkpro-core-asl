@@ -27,4 +27,18 @@ Using the standard named entity recognizers for English there are three classes:
 
 The corresponding UIMA annotation types are called "Person", "Organization" and "Location", from the package *de.tudarmstadt.ukp.dkpro.core.type.ner*.
 
+=== Output ===
+
+An example annotations output may look like this:
+
+   {{{
+INFO: === CAS ===
+-- Document Text --
+The headquarters of the UN is a complex in New York City.
+-- Annotations --
+[DocumentAnnotation] (0, 57) The headquarters of the UN is a complex in New York City.
+[Organization] (24, 26) UN
+[Location] (43, 56) New York City
+   }}}
+
 = Create your experiment =
