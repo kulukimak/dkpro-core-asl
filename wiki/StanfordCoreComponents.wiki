@@ -17,6 +17,7 @@ Either, create a new Maven project or incorporate the following to your existing
 You'll need the following dependencies:
 
   * de.tudarmstadt.ukp.dkpro.core-asl (Dependency Management)
+  * de.tudarmstadt.ukp.dkpro.core.tokit-asl (Dependencies)
   * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-asl
 
 = !StanfordSegmenter = 
