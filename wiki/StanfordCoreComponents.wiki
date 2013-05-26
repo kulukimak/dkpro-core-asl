@@ -62,15 +62,22 @@ The UN resides in New York City.
 
 The Stanford NER ([http://nlp.stanford.edu/software/CRF-NER.shtml website]) is a CRFClassifier implementation of a Named Entity Recognizer to label sequences of words in a text which are the names of things, such as person and company names, or gene and protein names.
 
+== Models ==
+
+The documentation says:
+ _Model files are not distributed as part of DKPro and need to be  obtained from the Stanford NLP tools homepage. Alternatively you can use the ANT script src/scripts/build.xml included with the source code of this component, which downloads the models from the Stanford NLP homepage and packages them conveniently as JARs which you may then install in your local Maven repository or deploy to a private Maven repository._
+
+I recommend downloading the Stanford NER, extract a model and putting it into your local resources folder.
+
 == Types ==
 
-Using the standard named entity recognizers for English there are three classes:
+Included with the Stanford NER are a 4 class model trained for CoNLL, a 7 class model trained for MUC, and a 3 class model trained on both data sets for the intersection of those class sets.
 
-  * PERSON (e.g. "Anna")
-  * ORGANIZATION (e.g. "UN")
-  * LOCATION (e.g. "Berlin")
+  * 3 class	Location, Person, Organization
+  * 4 class	Location, Person, Organization, Misc
+  * 7 class	Time, Location, Organization, Person, Money, Percent, Date
 
-The corresponding UIMA annotation types are called "Person", "Organization" and "Location", from the package *de.tudarmstadt.ukp.dkpro.core.type.ner*.
+The corresponding UIMA annotation types are called "Person", "Organization", "Location" etc., from the package *de.tudarmstadt.ukp.dkpro.core.type.ner*.
 
 == Pipeline ==
 
@@ -78,7 +85,10 @@ Include the component into your pipeline this way:
 
    {{{
   AnalysisEngineDescription ner = createPrimitiveDescription(
-    StanfordNamedEntityRecognizer.class
+    StanfordNamedEntityRecognizer.class,
+    StanfordNamedEntityRecognizer.PARAM_LANGUAGE, "en",
+    StanfordNamedEntityRecognizer.PARAM_MODEL_LOCATION,
+   "src/main/resources/english.all.3class.distsim.crf.ser.gz"
   );
    }}}
 
