@@ -108,7 +108,25 @@ The headquarters of the UN is a complex in New York City.
 
 = !StanfordParser = 
 
-The Stanford Parser ([http://www-nlp.stanford.edu/software/lex-parser.shtml website]) is 
+The Stanford Parser ([http://www-nlp.stanford.edu/software/lex-parser.shtml website]) is a program that works out the grammatical structure of sentences. There are models available for many languages, e.g. Englisch, German, Chinese or Arabic.
+
+== Models ==
+
+As with the NER component, please download the whole Stanford Parser package from the website and unpack the models from jar into your local project folder.
+
+== Pipeline ==
+
+Include the component into your pipeline this way:
+
+   {{{
+ AnalysisEngineDescription parser = createPrimitiveDescription(
+  StanfordParser.class,
+  StanfordParser.PARAM_LANGUAGE, "en",
+  StanfordParser.PARAM_MODEL_LOCATION,
+  "src/main/resources/models/lexparser/englishPCFG.ser.gz"
+ );
+   }}}
+
 
 = Create your experiment =
 
