@@ -128,6 +128,39 @@ Include the component into your pipeline this way:
    }}}
 
 
+== Output ==
+
+An example annotations output may look like this:
+
+   {{{
+INFO: === CAS ===
+-- Document Text --
+The UN resides in New York City.
+-- Annotations --
+[DocumentAnnotation] (0, 32) The UN resides in New York City.
+[ROOT] (0, 32) The UN resides in New York City.
+[DET] (0, 32) The UN resides in New York City.
+[POBJ] (0, 32) The UN resides in New York City.
+[S] (0, 32) The UN resides in New York City.
+[NSUBJ] (0, 32) The UN resides in New York City.
+[PREP] (0, 32) The UN resides in New York City.
+[Sentence] (0, 32) The UN resides in New York City.
+[NN] (0, 32) The UN resides in New York City.
+[NN] (0, 32) The UN resides in New York City.
+[NP] (0, 6) The UN
+[ART] (0, 3) The
+[NP] (4, 6) UN
+[VP] (7, 31) resides in New York City
+[V] (7, 14) resides
+[PP] (15, 31) in New York City
+[PP] (15, 17) in
+[NP] (18, 31) New York City
+[NP] (18, 21) New
+[NP] (22, 26) York
+[NP] (27, 31) City
+[PUNC] (31, 32) .
+   }}}
+
 = Create your experiment =
 
 The whole pipeline may look like this:
