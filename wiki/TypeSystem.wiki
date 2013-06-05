@@ -27,6 +27,7 @@ A !CompoundPart represents one fragment from the compounding word. Besides that,
 
 <i> Getränkautomat </i>
 
+{{{
 (Compound:
    coveredText: getränkeautomat
    splits:
@@ -46,3 +47,4 @@ A !CompoundPart represents one fragment from the compounding word. Besides that,
                splits:())
      )
 )
+}}}
