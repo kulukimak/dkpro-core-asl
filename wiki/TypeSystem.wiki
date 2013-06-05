@@ -31,18 +31,18 @@ A !CompoundPart represents one fragment from the compounding word. Besides that,
 (Compound:
    coveredText: getränkeautomat
    splits:
-     (!CompoundPart
+     (CompoundPart
         coveredText: getränk
         splits:())
-     (!LinkingMorpheme
+     (LinkingMorpheme
         coveredText: e)
-     (!CompoundPart
+     (CompoundPart
         coveredText: automat
         splits:
-           (!CompoundPart
+           (CompoundPart
                coveredText: auto
                splits:())
-           (!CompoundPart
+           (CompoundPart
                coveredText: mat
                splits:())
      )
