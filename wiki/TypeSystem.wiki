@@ -7,7 +7,7 @@ This graphics gives an overview of the most important types in the DKPro Core ty
 https://dkpro-core-asl.googlecode.com/svn/wiki/images/DKProCoreTypeSystem.png
 
 
-<h3> Segmentation </h3>
+<h3><a name="Segmentation">Segmentation</a></h3>
 
 <h4> Compound </h4>
 
