@@ -1,4 +1,5 @@
 #summary This page describes processing a small paragraph with Stanford CoreNLP components: StanfordSegmenter, StanfordNamedEntityRecognizer, StanfordParser.
+#labels InProgress
 
 <wiki:toc max_depth="3" />
 
