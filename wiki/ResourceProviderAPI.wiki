@@ -83,7 +83,11 @@ The model file "en-pos-maxent.bin" is downloaded from the OpenNLP website and st
 
 The following values are commonly used for *tool*:
 
+   * *token* - tokenizer
+   * *sentence* - sentence splitter
+   * *lemmatizer* - lemmatizer
    * *tagger* - part-of-speech tagger
+   * *morphtagger* - morphological analyzer
    * *ner* - named-entity recognizer
    * *parser* - syntactic or dependency parser
    * *coref* - coreference resolver
