@@ -92,6 +92,12 @@ The values for *variant* are very tool-dependent. Typically, the variant encodes
 
 An md5 sum for the remote file must be specified to make sure we notice if the remote file changes or if the download is corrupt. 
 
+The metadata added for the models currently used to store tagset information, which is used to drive the tag-to-DKPro-UIMA-type mapping. The following values are commonly used as keys:
+
+   * *pos.tagset* - part-of-speech tagset (ptb, ctb, stts, ...)
+   * *dependency.tagset* - dependency relation labels, aka. syntactic functions (negra, ancora, ...)
+   * *constituent.tagset* - constituent labels, aka. syntactic categories (ptb, negra, ...) 
+
 = Using Resource Providers =
 
 The `CasConfigurableProviderBase` class provides some support for the above requirements. The following code is taken from the `OpenNlpPosTagger` component. It shows how the POS Tagger model is addressed using a parametrized classpath URL with parameters for language and variant. The `produceResource()` method is called with the URL of the model once it has been located by `CasConfigurableProviderBase`.
