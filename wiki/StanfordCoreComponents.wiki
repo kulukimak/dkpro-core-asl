@@ -23,6 +23,7 @@ Dependencies:
 
   * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl
   * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-model-ner-en-all.3class.distsim.crf (for example)
+  * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-model-parser-en-pcfg (for example)
 
 = !StanfordSegmenter = 
 
@@ -104,7 +105,7 @@ The Stanford Parser ([http://www-nlp.stanford.edu/software/lex-parser.shtml webs
 
 == Models ==
 
-As with the NER component, please download the whole Stanford Parser package from the website and unpack the models from jar into your local project folder.
+There are different models for various languages, parsers include a PCFG (probabilistic context-free grammar) parser and a factored parser.
 
 == Pipeline ==
 
@@ -113,10 +114,8 @@ Include the component into your pipeline this way:
    {{{
  AnalysisEngineDescription parser = createPrimitiveDescription(
   StanfordParser.class,
-  StanfordParser.PARAM_LANGUAGE, "en",
-  StanfordParser.PARAM_MODEL_LOCATION,
-  "src/main/resources/models/lexparser/englishPCFG.ser.gz"
- );
+  StanfordParser.PARAM_LANGUAGE, "en", /* if not set on the Reader */
+  StanfordParser.PARAM_MODEL_VARIANT, "pcfg");
    }}}
 
 
