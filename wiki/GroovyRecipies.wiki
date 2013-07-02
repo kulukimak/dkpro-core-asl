@@ -74,7 +74,6 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 import org.apache.uima.jcas.JCas;
 
-import org.uimafit.factory.JCasFactory;
 import org.uimafit.pipeline.*;
 import static org.uimafit.util.JCasUtil.*;
 import static org.uimafit.factory.CollectionReaderFactory.*;
@@ -83,7 +82,6 @@ import static org.uimafit.factory.AnalysisEngineFactory.*;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
 import de.tudarmstadt.ukp.dkpro.core.io.text.*;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
-import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
 
 // Assemble and run pipeline
 SimplePipeline.runPipeline(  
