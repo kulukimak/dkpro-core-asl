@@ -1,0 +1,48 @@
+#summary Groovy scripts
+
+= Introduction =
+
+This assumes that you have installed [http://groovy.codehaus.org Groovy] and that you have the command `groovy` available in your path. On Debian/Ubuntu systems, installing Groovy should be as easy as `apt-get install groovy`.
+
+Copy on of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
+
+The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. Try deleting `~/.groovy/grapes` and `~/.ivy2/cache`.
+
+If a script complains about not having enough heap, try the command `export JAVA_OPTS="-Xmx1g"` and then run the script again.
+
+=== Simple OpenNlp pipeline ==
+
+This pipeline internally creates data, processes it, and writes results to the console.
+
+{{{
+#!/usr/bin/env groovy
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import org.uimafit.factory.JCasFactory;
+import org.uimafit.pipeline.SimplePipeline;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
+import static org.uimafit.util.JCasUtil.*;
+import static org.uimafit.factory.AnalysisEngineFactory.*;
+
+def jcas = JCasFactory.createJCas();
+jcas.documentText = "This is a test";
+jcas.documentLanguage = "en";
+
+SimplePipeline.runPipeline(jcas,
+  createPrimitiveDescription(OpenNlpSegmenter),
+  createPrimitiveDescription(OpenNlpPosTagger),
+  createPrimitiveDescription(OpenNlpParser,
+    OpenNlpParser.PARAM_CREATE_PENN_TREE_STRING, true));
+
+for (def t : select(jcas, Token)) {
+    println t.coveredText+ " " + t.pos.posValue;
+}
+
+for (def t : select(jcas, PennTree)) {
+    println t.pennTree;
+}
+}}}
