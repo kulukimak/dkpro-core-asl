@@ -14,7 +14,53 @@ If a script complains about not having enough heap, try the command `export JAVA
 
 <wiki:toc max_depth="2" />
 
-== OpenNLP Part-of-speech tagging pipeline ==
+== OpenNLP Part-of-speech tagging pipeline using custom writer component ==
+
+Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
+
+Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+
+{{{
+#!/usr/bin/env groovy
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import org.apache.uima.jcas.JCas;
+
+import org.uimafit.factory.JCasFactory;
+import org.uimafit.pipeline.*;
+import static org.uimafit.util.JCasUtil.*;
+import static org.uimafit.factory.CollectionReaderFactory.*;
+import static org.uimafit.factory.AnalysisEngineFactory.*;
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.io.text.*;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
+
+SimplePipeline.runPipeline(  
+  createDescription(TextReader,
+    TextReader.PARAM_PATH, args[0],
+    TextReader.PARAM_LANGUAGE, args[1],
+    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+  createPrimitiveDescription(OpenNlpSegmenter),
+  createPrimitiveDescription(OpenNlpPosTagger),
+  createPrimitiveDescription(Writer));
+
+class Writer extends org.uimafit.component.JCasAnnotator_ImplBase {
+  void process(JCas jcas) {
+    for (def t : select(jcas, Token)) {
+      println t.coveredText+ " " + t.pos.posValue;
+    }
+  }
+}
+}}}
+
+== OpenNLP Part-of-speech tagging pipeline using !JCasIterable and custom analysis result handling ==
 
 Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
 
