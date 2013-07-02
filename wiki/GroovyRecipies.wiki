@@ -14,7 +14,7 @@ If a script complains about not having enough heap, try the command `export JAVA
 
 <wiki:toc max_depth="2" />
 
-== OpenNLP pipeline ==
+== OpenNLP Part-of-speech tagging pipeline ==
 
 Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
 
@@ -55,9 +55,11 @@ for (def jcas : pipeline) {
 }
 }}}
 
-== OpenNLP pipeline without reader ==
+==== OpenNLP Part-of-speech tagging & parsing without reader ==
 
 This pipeline internally creates data, processes it, and writes results to the console.
+
+Mind to provide more memory to Groovy using the command `export JAVA_OPTS="-Xmx1g"` before trying to run this.
 
 {{{
 #!/usr/bin/env groovy
