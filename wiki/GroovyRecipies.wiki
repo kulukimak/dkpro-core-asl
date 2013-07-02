@@ -10,7 +10,7 @@ The scripts download required models and libraries automatically. Sometimes it m
 
 If a script complains about not having enough heap, try the command `export JAVA_OPTS="-Xmx1g"` and then run the script again.
 
-=== Simple OpenNlp pipeline ==
+=== Simple OpenNLP pipeline ==
 
 This pipeline internally creates data, processes it, and writes results to the console.
 
