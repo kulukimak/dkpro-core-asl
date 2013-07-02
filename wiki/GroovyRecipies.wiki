@@ -1,6 +1,6 @@
 #summary Groovy scripts
 
-= Introduction =
+<h1>Introduction</h1>
 
 This assumes that you have installed [http://groovy.codehaus.org Groovy] and that you have the command `groovy` available in your path. On Debian/Ubuntu systems, installing Groovy should be as easy as `apt-get install groovy`.
 
@@ -10,7 +10,9 @@ The scripts download required models and libraries automatically. Sometimes it m
 
 If a script complains about not having enough heap, try the command `export JAVA_OPTS="-Xmx1g"` and then run the script again.
 
-=== Simple OpenNLP pipeline ==
+<wiki:toc max_depth="1" />
+
+= Simple OpenNLP pipeline =
 
 This pipeline internally creates data, processes it, and writes results to the console.
 
