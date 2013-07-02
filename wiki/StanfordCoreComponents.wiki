@@ -168,6 +168,156 @@ The UN resides in New York City.
 [PUNC] (31, 32) .
    }}}
 
+= Writer = 
+
+   {{{
+package de.tudarmstadt.ukp.tutorial.ner;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.apache.uima.UimaContext;
+import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.resource.ResourceInitializationException;
+import org.uimafit.component.JCasConsumer_ImplBase;
+import org.uimafit.descriptor.ConfigurationParameter;
+import org.uimafit.util.JCasUtil;
+
+import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP;
+
+public class NPNEWriter extends JCasConsumer_ImplBase {
+
+	public static final String LF = System.getProperty("line.separator");
+
+	public static final String PARAM_OUTPUTFILE = "Outputfile";
+	@ConfigurationParameter(name = PARAM_OUTPUTFILE, mandatory = true)
+	protected String outputfile;
+
+	/* file handler */
+	FileWriter writer;
+
+	@Override
+	public void initialize(UimaContext context)
+			throws ResourceInitializationException {
+
+		super.initialize(context);
+
+		try {
+
+			writer = new FileWriter(outputfile);
+
+		} catch (IOException e) {
+
+			throw new ResourceInitializationException(e.getMessage(), null,
+					e.getCause());
+
+		} /* catch() */
+
+	} /* initialize() */
+
+	@Override
+	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+
+		try {
+
+			/* all sentences */
+			for (Sentence sentence : JCasUtil.select(aJCas, Sentence.class)) {
+
+				/* all Noun Phrases within that sentence */
+				for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class,
+						sentence)) {
+
+					/*
+					 * all Named Entities within that noun phrase
+					 */
+					for (NamedEntity ne : JCasUtil.selectCovered(aJCas,
+							NamedEntity.class, nounphrase)) {
+
+						writer.append("NP " + nounphrase.getCoveredText()
+								+ "\tNE " + ne.getCoveredText());
+						writer.append(LF);
+
+					} /* for each NamedEntity within the noun phrase */
+
+				} /* for each noun phrase within the sentence */
+
+			} /* for each sentence */
+
+			writer.flush();
+			
+		} catch (IOException e) {
+
+			throw new AnalysisEngineProcessException(this.getClass()
+					.getSimpleName()
+					+ ": Error writing to file: "
+					+ e.getMessage(), null, e.getCause());
+
+		} /* catch() */
+
+	} /* process() */
+
+} /* class */
+   }}}
+
 = Create your experiment =
 
-The whole pipeline may look like this:
+The entire pipeline may look like this:
+
+   {{{
+
+package de.tudarmstadt.ukp.tutorial.ner;
+
+import java.io.IOException;
+import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
+import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
+import org.apache.uima.UIMAException;
+import org.apache.uima.analysis_engine.AnalysisEngineDescription;
+import org.apache.uima.collection.CollectionReader;
+import org.uimafit.pipeline.SimplePipeline;
+
+import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordNamedEntityRecognizer;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordParser;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordSegmenter;
+
+public class Pipeline {
+
+	public static void main(String[] args) throws UIMAException, IOException {
+
+		CollectionReader reader = createCollectionReader(
+				TextReader.class,
+				TextReader.PARAM_PATH, "src/main/resources/sentences/",
+				TextReader.PARAM_LANGUAGE, "en",
+				TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
+
+		AnalysisEngineDescription seg = createPrimitiveDescription(StanfordSegmenter.class);
+
+		AnalysisEngineDescription ner = createPrimitiveDescription(
+				StanfordNamedEntityRecognizer.class);
+
+		AnalysisEngineDescription parser = createPrimitiveDescription(StanfordParser.class,
+				StanfordParser.PARAM_VARIANT, "pcfg");
+
+		 AnalysisEngineDescription writer = createPrimitiveDescription(
+		 NPNEWriter.class, NPNEWriter.PARAM_OUTPUTFILE, "target/npne.txt");
+
+		SimplePipeline.runPipeline(reader, seg, ner, parser, writer);
+
+	} /* main() */
+
+} /* class */
+   }}}
+
+== Output ==
+
+The final output prints the noun phrases (NP) and the named entities (NE) within them. An example may look like this:
+
+   {{{
+NP the beautiful New York	NE New York
+NP Berlin	NE Berlin
+NP The UN	NE UN
+NP amazing New York City	NE New York City
+   }}}
