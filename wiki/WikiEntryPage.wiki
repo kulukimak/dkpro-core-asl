@@ -36,5 +36,6 @@ For people who want to work on the DKPro source code or like to live on the blee
 
 = Miscellaneous =
 
+  * [GroovyRecipies Groovy scripts for DKPro Core pipelines]
   * [UkpMavenRepository Public UKP-OSS Maven repository]
   * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
