@@ -25,6 +25,20 @@ Dependencies:
   * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-model-ner-en-all.3class.distsim.crf (for example)
   * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-model-parser-en-pcfg (for example)
 
+= Reader = 
+
+For example, put all your sentences in a text file and read them with a default reader from !DkPro.
+
+   {{{
+  CollectionReader reader = createCollectionReader(
+    TextReader.class,
+    TextReader.PARAM_PATH, "src/main/resources/sentences/",
+    TextReader.PARAM_LANGUAGE, "en",
+    TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
+   }}}
+
+It is *important* to set the language (two letter ISO 639-1 code) at the reader.
+
 = !StanfordSegmenter = 
 
 The Stanford Segmenter performs tokenizations and makes sentence and token annotations and can serve as a high quality alternative for other segmenter components like the _!BreakIteratorSegmenter_.
@@ -81,7 +95,6 @@ Include the component into your pipeline this way:
    {{{
   AnalysisEngineDescription ner = createPrimitiveDescription(
     StanfordNamedEntityRecognizer.class,
-    StanfordNamedEntityRecognizer.PARAM_LANGUAGE, "en", /* if not set on the Reader */
     StanfordNamedEntityRecognizer.PARAM_VARIANT, "all.3class.distsim.crf");
    }}}
 
@@ -114,7 +127,6 @@ Include the component into your pipeline this way:
    {{{
  AnalysisEngineDescription parser = createPrimitiveDescription(
   StanfordParser.class,
-  StanfordParser.PARAM_LANGUAGE, "en", /* if not set on the Reader */
   StanfordParser.PARAM_MODEL_VARIANT, "pcfg");
    }}}
 
