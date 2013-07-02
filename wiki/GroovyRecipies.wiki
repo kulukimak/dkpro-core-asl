@@ -22,6 +22,8 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 {{{
 #!/usr/bin/env groovy
+@GrabResolver(name='ukp-oss-snapshots', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
       version='1.5.0-SNAPSHOT')
@@ -70,6 +72,8 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 {{{
 #!/usr/bin/env groovy
+@GrabResolver(name='ukp-oss-snapshots', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
       version='1.5.0-SNAPSHOT')
@@ -111,6 +115,8 @@ Mind to provide more memory to Groovy using the command `export JAVA_OPTS="-Xmx1
 
 {{{
 #!/usr/bin/env groovy
+@GrabResolver(name='ukp-oss-snapshots', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
       version='1.5.0-SNAPSHOT')
