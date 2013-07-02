@@ -22,6 +22,7 @@ Dependency Management:
 Dependencies:
 
   * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl
+  * de.tudarmstadt.ukp.dkpro.core.stanfordnlp-model-ner-en-all.3class.distsim.crf (for example)
 
 = !StanfordSegmenter = 
 
@@ -62,14 +63,7 @@ The UN resides in New York City.
 
 The Stanford NER ([http://nlp.stanford.edu/software/CRF-NER.shtml website]) is a CRFClassifier implementation of a Named Entity Recognizer to label sequences of words in a text which are the names of things, such as person and company names, or gene and protein names.
 
-== Models ==
-
-The documentation says:
- _Model files are not distributed as part of DKPro and need to be  obtained from the Stanford NLP tools homepage. Alternatively you can use the ANT script src/scripts/build.xml included with the source code of this component, which downloads the models from the Stanford NLP homepage and packages them conveniently as JARs which you may then install in your local Maven repository or deploy to a private Maven repository._
-
-I recommend downloading the Stanford NER, extract a model and putting it into your local resources folder.
-
-== Types ==
+== Models and types ==
 
 Included with the Stanford NER are a 4 class model trained for CoNLL, a 7 class model trained for MUC, and a 3 class model trained on both data sets for the intersection of those class sets.
 
@@ -86,10 +80,8 @@ Include the component into your pipeline this way:
    {{{
   AnalysisEngineDescription ner = createPrimitiveDescription(
     StanfordNamedEntityRecognizer.class,
-    StanfordNamedEntityRecognizer.PARAM_LANGUAGE, "en",
-    StanfordNamedEntityRecognizer.PARAM_MODEL_LOCATION,
-   "src/main/resources/english.all.3class.distsim.crf.ser.gz"
-  );
+    StanfordNamedEntityRecognizer.PARAM_LANGUAGE, "en", /* if not set on the Reader */
+    StanfordNamedEntityRecognizer.PARAM_VARIANT, "all.3class.distsim.crf");
    }}}
 
 == Output ==
