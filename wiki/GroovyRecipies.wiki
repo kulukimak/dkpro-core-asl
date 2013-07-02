@@ -16,6 +16,8 @@ If a script complains about not having enough heap, try the command `export JAVA
 
 == OpenNLP pipeline ==
 
+Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
+
 Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 {{{
