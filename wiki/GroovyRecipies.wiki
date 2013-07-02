@@ -55,7 +55,7 @@ for (def jcas : pipeline) {
 }
 }}}
 
-==== OpenNLP Part-of-speech tagging & parsing without reader ==
+== OpenNLP Part-of-speech tagging & parsing without reader ==
 
 This pipeline internally creates data, processes it, and writes results to the console.
 
