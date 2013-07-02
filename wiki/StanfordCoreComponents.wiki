@@ -130,9 +130,10 @@ Include the component into your pipeline this way:
    {{{
  AnalysisEngineDescription parser = createPrimitiveDescription(
   StanfordParser.class,
-  StanfordParser.PARAM_MODEL_VARIANT, "pcfg");
+  StanfordParser.PARAM_VARIANT, "pcfg");
    }}}
 
+The default variant for English is _factored_ ([https://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/trunk/de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl/src/main/resources/de/tudarmstadt/ukp/dkpro/core/stanfordnlp/lib/parser-default-variants.map source]).
 
 == Output ==
 
