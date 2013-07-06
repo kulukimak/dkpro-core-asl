@@ -95,9 +95,7 @@ SimplePipeline.runPipeline(
 // Custom writer class used at the end of the pipeline to write results to screen
 class Writer extends org.uimafit.component.JCasAnnotator_ImplBase {
   void process(JCas jcas) {
-    for (def t : select(jcas, Token)) {
-      println t.coveredText+ " " + t.pos.posValue;
-    }
+    select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
   }
 }
 }}}
@@ -139,9 +137,7 @@ def pipeline = new JCasIterable(
   createPrimitive(OpenNlpPosTagger));
 
 for (def jcas : pipeline) {
-  for (def t : select(jcas, Token)) {
-    println t.coveredText+ " " + t.pos.posValue;
-  }
+  select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
 }
 }}}
 
@@ -177,11 +173,7 @@ SimplePipeline.runPipeline(jcas,
   createPrimitiveDescription(OpenNlpParser,
     OpenNlpParser.PARAM_WRITE_PENN_TREE, true));
 
-for (def t : select(jcas, Token)) {
-    println t.coveredText+ " " + t.pos.posValue;
-}
+select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
 
-for (def t : select(jcas, PennTree)) {
-    println t.pennTree;
-}
+select(jcas, PennTree).each { println it.pennTree }
 }}}
