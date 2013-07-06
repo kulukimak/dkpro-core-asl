@@ -35,7 +35,6 @@ Call with `pipeline <foldername> <language> <outputfile>`, e.g. `pipeline myFold
       version='1.5.0-SNAPSHOT')
 
 import org.uimafit.pipeline.*;
-import static org.uimafit.util.JCasUtil.*;
 import static org.uimafit.factory.CollectionReaderFactory.*;
 import static org.uimafit.factory.AnalysisEngineFactory.*;
 
