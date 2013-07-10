@@ -22,7 +22,11 @@ Call with `pipeline <foldername> <language> <outputfile>`, e.g. `pipeline myFold
 
 {{{
 #!/usr/bin/env groovy
-@GrabResolver(name='ukp-oss-snapshots', 
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
       root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
