@@ -106,7 +106,7 @@ class Writer extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
 }
 }}}
 
-== OpenNLP Part-of-speech tagging pipeline using !JCasIterable and custom analysis result handling ==
+== OpenNLP Part-of-speech tagging pipeline using JCasIterable and custom analysis result handling ==
 
 Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
 
