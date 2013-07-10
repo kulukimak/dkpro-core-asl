@@ -14,6 +14,8 @@ If a script complains about not having enough heap, try the command `export JAVA
 
 <wiki:toc max_depth="2" />
 
+= Recipes = 
+
 == OpenNLP Part-of-speech tagging pipeline writing to IMS Open Corpus Workbench format ==
 
 Reads all text files (`*.txt`) in the specified folder and writes to the specified file.
@@ -192,4 +194,31 @@ SimplePipeline.runPipeline(jcas,
 select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
 
 select(jcas, PennTree).each { println it.pennTree }
+}}}
+
+
+= Trouble shooting = 
+
+== Groovy Grapes from Maven ==
+
+On some systems, Groovy per default re-uses artifacts that have already been downloaded by Maven. To make sure the Groovy Grape cache is fully separate from the Maven cache, create a file called `grapeConfig.xml` in your `~\.groovy` folder with this content
+
+{{{
+<?xml version="1.0"?>
+<ivysettings>
+    <settings defaultResolver="downloadGrapes"/>
+    <resolvers>
+        <chain name="downloadGrapes">
+            <!-- todo add 'endorsed groovy extensions' resolver here -->
+            <ibiblio name="local" root="file:${user.home}/.m2/repository/" m2compatible="true"/>
+            <filesystem name="cachedGrapes">
+                <ivy pattern="${user.home}/.groovy/grapes/[organisation]/[module]/ivy-[revision].xml"/>
+                <artifact pattern="${user.home}/.groovy/grapes/[organisation]/[module]/[type]s/[artifact]-[revision].[ext]"/>
+            </filesystem>
+            <ibiblio name="codehaus" root="http://repository.codehaus.org/" m2compatible="true"/>
+            <ibiblio name="ibiblio" m2compatible="true"/>
+            <ibiblio name="java.net2" root="http://download.java.net/maven/2/" m2compatible="true"/>
+        </chain>
+    </resolvers>
+</ivysettings>
 }}}
