@@ -6,7 +6,7 @@ This assumes that you have installed [http://groovy.codehaus.org Groovy] and tha
 
 Copy on of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
 
-*In preparation of the DKPro Core 1.5.0 release, we are currently upgrading to uimaFIT 2.0.0-SNAPSHOT and lima 2.4.1-SNAPSHOT. If you want to use the latest versions of our components, you may want to flush your caches from time to time. Once DKPro Core 1.5.0 is released, the !@GrabResolvers should no longer be necessary and the components will remain stable.*
+*In preparation of the DKPro Core 1.5.0 release, we are currently upgrading to uimaFIT 2.0.0-SNAPSHOT and lima 2.4.1-SNAPSHOT. If you want to use the latest versions of our components, you may want to flush your caches from time to time. Once DKPro Core 1.5.0 is released, the @!GrabResolvers should no longer be necessary and the components will remain stable.*
 
 *Table of contents*
 
