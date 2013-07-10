@@ -6,10 +6,6 @@ This assumes that you have installed [http://groovy.codehaus.org Groovy] and tha
 
 Copy on of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
 
-The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. Try deleting `~/.groovy/grapes` and `~/.ivy2/cache`.
-
-If a script complains about not having enough heap, try the command `export JAVA_OPTS="-Xmx1g"` and then run the script again.
-
 *Table of contents*
 
 <wiki:toc max_depth="2" />
@@ -199,7 +195,15 @@ select(jcas, PennTree).each { println it.pennTree }
 
 = Trouble shooting = 
 
-== Groovy Grapes from Maven ==
+== Out of memory ==
+
+If a script complains about not having enough heap, try the command `export JAVA_OPTS="-Xmx1g"` and then run the script again.
+
+== Flush caches ==
+
+The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. Try deleting `~/.groovy/grapes` and `~/.ivy2/cache`. If you did not separate the Groovy cache from the Maven cache, you might also want to consider deleting `~/.m2/repository`. If you use Maven for software development, we recommend that you separate the caches.
+
+== Separate Groovy Grape Cache from Maven Cache ==
 
 On some systems, Groovy per default re-uses artifacts that have already been downloaded by Maven. To make sure the Groovy Grape cache is fully separate from the Maven cache, create a file called `grapeConfig.xml` in your `~\.groovy` folder with this content
 
