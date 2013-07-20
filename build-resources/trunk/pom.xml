@@ -9,6 +9,19 @@
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
 	</parent>
+	<description>Build resources for DKPro projects. Templates for NOTICE.txt and friends to be installed using the maven-remote-resources-plugin.</description>
+	<name>DKPro Build Resources</name>
+	<url>http://code.google.com/p/dkpro-core-asl/</url>
+	<inceptionYear>2013</inceptionYear>
+	<scm>
+		<connection>scm:svn:https://dkpro-core-asl.googlecode.com/svn/build-resources/trunk</connection>
+		<developerConnection>scm:svn:https://dkpro-core-asl.googlecode.com/svn/build-resources/trunk</developerConnection>
+		<url>http://code.google.com/p/dkpro-core-asl/source/browse/build-resources/trunk</url>
+	</scm>
+	<issueManagement>
+		<system>Google Code</system>
+		<url>http://code.google.com/p/dkpro-core-asl/issues/list</url>
+	</issueManagement>
 	<build>
 		<plugins>
 			<plugin>
