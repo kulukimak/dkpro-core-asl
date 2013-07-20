@@ -1,9 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 	<artifactId>build-resources</artifactId>
-	<version>1-SNAPSHOT</version>
+	<version>1</version>
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
@@ -14,9 +13,9 @@
 	<url>http://code.google.com/p/dkpro-core-asl/</url>
 	<inceptionYear>2013</inceptionYear>
 	<scm>
-		<connection>scm:svn:https://dkpro-core-asl.googlecode.com/svn/build-resources/trunk</connection>
-		<developerConnection>scm:svn:https://dkpro-core-asl.googlecode.com/svn/build-resources/trunk</developerConnection>
-		<url>http://code.google.com/p/dkpro-core-asl/source/browse/build-resources/trunk</url>
+		<connection>scm:svn:https://dkpro-core-asl.googlecode.com/svn/build-resources/tags/build-resources-1</connection>
+		<developerConnection>scm:svn:https://dkpro-core-asl.googlecode.com/svn/build-resources/tags/build-resources-1</developerConnection>
+		<url>http://code.google.com/p/dkpro-core-asl/source/browse/build-resources/tags/build-resources-1</url>
 	</scm>
 	<issueManagement>
 		<system>Google Code</system>
@@ -58,7 +57,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
