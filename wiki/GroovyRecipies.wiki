@@ -48,13 +48,13 @@ import de.tudarmstadt.ukp.dkpro.core.io.imscwb.*;
 
 // Assemble and run pipeline
 SimplePipeline.runPipeline(  
-  createDescription(TextReader,
+  createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0], // first command line parameter
     TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
     TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
-  createPrimitiveDescription(OpenNlpSegmenter),
-  createPrimitiveDescription(OpenNlpPosTagger),
-  createPrimitiveDescription(ImsCwbWriter,
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(ImsCwbWriter,
     ImsCwbWriter.PARAM_TARGET_LOCATION, args[2])); // third command line parameter
 }}}
 
@@ -92,13 +92,13 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
 
 // Assemble and run pipeline
 SimplePipeline.runPipeline(  
-  createDescription(TextReader,
+  createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0], // first command line parameter
     TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
     TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
-  createPrimitiveDescription(OpenNlpSegmenter),
-  createPrimitiveDescription(OpenNlpPosTagger),
-  createPrimitiveDescription(Writer));
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(Writer));
 
 // Custom writer class used at the end of the pipeline to write results to screen
 class Writer extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
@@ -141,12 +141,12 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
 
 def pipeline = new JCasIterable(
-  createCollectionReader(TextReader,
+  createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0],
     TextReader.PARAM_LANGUAGE, args[1],
     TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
-  createPrimitive(OpenNlpSegmenter),
-  createPrimitive(OpenNlpPosTagger));
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger));
 
 for (def jcas : pipeline) {
   select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
@@ -184,9 +184,9 @@ jcas.documentText = "This is a test";
 jcas.documentLanguage = "en";
 
 SimplePipeline.runPipeline(jcas,
-  createPrimitiveDescription(OpenNlpSegmenter),
-  createPrimitiveDescription(OpenNlpPosTagger),
-  createPrimitiveDescription(OpenNlpParser,
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(OpenNlpParser,
     OpenNlpParser.PARAM_WRITE_PENN_TREE, true));
 
 select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
