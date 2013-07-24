@@ -194,7 +194,7 @@ select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
 select(jcas, PennTree).each { println it.pennTree }
 }}}
 
-== MaltParser dependency parsing pipeline using JCasIterable ==
+== !MaltParser dependency parsing pipeline using JCasIterable ==
 
 Reads all text files (`*.txt`) in the specified folder and prints dependencies, one per line.
 
