@@ -194,6 +194,57 @@ select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
 select(jcas, PennTree).each { println it.pennTree }
 }}}
 
+== MaltParser dependency parsing pipeline using JCasIterable ==
+
+Reads all text files (`*.txt`) in the specified folder and prints dependencies, one per line.
+
+Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+
+{{{
+#!/usr/bin/env groovy
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.maltparser-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.conll-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.util.JCasUtil.*;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.maltparser.*;
+import de.tudarmstadt.ukp.dkpro.core.io.text.*;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.*;
+
+// Assemble and run pipeline
+def pipeline = new JCasIterable(
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, args[0], // first command line parameter
+    TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
+    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(MaltParser));
+
+for (def jcas : pipeline) {
+  select(jcas, Dependency).each { println "${it.dependencyType} ${it.governor.coveredText} ${it.dependent.coveredText}" }
+}
+}}}
 
 = Trouble shooting = 
 
