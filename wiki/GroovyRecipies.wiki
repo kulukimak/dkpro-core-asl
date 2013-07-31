@@ -153,6 +153,21 @@ for (def jcas : pipeline) {
 }
 }}}
 
+Example output:
+
+{{{
+The DT
+quick JJ
+brown JJ
+fox NN
+jumps NNS
+over IN
+the DT
+lazy JJ
+dog NN
+. .
+}}}
+
 == OpenNLP Part-of-speech tagging & parsing without reader ==
 
 This pipeline internally creates data, processes it, and writes results to the console.
@@ -192,6 +207,16 @@ SimplePipeline.runPipeline(jcas,
 select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
 
 select(jcas, PennTree).each { println it.pennTree }
+}}}
+
+Example output:
+
+{{{
+This DT
+is VBZ
+a DT
+test NN
+(ROOT (S (NP (DT This)) (VP (VBZ is) (NP (DT a) (NN test)))))
 }}}
 
 == !MaltParser dependency parsing pipeline using JCasIterable ==
