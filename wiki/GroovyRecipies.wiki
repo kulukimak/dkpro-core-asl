@@ -108,6 +108,21 @@ class Writer extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
 }
 }}}
 
+Example output:
+
+{{{
+The DT
+quick JJ
+brown JJ
+fox NN
+jumps NNS
+over IN
+the DT
+lazy JJ
+dog NN
+. .
+}}}
+
 == OpenNLP Part-of-speech tagging pipeline using JCasIterable and custom analysis result handling ==
 
 Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
