@@ -366,7 +366,7 @@ Example output:
 10	.	.	.	_	_	_	_	_	_
 }}}
 
-== !Fully mixed pipeline ==
+== Fully mixed pipeline ==
 
 Reads all text files (`*.txt`) in the specified folder and prints token, part-of-speech, lemma, and named entity in a tab-separated format, followed by the constituent tree as a bracketed structure.
 
