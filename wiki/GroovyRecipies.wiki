@@ -417,7 +417,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
 // Assemble and run pipeline
 def pipeline = new JCasIterable(
   createReaderDescription(TextReader,
-    TextReader.PARAM_PATH, args[0], //first command line parameter
+    TextReader.PARAM_PATH, args[0],     //first command line parameter
     TextReader.PARAM_LANGUAGE, args[1], //second command line parameter
     TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
   createEngineDescription(OpenNlpSegmenter),
@@ -431,9 +431,7 @@ for (def jcas : pipeline) {
   for (def sentence : select(jcas, Sentence)) {
     println "Token\tPOS\tLemma\tNamed entity";
     selectCovered(Token, sentence).each {
-      print "${it.coveredText}\t";
-      print "${it.pos.posValue}\t";
-      print "${it.lemma.value}\t";
+      print "${it.coveredText}\t${it.pos.posValue}\t${it.lemma.value}\t";
       print "${selectCovering(NamedEntity, it)*.value}\n";
     };
     selectCovered(PennTree, sentence).each {println "\n${it.pennTree}"};
