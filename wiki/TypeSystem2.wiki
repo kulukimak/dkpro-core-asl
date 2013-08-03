@@ -1,0 +1,48 @@
+#Ideas for a type system reorg
+
+=== Segmentation ===
+
+   * Document
+   * Heading
+   * Paragraph
+   * Sentence
+   * Token
+   * StopWord
+   * NGram
+
+=== Words ===
+
+   * Lemma
+   * Stem
+   * POS
+   * _Decompounding_
+      * Split
+      * Compound
+      * CompoundPart
+      * LinkingMorpheme
+   * Morpheme (redefine?)
+
+=== Phonetics ===
+
+   * PhoneticTranscription
+
+=== Syntax ===
+
+   * Chunk
+   * Constituent
+   * Dependency
+
+=== Semantics ===
+
+rename srl -> semantics (issue 187)
+
+   * SemanticPredicate
+   * SemanticArgument
+   * SemanticField (new)
+   * NamedEntity (<- ner)
+
+=== Pragmatics ===
+
+   * _Coreference types_ (<- coref, redefine?)
+
+=== Discourse ===
