@@ -12,9 +12,10 @@
 
 === Words ===
 
+rename lexmorph -> words
+
    * Lemma
    * Stem
-   * POS
    * _Decompounding_
       * Split
       * Compound
@@ -28,6 +29,7 @@
 
 === Syntax ===
 
+   * POS (<- lexmorph)
    * Chunk
    * Constituent
    * Dependency
