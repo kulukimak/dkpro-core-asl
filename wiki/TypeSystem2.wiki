@@ -1,4 +1,4 @@
-#Ideas for a type system reorg
+#summary Ideas for a type system reorg
 
 === Segmentation ===
 
