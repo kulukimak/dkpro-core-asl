@@ -8,6 +8,8 @@ For people who want to use a DKPro release version.
   * [UserSetup User Setup]
   * [MyFirstDKProProject First Steps with DKPro Core]
   * [TypeSystem Type system]
+  * [UkpMavenRepository Public UKP-OSS Maven repository]
+  * [GroovyRecipies Groovy scripts for DKPro Core pipelines] (for DKPro Core 1.5.0-SNAPSHOT)
 
 = Reference documentation =
 
@@ -36,6 +38,5 @@ For people who want to work on the DKPro source code or like to live on the blee
 
 = Miscellaneous =
 
-  * [GroovyRecipies Groovy scripts for DKPro Core pipelines]
-  * [UkpMavenRepository Public UKP-OSS Maven repository]
   * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
+  * [TypeSystem2 Type system reorg]
