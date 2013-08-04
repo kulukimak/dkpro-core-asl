@@ -1,5 +1,10 @@
 #summary Ideas for a type system reorg
 
+=== Metadata ===
+
+   * DocumentMetaData
+   * ~~ProcessorMetaData~~ (cf. issue 77)
+
 === Segmentation ===
 
    * Document
@@ -7,6 +12,7 @@
    * Paragraph
    * Sentence
    * Token
+      * issue 174: token annotations cannot carry syntactic function
    * StopWord
    * NGram
 
@@ -29,10 +35,15 @@ rename lexmorph -> words
 
 === Syntax ===
 
-   * POS (<- lexmorph)
+   * POS (<- lexmorph) (cf. issue 25)
+      * 12 universal tags (cf. issue 76)
    * Chunk
+      * keep only coarse-grained types (cf. issue 79)
    * Constituent
+      * keep only coarse-grained types (cf. issue 79)
+      * add head information (cf. issue 117)
    * Dependency
+      * keep only coarse-grained types (cf. issue 79)
 
 === Semantics ===
 
@@ -42,6 +53,7 @@ rename srl -> semantics (issue 187)
    * SemanticArgument
    * SemanticField (new)
    * NamedEntity (<- ner)
+      * Keep only Person, Location, Organisation (cf. issue 78)
 
 === Pragmatics ===
 
