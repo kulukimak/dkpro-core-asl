@@ -102,6 +102,18 @@ The metadata added for the models currently used to store tagset information, wh
    * *dependency.tagset* - dependency relation labels, aka. syntactic functions (negra, ancora, ...)
    * *constituent.tagset* - constituent labels, aka. syntactic categories (ptb, negra, ...) 
 
+= Updating Models=
+
+Whenever one existing model have a new release, it is good to update the build.xml changing the:
+
+  * URL for retrieving the model (if it has changed)
+  * The version from the model (the day when the model was created in the _yyyymmdd_ format)
+
+After that, run the ant script with the *local-maven target*, add the jars to your project classpath and check if the existing unit tests work for the up to date model. If they do, then run the script again, this time with the *remote-maven target*. Then, change the versions from the models in the dependency management section from the project's pom file, commit those changes and move these new models from staging into model repository in zoidberg.
+
+
+
+
 = Using Resource Providers =
 
 The `CasConfigurableProviderBase` class provides some support for the above requirements. The following code is taken from the `OpenNlpPosTagger` component. It shows how the POS Tagger model is addressed using a parametrized classpath URL with parameters for language and variant. The `produceResource()` method is called with the URL of the model once it has been located by `CasConfigurableProviderBase`.
