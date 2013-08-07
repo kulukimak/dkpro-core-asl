@@ -1,0 +1,494 @@
+#summary Groovy scripts
+
+<h1>Introduction</h1>
+
+This assumes that you have installed [http://groovy.codehaus.org Groovy] and that you have the command `groovy` available in your path. On Debian/Ubuntu systems, installing Groovy should be as easy as `apt-get install groovy`.
+
+Copy on of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
+
+*In preparation of the DKPro Core 1.5.0 release, we are currently upgrading to uimaFIT 2.0.0-SNAPSHOT and lima 2.4.1-SNAPSHOT. If you want to use the latest versions of our components, you may want to flush your caches from time to time. Once DKPro Core 1.5.0 is released, the @!GrabResolvers should no longer be necessary and the components will remain stable.*
+
+*Table of contents*
+
+<wiki:toc max_depth="2" />
+
+= Recipes = 
+
+== OpenNLP Part-of-speech tagging pipeline writing to IMS Open Corpus Workbench format ==
+
+Reads all text files (`*.txt`) in the specified folder and writes to the specified file.
+
+Call with `pipeline <foldername> <language> <outputfile>`, e.g. `pipeline myFolder en output.tsv`.
+
+{{{
+#!/usr/bin/env groovy
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.imscwb-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.io.text.*;
+import de.tudarmstadt.ukp.dkpro.core.io.imscwb.*;
+
+// Assemble and run pipeline
+SimplePipeline.runPipeline(  
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, args[0], // first command line parameter
+    TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
+    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(ImsCwbWriter,
+    ImsCwbWriter.PARAM_TARGET_LOCATION, args[2])); // third command line parameter
+}}}
+
+== OpenNLP Part-of-speech tagging pipeline using custom writer component ==
+
+Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
+
+Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+
+{{{
+#!/usr/bin/env groovy
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import org.apache.uima.jcas.JCas;
+
+import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.util.JCasUtil.*;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.io.text.*;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
+
+// Assemble and run pipeline
+SimplePipeline.runPipeline(  
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, args[0], // first command line parameter
+    TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
+    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(Writer));
+
+// Custom writer class used at the end of the pipeline to write results to screen
+class Writer extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+  void process(JCas jcas) {
+    select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
+  }
+}
+}}}
+
+Example output:
+
+{{{
+The DT
+quick JJ
+brown JJ
+fox NN
+jumps NNS
+over IN
+the DT
+lazy JJ
+dog NN
+. .
+}}}
+
+== OpenNLP Part-of-speech tagging pipeline using JCasIterable and custom analysis result handling ==
+
+Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
+
+Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+
+{{{
+#!/usr/bin/env groovy
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import org.apache.uima.fit.factory.JCasFactory;
+import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.util.JCasUtil.*;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.io.text.*;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
+
+def pipeline = new JCasIterable(
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, args[0],
+    TextReader.PARAM_LANGUAGE, args[1],
+    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger));
+
+for (def jcas : pipeline) {
+  select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
+}
+}}}
+
+Example output:
+
+{{{
+The DT
+quick JJ
+brown JJ
+fox NN
+jumps NNS
+over IN
+the DT
+lazy JJ
+dog NN
+. .
+}}}
+
+== OpenNLP Part-of-speech tagging & parsing without reader ==
+
+This pipeline internally creates data, processes it, and writes results to the console.
+
+Mind to provide more memory to Groovy using the command `export JAVA_OPTS="-Xmx1g"` before trying to run this.
+
+{{{
+#!/usr/bin/env groovy
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import org.apache.uima.fit.factory.JCasFactory;
+import org.apache.uima.fit.pipeline.SimplePipeline;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
+import static org.apache.uima.fit.util.JCasUtil.*;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+
+def jcas = JCasFactory.createJCas();
+jcas.documentText = "This is a test";
+jcas.documentLanguage = "en";
+
+SimplePipeline.runPipeline(jcas,
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(OpenNlpParser,
+    OpenNlpParser.PARAM_WRITE_PENN_TREE, true));
+
+select(jcas, Token).each { println "${it.coveredText} ${it.pos.posValue}" }
+
+select(jcas, PennTree).each { println it.pennTree }
+}}}
+
+Example output:
+
+{{{
+This DT
+is VBZ
+a DT
+test NN
+(ROOT (S (NP (DT This)) (VP (VBZ is) (NP (DT a) (NN test)))))
+}}}
+
+== !MaltParser dependency parsing pipeline using JCasIterable ==
+
+Reads all text files (`*.txt`) in the specified folder and prints dependencies, one per line.
+
+Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+
+{{{
+#!/usr/bin/env groovy
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.maltparser-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.conll-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.util.JCasUtil.*;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.maltparser.*;
+import de.tudarmstadt.ukp.dkpro.core.io.text.*;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.*;
+
+// Assemble and run pipeline
+def pipeline = new JCasIterable(
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, args[0], // first command line parameter
+    TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
+    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(MaltParser));
+
+for (def jcas : pipeline) {
+  select(jcas, Dependency).each { println "dep: [${it.dependencyType}] \t gov: [${it.governor.coveredText}] \t dep: [${it.dependent.coveredText}]" }
+}
+}}}
+
+Example output:
+
+{{{
+dep: [det] 	 gov: [test] 	 dep: [a]
+dep: [cop] 	 gov: [test] 	 dep: [is]
+dep: [nsubj] 	 gov: [test] 	 dep: [This]
+dep: [det] 	 gov: [fox] 	 dep: [The]
+dep: [amod] 	 gov: [fox] 	 dep: [quick]
+dep: [amod] 	 gov: [fox] 	 dep: [brown]
+dep: [nsubj] 	 gov: [jumps] 	 dep: [fox]
+dep: [prep] 	 gov: [jumps] 	 dep: [over]
+dep: [pobj] 	 gov: [over] 	 dep: [dog]
+dep: [det] 	 gov: [dog] 	 dep: [the]
+dep: [amod] 	 gov: [dog] 	 dep: [lazy]
+}}}
+
+== !MaltParser dependency parsing pipeline writing to CONLL format ==
+
+Reads all text files (`*.txt`) in the specified folder and prints dependencies, one per line.
+
+Call with `pipeline <inputfolder> <language> <outputfolder>`, e.g. `pipeline input en output`.
+
+{{{
+#!/usr/bin/env groovy
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.maltparser-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.conll-asl', 
+      version='1.5.0-SNAPSHOT')
+
+import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.maltparser.*;
+import de.tudarmstadt.ukp.dkpro.core.io.conll.*;
+import de.tudarmstadt.ukp.dkpro.core.io.text.*;
+
+// Assemble and run pipeline
+SimplePipeline.runPipeline(
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, args[0], // first command line parameter
+    TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
+    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(MaltParser),
+  createEngineDescription(Conll2006Writer,
+    Conll2006Writer.PARAM_TARGET_LOCATION, args[2])); // third command line parameter);
+}}}
+
+Example output:
+
+{{{
+1	The	the	DT	_	_	4	det	_	_
+2	quick	quick	JJ	_	_	4	amod	_	_
+3	brown	brown	JJ	_	_	4	amod	_	_
+4	fox	fox	NN	_	_	5	nsubj	_	_
+5	jumps	jump	VBZ	_	_	_	_	_	_
+6	over	over	IN	_	_	5	prep	_	_
+7	the	the	DT	_	_	9	det	_	_
+8	lazy	lazy	JJ	_	_	9	amod	_	_
+9	dog	dog	NN	_	_	6	pobj	_	_
+10	.	.	.	_	_	_	_	_	_
+}}}
+
+== Fully mixed pipeline ==
+
+Reads all text files (`*.txt`) in the specified folder and prints token, part-of-speech, lemma, and named entity in a tab-separated format, followed by the constituent tree as a bracketed structure.
+
+Call with `pipeline <inputfolder> <language>`, e.g. `pipeline input en`.
+
+{{{
+#!/usr/bin/env groovy
+@GrabResolver(name='apache.snapshots', 
+      root='http://repository.apache.org/snapshots')
+@GrabResolver(name='ukp-oss-releases', 
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
+@GrabResolver(name='ukp-oss-snapshots',
+      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.matetools-gpl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.clearnlp-asl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.berkeleyparser-gpl', 
+      version='1.5.0-SNAPSHOT')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl', 
+      version='1.5.0-SNAPSHOT')
+
+import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.util.JCasUtil.*;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+
+import de.tudarmstadt.ukp.dkpro.core.io.text.*;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.matetools.*;
+import de.tudarmstadt.ukp.dkpro.core.clearnlp.*;
+import de.tudarmstadt.ukp.dkpro.core.berkeleyparser.*;
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.*;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
+import de.tudarmstadt.ukp.dkpro.core.api.ner.type.*;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
+
+// Assemble and run pipeline
+def pipeline = new JCasIterable(
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, args[0],     //first command line parameter
+    TextReader.PARAM_LANGUAGE, args[1], //second command line parameter
+    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(MatePosTagger),
+  createEngineDescription(ClearNlpLemmatizer),
+  createEngineDescription(BerkeleyParser,
+    BerkeleyParser.PARAM_WRITE_PENN_TREE, true),
+  createEngineDescription(StanfordNamedEntityRecognizer));
+
+for (def jcas : pipeline) {
+  for (def sentence : select(jcas, Sentence)) {
+    println "Token\tPOS\tLemma\tNamed entity";
+    selectCovered(Token, sentence).each {
+      print "${it.coveredText}\t${it.pos.posValue}\t${it.lemma.value}\t";
+      print "${selectCovering(NamedEntity, it)*.value}\n";
+    };
+    selectCovered(PennTree, sentence).each {println "\n${it.pennTree}"};
+  }
+} 
+}}}
+
+Example output:
+
+{{{
+Token	POS	Lemma	Named entity
+Jim	NNP	jim	[PERSON]
+bought	VBD	buy	[]
+300	CD	0	[]
+shares	NNS	share	[]
+of	IN	of	[]
+Acme	NNP	acme	[ORGANIZATION]
+Corp.	NNP	corp.	[ORGANIZATION]
+in	IN	in	[]
+2006	CD	0	[]
+.	.	.	[]
+
+(ROOT (S (NP (NNP Jim)) (VP (VBD bought) (NP (NP (CD 300) (NNS shares))
+(PP (IN of) (NP (NNP Acme) (NNP Corp.)))) (PP (IN in) (NP (CD 2006)))) (. .)))
+}}}
+
+= Trouble shooting = 
+
+== Out of memory ==
+
+If a script complains about not having enough heap, try the command `export JAVA_OPTS="-Xmx1g"` and then run the script again.
+
+== Flush caches ==
+
+The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. Try deleting `~/.groovy/grapes` and `~/.ivy2/cache`. If you did not separate the Groovy cache from the Maven cache, you might also want to consider deleting `~/.m2/repository`. If you use Maven for software development, we recommend that you separate the caches.
+
+== Separate Groovy Grape Cache from Maven Cache ==
+
+On some systems, Groovy per default re-uses artifacts that have already been downloaded by Maven. To make sure the Groovy Grape cache is fully separate from the Maven cache, create a file called `grapeConfig.xml` in your `~\.groovy` folder with this content
+
+{{{
+<?xml version="1.0"?>
+<ivysettings>
+    <settings defaultResolver="downloadGrapes"/>
+    <resolvers>
+        <chain name="downloadGrapes">
+            <!-- todo add 'endorsed groovy extensions' resolver here -->
+            <filesystem name="cachedGrapes">
+                <ivy pattern="${user.home}/.groovy/grapes/[organisation]/[module]/ivy-[revision].xml"/>
+                <artifact pattern="${user.home}/.groovy/grapes/[organisation]/[module]/[type]s/[artifact]-[revision].[ext]"/>
+            </filesystem>
+            <ibiblio name="codehaus" root="http://repository.codehaus.org/" m2compatible="true"/>
+            <ibiblio name="ibiblio" m2compatible="true"/>
+            <ibiblio name="java.net2" root="http://download.java.net/maven/2/" m2compatible="true"/>
+        </chain>
+    </resolvers>
+</ivysettings>
+}}}
+
+Then flush the cache by deleting the folder `~/.groovy/grapes`. Mind that the next time you run a Groovy script, it will take some more time, because the cache needs to be repopulated.
