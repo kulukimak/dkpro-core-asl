@@ -58,7 +58,7 @@ The Stanford Segmenter performs tokenizations and makes sentence and token annot
 Include the component into your pipeline this way:
 
    {{{
-  AnalysisEngineDescription ner = createPrimitiveDescription(
+  AnalysisEngineDescription seg = createPrimitiveDescription(
     StanfordSegmenter.class
   );
    }}}
