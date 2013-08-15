@@ -175,20 +175,15 @@ The UN resides in New York City.
 [PUNC] (31, 32) .
    }}}
 
-= Writer = 
+= Consumer = 
 
    {{{
 package de.tudarmstadt.ukp.tutorial.ner;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
-import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.util.Level;
 import org.uimafit.component.JCasConsumer_ImplBase;
-import org.uimafit.descriptor.ConfigurationParameter;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
@@ -199,66 +194,39 @@ public class NPNEWriter extends JCasConsumer_ImplBase {
 
 	public static final String LF = System.getProperty("line.separator");
 
-	public static final String PARAM_OUTPUTFILE = "Outputfile";
-	@ConfigurationParameter(name = PARAM_OUTPUTFILE, mandatory = true)
-	protected String outputfile;
-
-	/* file handler */
-	FileWriter writer;
-
-	@Override
-	public void initialize(UimaContext context)
-			throws ResourceInitializationException {
-
-		super.initialize(context);
-
-		try {
-
-			writer = new FileWriter(outputfile);
-
-		} catch (IOException e) {
-
-			throw new ResourceInitializationException(e);
-
-		} /* catch() */
-
-	} /* initialize() */
 
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 
-		try {
+		StringBuilder sb = new StringBuilder();
 
-			/* all sentences */
-			for (Sentence sentence : JCasUtil.select(aJCas, Sentence.class)) {
+		sb.append("-- Annotations --");
+		sb.append(LF);
+	
+		/* all sentences */
+		for (Sentence sentence : JCasUtil.select(aJCas, Sentence.class)) {
 
-				/* all Noun Phrases within that sentence */
-				for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class,
-						sentence)) {
+			/* all Noun Phrases within that sentence */
+			for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class,
+					sentence)) {
 
-					/*
-					 * all Named Entities within that noun phrase
-					 */
-					for (NamedEntity ne : JCasUtil.selectCovered(aJCas,
-							NamedEntity.class, nounphrase)) {
+				/*
+				 * all Named Entities within that noun phrase
+				 */
+				for (NamedEntity ne : JCasUtil.selectCovered(aJCas,
+						NamedEntity.class, nounphrase)) {
 
-						writer.append("NP " + nounphrase.getCoveredText()
-								+ "\tNE " + ne.getCoveredText());
-						writer.append(LF);
+					sb.append("NP " + nounphrase.getCoveredText()
+							+ "\tNE " + ne.getCoveredText());
+					sb.append(LF);
 
-					} /* for each NamedEntity within the noun phrase */
+				} /* for each NamedEntity within the noun phrase */
 
-				} /* for each noun phrase within the sentence */
+			} /* for each noun phrase within the sentence */
 
-			} /* for each sentence */
+		} /* for each sentence */
 
-			writer.flush();
-			
-		} catch (IOException e) {
-
-			throw new AnalysisEngineProcessException(e);
-
-		} /* catch() */
+		getContext().getLogger().log(Level.INFO, sb.toString());
 
 	} /* process() */
 
