@@ -29,17 +29,25 @@ Dependency Management:
 
 = Reader = 
 
-For example, put all your sentences in a text file and read them with a default reader from !DkPro.
+For example, put all your sentences in a text file and read them with a default reader from !DkPro. (The directory containing the file is given as the first command line argument.) 
 
    {{{
   CollectionReader reader = createCollectionReader(
     TextReader.class,
-    TextReader.PARAM_PATH, "src/main/resources/sentences/",
+    TextReader.PARAM_PATH, args[0],
     TextReader.PARAM_LANGUAGE, "en",
     TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
    }}}
 
 It is *important* to set the language (two letter ISO 639-1 code) at the reader.
+
+== Example sentences ==
+
+As examples, the following sentences are used:
+  * Have you seen Anna?
+  * Last year we visited the beautiful New York.
+  * We live in Berlin.
+  * The UN resides in New York City.
 
 = !StanfordSegmenter = 
 
@@ -78,7 +86,7 @@ The UN resides in New York City.
 
 = !StanfordNamedEntityRecognizer = 
 
-The Stanford NER ([http://nlp.stanford.edu/software/CRF-NER.shtml website]) is a CRFClassifier implementation of a Named Entity Recognizer to label sequences of words in a text which are the names of things, such as person and company names, or gene and protein names.
+The Stanford NER ([http://nlp.stanford.edu/software/CRF-NER.shtml website]) is a CRFClassifier implementation of a Named Entity Recognizer to label sequences of words in a text which are the names of things, such as person and company names.
 
 == Models and types ==
 
@@ -99,7 +107,7 @@ Include the component into your pipeline this way:
     StanfordNamedEntityRecognizer.class);
    }}}
 
-The default variant for English is _all.3class.distsim.crf_ ([https://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/trunk/de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl/src/main/resources/de/tudarmstadt/ukp/dkpro/core/stanfordnlp/lib/ner-default-variants.map source]), other variants can be set by _PARAM_VARIANT_.
+The default variant for English is _all.3class.distsim.crf_, other variants can be set by _PARAM_VARIANT_.
 
 == Output ==
 
@@ -117,7 +125,7 @@ The headquarters of the UN is a complex in New York City.
 
 = !StanfordParser = 
 
-The Stanford Parser ([http://www-nlp.stanford.edu/software/lex-parser.shtml website]) is a program that works out the grammatical structure of sentences. There are models available for many languages, e.g. Englisch, German, Chinese or Arabic.
+The Stanford Parser ([http://www-nlp.stanford.edu/software/lex-parser.shtml website]) is a program that works out the grammatical structure of sentences. There are models available for many languages, e.g. Englisch and German.
 
 == Models ==
 
@@ -129,11 +137,10 @@ Include the component into your pipeline this way:
 
    {{{
  AnalysisEngineDescription parser = createPrimitiveDescription(
-  StanfordParser.class,
-  StanfordParser.PARAM_VARIANT, "pcfg");
+  StanfordParser.class);
    }}}
 
-The default variant for English is _factored_ ([https://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/trunk/de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl/src/main/resources/de/tudarmstadt/ukp/dkpro/core/stanfordnlp/lib/parser-default-variants.map source]).
+The default variant for English is _factored_.
 
 == Output ==
 
@@ -289,7 +296,7 @@ public class Pipeline {
 
 		CollectionReader reader = createCollectionReader(
 				TextReader.class,
-				TextReader.PARAM_PATH, "src/main/resources/sentences/",
+				TextReader.PARAM_PATH, args[0],
 				TextReader.PARAM_LANGUAGE, "en",
 				TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
 
