@@ -5,7 +5,7 @@
 
 = Introduction =
 
-This page describes processing a small paragraph with Stanford CoreNLP components (*!StanfordSegmenter*, *!StanfordNamedEntityRecognizer*, *!StanfordParser*) and writing out the *noun phrases* (NP) and *Named Entities* (NE) ocurring in the NPs into a file (CSV format), such as e.g.
+This page describes processing a small paragraph with Stanford CoreNLP components (*!StanfordSegmenter*, *!StanfordNamedEntityRecognizer*, *!StanfordParser*) and writing out the *noun phrases* (NP) and *Named Entities* (NE) ocurring in the NPs to the console output, such as e.g.
   * NP   the new product of UKP Lab   NE UKP Lab
   * NP   the latest announcements in the news   NE -
 
@@ -269,11 +269,10 @@ public class Pipeline {
 		AnalysisEngineDescription ner = createPrimitiveDescription(
 				StanfordNamedEntityRecognizer.class);
 
-		AnalysisEngineDescription parser = createPrimitiveDescription(StanfordParser.class,
-				StanfordParser.PARAM_VARIANT, "pcfg");
+		AnalysisEngineDescription parser = createPrimitiveDescription(StanfordParser.class);
 
 		 AnalysisEngineDescription writer = createPrimitiveDescription(
-		 NPNEWriter.class, NPNEWriter.PARAM_OUTPUTFILE, "target/npne.txt");
+		 NPNEWriter.class);
 
 		SimplePipeline.runPipeline(reader, seg, ner, parser, writer);
 
