@@ -194,12 +194,10 @@ public class NPNEWriter extends JCasConsumer_ImplBase {
 
 	public static final String LF = System.getProperty("line.separator");
 
-
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 
 		StringBuilder sb = new StringBuilder();
-
 		sb.append("-- Annotations --");
 		sb.append(LF);
 	
@@ -210,9 +208,7 @@ public class NPNEWriter extends JCasConsumer_ImplBase {
 			for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class,
 					sentence)) {
 
-				/*
-				 * all Named Entities within that noun phrase
-				 */
+				/* all Named Entities within that noun phrase */
 				for (NamedEntity ne : JCasUtil.selectCovered(aJCas,
 						NamedEntity.class, nounphrase)) {
 
@@ -221,15 +217,12 @@ public class NPNEWriter extends JCasConsumer_ImplBase {
 					sb.append(LF);
 
 				} /* for each NamedEntity within the noun phrase */
-
 			} /* for each noun phrase within the sentence */
-
 		} /* for each sentence */
 
 		getContext().getLogger().log(Level.INFO, sb.toString());
 
 	} /* process() */
-
 } /* class */
    }}}
 
@@ -277,7 +270,6 @@ public class Pipeline {
 		SimplePipeline.runPipeline(reader, seg, ner, parser, writer);
 
 	} /* main() */
-
 } /* class */
    }}}
 
