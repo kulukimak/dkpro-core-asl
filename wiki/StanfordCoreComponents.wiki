@@ -200,8 +200,7 @@ public class NPNEWriter extends JCasConsumer_ImplBase {
       for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class,
           sentence)) {
         /* all Named Entities within that noun phrase */
-        for (NamedEntity ne : JCasUtil.selectCovered(aJCas,
-            NamedEntity.class, nounphrase)) {
+        for (NamedEntity ne : JCasUtil.selectCovered(aJCas, NamedEntity.class, nounphrase)) {
 
           System.out.println("NP " + nounphrase.getCoveredText() + "\tNE " + ne.getCoveredText());
 
@@ -242,13 +241,11 @@ public class Pipeline {
 
     AnalysisEngineDescription seg = createPrimitiveDescription(StanfordSegmenter.class);
 
-    AnalysisEngineDescription ner = createPrimitiveDescription(
-      StanfordNamedEntityRecognizer.class);
+    AnalysisEngineDescription ner = createPrimitiveDescription(StanfordNamedEntityRecognizer.class);
 
     AnalysisEngineDescription parser = createPrimitiveDescription(StanfordParser.class);
 
-    AnalysisEngineDescription writer = createPrimitiveDescription(
-      NPNEWriter.class);
+    AnalysisEngineDescription writer = createPrimitiveDescription(NPNEWriter.class);
 
     SimplePipeline.runPipeline(reader, seg, ner, parser, writer);
   } /* main() */
