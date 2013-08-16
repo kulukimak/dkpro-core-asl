@@ -92,9 +92,9 @@ The Stanford NER ([http://nlp.stanford.edu/software/CRF-NER.shtml website]) is a
 
 Included with the Stanford NER are a 4 class model trained for CoNLL, a 7 class model trained for MUC, and a 3 class model trained on both data sets for the intersection of those class sets.
 
-  * 3 class	Location, Person, Organization
-  * 4 class	Location, Person, Organization, Misc
-  * 7 class	Time, Location, Organization, Person, Money, Percent, Date
+  * 3 class  Location, Person, Organization
+  * 4 class  Location, Person, Organization, Misc
+  * 7 class  Time, Location, Organization, Person, Money, Percent, Date
 
 The corresponding UIMA annotation types are called "Person", "Organization", "Location" etc., from the package *de.tudarmstadt.ukp.dkpro.core.type.ner*.
 
@@ -191,35 +191,24 @@ import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.NP;
 
 public class NPNEWriter extends JCasConsumer_ImplBase {
 
-	public static final String LF = System.getProperty("line.separator");
+  @Override
+  public void process(JCas aJCas) throws AnalysisEngineProcessException {
 
-	@Override
-	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+    /* all sentences */
+    for (Sentence sentence : JCasUtil.select(aJCas, Sentence.class)) {
+      /* all Noun Phrases within that sentence */
+      for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class,
+          sentence)) {
+        /* all Named Entities within that noun phrase */
+        for (NamedEntity ne : JCasUtil.selectCovered(aJCas,
+            NamedEntity.class, nounphrase)) {
 
-		StringBuilder sb = new StringBuilder();
-		sb.append("-- Annotations --");
-		sb.append(LF);
-	
-		/* all sentences */
-		for (Sentence sentence : JCasUtil.select(aJCas, Sentence.class)) {
-			/* all Noun Phrases within that sentence */
-			for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class,
-					sentence)) {
-				/* all Named Entities within that noun phrase */
-				for (NamedEntity ne : JCasUtil.selectCovered(aJCas,
-						NamedEntity.class, nounphrase)) {
+          System.out.println("NP " + nounphrase.getCoveredText() + "\tNE " + ne.getCoveredText());
 
-					sb.append("NP " + nounphrase.getCoveredText()
-							+ "\tNE " + ne.getCoveredText());
-					sb.append(LF);
-
-				} /* for each NamedEntity within the noun phrase */
-			} /* for each noun phrase within the sentence */
-		} /* for each sentence */
-
-		getContext().getLogger().log(Level.INFO, sb.toString());
-
-	} /* process() */
+        } /* for each NamedEntity within the noun phrase */
+      } /* for each noun phrase within the sentence */
+    } /* for each sentence */
+  } /* process() */
 } /* class */
    }}}
 
@@ -244,26 +233,25 @@ import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordParser;
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordSegmenter;
 
 public class Pipeline {
-	public static void main(String[] args) throws UIMAException, IOException {
+  public static void main(String[] args) throws UIMAException, IOException {
+    CollectionReader reader = createCollectionReader(
+      TextReader.class,
+      TextReader.PARAM_PATH, args[0],
+      TextReader.PARAM_LANGUAGE, "en",
+      TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
 
-		CollectionReader reader = createCollectionReader(
-				TextReader.class,
-				TextReader.PARAM_PATH, args[0],
-				TextReader.PARAM_LANGUAGE, "en",
-				TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
+    AnalysisEngineDescription seg = createPrimitiveDescription(StanfordSegmenter.class);
 
-		AnalysisEngineDescription seg = createPrimitiveDescription(StanfordSegmenter.class);
+    AnalysisEngineDescription ner = createPrimitiveDescription(
+      StanfordNamedEntityRecognizer.class);
 
-		AnalysisEngineDescription ner = createPrimitiveDescription(
-				StanfordNamedEntityRecognizer.class);
+    AnalysisEngineDescription parser = createPrimitiveDescription(StanfordParser.class);
 
-		AnalysisEngineDescription parser = createPrimitiveDescription(StanfordParser.class);
+    AnalysisEngineDescription writer = createPrimitiveDescription(
+      NPNEWriter.class);
 
-		 AnalysisEngineDescription writer = createPrimitiveDescription(
-		 NPNEWriter.class);
-
-		SimplePipeline.runPipeline(reader, seg, ner, parser, writer);
-	} /* main() */
+    SimplePipeline.runPipeline(reader, seg, ner, parser, writer);
+  } /* main() */
 } /* class */
    }}}
 
@@ -272,8 +260,8 @@ public class Pipeline {
 The final output prints the noun phrases (NP) and the named entities (NE) within them. An example may look like this:
 
    {{{
-NP the beautiful New York	NE New York
-NP Berlin	NE Berlin
-NP The UN	NE UN
-NP amazing New York City	NE New York City
+NP the beautiful New York  NE New York
+NP Berlin  NE Berlin
+NP The UN  NE UN
+NP amazing New York City  NE New York City
    }}}
