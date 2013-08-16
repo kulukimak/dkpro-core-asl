@@ -27,11 +27,11 @@ Dependencies:
 For example, put all your sentences in a text file and read them with a default reader from !DkPro. (The directory containing the file is given as the first command line argument.) 
 
    {{{
-		CollectionReader reader = createReader(
-				TextReader.class,
-				TextReader.PARAM_SOURCE_LOCATION, "args[0]",
-				TextReader.PARAM_LANGUAGE, "en",
-				TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
+    CollectionReader reader = createReader(
+        TextReader.class,
+        TextReader.PARAM_SOURCE_LOCATION, "args[0]",
+        TextReader.PARAM_LANGUAGE, "en",
+        TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
    }}}
 
 It is *important* to set the language (two letter ISO 639-1 code) at the reader.
@@ -53,7 +53,7 @@ The Stanford Segmenter performs tokenizations and makes sentence and token annot
 Include the component into your pipeline this way:
 
    {{{
-		AnalysisEngineDescription seg = createEngineDescription(StanfordSegmenter.class);
+    AnalysisEngineDescription seg = createEngineDescription(StanfordSegmenter.class);
    }}}
 
 == Output == 
@@ -96,7 +96,7 @@ The corresponding UIMA annotation types are called "Person", "Organization", "Lo
 Include the component into your pipeline this way:
 
    {{{
-		AnalysisEngineDescription ner = createEngineDescription(StanfordNamedEntityRecognizer.class);
+    AnalysisEngineDescription ner = createEngineDescription(StanfordNamedEntityRecognizer.class);
    }}}
 
 The default variant for English is _all.3class.distsim.crf_, other variants can be set by _PARAM_VARIANT_.
@@ -128,7 +128,7 @@ There are different models for various languages, parsers include a PCFG (probab
 Include the component into your pipeline this way:
 
    {{{
-		AnalysisEngineDescription parser = createEngineDescription(StanfordParser.class);
+    AnalysisEngineDescription parser = createEngineDescription(StanfordParser.class);
    }}}
 
 The default variant for English is _factored_.
@@ -224,23 +224,23 @@ import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordSegmenter;
 
 public class StanfordCoreComponents {
 
-	public static void main(String[] args) throws UIMAException, IOException {
-		CollectionReader reader = createReader(
-				TextReader.class,
-				TextReader.PARAM_SOURCE_LOCATION, "src/main/resources",
-				TextReader.PARAM_LANGUAGE, "en",
-				TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
+  public static void main(String[] args) throws UIMAException, IOException {
+    CollectionReader reader = createReader(
+        TextReader.class,
+        TextReader.PARAM_SOURCE_LOCATION, "src/main/resources",
+        TextReader.PARAM_LANGUAGE, "en",
+        TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
 
-		AnalysisEngineDescription seg = createEngineDescription(StanfordSegmenter.class);
+    AnalysisEngineDescription seg = createEngineDescription(StanfordSegmenter.class);
 
-		AnalysisEngineDescription ner = createEngineDescription(StanfordNamedEntityRecognizer.class);
+    AnalysisEngineDescription ner = createEngineDescription(StanfordNamedEntityRecognizer.class);
 
-		AnalysisEngineDescription parser = createEngineDescription(StanfordParser.class);
+    AnalysisEngineDescription parser = createEngineDescription(StanfordParser.class);
 
-		AnalysisEngineDescription writer = createEngineDescription(NPNEWriter.class);
+    AnalysisEngineDescription writer = createEngineDescription(NPNEWriter.class);
 
-		SimplePipeline.runPipeline(reader, seg, ner, parser, writer);
-	} /* main() */
+    SimplePipeline.runPipeline(reader, seg, ner, parser, writer);
+  } /* main() */
 } /* class */
 
 == Output ==
