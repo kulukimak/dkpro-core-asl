@@ -1,5 +1,5 @@
 #summary This page describes processing a small paragraph with Stanford CoreNLP components: StanfordSegmenter, StanfordNamedEntityRecognizer, StanfordParser.
-#labels InProgress
+#labels Phase-Deploy
 
 <wiki:toc max_depth="3" />
 
@@ -254,7 +254,7 @@ NP Berlin	NE Berlin
 NP The UN	NE UN
 NP New York City	NE New York City
    }}}
-   
+
 = Source =
 
 You'll find all classes in the example module at [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/trunk/de.tudarmstadt.ukp.dkpro.core.examples-gpl/].
