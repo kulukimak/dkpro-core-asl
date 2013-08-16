@@ -196,9 +196,10 @@ public class NPNEWriter extends JCasConsumer_ImplBase {
 
     /* all sentences */
     for (Sentence sentence : JCasUtil.select(aJCas, Sentence.class)) {
+ 
       /* all Noun Phrases within that sentence */
-      for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class,
-          sentence)) {
+      for (NP nounphrase : JCasUtil.selectCovered(aJCas, NP.class, sentence)) {
+ 
         /* all Named Entities within that noun phrase */
         for (NamedEntity ne : JCasUtil.selectCovered(aJCas, NamedEntity.class, nounphrase)) {
 
