@@ -1,0 +1,15 @@
+#summary Mapping to Universal POS Tags
+
+|| Universal  || DKPro (1.5.0) || DKPro (future) ||  	Change || Description  || 
+|| ADJ || ADJ ||  ADJ ||  no ||  adjetives ||  
+|| ADV ||  ADV ||  ADV ||  no ||  adverbs ||  
+|| DET ||  ART ||  DET ||  rename ||  determiners ||  
+|| NUM ||  CARD ||  NUM ||  rename ||  cardinal numbers ||  
+|| CONJ ||  CONJ ||  CONJ ||  no ||  conjunctions ||  
+|| NOUN ||  NP, NN, N ||  NOUN ||  merge ||  nouns ||  
+|| X ||  O ||  X ||  rename ||  other ||  
+|| ADP ||  PP ||  ADP ||  rename ||  adjectives ||  
+|| PRON ||  PR ||  PRON ||  rename ||  pronouns ||  
+|| VERB ||  V ||  VERB ||  rename ||  verbs ||  
+|| PRT ||   ||  PRT ||  new ||  particles ||  
+|| . ||  PUNC ||  PUNC ||  no ||  punctuation  ||  
