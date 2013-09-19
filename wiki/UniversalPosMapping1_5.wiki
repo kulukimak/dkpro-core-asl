@@ -11,5 +11,5 @@
 || ADP ||  PP ||  ADP ||  rename ||  adjectives ||  
 || PRON ||  PR ||  PRON ||  rename ||  pronouns ||  
 || VERB ||  V ||  VERB ||  rename ||  verbs ||  
-|| PRT ||   ||  PRT ||  new ||  particles ||  
+|| PRT || PRT ||  PRT ||  no ||  particles ||  
 || . ||  PUNC ||  PUNC ||  no ||  punctuation  ||  
