@@ -6,8 +6,6 @@ This assumes that you have installed [http://groovy.codehaus.org Groovy] and tha
 
 Copy on of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
 
-*In preparation of the DKPro Core 1.5.0 release, we are currently upgrading to uimaFIT 2.0.0-SNAPSHOT and lima 2.4.1-SNAPSHOT. If you want to use the latest versions of our components, you may want to flush your caches from time to time. Once DKPro Core 1.5.0 is released, the @!GrabResolvers should no longer be necessary and the components will remain stable.*
-
 *Table of contents*
 
 <wiki:toc max_depth="2" />
@@ -22,21 +20,15 @@ Call with `pipeline <foldername> <language> <outputfile>`, e.g. `pipeline myFold
 
 {{{
 #!/usr/bin/env groovy
-@GrabResolver(name='apache.snapshots', 
-      root='http://repository.apache.org/snapshots')
-@GrabResolver(name='ukp-oss-releases', 
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
-@GrabResolver(name='ukp-oss-snapshots',
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.imscwb-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 
 import org.apache.uima.fit.pipeline.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
@@ -66,18 +58,12 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 {{{
 #!/usr/bin/env groovy
-@GrabResolver(name='apache.snapshots', 
-      root='http://repository.apache.org/snapshots')
-@GrabResolver(name='ukp-oss-releases', 
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
-@GrabResolver(name='ukp-oss-snapshots',
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 
 import org.apache.uima.jcas.JCas;
 
@@ -131,18 +117,12 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 {{{
 #!/usr/bin/env groovy
-@GrabResolver(name='apache.snapshots', 
-      root='http://repository.apache.org/snapshots')
-@GrabResolver(name='ukp-oss-releases', 
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
-@GrabResolver(name='ukp-oss-snapshots',
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 
 import org.apache.uima.fit.factory.JCasFactory;
 import org.apache.uima.fit.pipeline.*;
@@ -191,15 +171,9 @@ Mind to provide more memory to Groovy using the command `export JAVA_OPTS="-Xmx1
 
 {{{
 #!/usr/bin/env groovy
-@GrabResolver(name='apache.snapshots', 
-      root='http://repository.apache.org/snapshots')
-@GrabResolver(name='ukp-oss-releases', 
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
-@GrabResolver(name='ukp-oss-snapshots',
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 
 import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
 import org.apache.uima.fit.factory.JCasFactory;
@@ -242,24 +216,18 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 {{{
 #!/usr/bin/env groovy
-@GrabResolver(name='apache.snapshots', 
-      root='http://repository.apache.org/snapshots')
-@GrabResolver(name='ukp-oss-releases', 
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
-@GrabResolver(name='ukp-oss-snapshots',
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.maltparser-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.conll-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 
 import org.apache.uima.fit.pipeline.*;
 import static org.apache.uima.fit.util.JCasUtil.*;
@@ -310,24 +278,18 @@ Call with `pipeline <inputfolder> <language> <outputfolder>`, e.g. `pipeline inp
 
 {{{
 #!/usr/bin/env groovy
-@GrabResolver(name='apache.snapshots', 
-      root='http://repository.apache.org/snapshots')
-@GrabResolver(name='ukp-oss-releases', 
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
-@GrabResolver(name='ukp-oss-snapshots',
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.maltparser-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.conll-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 
 import org.apache.uima.fit.pipeline.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
@@ -374,30 +336,24 @@ Call with `pipeline <inputfolder> <language>`, e.g. `pipeline input en`.
 
 {{{
 #!/usr/bin/env groovy
-@GrabResolver(name='apache.snapshots', 
-      root='http://repository.apache.org/snapshots')
-@GrabResolver(name='ukp-oss-releases', 
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases')
-@GrabResolver(name='ukp-oss-snapshots',
-      root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.matetools-gpl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.clearnlp-asl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.berkeleyparser-gpl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl', 
-      version='1.5.0-SNAPSHOT')
+      version='1.5.0')
 
 import org.apache.uima.fit.pipeline.*;
 import static org.apache.uima.fit.util.JCasUtil.*;
