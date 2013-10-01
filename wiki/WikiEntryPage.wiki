@@ -29,6 +29,7 @@ For people who want to work on the DKPro source code or like to live on the blee
 
 = Releases =
 
+  * [ReleaseNotes_1_5_0 DKPro Core 1.5.0]
   * DKPro Core 1.4.0
      * [ReleaseNotes_1_4_0 DKPro Core ASL 1.4.0 release notes] 
      * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_4_0 DKPro Core GPL 1.4.0 release notes] 
