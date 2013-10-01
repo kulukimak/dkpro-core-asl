@@ -13,9 +13,9 @@ This small tutorial will show you how to build your first small application with
 This tutorial assumes that you have:
 
    * Java 6 SDK or higher
-   * Eclipse 3.7.x
-   * Maven Integration for Eclipse (M2E) plugin installed in version 1.0.200.x or higher
-   * DKPro Core ASL 1.4.0 or higher
+   * Eclipse 4.3.x
+   * Maven Integration for Eclipse (M2E) plugin installed
+   * DKPro Core ASL 1.5.0 or higher
 
 == Create a project ==
 
@@ -28,7 +28,7 @@ This tutorial assumes that you have:
 *Note*: If Eclipse fails to find the *de.tudarmstadt.ukp.dkpro.core-asl* POM when you search for it, enter the following fields manually:
    * *groupId:* de.tudarmstadt.ukp.dkpro.core
    * *artifactId:* de.tudarmstadt.ukp.dkpro.core-asl
-   * *version:* 1.4.0 (or higher)
+   * *version:* 1.5.0 (or higher)
 
 *Note*: If you do not wish to inherit from the *de.tudarmstadt.ukp.dkpro.core-asl* POM, you need to perform [UkpMavenRepository#Configuring_a_project_for_access_to_models an extra step] to be able to access the models (e.g. parser models, tagger models, etc.) from the public UKP Maven repository.
 
@@ -40,7 +40,6 @@ This tutorial assumes that you have:
       * *de.tudarmstadt.ukp.dkpro.core.io.text-asl*
       * *de.tudarmstadt.ukp.dkpro.core.tokit-asl*
       * *de.tudarmstadt.ukp.dkpro.core.opennlp-asl*
-      * *de.tudarmstadt.ukp.dkpro.core.opennlp-model-tagger-en-maxent*
    * Check that all dependencies have the type *jar* and the scope *compile*.
    * For the JUnit dependency, set the scope to *test*, and leave the default scope for the others. We'll use JUnit later on to test if everything works.
    * Save the POM (Ctrl + S) and let Maven automatically resolve the dependencies.
@@ -49,7 +48,7 @@ This tutorial assumes that you have:
 *Note*: If Eclipse fails to find the artifacts listed above when you search for it, enter the following fields manually:
    * *groupId:* de.tudarmstadt.ukp.dkpro.core
    * *artifactId:* _dependency name given above_
-   * *version:* 1.4.0, except for the tagger model which should be 20120616.0
+   * *version:* 1.5.0, except for the tagger model which should be 20120616.0
 
 == Create your first experiment ==
    
@@ -64,42 +63,41 @@ This tutorial assumes that you have:
    
    * Now we can start processing some documents. We will read files from the file system, we use a *!TextReader*, tell it where to find the documents and select a language which language they are in. Add the *import* lines - you know where. I won't mention that from now on.
    {{{
-   import org.apache.uima.collection.CollectionReader;
+   import org.apache.uima.collection.CollectionReaderDescription;
    import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
-   import static org.uimafit.factory.CollectionReaderFactory.*;
+   import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 
-   CollectionReader cr = createCollectionReader(
+   CollectionReaderDescription cr = createReader(
          TextReader.class,
-         TextReader.PARAM_PATH, "src/test/resources",
-         TextReader.PARAM_LANGUAGE, "en",
-         TextReader.PARAM_PATTERNS, new String[] {"[+]*.txt"});
+         TextReader.PARAM_PATH, "src/test/resources/*.txt",
+         TextReader.PARAM_LANGUAGE, "en");
    }}}
    * Next we want to analyze the documents. For this we need the description of the analysis engines we want to use, and they can be created like this:
    {{{
    import org.apache.uima.analysis_engine.AnalysisEngineDescription;
    import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-   import static org.uimafit.factory.AnalysisEngineFactory.*;
+   import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
 
-   AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
+   AnalysisEngineDescription seg = createEngineDescription(BreakIteratorSegmenter.class);
    }}} 
 
    This particular analysis engine is responsible for breaking a document into sentences and words (tokens). Now we'll create a description for an engine which annotates the words with their part of speech (e.g. as a verb, noun, etc.):
    {{{
    import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
    
-   AnalysisEngineDescription tagger = createPrimitiveDescription(OpenNlpPosTagger.class);
+   AnalysisEngineDescription tagger = createEngineDescription(OpenNlpPosTagger.class);
    }}}
    * Now we want to save our analysis results, so we can actually look at them. For this purpose we use the *CASDumpWriter* to write all the information to a file (output.txt).
    {{{
-   import org.uimafit.component.xwriter.CASDumpWriter;
+   import org.apache.uima.fit.component.CasDumpWriter;
    
    AnalysisEngineDescription cc = createPrimitiveDescription(
-         CASDumpWriter.class,
-         CASDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
+         CasDumpWriter.class,
+         CasDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
    }}}
    * Finally, we need to consecutively read the documents, analyses them and then writes the analysis results to a file. Hence, we combine these separate parts into a pipeline:
    {{{
-   import static org.uimafit.pipeline.SimplePipeline.*;
+   import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 
    runPipeline(cr, seg, tagger, cc);
    }}}
@@ -108,13 +106,13 @@ This tutorial assumes that you have:
    {{{
    package de.tudarmstadt.ukp.experiments.xx.gettingstarted;
 
-   import static org.uimafit.factory.AnalysisEngineFactory.*;
-   import static org.uimafit.factory.CollectionReaderFactory.*;
-   import static org.uimafit.pipeline.SimplePipeline.*;
+   import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+   import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
+   import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 
    import org.apache.uima.analysis_engine.AnalysisEngineDescription;
-   import org.apache.uima.collection.CollectionReader;
-   import org.uimafit.component.xwriter.CASDumpWriter;
+   import org.apache.uima.collection.CollectionReaderDescription;
+   import org.apache.uima.fit.component.CasDumpWriter;
 
    import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
    import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
@@ -124,19 +122,18 @@ This tutorial assumes that you have:
    {
       public static void main(String[] args) throws Exception
       {
-         CollectionReader cr = createCollectionReader(
+         CollectionReaderDescription cr = createReaderDescription(
             TextReader.class,
-            TextReader.PARAM_PATH, "src/test/resources",
-            TextReader.PARAM_LANGUAGE, "en",
-            TextReader.PARAM_PATTERNS, new String[] {"[+]*.txt"});
+            TextReader.PARAM_PATH, "src/test/resources/*.txt",
+            TextReader.PARAM_LANGUAGE, "en");
 		
-         AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
+         AnalysisEngineDescription seg = createEngineDescription(BreakIteratorSegmenter.class);
 	   
-         AnalysisEngineDescription tagger = createPrimitiveDescription(OpenNlpPosTagger.class);
+         AnalysisEngineDescription tagger = createEngineDescription(OpenNlpPosTagger.class);
 	   
-         AnalysisEngineDescription cc = createPrimitiveDescription(
-            CASDumpWriter.class,
-            CASDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
+         AnalysisEngineDescription cc = createEngineDescription(
+            CasDumpWriter.class,
+            CasDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
 	   
          runPipeline(cr, seg, tagger, cc);
       }
