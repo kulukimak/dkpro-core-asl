@@ -8,7 +8,7 @@ _by Steven Burrows (2013), Richard Eckart de Castilho (2012),  Erik-Lân Do Dinh
 
 This small tutorial will show you how to build your first small application with DKPro Core, from creating a new project to your first annotated document. Please make sure your environment is properly set up as described [UserSetup here] before you start.
 
-*Note for the impatient: This tutorial is for people using Java and Maven. If you want to get into DKPro Core even faster, you can Groovy and use our [DKProGroovyCookbook  cut and paste recipes].*
+*Note for the impatient: If you want to get into DKPro Core even faster, you can use our [DKProGroovyCookbook  cut and paste recipes] with Groovy.*
 
 == Prerequisites ==
 
