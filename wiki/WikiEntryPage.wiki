@@ -14,7 +14,7 @@ For people who want to use a DKPro release version.
 = Reference documentation =
 
   * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdGh2azY2ODMtZDRNczUySEZJUFpXM2c&single=true&gid=0&output=html Models (DKPro Core 1.5.0)] (ASL/GPL)
-  * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html Models (DKPro Core 1.5.1)]
+  * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html Models (DKPro Core 1.5.1)] (ASL/GPL)
 
 = Developer documentation =
 
