@@ -1,12 +1,6 @@
 = Configuring a project for access to models =
 
-If your project uses the DKPro Core ASL master POM as parent, you automatically inherit access to the UKP model repository. The coordinates of this POM are:
-
-  * *groupId:* de.tudarmstadt.ukp.dkpro.core
-  * *artifactId:* de.tudarmstadt.ukp.dkpro.core-asl
-  * *version:* 1.4.0 (or higher)
-
-Otherwise, you have to add the following repository section to your project in order to get access to the models:
+Add the following repository section to your project in order to get access to the models:
 
 {{{
 <repositories>
