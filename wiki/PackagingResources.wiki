@@ -28,7 +28,7 @@ the new resource JARs should be available in the search dialog when you add depe
 
 == Example: how to package !TreeTagger binaries and models ==
 
-!TreeTagger and its models cannot be re-distributed with DKPro Core, you need to download it yourself. For your convenience, we included an Apache Ant script called `build.xml` in the `src/main/scripts` folder of the TreeTagger module. This script downloads the !TreeTagger binaries and models and packages them as artifacts, allowing you to simply add them as dependencies in Maven.
+!TreeTagger and its models cannot be re-distributed with DKPro Core, you need to download it yourself. For your convenience, we included an Apache Ant script called `build.xml` in the `src/main/scripts` folder of the !TreeTagger module. This script downloads the !TreeTagger binaries and models and packages them as artifacts, allowing you to simply add them as dependencies in Maven.
 
 To run the script, you need to have Ant 1.8.x installed and configured in Eclipse. This is already the case with Eclipse 3.7.x. If you use an older Eclipse version, please see the section below on installing Ant in Eclipse.
 
