@@ -9,12 +9,13 @@
 
 = Language Identification =
 
-  * LangDect (Token ngram-based )
+  * !LangDect (Token ngram-based )
   * !TextCat
 
 = Lemmatization =
 
-  * TreeTagger
+  * !LanguageToolLemmatizer
+  * !TreeTagger
 
 = Morphological Annotation =
 
@@ -33,9 +34,10 @@
   * OpenNLP
   * !TreeTagger
 
-= Segmentation =
+= Segmentation / Tokenization =
 
-  * .
+  * !BreakIteratorSegmenter
+  * !LanguageToolSegmenter
 
 = Semantic Role Labelling =
 
@@ -44,11 +46,8 @@
 = Spell Checking =
 
   * Jazzy
+  * !LanguageToolChecker
 
 = Stemming =
 
-  * Snowball
-
-= Tokenization =
-
-  * !BreakIteratorSegmenter
+  * !SnowballStemmer
