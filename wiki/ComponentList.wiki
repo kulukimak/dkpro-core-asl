@@ -18,7 +18,7 @@
 
   * !LanguageToolLemmatizer
   * !StanfordLemmatizer
-  * !TreeTaggerPosLemmaTT4J
+  * TreeTaggerPosLemmaTT4J
 
 == Morphological Annotation ==
 
@@ -33,6 +33,7 @@
   * !OpenNlpParser
   * !MaltParser
   * !MstParser
+  * !StanfordParser
 
 == POS Tagging ==
 
