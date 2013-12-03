@@ -39,6 +39,7 @@
   * !StanfordParser
 
 == POS Tagging ==
+  * !ArktweetTagger
   * !ClearNlpPosTagger
   * !LbjPosTagger
   * !MatePosTagger
