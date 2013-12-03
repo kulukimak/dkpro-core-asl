@@ -2,28 +2,12 @@
 
 <wiki:toc max_depth="1" />
 
-
-= Decompounding =
-
-|| *Name* || *Module* || *License* || *Languages* ||
-
-= Language Identification =
+= Tokenization =
 
 || *Name* || *Module* || *License* || *Languages* ||
+|| !BreakIterator || tokit || ASL || all ||
 
-= Lemmatization =
-
-|| *Name* || *Module* || *License* || *Languages* ||
-
-= Morphological Annotation =
-
-|| *Name* || *Module* || *License* || *Languages* ||
-
-= Named Entity Recognition =
-
-|| *Name* || *Module* || *License* || *Languages* ||
-
-= Parsing =
+= Segmentation =
 
 || *Name* || *Module* || *License* || *Languages* ||
 
@@ -33,7 +17,7 @@
 || !TreeTagger || treetagger || GPL || de, en, ... ||
 || OpenNLP || opennlp || ASL || de, en, ... ||
 
-= Segmentation =
+= Parsing =
 
 || *Name* || *Module* || *License* || *Languages* ||
 
@@ -41,20 +25,28 @@
 
 || *Name* || *Module* || *License* || *Languages* ||
 
+= Morphological Annotation =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
+
+= Language Identification =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
+= Named Entity Recognition =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
 = Spell Checking =
 
 || *Name* || *Module* || *License* || *Languages* ||
 
-= Stemming =
+= Lemmatizing/ Stemming =
 
 || *Name* || *Module* || *License* || *Languages* ||
 
-= Tokenization =
+= Decompounding =
 
 || *Name* || *Module* || *License* || *Languages* ||
-|| !BreakIterator || tokit || ASL || all ||
-
-
-
-
-
+|| Decompounding || decompounding || asl || de ||
