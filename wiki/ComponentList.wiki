@@ -5,52 +5,50 @@
 
 = Decompounding =
 
-|| *Name* || *Module* || *License* || *Languages* ||
-|| Decompounding || decompounding || asl || de ||
+  * !BananaSplitter
 
 = Language Identification =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * LangDect (Token ngram-based )
+  * !TextCat
 
 = Lemmatization =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * TreeTagger
 
 = Morphological Annotation =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * .
 
 = Named Entity Recognition =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * .
 
 = Parsing =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * .
 
 = POS Tagging =
 
-|| *Name* || *Module* || *License* || *Languages* ||
-|| !TreeTagger || treetagger || GPL || de, en, ... ||
-|| OpenNLP || opennlp || ASL || de, en, ... ||
+  * OpenNLP
+  * !TreeTagger
 
 = Segmentation =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * .
 
 = Semantic Role Labelling =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * .
 
 = Spell Checking =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * Jazzy
 
 = Stemming =
 
-|| *Name* || *Module* || *License* || *Languages* ||
+  * Snowball
 
 = Tokenization =
 
-|| *Name* || *Module* || *License* || *Languages* ||
-|| !BreakIterator || tokit || ASL || all ||
+  * !BreakIteratorSegmenter
