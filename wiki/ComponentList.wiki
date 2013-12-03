@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 == Chunker ==
-  * !TreeTaggerChunkerTT4J
+  * TreeTaggerChunkerTT4J
 
 == Decompounding ==
 
@@ -17,6 +17,7 @@
 == Lemmatization ==
 
   * !LanguageToolLemmatizer
+  * !StanfordLemmatizer
   * !TreeTaggerPosLemmaTT4J
 
 == Morphological Annotation ==
@@ -38,7 +39,7 @@
   * !LbjPosTagger
   * !MeCabTagger
   * !OpenNlpPosTagger
-  * !TreeTaggerPosLemmaTT4J
+  * TreeTaggerPosLemmaTT4J
 
 == Segmentation / Tokenization ==
 
@@ -57,5 +58,5 @@
 
 == Stemming ==
 
-  * MorphaStemmer
+  * !MorphaStemmer
   * !SnowballStemmer
