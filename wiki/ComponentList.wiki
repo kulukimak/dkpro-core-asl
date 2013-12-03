@@ -2,6 +2,8 @@
 
 <wiki:toc max_depth="2" />
 
+Further information on models for particular components can be found in the [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdGh2azY2ODMtZDRNczUySEZJUFpXM2c&single=true&gid=0&output=html list of models]
+
 == Coreference ==
   * !StanfordCoreferenceResolver
 
