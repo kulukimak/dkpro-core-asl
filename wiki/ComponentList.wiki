@@ -5,7 +5,7 @@
 = Tokenization =
 
 || *Name* || *Module* || *License* || *Languages* ||
-|| BreakIterator || tokit || ASL || all ||
+|| !BreakIterator || tokit || ASL || all ||
 
 
 = POS Tagging =
