@@ -7,7 +7,7 @@
 
 == Decompounding ==
 
-  * !BananaSplitter
+  * !CompoundAnnotator
 
 == Language Identification ==
 
@@ -26,6 +26,7 @@
 == Named Entity Recognition ==
 
   * !OpenNlpNameFinder
+  * !StanfordNamedEntityRecognizer
 
 == Parsing ==
   * !OpenNlpParser
