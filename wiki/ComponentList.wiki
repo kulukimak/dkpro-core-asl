@@ -48,6 +48,7 @@
   * !BreakIteratorSegmenter
   * !LanguageToolSegmenter
   * !OpenNlpSegmenter
+  * !StanfordSegmenter
 
 == Semantic Role Labelling ==
 
