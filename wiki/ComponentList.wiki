@@ -1,53 +1,52 @@
 #summary List of components contained in DKPro
 
-<wiki:toc max_depth="1" />
+<wiki:toc max_depth="2" />
 
-
-= Decompounding =
+== Decompounding ==
 
   * !BananaSplitter
 
-= Language Identification =
+== Language Identification ==
 
   * !LangDect (Token ngram-based )
   * !TextCat
 
-= Lemmatization =
+== Lemmatization ==
 
   * !LanguageToolLemmatizer
   * !TreeTagger
 
-= Morphological Annotation =
+== Morphological Annotation ==
 
   * .
 
-= Named Entity Recognition =
+== Named Entity Recognition ==
 
   * .
 
-= Parsing =
+== Parsing ==
 
   * .
 
-= POS Tagging =
+== POS Tagging ==
 
   * OpenNLP
   * !TreeTagger
 
-= Segmentation / Tokenization =
+== Segmentation / Tokenization ==
 
   * !BreakIteratorSegmenter
   * !LanguageToolSegmenter
 
-= Semantic Role Labelling =
+== Semantic Role Labelling ==
 
   * .
 
-= Spell Checking =
+== Spell Checking ==
 
   * Jazzy
   * !LanguageToolChecker
 
-= Stemming =
+== Stemming ==
 
   * !SnowballStemmer
