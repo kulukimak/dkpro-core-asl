@@ -9,37 +9,34 @@
   * TreeTaggerChunkerTT4J
 
 == Decompounding ==
-
   * !CompoundAnnotator
 
 == Language Identification ==
-
   * !LangDect (Token ngram-based )
   * !TextCat
 
 == Lemmatization ==
-
+  * !ClearNlpLemmatizer
   * !LanguageToolLemmatizer
   * !StanfordLemmatizer
   * TreeTaggerPosLemmaTT4J
 
 == Morphological Annotation ==
-
   * .
 
 == Named Entity Recognition ==
-
   * !OpenNlpNameFinder
   * !StanfordNamedEntityRecognizer
 
 == Parsing ==
+  * !ClearNlpDependencyParser
   * !OpenNlpParser
   * !MaltParser
   * !MstParser
   * !StanfordParser
 
 == POS Tagging ==
-
+  * !ClearNlpPosTagger
   * !LbjPosTagger
   * !MeCabTagger
   * !OpenNlpPosTagger
@@ -47,15 +44,14 @@
   * TreeTaggerPosLemmaTT4J
 
 == Segmentation / Tokenization ==
-
+  * !ClearNlpSegmenter
   * !BreakIteratorSegmenter
   * !LanguageToolSegmenter
   * !OpenNlpSegmenter
   * !StanfordSegmenter
 
 == Semantic Role Labelling ==
-
-  * .
+  * !ClearNlpSemanticRoleLabeler
 
 == Spell Checking ==
   * !LanguageToolChecker
@@ -63,6 +59,5 @@
   * !SpellChecker (Jazzy)
 
 == Stemming ==
-
   * !MorphaStemmer
   * !SnowballStemmer
