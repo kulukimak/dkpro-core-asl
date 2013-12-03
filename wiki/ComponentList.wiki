@@ -12,7 +12,7 @@
 
 || *Name* || *Module* || *License* || *Languages* ||
 || !TreeTagger || treetagger || GPL || de, en, ... ||
-|| OpenNLP || opennlp || GPL || de, en, ... ||
+|| OpenNLP || opennlp || ASL || de, en, ... ||
 
 = Parsing =
 
