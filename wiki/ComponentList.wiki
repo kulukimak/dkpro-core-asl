@@ -2,6 +2,9 @@
 
 <wiki:toc max_depth="2" />
 
+== Coreference ==
+  * !StanfordCoreferenceResolver
+
 == Chunker ==
   * TreeTaggerChunkerTT4J
 
