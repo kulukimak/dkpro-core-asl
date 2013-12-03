@@ -2,6 +2,9 @@
 
 <wiki:toc max_depth="2" />
 
+== Chunker ==
+  * !TreeTaggerChunkerTT4J
+
 == Decompounding ==
 
   * !BananaSplitter
@@ -14,7 +17,7 @@
 == Lemmatization ==
 
   * !LanguageToolLemmatizer
-  * !TreeTagger
+  * !TreeTaggerPosLemmaTT4J
 
 == Morphological Annotation ==
 
@@ -22,31 +25,37 @@
 
 == Named Entity Recognition ==
 
-  * .
+  * !OpenNlpNameFinder
 
 == Parsing ==
-
-  * .
+  * !OpenNlpParser
+  * !MaltParser
+  * !MstParser
 
 == POS Tagging ==
 
-  * OpenNLP
-  * !TreeTagger
+  * !LbjPosTagger
+  * !MeCabTagger
+  * !OpenNlpPosTagger
+  * !TreeTaggerPosLemmaTT4J
 
 == Segmentation / Tokenization ==
 
   * !BreakIteratorSegmenter
+  * !JWordSplitter
   * !LanguageToolSegmenter
+  * !OpenNlpSegmenter
 
 == Semantic Role Labelling ==
 
   * .
 
 == Spell Checking ==
-
-  * Jazzy
   * !LanguageToolChecker
+  * !NorvigSpellingCorrector
+  * !SpellChecker (Jazzy)
 
 == Stemming ==
 
+  * MorphaStemmer
   * !SnowballStemmer
