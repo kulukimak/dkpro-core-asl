@@ -18,11 +18,12 @@
 == Lemmatization ==
   * !ClearNlpLemmatizer
   * !LanguageToolLemmatizer
+  * !MateLemmatizer
   * !StanfordLemmatizer
   * TreeTaggerPosLemmaTT4J
 
 == Morphological Annotation ==
-  * .
+  * !MateMorphTagger
 
 == Named Entity Recognition ==
   * !OpenNlpNameFinder
@@ -32,12 +33,14 @@
   * !ClearNlpDependencyParser
   * !OpenNlpParser
   * !MaltParser
+  * !MateParser
   * !MstParser
   * !StanfordParser
 
 == POS Tagging ==
   * !ClearNlpPosTagger
   * !LbjPosTagger
+  * !MatePosTagger
   * !MeCabTagger
   * !OpenNlpPosTagger
   * !StanfordPosTagger
