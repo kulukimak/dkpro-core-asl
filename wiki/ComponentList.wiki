@@ -13,6 +13,10 @@ Further information on models for particular components can be found in the [htt
 == Decompounding ==
   * !CompoundAnnotator
 
+== Dictionary Annotation ==
+  * !DictionaryAnnotator
+  * !SemanticFieldAnnotator
+
 == Language Identification ==
   * !LangDect (Token ngram-based )
   * !TextCat
