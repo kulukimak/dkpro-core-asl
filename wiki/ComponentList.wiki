@@ -7,6 +7,9 @@
 || *Name* || *Module* || *License* || *Languages* ||
 || !BreakIterator || tokit || ASL || all ||
 
+= Segmentation =
+
+|| *Name* || *Module* || *License* || *Languages* ||
 
 = POS Tagging =
 
@@ -17,6 +20,15 @@
 = Parsing =
 
 || *Name* || *Module* || *License* || *Languages* ||
+
+= Semantic Role Labelling =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
+= Morphological Annotation =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
 
 = Language Identification =
 
