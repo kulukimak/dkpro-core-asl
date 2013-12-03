@@ -17,6 +17,7 @@
 
 == Lemmatization ==
   * !ClearNlpLemmatizer
+  * !GateLemmatizer
   * !LanguageToolLemmatizer
   * !MateLemmatizer
   * !StanfordLemmatizer
