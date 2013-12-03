@@ -25,12 +25,14 @@
 
 == Morphological Annotation ==
   * !MateMorphTagger
+  * !SfstAnnotator
 
 == Named Entity Recognition ==
   * !OpenNlpNameFinder
   * !StanfordNamedEntityRecognizer
 
 == Parsing ==
+  * !BerkeleyParser
   * !ClearNlpDependencyParser
   * !OpenNlpParser
   * !MaltParser
