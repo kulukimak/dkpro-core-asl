@@ -1,0 +1,39 @@
+#summary List of components contained in DKPro
+
+<wiki:toc max_depth="1" />
+
+= Tokenization =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+|| BreakIterator || tokit || ASL || all ||
+
+
+= POS Tagging =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+|| !TreeTagger || treetagger || GPL || de, en, ... ||
+|| OpenNLP || opennlp || GPL || de, en, ... ||
+
+= Parsing =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
+= Language Identification =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
+= Named Entity Recognition =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
+= Spell Checking =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
+= Lemmatizing/ Stemming =
+
+|| *Name* || *Module* || *License* || *Languages* ||
+
+= Decompounding =
+
+|| *Name* || *Module* || *License* || *Languages* ||
