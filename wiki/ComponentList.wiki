@@ -38,13 +38,13 @@ Further information on models for particular components can be found in the [htt
   * !StanfordNamedEntityRecognizer
 
 == Parsing ==
-  * !BerkeleyParser
-  * !ClearNlpDependencyParser
-  * !OpenNlpParser
-  * !MaltParser
-  * !MateParser
-  * !MstParser
-  * !StanfordParser
+  * !BerkeleyParser (constituents)
+  * !ClearNlpDependencyParser (dependencies)
+  * !OpenNlpParser (constituents)
+  * !MaltParser (dependencies) 
+  * !MateParser (dependencies) 
+  * !MstParser (dependencies)
+  * !StanfordParser (constituents, dependencies for some languages)
 
 == POS Tagging ==
   * !ArktweetTagger
