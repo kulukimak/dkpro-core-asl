@@ -10,6 +10,7 @@ For people who want to use a DKPro release version.
   * [TypeSystem Type system]
   * [UkpMavenRepository Public UKP-OSS Maven repository]
   * [DKProGroovyCookbook Groovy scripts for DKPro Core pipelines]
+  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/lastSuccessfulBuild/artifact/de.tudarmstadt.ukp.dkpro.core.docbook-asl/target/docbkx/pdf/dkpro.core.book.pdf DKPro Core Guide and Reference] (1.6.0-SNAPSHOT)
 
 = Reference documentation =
 
