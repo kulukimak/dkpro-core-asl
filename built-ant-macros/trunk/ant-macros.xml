@@ -585,6 +585,7 @@ Actual  : ${@{prop.verify.md5.actual}}
 	 -->
 	<target name="install-artifact-local">
 		<delete dir="target/install-artifact-staging"/>
+		<mkdir dir="target/install-artifact-staging"/>
 		<!-- Copy the POM -->
 		<unzip src="${file}" dest="target/install-artifact-staging">
     		<patternset>
