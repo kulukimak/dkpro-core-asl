@@ -45,3 +45,4 @@ For people who want to work on the DKPro source code or like to live on the blee
   * [TypeSystem2 Type system reorg]
   * [UniversalPosMapping1_5 DKPro Core 1.5.0 to Universal POS tags mapping]
   * ComponentList
+  * [UnintegratableSoftware Software that cannot be integrated into DKPro Core]
