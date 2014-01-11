@@ -1,0 +1,12 @@
+#summary Overview of NLP software that cannot be integrated and distributed with DKPro Core
+
+This page provides an overview over software that cannot be integrated and distributed with DKPro Core for one or more of the following reasons:
+
+   * Service only - the software is only available as a web-service. DKPro Core aims to be a collection of portable NLP components that can easily be deployed on any Linux, Windows or OS X machine. Software that is only available as a service is problematic for various reasons. E.g. the data must be transferred to the service for being processed. For large amounts of data or for sensitive data, this may not be possible. DKPro Core components are versioned and each of the versions is available indefinitely (or until Maven Central goes away). Hosting the artifacts requires comparatively few resources. Hosting a live service consumes comparatively many resources. Therefore it is not possible to host all versions of a service. Thus, a service may easily change due to upgrades or go away due to lack of funding.
+   * Not redistributable - the software may not be distributed from other parties than the original provider. All DKPro Core components are meant to be self-contained and should not require the user to install additional software on a machine where it is executed. If a DKPro Core component requires a library or tool, it should be able to acquire it automatically from Maven Central or from the UKP Lab OSS Maven repository. Some licenses prohibit redistribution, thus we cannot upload them either of these Maven repositories.
+   * Not statically compilable - the software is written in a non-Java language and cannot be compiled in such a way that it runs on a reasonably large set of machines. E.g. it may depend on too many dynamically linked libraries.
+   * Requires runtime - the software is written in a non-Java language that requires a runtime environment which cannot easily be deployed automatically a machine by DKPro Core. This includes software written in Python, Perl, or similar languages.
+
+|| *Software* || *Reason* || *Comment* || 
+|| [http://www.inf.u-szeged.hu/rgai/nlp?lang=en&page=magyarlanc magyarlanc] || Not redistributable || ||
+|| [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger] || Not redistributable || DKPro Core supports TreeTagger, but users have to download binaries and models themselves. DKPro Core runs TreeTagger in a separate process, thus there are no compile-time dependencies on any part of TreeTagger. ||
