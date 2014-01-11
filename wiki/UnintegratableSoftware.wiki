@@ -9,4 +9,4 @@ This page provides an overview over software that cannot be integrated and distr
 
 || *Software* || *Reason* || *Comment* || 
 || [http://www.inf.u-szeged.hu/rgai/nlp?lang=en&page=magyarlanc magyarlanc] || Not redistributable || ||
-|| [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger] || Not redistributable || DKPro Core supports TreeTagger, but users have to download binaries and models themselves. DKPro Core runs TreeTagger in a separate process, thus there are no compile-time dependencies on any part of TreeTagger. ||
+|| [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger] || Not redistributable || DKPro Core supports !TreeTagger, but users have to download binaries and models themselves. DKPro Core runs !TreeTagger in a separate process, thus there are no compile-time dependencies on any part of TreeTagger. ||
