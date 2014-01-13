@@ -13,3 +13,4 @@ This page provides an overview over software that we will not integrate and dist
 || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LXTagger.html LX-Tagger] || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LX-Tagger_License.pdf Not redistributable] || ||
 || [http://lxcenter.di.fc.ul.pt/tools/pt/conteudo/LXParser.html LX-Parser] || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LX-Parser_License.pdf Not redistributable] || Additionally, the LX-Parser requires an ancient version of the Stanford Parser. It is not kept up-to-date with recent Stanford releases. ||
 || [http://lxcenter.di.fc.ul.pt/tools/pt/conteudo/LXTokenizer.html LX-Tokenizer] || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LX-Tokenizer_License.pdf Not redistributable] || Additionally, the LX-Tokenizer is only available as a binary for Linux. No Windows or OS X support. ||
+[[ [http://nlptools.infoiasi.ro/Software.jsp UAIC NLP Tools for Romanian] || Service only || ||
