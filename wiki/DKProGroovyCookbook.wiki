@@ -109,7 +109,7 @@ dog NN
 . .
 }}}
 
-== OpenNLP Part-of-speech tagging pipeline using JCasIterable and custom analysis result handling ==
+== OpenNLP Part-of-speech tagging pipeline with direct access to results ==
 
 Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
 
@@ -135,7 +135,7 @@ import de.tudarmstadt.ukp.dkpro.core.io.text.*;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
 
-def pipeline = new JCasIterable(
+def pipeline = SimplePipeline.iteratePipeline(
   createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0],
     TextReader.PARAM_LANGUAGE, args[1],
@@ -208,7 +208,7 @@ test NN
 (ROOT (S (NP (DT This)) (VP (VBZ is) (NP (DT a) (NN test)))))
 }}}
 
-== !MaltParser dependency parsing pipeline using JCasIterable ==
+== !MaltParser dependency parsing pipeline with direct access to results ==
 
 Reads the specified file and prints dependencies, one per line. Multiple files can be specified using a wildcard, e.g. '*.txt' (the single quotes are part of the argument to avoid the shell expanding the wildcard!).
 
@@ -240,7 +240,7 @@ import de.tudarmstadt.ukp.dkpro.core.io.text.*;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.*;
 
 // Assemble and run pipeline
-def pipeline = new JCasIterable(
+def pipeline = SimplePipeline.iteratePipeline(
   createReaderDescription(TextReader,
     TextReader.PARAM_SOURCE_LOCATION, args[0], // first command line parameter
     TextReader.PARAM_LANGUAGE, args[1]), // second command line parameter
@@ -368,7 +368,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.ner.type.*;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
 
 // Assemble and run pipeline
-def pipeline = new JCasIterable(
+def pipeline = SimplePipeline.iteratePipeline(
   createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0],     //first command line parameter
     TextReader.PARAM_LANGUAGE, args[1], //second command line parameter
