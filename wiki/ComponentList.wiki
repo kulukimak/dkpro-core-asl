@@ -49,6 +49,7 @@ Further information on models for particular components can be found in the [htt
 == POS Tagging ==
   * !ArktweetTagger
   * !ClearNlpPosTagger
+  * !HunPosTagger
   * !LbjPosTagger
   * !MatePosTagger
   * !MeCabTagger
