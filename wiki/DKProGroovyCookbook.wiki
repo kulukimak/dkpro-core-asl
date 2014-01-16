@@ -124,7 +124,6 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
       version='1.5.0')
 
-import org.apache.uima.fit.factory.JCasFactory;
 import org.apache.uima.fit.pipeline.*;
 import static org.apache.uima.fit.util.JCasUtil.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
