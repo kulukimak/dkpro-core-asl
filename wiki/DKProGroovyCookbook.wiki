@@ -282,6 +282,9 @@ Call with `pipeline <inputfolder> <language> <outputfolder>`, e.g. `pipeline inp
       module='de.tudarmstadt.ukp.dkpro.core.maltparser-asl', 
       version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
+      module='de.tudarmstadt.ukp.dkpro.core.clearnlp-asl', 
+      version='1.5.0')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
       version='1.5.0')
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
@@ -292,6 +295,7 @@ import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
 
+import de.tudarmstadt.ukp.dkpro.core.clearnlp.*;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
 import de.tudarmstadt.ukp.dkpro.core.maltparser.*;
 import de.tudarmstadt.ukp.dkpro.core.io.conll.*;
@@ -305,6 +309,7 @@ runPipeline(
     TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
   createEngineDescription(OpenNlpSegmenter),
   createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(ClearNlpLemmatizer),
   createEngineDescription(MaltParser),
   createEngineDescription(Conll2006Writer,
     Conll2006Writer.PARAM_TARGET_LOCATION, args[2])); // third command line parameter);
@@ -313,16 +318,16 @@ runPipeline(
 Example output:
 
 {{{
-1	The	the	DT	_	_	4	det	_	_
-2	quick	quick	JJ	_	_	4	amod	_	_
-3	brown	brown	JJ	_	_	4	amod	_	_
-4	fox	fox	NN	_	_	5	nsubj	_	_
-5	jumps	jump	VBZ	_	_	_	_	_	_
-6	over	over	IN	_	_	5	prep	_	_
-7	the	the	DT	_	_	9	det	_	_
-8	lazy	lazy	JJ	_	_	9	amod	_	_
-9	dog	dog	NN	_	_	6	pobj	_	_
-10	.	.	.	_	_	_	_	_	_
+1	The	the	DT	DT	_	5	det	_	_
+2	quick	quick	JJ	JJ	_	5	amod	_	_
+3	brown	brown	JJ	JJ	_	5	amod	_	_
+4	fox	fox	NN	NN	_	5	nn	_	_
+5	jumps	jump	NNS	NNS	_	0	_	_	_
+6	over	over	IN	IN	_	5	prep	_	_
+7	the	the	DT	DT	_	9	det	_	_
+8	lazy	lazy	JJ	JJ	_	9	amod	_	_
+9	dog	dog	NN	NN	_	6	pobj	_	_
+10	.	.	.	.	_	5	punct	_	_
 }}}
 
 == Fully mixed pipeline ==
