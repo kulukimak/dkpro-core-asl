@@ -30,7 +30,7 @@ Call with `pipeline <foldername> <language> <outputfile>`, e.g. `pipeline myFold
       module='de.tudarmstadt.ukp.dkpro.core.io.imscwb-asl', 
       version='1.5.0')
 
-import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
 
@@ -39,7 +39,7 @@ import de.tudarmstadt.ukp.dkpro.core.io.text.*;
 import de.tudarmstadt.ukp.dkpro.core.io.imscwb.*;
 
 // Assemble and run pipeline
-SimplePipeline.runPipeline(  
+runPipeline(  
   createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0], // first command line parameter
     TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
@@ -67,7 +67,7 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 import org.apache.uima.jcas.JCas;
 
-import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.util.JCasUtil.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
@@ -77,7 +77,7 @@ import de.tudarmstadt.ukp.dkpro.core.io.text.*;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
 
 // Assemble and run pipeline
-SimplePipeline.runPipeline(  
+runPipeline(  
   createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0], // first command line parameter
     TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
@@ -124,7 +124,7 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
       module='de.tudarmstadt.ukp.dkpro.core.io.text-asl', 
       version='1.5.0')
 
-import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.util.JCasUtil.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
@@ -134,7 +134,7 @@ import de.tudarmstadt.ukp.dkpro.core.io.text.*;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
 
-def pipeline = SimplePipeline.iteratePipeline(
+def pipeline = iteratePipeline(
   createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0],
     TextReader.PARAM_LANGUAGE, args[1],
@@ -174,19 +174,20 @@ Mind to provide more memory to Groovy using the command `export JAVA_OPTS="-Xmx1
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', 
       version='1.5.0')
 
-import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
-import org.apache.uima.fit.factory.JCasFactory;
-import org.apache.uima.fit.pipeline.SimplePipeline;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
-import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
+import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.util.JCasUtil.*;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
+import org.apache.uima.fit.factory.JCasFactory;
+
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
 
 def jcas = JCasFactory.createJCas();
 jcas.documentText = "This is a test";
 jcas.documentLanguage = "en";
 
-SimplePipeline.runPipeline(jcas,
+runPipeline(jcas,
   createEngineDescription(OpenNlpSegmenter),
   createEngineDescription(OpenNlpPosTagger),
   createEngineDescription(OpenNlpParser,
@@ -228,7 +229,7 @@ Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
       module='de.tudarmstadt.ukp.dkpro.core.io.conll-asl', 
       version='1.5.0')
 
-import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.util.JCasUtil.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
@@ -239,7 +240,7 @@ import de.tudarmstadt.ukp.dkpro.core.io.text.*;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.*;
 
 // Assemble and run pipeline
-def pipeline = SimplePipeline.iteratePipeline(
+def pipeline = iteratePipeline(
   createReaderDescription(TextReader,
     TextReader.PARAM_SOURCE_LOCATION, args[0], // first command line parameter
     TextReader.PARAM_LANGUAGE, args[1]), // second command line parameter
@@ -287,7 +288,7 @@ Call with `pipeline <inputfolder> <language> <outputfolder>`, e.g. `pipeline inp
       module='de.tudarmstadt.ukp.dkpro.core.io.conll-asl', 
       version='1.5.0')
 
-import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
 
@@ -297,7 +298,7 @@ import de.tudarmstadt.ukp.dkpro.core.io.conll.*;
 import de.tudarmstadt.ukp.dkpro.core.io.text.*;
 
 // Assemble and run pipeline
-SimplePipeline.runPipeline(
+runPipeline(
   createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0], // first command line parameter
     TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
@@ -351,7 +352,7 @@ Call with `pipeline <inputfolder> <language>`, e.g. `pipeline input en`.
       module='de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl', 
       version='1.5.0')
 
-import org.apache.uima.fit.pipeline.*;
+import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.util.JCasUtil.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*;
@@ -367,7 +368,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.ner.type.*;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.*;
 
 // Assemble and run pipeline
-def pipeline = SimplePipeline.iteratePipeline(
+def pipeline = iteratePipeline(
   createReaderDescription(TextReader,
     TextReader.PARAM_PATH, args[0],     //first command line parameter
     TextReader.PARAM_LANGUAGE, args[1], //second command line parameter
