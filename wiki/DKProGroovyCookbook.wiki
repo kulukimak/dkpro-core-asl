@@ -210,7 +210,7 @@ test NN
 
 == !MaltParser dependency parsing pipeline using JCasIterable ==
 
-Reads all text files (`*.txt`) in the specified folder and prints dependencies, one per line.
+Reads the specified file and prints dependencies, one per line. Multiple files can be specified using a wildcard, e.g. '*.txt' (the single quotes are part of the argument to avoid the shell expanding the wildcard!).
 
 Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
@@ -242,32 +242,29 @@ import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.*;
 // Assemble and run pipeline
 def pipeline = new JCasIterable(
   createReaderDescription(TextReader,
-    TextReader.PARAM_PATH, args[0], // first command line parameter
-    TextReader.PARAM_LANGUAGE, args[1], // second command line parameter
-    TextReader.PARAM_PATTERNS, ["[+]*.txt"]),
+    TextReader.PARAM_SOURCE_LOCATION, args[0], // first command line parameter
+    TextReader.PARAM_LANGUAGE, args[1]), // second command line parameter
   createEngineDescription(OpenNlpSegmenter),
   createEngineDescription(OpenNlpPosTagger),
   createEngineDescription(MaltParser));
 
 for (def jcas : pipeline) {
-  select(jcas, Dependency).each { println "dep: [${it.dependencyType}] \t gov: [${it.governor.coveredText}] \t dep: [${it.dependent.coveredText}]" }
+  select(jcas, Dependency).each { 
+    println "dep: [${it.dependencyType}] \t gov: [${it.governor.coveredText}] \t dep: [${it.dependent.coveredText}]" 
+  }
 }
 }}}
 
 Example output:
 
 {{{
-dep: [det] 	 gov: [test] 	 dep: [a]
-dep: [cop] 	 gov: [test] 	 dep: [is]
-dep: [nsubj] 	 gov: [test] 	 dep: [This]
-dep: [det] 	 gov: [fox] 	 dep: [The]
-dep: [amod] 	 gov: [fox] 	 dep: [quick]
-dep: [amod] 	 gov: [fox] 	 dep: [brown]
-dep: [nsubj] 	 gov: [jumps] 	 dep: [fox]
-dep: [prep] 	 gov: [jumps] 	 dep: [over]
-dep: [pobj] 	 gov: [over] 	 dep: [dog]
-dep: [det] 	 gov: [dog] 	 dep: [the]
-dep: [amod] 	 gov: [dog] 	 dep: [lazy]
+dep: [nsubj] 	 gov: [wants] 	 dep: [Alice]
+dep: [aux] 	 gov: [see] 	 dep: [to]
+dep: [xcomp] 	 gov: [wants] 	 dep: [see]
+dep: [nn] 	 gov: [parsing] 	 dep: [dependency]
+dep: [dobj] 	 gov: [see] 	 dep: [parsing]
+dep: [prep] 	 gov: [parsing] 	 dep: [with]
+dep: [pobj] 	 gov: [with] 	 dep: [UIMA.]
 }}}
 
 == !MaltParser dependency parsing pipeline writing to CONLL format ==
