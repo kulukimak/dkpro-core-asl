@@ -8,7 +8,7 @@ This page provides an overview over software that we will not integrate and dist
    * *Requires runtime* - the software is written in a non-Java language that requires a runtime environment which cannot easily be deployed automatically a machine by DKPro Core. This includes software written in Python, Perl, or similar languages.
 
 || *Software* || *Reason* || *Comment* || 
-|| [http://www.inf.u-szeged.hu/rgai/nlp?lang=en&page=magyarlanc magyarlanc] || [http://www.inf.u-szeged.hu/rgai/magyarlanc_license Not redistributable] || ||
+|| [http://www.nactem.ac.uk/enju/ Enju parser] || Not redistributable || 2.3. You shall not distribute and not make Commercial Use of the Software or Derivative Works of the Software without having executed an appropriate licence. |||| [http://www.inf.u-szeged.hu/rgai/nlp?lang=en&page=magyarlanc magyarlanc] || [http://www.inf.u-szeged.hu/rgai/magyarlanc_license Not redistributable] || ||
 || [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger] || [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/Tagger-Licence Not redistributable] || DKPro Core supports !TreeTagger, but users have to download binaries and models themselves. DKPro Core runs !TreeTagger in a separate process, thus there are no compile-time dependencies on any part of !TreeTagger. ||
 || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LXTagger.html LX-Tagger] || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LX-Tagger_License.pdf Not redistributable] || ||
 || [http://lxcenter.di.fc.ul.pt/tools/pt/conteudo/LXParser.html LX-Parser] || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LX-Parser_License.pdf Not redistributable] || Additionally, the LX-Parser requires an ancient version of the Stanford Parser. It is not kept up-to-date with recent Stanford releases. ||
@@ -16,4 +16,3 @@ This page provides an overview over software that we will not integrate and dist
 || [http://nlptools.infoiasi.ro/Software.jsp UAIC NLP Tools] || Service only || ||
 || [http://www.alchemyapi.com AlchemyAPI] || Service only || ||
 || [http://www.opencalais.com OpenCalais] || Service only || ||
-|| [http://www.nactem.ac.uk/enju/ Enju parser] || Not redistributable || 2.3. You shall not distribute and not make Commercial Use of the Software or Derivative Works of the Software without having executed an appropriate licence. ||
