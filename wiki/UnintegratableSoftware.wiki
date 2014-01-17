@@ -8,7 +8,7 @@ This page provides an overview over software that we will not integrate and dist
    * *Requires runtime* - the software is written in a non-Java language that requires a runtime environment which cannot easily be deployed automatically a machine by DKPro Core. This includes software written in Python, Perl, or similar languages.
 
 || *Software* || *Reason* || *Comment* || 
-|| [http://www.nactem.ac.uk/enju/ Enju parser] || Not redistributable || 2.3. You shall not distribute and not make Commercial Use of the Software or Derivative Works of the Software without having executed an appropriate licence. ||
+|| [http://www.nactem.ac.uk/enju/ Enju parser] || [http://www.nactem.ac.uk/tsujii//downloads/files/enju/COPYING.txt Not redistributable] || ||
 || [http://www.inf.u-szeged.hu/rgai/nlp?lang=en&page=magyarlanc magyarlanc] || [http://www.inf.u-szeged.hu/rgai/magyarlanc_license Not redistributable] || ||
 || [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger] || [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/Tagger-Licence Not redistributable] || DKPro Core supports !TreeTagger, but users have to download binaries and models themselves. DKPro Core runs !TreeTagger in a separate process, thus there are no compile-time dependencies on any part of !TreeTagger. ||
 || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LXTagger.html LX-Tagger] || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LX-Tagger_License.pdf Not redistributable] || ||
