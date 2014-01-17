@@ -10,7 +10,7 @@ This page provides an overview over software that we will not integrate and dist
 || *Software* || *Reason* || *Comment* || 
 || [http://www.nactem.ac.uk/enju/ Enju parser] || [http://www.nactem.ac.uk/tsujii//downloads/files/enju/COPYING.txt Not redistributable] || ||
 || [http://www.inf.u-szeged.hu/rgai/nlp?lang=en&page=magyarlanc magyarlanc] || [http://www.inf.u-szeged.hu/rgai/magyarlanc_license Not redistributable] || ||
-|| [https://sites.google.com/site/adwaitratnaparkhi/publications MXPOST] || [http://morphix-nlp.berlios.de/manual/node43.html Not redistributable] || ||
+|| [https://sites.google.com/site/adwaitratnaparkhi/publications MXPOST] || [http://morphix-nlp.berlios.de/manual/node43.html Not redistributable]  || ||
 || [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger] || [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/Tagger-Licence Not redistributable] || DKPro Core supports !TreeTagger, but users have to download binaries and models themselves. DKPro Core runs !TreeTagger in a separate process, thus there are no compile-time dependencies on any part of !TreeTagger. ||
 || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LXTagger.html LX-Tagger] || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LX-Tagger_License.pdf Not redistributable] || ||
 || [http://lxcenter.di.fc.ul.pt/tools/pt/conteudo/LXParser.html LX-Parser] || [http://lxcenter.di.fc.ul.pt/tools/en/conteudo/LX-Parser_License.pdf Not redistributable] || Additionally, the LX-Parser requires an ancient version of the Stanford Parser. It is not kept up-to-date with recent Stanford releases. ||
