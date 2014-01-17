@@ -16,3 +16,4 @@ This page provides an overview over software that we will not integrate and dist
 || [http://nlptools.infoiasi.ro/Software.jsp UAIC NLP Tools] || Service only || ||
 || [http://www.alchemyapi.com AlchemyAPI] || Service only || ||
 || [http://www.opencalais.com OpenCalais] || Service only || ||
+|| [http://www.nactem.ac.uk/enju/ Enju parser] || Not redistributable || 2.3. You shall not distribute and not make Commercial Use of the Software or Derivative Works of the Software without having executed an appropriate licence. ||
