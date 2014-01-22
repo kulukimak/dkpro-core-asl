@@ -1,0 +1,16 @@
+#summary How to choose components?
+
+= Introduction =
+
+Sometimes we get asked which parser, tagger, etc. is the best and which should be used. We currently do not make any evaluations of the integrated tools. Also, building a pipeline just of the "best" components may not actually yield the best results, because of several reasons:
+
+  * components or models may expect different tokenizations or tagsets
+  * components or models may be good for one domain (e.g. news) but not for another (e.g. twitter data)
+
+We recommend that you try various combinations and stick with the one that gives the best result for _your_ data.
+
+= Further references =
+
+Here are some further references that might be helpful when deciding which tools to use:
+
+   * Giesbrecht, Eugenie and Evert, Stefan (2009). Part-of-speech tagging - a solved task? An evaluation of POS taggers for the Web as corpus. In I. Alegria, I. Leturia, and S. Sharoff, editors, Proceedings of the 5th Web as Corpus Workshop (WAC5), San Sebastian, Spain. [[http://purl.org/stefan.evert/PUB/GiesbrechtEvert2009_Tagging.pdf PDF]]
