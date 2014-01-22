@@ -9,6 +9,17 @@ Sometimes we get asked which parser, tagger, etc. is the best and which should b
 
 We recommend that you try various combinations and stick with the one that gives the best result for _your_ data.
 
+= Particular Settings =
+
+== Dictionaries and other lexical resources ==
+If you use components in your pipeline that access dictionaries or other lexical resources, it might be essential to include a Lemmatizer in your pipeline:
+Many dictionaries and well-known lexical resources such as WordNet require at minimum a lemma form as a search word in order to return information about that word. For large-scale lexical resources, e.g. for Wiktionary, additional information about POS is very helpful in order to reduce the ambiguity of a given lemma form.
+
+== Lemmatizing multiwords ==
+If you use lemma information in your pipeline, you should bear in mind that multiword expressions, in particular discontinuous multiwords, might not be lemmatized as one word (or expression), but rather each multiword part might be lemmatized separately.
+In languages such as German, there are verbs with separable particle such as _anfangen_ (_an_ occurs separate from _fangen_ in particular sentence constructions). Therefore - depending on your use case - you might consider postprocessing the output of the lemmatizer in order to get the true lemmas (which you might need, e.g. in order to look up information in a lexical resource).
+
+
 = Further references =
 
 Here are some further references that might be helpful when deciding which tools to use:
