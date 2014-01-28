@@ -9,6 +9,13 @@ Sometimes we get asked which parser, tagger, etc. is the best and which should b
 
 We recommend that you try various combinations and stick with the one that gives the best result for _your_ data.
 
+= Compatibility of Components =
+When selecting components for your pipeline you should make sure that the components are compatible regarding the annotation types they expect or offer. 
+  * if a component expects an annotation type that is not provided by the preceding component, that leads to an error
+  * if a component (e.g. a reader which adds sentence annotations) provides an annotation that is added again by a subsequent component (e.g. a segmenter), that might result in strange behaviour of other components when you iterate over the annotation that has been added more than once.
+
+To check whether components are compatible, you can look at the @TypeCapability annotation which is available in all DKPro Core components.
+
 = Particular Settings =
 
 == Dictionaries and other lexical resources ==
