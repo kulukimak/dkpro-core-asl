@@ -11,10 +11,10 @@ We recommend that you try various combinations and stick with the one that gives
 
 = Compatibility of Components =
 When selecting components for your pipeline you should make sure that the components are compatible regarding the annotation types they expect or offer. 
-  * if a component expects an annotation type that is not provided by the preceding component, that leads to an error
-  * if a component (e.g. a reader which adds sentence annotations) provides an annotation that is added again by a subsequent component (e.g. a segmenter), that might result in strange behaviour of other components when you iterate over the annotation that has been added more than once.
+  * if a component expects an annotation type that is not provided by the preceding component, that may lead to an error or simply to no results
+  * if a component (e.g. a reader which adds sentence annotations) provides an annotation that is added again by a subsequent component (e.g. a segmenter), that will result in undefined behaviour of other components when you iterate over the annotation that has been added more than once.
 
-To check whether components are compatible, you can look at the @TypeCapability annotation which is available in all DKPro Core components.
+To check whether components are compatible, you can look at the @TypeCapability annotation which is available in most DKPro Core components. Mind that many components can be configured with regards to which types they consume or produce, so the @TypeCapability should be taken as a rough indicator, not as a definitive information. It is also important to note, that the @TypeCapability does say anything about the tagset being consumed or produced by a component. E.g. one if a POS-tagger uses a model that produces POS-tags from the tagset X and a dependency-parser uses a model that requires POS-tags from the tagset Y, then the two models are not semantically compatible - even though the POS-tagger and dependency-parser components are compatible on the level of the type system.
 
 = Particular Settings =
 
