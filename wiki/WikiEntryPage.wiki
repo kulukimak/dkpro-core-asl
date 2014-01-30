@@ -32,6 +32,9 @@ For people who want to work on the DKPro source code or like to live on the blee
   * [PackagingResources Packaging resources]
 
 ===Upcoming releases===
+
+The information on unreleased versions is updated continually. Individual links in this section my be broken from time to time.
+
   * *DKPro Core 1.5.1 (unreleased)*
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%201.5.x%20(Google%20Code)/javadoc/? API Docs] (ASL)
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%201.5.x%20(Google%20Code)/javadoc/? API Docs] (GPL)
