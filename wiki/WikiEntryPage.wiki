@@ -6,12 +6,12 @@
 For people who want to use a DKPro release version.
 
   * [UserSetup User Setup]
+  * [UkpMavenRepository Public UKP-OSS Maven repository]
   * [MyFirstDKProProject First Steps with DKPro Core]
   * [TypeSystem Type system]
-  * [UkpMavenRepository Public UKP-OSS Maven repository]
-  * [DKProGroovyCookbook Groovy scripts for DKPro Core pipelines]
-  * [ChoosingComponents How to choose components?]
   * [ComponentList Component overview]
+  * [ChoosingComponents How to choose components?]
+  * [DKProGroovyCookbook Groovy scripts for DKPro Core pipelines]
 
 ===Current release: DKPro Core 1.5.0===
   * [ReleaseNotes_1_5_0 DKPro Core 1.5.0 release notes]
