@@ -14,10 +14,11 @@ For people who want to use a DKPro release version.
   * [DKProGroovyCookbook Groovy scripts for DKPro Core pipelines]
 
 ===Current release: DKPro Core 1.5.0===
-  * [ReleaseNotes_1_5_0 DKPro Core 1.5.0 release notes]
+  * [ReleaseNotes_1_5_0 Release notes] (ASL/GPL)
   * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.5.0/apidocs/index.html API Docs] (ASL)
   * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.5.0/apidocs/index.html API Docs] (GPL)
   * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdGh2azY2ODMtZDRNczUySEZJUFpXM2c&single=true&gid=0&output=html Models] (ASL/GPL)
+  * [UniversalPosMapping1_5 DKPro Core to Universal POS tags mapping]
 
 = Developer documentation =
 
@@ -44,22 +45,22 @@ The information on unreleased versions is updated continually. Individual links 
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/? API Docs] (ASL)
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/? API Docs] (GPL)
     * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdFduOVpydHhURC1Bd0hpZ0c0NGJfMHc&single=true&gid=0&output=html Models] (ASL/GPL)
+  * *DKPro Core 2.0.0 (unreleased)*
+    * [TypeSystem2 Type system reorg]
 
 = Miscellaneous =
 
-  * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
-  * [TypeSystem2 Type system reorg]
-  * [UniversalPosMapping1_5 DKPro Core 1.5.0 to Universal POS tags mapping]
   * [UnintegratableSoftware Software that cannot be integrated into DKPro Core]
+  * [http://code.google.com/p/dkpro-core-asl/w/list List of wiki pages]
 
 ===Old releases===
   * *DKPro Core 1.4.0*
-     * [ReleaseNotes_1_4_0 DKPro Core ASL 1.4.0 release notes] 
-     * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_4_0 DKPro Core GPL 1.4.0 release notes] 
+     * [ReleaseNotes_1_4_0 DKPro Release notes] (ASL) 
+     * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_4_0 Release notes] (GPL)
      * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.4.0/apidocs/index.html API Docs] (ASL)
-     * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.4.0/apidocs/index.html API Docs] (ASL)
+     * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.4.0/apidocs/index.html API Docs] (GPL)
   * *DKPro Core 1.3.0*
-     * [ReleaseNotes_1_3_0 DKPro Core ASL 1.3.0 release notes] 
-     * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_3_0 DKPro Core GPL 1.3.0 release notes] 
+     * [ReleaseNotes_1_3_0 Release notes] (ASL)
+     * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_3_0 Release notes] (GPL)
      * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.3.0/apidocs/index.html API Docs] (ASL)
      * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.3.0/apidocs/index.html API Docs] (GPL)
