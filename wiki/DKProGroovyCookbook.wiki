@@ -413,6 +413,15 @@ in	IN	in	[]
 
 = Trouble shooting = 
 
+== Out of memory ==
+
+If a script complains about not having enough heap, try the command 
+{{{
+Linux:    export JAVA_OPTS="-Xmx1g"
+}}} 
+
+and then run the script again.
+
 == Verbose dependency resolving ==
 
 Normally, grape resolves dependencies quietly. If a script has many dependencies, that can mean the script may be running for a long time without any visible output on screen, looking like it is hanging. What it really does is downloading the dependencies. To enable verbose output during the dependency resolving phase, set JAVA_OPTS:
@@ -421,10 +430,6 @@ Normally, grape resolves dependencies quietly. If a script has many dependencies
 Linux:    export JAVA_OPTS="-Dgroovy.grape.report.downloads=true $JAVA_OPTS"
 Windows:  set JAVA_OPTS="-Dgroovy.grape.report.downloads=true %JAVA_OPTS%"
 }}}
-
-== Out of memory ==
-
-If a script complains about not having enough heap, try the command `export JAVA_OPTS="-Xmx1g"` and then run the script again.
 
 == Flush caches ==
 
