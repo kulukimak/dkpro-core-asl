@@ -27,6 +27,7 @@ For people who want to work on the DKPro source code or like to live on the blee
 *Setup*
   * [DeveloperSetup Developer Setup]
   * [EclipseMylynConfiguration Eclipse Mylyn]	
+  * [CommitMessagesBestPractices Commit Messages: Best Practices]
 
 *APIs*
   * [ResourceProviderAPI Resource Provider API] 
