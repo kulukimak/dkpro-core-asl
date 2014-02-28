@@ -444,11 +444,10 @@ import static org.apache.uima.fit.factory.JCasFactory.*
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*
 
-// Disable annoying logging
-java.util.logging.LogManager.logManager.reset();
 
-// Load test suite
-def testSuite = new XmlSlurper().parse(args[0])
+/* Disable logging*/ java.util.logging.LogManager.logManager.reset();
+
+/* Load tests*/ def testSuite = new XmlSlurper().parse(args[0])
 
 // These are the segmenters to test
 def segmenters = [ 
@@ -458,9 +457,7 @@ def segmenters = [
   LanguageToolSegmenter 
 ]
 
-// Create empty document
-def doc = createJCas()
-
+/* Create empty document */ def doc = createJCas()
 
 // Run test suite
 def results = [:];
@@ -488,7 +485,7 @@ for (def tc : testSuite.tests.test) {
       }
     }
     
-    // Print result
+    // Print result for individual segmenter
     println "Segmenter : ${segmenter.simpleName}" 
     println "Output    : ${output}"
     println "Result    : ${diag}"
