@@ -444,27 +444,19 @@ import static org.apache.uima.fit.factory.JCasFactory.*
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*
 
-
-/* Disable logging*/ java.util.logging.LogManager.logManager.reset();
-
-/* Load tests*/ def testSuite = new XmlSlurper().parse(args[0])
+java.util.logging.LogManager.logManager.reset(); // Disable logging
+def testSuite = new XmlSlurper().parse(args[0]) // Load tests
+def doc = createJCas() // Create empty reusable document
 
 // These are the segmenters to test
-def segmenters = [ 
-  BreakIteratorSegmenter, 
-  StanfordSegmenter, 
-  OpenNlpSegmenter, 
-  LanguageToolSegmenter 
-]
+def segmenters = [ BreakIteratorSegmenter, StanfordSegmenter, 
+  OpenNlpSegmenter, LanguageToolSegmenter ]
 
-/* Create empty document */ def doc = createJCas()
-
-// Run test suite
 def results = [:];
-for (def tc : testSuite.tests.test) {
+for (def tc : testSuite.tests.test) { // Run tests
   println "=== ${tc.@id} ===\n"
 
-  for (def segmenter : segmenters) {
+  for (def segmenter : segmenters) { // Test each segmenter in turn
     // Process test input
     doc.reset()
     doc.documentText = tc.input
