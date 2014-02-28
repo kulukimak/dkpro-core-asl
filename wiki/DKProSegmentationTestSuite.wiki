@@ -1,0 +1,158 @@
+<testSuite>
+	<tests>
+		<test id="ordinal.Jahrhundert" language="de">
+			<input>Er starb im 19. Jahrhundert.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Er⁍ ⁌starb⁍ ⁌im⁍ ⁌19⁍ ⁌.⁍ ▶ ◀⁌Jahrhundert⁍ ⁌.⁍ ▶</output>
+					<description>BAD - Ordinal number point mis-detected as sentence boundary.</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Er⁍ ⁌starb⁍ ⁌im⁍ ⁌19.⁍ ⁌Jahrhundert⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - Ordinal number point is part of number token</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Er⁍ ⁌starb⁍ ⁌im⁍ ⁌19⁍ ⁌.⁍ ⁌Jahrhundert⁍ ⁌.⁍ ▶</output>
+					<description>BAD - Ordinal number point is separate token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="ordinal.Mann" language="de">
+			<input>Und dann kam der 3. Mann ins Spiel.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Und⁍ ⁌dann⁍ ⁌kam⁍ ⁌der⁍ ⁌3⁍ ⁌.⁍ ▶ ◀⁌Mann⁍ ⁌ins⁍ ⁌Spiel⁍ ⁌.⁍ ▶</output>
+					<description>BAD - Ordinal number point mis-detected as sentence boundary.</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Und⁍ ⁌dann⁍ ⁌kam⁍ ⁌der⁍ ⁌3.⁍ ⁌Mann⁍ ⁌ins⁍ ⁌Spiel⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - Ordinal number point is part of number token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="ordinal.Platz" language="de">
+			<input>Sie stehen zurzeit auf dem 15. Platz der Rangliste.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Sie⁍ ⁌stehen⁍ ⁌zurzeit⁍ ⁌auf⁍ ⁌dem⁍ ⁌15⁍ ⁌.⁍ ▶ ◀⁌Platz⁍ ⁌der⁍ ⁌Rangliste⁍ ⁌.⁍ ▶</output>
+					<description>BAD - Ordinal number point mis-detected as sentence boundary.</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Sie⁍ ⁌stehen⁍ ⁌zurzeit⁍ ⁌auf⁍ ⁌dem⁍ ⁌15.⁍ ⁌Platz⁍ ⁌der⁍ ⁌Rangliste⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - Ordinal number point is part of number token</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Sie⁍ ⁌stehen⁍ ⁌zurzeit⁍ ⁌auf⁍ ⁌dem⁍ ⁌15⁍ ⁌.⁍ ⁌Platz⁍ ⁌der⁍ ⁌Rangliste⁍ ⁌.⁍ ▶</output>
+					<description>BAD - Ordinal number point is separate token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="ordinal.Weltkrieg" language="de">
+			<input>Der 1. Weltkrieg dauerte 4 Jahre.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Der⁍ ⁌1⁍ ⁌.⁍ ▶ ◀⁌Weltkrieg⁍ ⁌dauerte⁍ ⁌4⁍ ⁌Jahre⁍ ⁌.⁍ ▶</output>
+					<description>BAD - Ordinal number point mis-detected as sentence boundary and is separate token.</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Der⁍ ⁌1.⁍ ⁌Weltkrieg⁍ ⁌dauerte⁍ ⁌4⁍ ⁌Jahre⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - Ordinal number point is part of number token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="ordinal.date" language="de">
+			<input>Der erste Weltkrieg begann mit dem Attentat von Sarajevo am 28. Juni 1914.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Der⁍ ⁌erste⁍ ⁌Weltkrieg⁍ ⁌begann⁍ ⁌mit⁍ ⁌dem⁍ ⁌Attentat⁍ ⁌von⁍ ⁌Sarajevo⁍ ⁌am⁍ ⁌28⁍ ⁌.⁍ ▶ ◀⁌Juni⁍ ⁌1914⁍ ⁌.⁍ ▶</output>
+					<description>BAD - Ordinal number point mis-detected as sentence boundary.</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Der⁍ ⁌erste⁍ ⁌Weltkrieg⁍ ⁌begann⁍ ⁌mit⁍ ⁌dem⁍ ⁌Attentat⁍ ⁌von⁍ ⁌Sarajevo⁍ ⁌am⁍ ⁌28.⁍ ⁌Juni⁍ ⁌1914.⁍ ▶</output>
+					<description>GOOD - Ordinal number point is part of number token</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Der⁍ ⁌erste⁍ ⁌Weltkrieg⁍ ⁌begann⁍ ⁌mit⁍ ⁌dem⁍ ⁌Attentat⁍ ⁌von⁍ ⁌Sarajevo⁍ ⁌am⁍ ⁌28⁍ ⁌.⁍ ⁌Juni⁍ ⁌1914⁍ ⁌.⁍ ▶</output>
+					<description>BAD - Ordinal number point is separate token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="abbreviation.M_Sc_" language="de">
+			<input>Der akademische Titel M.Sc. Informatik berechtigt zur Promotion.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Der⁍ ⁌akademische⁍ ⁌Titel⁍ ⁌M.Sc⁍ ⁌.⁍ ▶ ◀⁌Informatik⁍ ⁌berechtigt⁍ ⁌zur⁍ ⁌Promotion⁍ ⁌.⁍ ▶</output>
+					<description>BAD - dot closing abbreviation mis-detected as sentence boundary</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Der⁍ ⁌akademische⁍ ⁌Titel⁍ ⁌M⁍ ⁌.⁍ ⁌Sc⁍ ⁌.⁍ ▶ ◀⁌Informatik⁍ ⁌berechtigt⁍ ⁌zur⁍ ⁌Promotion⁍ ⁌.⁍ ▶</output>
+					<description>BAD - dot closing abbreviation mis-detected as sentence boundary and abbreviation falls apart</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="abbreviation.middle.initial" language="de">
+			<input>Christian M. Meyer wird demnächst seine Dissertation fertig stellen.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Christian⁍ ⁌M⁍ ⁌.⁍ ▶ ◀⁌Meyer⁍ ⁌wird⁍ ⁌demnächst⁍ ⁌seine⁍ ⁌Dissertation⁍ ⁌fertig⁍ ⁌stellen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - closing dot mis-detected as sentence boundary and is separated from abbreviation</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Christian⁍ ⁌M.⁍ ▶ ◀⁌Meyer⁍ ⁌wird⁍ ⁌demnächst⁍ ⁌seine⁍ ⁌Dissertation⁍ ⁌fertig⁍ ⁌stellen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - closing dot  mis-detected as sentence boundary and abbreviation falls apart</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Christian⁍ ⁌M⁍ ⁌.⁍ ⁌Meyer⁍ ⁌wird⁍ ⁌demnächst⁍ ⁌seine⁍ ⁌Dissertation⁍ ⁌fertig⁍ ⁌stellen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - closing dot is separated from abbreviation</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="directspeech.question.smartquotes" language="de">
+			<input>„Wird der Splitter das hier meistern?“, wollte er wissen.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌„⁍ ⁌Wird⁍ ⁌der⁍ ⁌Splitter⁍ ⁌das⁍ ⁌hier⁍ ⁌meistern⁍ ⁌?⁍ ▶ ◀⁌“⁍ ⁌,⁍ ⁌wollte⁍ ⁌er⁍ ⁌wissen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - the two quotes end up in different sentences</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌„Wird⁍ ⁌der⁍ ⁌Splitter⁍ ⁌das⁍ ⁌hier⁍ ⁌meistern⁍ ⁌?“,⁍ ▶ ◀⁌wollte⁍ ⁌er⁍ ⁌wissen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - two sentences and punctuation cloggs together</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌„⁍ ⁌Wird⁍ ⁌der⁍ ⁌Splitter⁍ ⁌das⁍ ⁌hier⁍ ⁌meistern⁍ ⁌?⁍ ⁌“⁍ ⁌,⁍ ⁌wollte⁍ ⁌er⁍ ⁌wissen⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - one sentence</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="directspeech.question.doublequotes" language="de">
+			<input>"Wird der Splitter das hier meistern?", wollte er wissen.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌"⁍ ⁌Wird⁍ ⁌der⁍ ⁌Splitter⁍ ⁌das⁍ ⁌hier⁍ ⁌meistern⁍ ⁌?⁍ ⁌"⁍ ▶ ◀⁌,⁍ ⁌wollte⁍ ⁌er⁍ ⁌wissen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - two sentences</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌"Wird⁍ ⁌der⁍ ⁌Splitter⁍ ⁌das⁍ ⁌hier⁍ ⁌meistern⁍ ⁌?",⁍ ▶ ◀⁌wollte⁍ ⁌er⁍ ⁌wissen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - two sentences and punctuation cloggs together</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌"⁍ ⁌Wird⁍ ⁌der⁍ ⁌Splitter⁍ ⁌das⁍ ⁌hier⁍ ⁌meistern⁍ ⁌?⁍ ⁌"⁍ ⁌,⁍ ⁌wollte⁍ ⁌er⁍ ⁌wissen⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - one sentence</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="number.version.underspecified" language="en">
+			<input>John loves Windows 3.x and DOS.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶</output>
+					<description>BAD - version split into multiple tokens</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3.x⁍ ⁌and⁍ ⁌DOS.⁍ ▶</output>
+					<description>BAD - sentence marker is not a separate token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+	</tests>
+</testSuite>
