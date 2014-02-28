@@ -94,6 +94,10 @@
 			<input>Christian M. Meyer wird demnächst seine Dissertation fertig stellen.</input>
 			<possibleOutputs>
 				<possibleOutput>
+					<output>◀⁌Christian⁍ ⁌M.⁍ ⁌Meyer⁍ ⁌wird⁍ ⁌demnächst⁍ ⁌seine⁍ ⁌Dissertation⁍ ⁌fertig⁍ ⁌stellen⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - middle initial dot not separated, single sentence</description>
+				</possibleOutput>
+				<possibleOutput>
 					<output>◀⁌Christian⁍ ⁌M⁍ ⁌.⁍ ▶ ◀⁌Meyer⁍ ⁌wird⁍ ⁌demnächst⁍ ⁌seine⁍ ⁌Dissertation⁍ ⁌fertig⁍ ⁌stellen⁍ ⁌.⁍ ▶</output>
 					<description>BAD - closing dot mis-detected as sentence boundary and is separated from abbreviation</description>
 				</possibleOutput>
