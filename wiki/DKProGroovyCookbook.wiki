@@ -411,6 +411,159 @@ in	IN	in	[]
 (PP (IN of) (NP (NNP Acme) (NNP Corp.)))) (PP (IN in) (NP (CD 2006)))) (. .)))
 }}}
 
+== Segmentation evaluator ==
+
+Reads a test suite from an XML file and tries it against several segmenters.
+
+Call with `pipeline <filename>`, e.g. `pipeline testsuite.xml`.
+
+{{{
+#!/usr/bin/env groovy
+@Grab(group='de.tudarmstadt.ukp.dkpro.core',
+      module='de.tudarmstadt.ukp.dkpro.core.tokit-asl',
+      version='1.5.0')
+import de.tudarmstadt.ukp.dkpro.core.tokit.*
+
+@Grab(group='de.tudarmstadt.ukp.dkpro.core',
+      module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl',
+      version='1.5.0')
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*
+
+@Grab(group='de.tudarmstadt.ukp.dkpro.core',
+      module='de.tudarmstadt.ukp.dkpro.core.languagetool-asl',
+      version='1.5.0')
+import de.tudarmstadt.ukp.dkpro.core.languagetool.*
+
+@Grab(group='de.tudarmstadt.ukp.dkpro.core',
+      module='de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl',
+      version='1.5.0')
+import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.*
+
+import static org.apache.uima.fit.util.JCasUtil.*
+import static org.apache.uima.fit.factory.JCasFactory.*
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.*
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.*
+
+// Disable annoying logging
+java.util.logging.LogManager.logManager.reset();
+
+// Load test suite
+def testSuite = new XmlSlurper().parse(args[0])
+
+// These are the segmenters to test
+def segmenters = [ 
+  BreakIteratorSegmenter, 
+  StanfordSegmenter, 
+  OpenNlpSegmenter, 
+  LanguageToolSegmenter 
+]
+
+// Create empty document
+def doc = createJCas()
+
+
+// Run test suite
+def results = [:];
+for (def tc : testSuite.tests.test) {
+  println "=== ${tc.@id} ===\n"
+
+  for (def segmenter : segmenters) {
+    // Process test input
+    doc.reset()
+    doc.documentText = tc.input
+    doc.documentLanguage = tc.@language
+    createEngine(segmenter).process(doc)
+
+    // Construct comparable output
+    def output = select(doc, Sentence).collect {s ->
+      "◀" + selectCovered(Token, s).collect { "⁌${it.coveredText}⁍ " }.join("") + "▶ "
+    }.join("")
+
+    // Find output in test suite
+    def diag = "unknown"
+    for (def possibleOutput : tc.possibleOutputs.possibleOutput) {
+      if (output.trim() == possibleOutput.output.text().trim()) {
+        diag = possibleOutput.description
+        break
+      }
+    }
+    
+    // Print result
+    println "Segmenter : ${segmenter.simpleName}" 
+    println "Output    : ${output}"
+    println "Result    : ${diag}"
+    println ""
+
+    if (results[segmenter] == null) results[segmenter] = [];
+    results[segmenter] << diag;
+  }
+}
+
+// Print results overview
+for (def segmenter : segmenters) {
+  println "${segmenter.simpleName}"
+  println "  GOOD: ${results[segmenter].grep(~/GOOD.*/).size()}"
+  println "  BAD : ${results[segmenter].grep(~/BAD.*/).size()}"
+}
+}}}
+
+Example test suite:
+
+{{{
+<testSuite>
+  <tests>
+    <test id="number.version.underspecified" language="en">
+      <input>John loves Windows 3.x and DOS.</input>
+      <possibleOutputs>
+        <possibleOutput>
+          <output>◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶</output>
+          <description>BAD - version split into multiple tokens</description>
+        </possibleOutput>
+        <possibleOutput>
+          <output>◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3.x⁍ ⁌and⁍ ⁌DOS.⁍ ▶</output>
+          <description>BAD - sentence marker is not a separate token</description>
+        </possibleOutput>
+      </possibleOutputs>
+    </test>
+  </tests>
+</testSuite>
+}}}
+
+Example output:
+
+{{{
+=== number.version.underspecified ===
+
+Segmenter : BreakIteratorSegmenter
+Output    : ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶
+Result    : BAD - version split into multiple tokens
+
+Segmenter : StanfordSegmenter
+Output    : ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ▶ ◀⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶
+Result    : unknown
+
+Segmenter : OpenNlpSegmenter
+Output    : ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3.x⁍ ⁌and⁍ ⁌DOS.⁍ ▶
+Result    : BAD - sentence marker is not a separate token
+
+Segmenter : LanguageToolSegmenter
+Output    : ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶
+Result    : BAD - version split into multiple tokens
+
+BreakIteratorSegmenter
+  GOOD: 0
+  BAD : 1
+StanfordSegmenter
+  GOOD: 0
+  BAD : 0
+OpenNlpSegmenter
+  GOOD: 0
+  BAD : 1
+LanguageToolSegmenter
+  GOOD: 0
+  BAD : 1
+}}}
+
 = Trouble shooting = 
 
 == Out of memory ==
