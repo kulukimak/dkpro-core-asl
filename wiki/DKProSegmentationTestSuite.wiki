@@ -158,5 +158,101 @@
 				</possibleOutput>
 			</possibleOutputs>
 		</test>
+		<test id="namedentity.ampersand" language="en">
+			<input>I called the AT&amp;T support today.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌I⁍ ⁌called⁍ ⁌the⁍ ⁌AT⁍ ⁌&amp;⁍ ⁌T⁍ ⁌support⁍ ⁌today⁍ ⁌.⁍ ▶</output>
+					<description>BAD - "AT&amp;T" is split</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌I⁍ ⁌called⁍ ⁌the⁍ ⁌AT&amp;T⁍ ⁌support⁍ ⁌today⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - "AT&amp;T" is one token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="number.n-th" language="en">
+			<input>We travel to the n-th dimension.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌We⁍ ⁌travel⁍ ⁌to⁍ ⁌the⁍ ⁌n-th⁍ ⁌dimension⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - "n-th" is one token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="namedentity.location.compound" language="en">
+			<input>We visit Barton-upon-Humber in summer.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌We⁍ ⁌visit⁍ ⁌Barton-upon-Humber⁍ ⁌in⁍ ⁌summer⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - "Barton-upon-Humber" is one token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="time.decade" language="en">
+			<input>The '20s had been a tough time.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌'⁍ ⁌20s⁍ ⁌had⁍ ⁌been⁍ ⁌a⁍ ⁌tough⁍ ⁌time⁍ ⁌.⁍ ▶</output>
+					<description>BAD - the apostrophe is split off</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌'20s⁍ ⁌had⁍ ⁌been⁍ ⁌a⁍ ⁌tough⁍ ⁌time⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - the apostrophe is not split off</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="number.range" language="en">
+			<input>We get 10-20 of these each day.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌We⁍ ⁌get⁍ ⁌10⁍ ⁌-⁍ ⁌20⁍ ⁌of⁍ ⁌these⁍ ⁌each⁍ ⁌day⁍ ⁌.⁍ ▶</output>
+					<description>BAD - the range is split into multiple tokens</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌We⁍ ⁌get⁍ ⁌10-20⁍ ⁌of⁍ ⁌these⁍ ⁌each⁍ ⁌day⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - the range is one token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="number.percentage" language="en">
+			<input>The car is 20% off today.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌car⁍ ⁌is⁍ ⁌20⁍ ⁌%⁍ ⁌off⁍ ⁌today⁍ ⁌.⁍ ▶</output>
+					<description>BAD - "20%" is split into two tokens</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌car⁍ ⁌is⁍ ⁌20%⁍ ⁌off⁍ ⁌today⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - "20%" is one token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="wisp" language="en">
+			<input>The elusive will-o'-the-wisp haunts the forest.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌elusive⁍ ⁌will-o⁍ ⁌'⁍ ⁌-⁍ ⁌the-wisp⁍ ⁌haunts⁍ ⁌the⁍ ⁌forest⁍ ⁌.⁍ ▶</output>
+					<description>BAD - "will-o'-the-wisp" is split into multiple tokens</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌elusive⁍ ⁌will-o⁍ ⁌'⁍ ⁌-the-wisp⁍ ⁌haunts⁍ ⁌the⁍ ⁌forest⁍ ⁌.⁍ ▶</output>
+					<description>BAD - "will-o'-the-wisp" is split into multiple tokens</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌elusive⁍ ⁌will-o'-the-wisp⁍ ⁌haunts⁍ ⁌the⁍ ⁌forest⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - "will-o'-the-wisp" is one token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="adjective.compound" language="en">
+			<input>Let us visit the Museum of Afro-American History in Boston.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Let⁍ ⁌us⁍ ⁌visit⁍ ⁌the⁍ ⁌Museum⁍ ⁌of⁍ ⁌Afro-American⁍ ⁌History⁍ ⁌in⁍ ⁌Boston⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - compound is one token</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
 	</tests>
 </testSuite>
