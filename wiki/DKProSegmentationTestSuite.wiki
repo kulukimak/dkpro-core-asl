@@ -156,6 +156,10 @@
 					<output>◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3.x⁍ ⁌and⁍ ⁌DOS.⁍ ▶</output>
 					<description>BAD - sentence marker is not a separate token</description>
 				</possibleOutput>
+				<possibleOutput>
+					<output> ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ▶ ◀⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶</output>
+					<description>BAD - version separator misdetected as sentence separator</description>
+				</possibleOutput>
 			</possibleOutputs>
 		</test>
 		<test id="namedentity.ampersand" language="en">
