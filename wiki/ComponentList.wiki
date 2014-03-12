@@ -27,6 +27,7 @@ Further information on models for particular components can be found in the [htt
   * !LanguageToolLemmatizer
   * !MateLemmatizer
   * !StanfordLemmatizer
+  * !MorphaLemmatizer
   * TreeTaggerPosLemmaTT4J
 
 == Morphological Annotation ==
@@ -73,5 +74,4 @@ Further information on models for particular components can be found in the [htt
   * !SpellChecker (Jazzy)
 
 == Stemming ==
-  * !MorphaStemmer
   * !SnowballStemmer
