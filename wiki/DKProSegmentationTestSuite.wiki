@@ -258,5 +258,22 @@
 				</possibleOutput>
 			</possibleOutputs>
 		</test>
+		<test id="apostrophe.possessive" language="en">
+			<input>The next question is Debanjan's.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌next⁍ ⁌question⁍ ⁌is⁍ ⁌Debanjan⁍ ⁌'s⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - possessive marker is separate token</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌next⁍ ⁌question⁍ ⁌is⁍ ⁌Debanjan⁍ ⁌'⁍ ⁌s⁍ ⁌.⁍ ▶</output>
+					<description>BAD - possessive marker is split into two tokens</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌next⁍ ⁌question⁍ ⁌is⁍ ⁌Debanjan's⁍ ⁌.⁍ ▶</output>
+					<description>BAD - possessive marker is not split off</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
 	</tests>
 </testSuite>
