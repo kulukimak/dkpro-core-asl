@@ -8,6 +8,7 @@ Further information on models for particular components can be found in the [htt
   * !StanfordCoreferenceResolver
 
 == Chunker ==
+  * !OpenNlpChunker
   * TreeTaggerChunkerTT4J
 
 == Decompounding ==
