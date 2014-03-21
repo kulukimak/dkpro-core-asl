@@ -48,7 +48,7 @@ from org.apache.uima.fit.factory.AnalysisEngineFactory import *
 # Access to commandline arguments
 import sys
 
-# Pipeline
+# Assemble and run pipeline
 pipeline = iteratePipeline(
   createReaderDescription(TextReader,
     TextReader.PARAM_PATH, sys.argv[1],
@@ -75,6 +75,119 @@ the DT
 lazy JJ
 dog NN
 . .
+}}}
+
+== OpenNLP Part-of-speech tagging & parsing without reader ==
+
+This pipeline internally creates data, processes it, and writes results to the console.
+
+Mind to provide more memory to Groovy using the command `export JAVA_OPTS="-Xmx1g"` before trying to run this.
+
+{{{
+#!/usr/bin/env jython
+# Fix classpath scanning - otherise uimaFIT will not find the UIMA types
+from java.lang import Thread
+from org.python.core.imp import *
+Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
+
+# Dependencies and imports for DKPro modules
+from jip.embed import require
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
+from de.tudarmstadt.ukp.dkpro.core.opennlp import *
+from de.tudarmstadt.ukp.dkpro.core.api.segmentation.type import *
+from de.tudarmstadt.ukp.dkpro.core.api.syntax.type import *
+
+# uimaFIT imports
+from org.apache.uima.fit.util.JCasUtil import *
+from org.apache.uima.fit.pipeline.SimplePipeline import *
+from org.apache.uima.fit.factory.AnalysisEngineFactory import *
+from org.apache.uima.fit.factory import JCasFactory
+
+# Assemble and run pipeline
+jcas = JCasFactory.createJCas()
+jcas.documentText = "This is a test"
+jcas.documentLanguage = "en"
+
+runPipeline(jcas,
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(OpenNlpParser,
+    OpenNlpParser.PARAM_WRITE_PENN_TREE, True));
+
+for token in select(jcas, Token):
+  print token.coveredText + " " + token.pos.posValue
+
+for tree in select(jcas, PennTree):
+  print tree.pennTree
+}}}
+
+Example output:
+
+{{{
+This DT
+is VBZ
+a DT
+test NN
+(ROOT (S (NP (DT This)) (VP (VBZ is) (NP (DT a) (NN test)))))
+}}}
+
+== !MaltParser dependency parsing pipeline with direct access to results ==
+
+Reads the specified file and prints dependencies, one per line. Multiple files can be specified using a wildcard, e.g. '*.txt' (the single quotes are part of the argument to avoid the shell expanding the wildcard!).
+
+Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+
+{{{
+#!/usr/bin/env jython
+# Fix classpath scanning - otherise uimaFIT will not find the UIMA types
+from java.lang import Thread
+from org.python.core.imp import *
+Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
+
+# Dependencies and imports for DKPro modules
+from jip.embed import require
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.maltparser-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.conll-asl:1.5.0')
+from de.tudarmstadt.ukp.dkpro.core.opennlp import *
+from de.tudarmstadt.ukp.dkpro.core.maltparser import *
+from de.tudarmstadt.ukp.dkpro.core.io.text import *
+from de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency import *
+
+# uimaFIT imports
+from org.apache.uima.fit.util.JCasUtil import *
+from org.apache.uima.fit.pipeline.SimplePipeline import *
+from org.apache.uima.fit.factory.AnalysisEngineFactory import *
+from org.apache.uima.fit.factory.CollectionReaderFactory import *
+
+# Access to commandline arguments
+import sys
+
+# Assemble and run pipeline
+pipeline = iteratePipeline(
+  createReaderDescription(TextReader,
+    TextReader.PARAM_SOURCE_LOCATION, sys.argv[1], # 1st commandline parameter
+    TextReader.PARAM_LANGUAGE, sys.argv[2]),       # 2nd commandline parameter
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger),
+  createEngineDescription(MaltParser))
+
+for jcas in pipeline:
+  for dep in select(jcas, Dependency): 
+    print "dep: [" + dep.dependencyType +"] \t gov: [" + dep.governor.coveredText + "] \t dep: [" + dep.dependent.coveredText + "]" 
+}}}
+
+Example output:
+
+{{{
+dep: [nsubj] 	 gov: [wants] 	 dep: [Alice]
+dep: [aux] 	 gov: [see] 	 dep: [to]
+dep: [xcomp] 	 gov: [wants] 	 dep: [see]
+dep: [nn] 	 gov: [parsing] 	 dep: [dependency]
+dep: [dobj] 	 gov: [see] 	 dep: [parsing]
+dep: [prep] 	 gov: [parsing] 	 dep: [with]
+dep: [pobj] 	 gov: [with] 	 dep: [UIMA.]
 }}}
 
 = Comparison to Groovy scripts =
