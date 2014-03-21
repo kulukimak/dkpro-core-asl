@@ -1,0 +1,41 @@
+#summary Python scripts
+
+<h1>Introduction</h1>
+
+This assumes that you have installed [http://www.jython.org Jython 2.5.4rc 1] and that you have the command `jython` available in your path.
+
+*Note:* Currently Jython 2.5.4rc 1 is incompatible with uimaFIT and therefore with DKPro Core. Jython uses a custom classloader (SyspathJavaLoader) to load Java classes used be the scripts. However, this classloader currently does not support classpath scanning because the method findResources() has not been implemented. We provided a *fixed version* . Download a [http://dummy fixed Jython 2.5.5-SNAPSHOT] and replace the _jython.jar_ file in your Jython installation folder with our file. After this, our recipes should work nicely. 
+
+Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
+
+*Table of contents*
+
+<wiki:toc max_depth="2" />
+
+= Recipes = 
+
+== OpenNLP Part-of-speech tagging pipeline writing to IMS Open Corpus Workbench format ==
+
+= Trouble shooting = 
+
+== Out of memory ==
+
+If a script complains about not having enough heap, try the command 
+{{{
+Linux:    export JAVA_MEM="-Xmx1g"
+}}} 
+
+and then run the script again.
+
+== Verbose dependency resolving ==
+
+Normally, grape resolves dependencies quietly. If a script has many dependencies, that can mean the script may be running for a long time without any visible output on screen, looking like it is hanging. What it really does is downloading the dependencies. To enable verbose output during the dependency resolving phase, set JAVA_OPTS:
+
+{{{
+Linux:    export JYTHON_OPTS="-Dgroovy.grape.report.downloads=true $JAVA_OPTS"
+Windows:  set JYTHON_OPTS="-Dgroovy.grape.report.downloads=true %JAVA_OPTS%"
+}}}
+
+== Flush caches ==
+
+The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. Try deleting `~/.jip/cache`
