@@ -4,7 +4,7 @@
 
 This assumes that you have installed *[http://www.jython.org Jython 2.5.4rc 1]* and that you have the command `jython` available in your path.
 
-*Note:* Currently Jython 2.5.4rc 1 is incompatible with uimaFIT and therefore with DKPro Core. Jython uses a custom classloader (!SyspathJavaLoader) to load Java classes used be the scripts. However, this classloader currently does not support classpath scanning because the method findResources() has not been implemented. Get our *[http://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.5.5-SNAPSHOT jar]* and replace the _jython.jar_ file in your Jython installation folder with our file. After this, our recipes should work nicely. 
+*Note:* Currently Jython 2.5.4rc 1 is incompatible with uimaFIT and therefore with DKPro Core. Jython uses a custom classloader (!SyspathJavaLoader) to load Java classes used be the scripts. However, this classloader currently does not support classpath scanning because the method findResources() has not been implemented. Get our *[https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.5.5-SNAPSHOT jar]* and replace the _jython.jar_ file in your Jython installation folder with our file. After this, our recipes should work nicely. 
 
 Additionally, you must have *[https://pypi.python.org/pypi/jip jip 0.7]* installed. See the jip homepage for different options of installing it. Jip provides our scripts with the ability to automatically download dependencies from Maven repositories.
 
