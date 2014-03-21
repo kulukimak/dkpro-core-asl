@@ -12,6 +12,7 @@ For people who want to use a DKPro release version.
   * [ComponentList Component overview]
   * [ChoosingComponents How to choose components?]
   * [DKProGroovyCookbook Groovy scripts for DKPro Core pipelines]
+  * [DKProPythonCookbook Python scripts for DKPro Core pipelines]
 
 ===Current release: DKPro Core 1.5.0===
   * [ReleaseNotes_1_5_0 Release notes] (ASL/GPL)
