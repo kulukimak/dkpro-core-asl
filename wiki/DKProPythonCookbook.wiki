@@ -2,9 +2,11 @@
 
 <h1>Introduction</h1>
 
-This assumes that you have installed [http://www.jython.org Jython 2.5.4rc 1] and that you have the command `jython` available in your path.
+This assumes that you have installed *[http://www.jython.org Jython 2.5.4rc 1]* and that you have the command `jython` available in your path.
 
-*Note:* Currently Jython 2.5.4rc 1 is incompatible with uimaFIT and therefore with DKPro Core. Jython uses a custom classloader (SyspathJavaLoader) to load Java classes used be the scripts. However, this classloader currently does not support classpath scanning because the method findResources() has not been implemented. We provided a *fixed version* . Download a [http://dummy fixed Jython 2.5.5-SNAPSHOT] and replace the _jython.jar_ file in your Jython installation folder with our file. After this, our recipes should work nicely. 
+*Note:* Currently Jython 2.5.4rc 1 is incompatible with uimaFIT and therefore with DKPro Core. Jython uses a custom classloader (!SyspathJavaLoader) to load Java classes used be the scripts. However, this classloader currently does not support classpath scanning because the method findResources() has not been implemented. Get our *[http://dummy fixed Jython 2.5.5-SNAPSHOT]* and replace the _jython.jar_ file in your Jython installation folder with our file. After this, our recipes should work nicely. 
+
+Additionally, you must have *[https://pypi.python.org/pypi/jip jip 0.7]* installed. See the jip homepage for different options of installing it. Jip provides our scripts with the ability to automatically download dependencies from Maven repositories.
 
 Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
 
@@ -14,7 +16,99 @@ Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file
 
 = Recipes = 
 
-== OpenNLP Part-of-speech tagging pipeline writing to IMS Open Corpus Workbench format ==
+== OpenNLP Part-of-speech tagging pipeline with direct access to results ==
+
+Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
+
+Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+
+{{{
+#!/usr/bin/env jython
+# Fix classpath scanning - otherise uimaFIT will not find the UIMA types
+from java.lang import Thread
+from org.python.core.imp import *
+Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
+
+# Dependencies and imports for DKPro modules
+from jip.embed import require
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.5.0')
+from de.tudarmstadt.ukp.dkpro.core.opennlp import *
+from de.tudarmstadt.ukp.dkpro.core.io.text import *
+from de.tudarmstadt.ukp.dkpro.core.api.segmentation.type import *
+from de.tudarmstadt.ukp.dkpro.core.api.syntax.type import *
+
+# uimaFIT imports
+from org.apache.uima.fit.util.JCasUtil import *
+from org.apache.uima.fit.pipeline.SimplePipeline import *
+from org.apache.uima.fit.factory.CollectionReaderFactory import *
+from org.apache.uima.fit.factory.AnalysisEngineFactory import *
+from org.apache.uima.fit.factory.AnalysisEngineFactory import *
+
+# Access to commandline arguments
+import sys
+
+# Pipeline
+pipeline = iteratePipeline(
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, sys.argv[1],
+    TextReader.PARAM_LANGUAGE, sys.argv[2],
+    TextReader.PARAM_PATTERNS, "*.txt"),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(OpenNlpPosTagger));
+
+for jcas in pipeline:
+  for token in select(jcas, Token):
+    print token.coveredText + " " + token.pos.posValue
+}}}
+
+Example output:
+
+{{{
+The DT
+quick JJ
+brown JJ
+fox NN
+jumps NNS
+over IN
+the DT
+lazy JJ
+dog NN
+. .
+}}}
+
+= Comparison to Groovy scripts =
+
+The Python (Jython) scripts are very similar to the Groovy scripts. The main differences (except for the different syntax) are:
+
+===Fixing classpath scanning in Jython===
+
+Each Jython script require these commands at the beginning of the script to allow uimaFIT access to the dynamically imported dependencies (see below).
+
+{{{
+# Fix classpath scanning - otherise uimaFIT will not find the UIMA types
+from java.lang import Thread
+from org.python.core.imp import *
+Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
+}}}
+
+===Dependencies===
+
+<table>
+<tr><th>Jython</th><td>
+{{{
+from jip.embed import require # only required once
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
+from de.tudarmstadt.ukp.dkpro.core.opennlp import *
+}}}
+</td></tr>
+<tr><th>Groovy</th><td>
+{{{
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', version='1.5.0')
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+}}}
+</td></tr>
+</table>
 
 = Trouble shooting = 
 
@@ -26,6 +120,20 @@ Linux:    export JAVA_MEM="-Xmx1g"
 }}} 
 
 and then run the script again.
+
+== expr: syntax error - if jython is a symlink ==
+
+If you set up a symlink to the `jython`command, you may be seeing the error `expr: syntax error` whenever you run a script. This has been discussed [http://sourceforge.net/p/jython/mailman/message/31323567/ here]. The solution is to open the file `jython`in a text editor, locate the line
+
+{{{
+if expr "$link" : '/' > /dev/null; then
+}}}
+
+and replace it with the line
+
+{{{
+if expr "$link" : '[/]' > /dev/null; then
+}}}
 
 == Verbose dependency resolving ==
 
