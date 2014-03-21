@@ -181,13 +181,15 @@ for jcas in pipeline:
 Example output:
 
 {{{
-dep: [nsubj] 	 gov: [wants] 	 dep: [Alice]
-dep: [aux] 	 gov: [see] 	 dep: [to]
-dep: [xcomp] 	 gov: [wants] 	 dep: [see]
-dep: [nn] 	 gov: [parsing] 	 dep: [dependency]
-dep: [dobj] 	 gov: [see] 	 dep: [parsing]
-dep: [prep] 	 gov: [parsing] 	 dep: [with]
-dep: [pobj] 	 gov: [with] 	 dep: [UIMA.]
+dep: [det] 	 gov: [jumps] 	 dep: [The]
+dep: [amod] 	 gov: [jumps] 	 dep: [quick]
+dep: [amod] 	 gov: [jumps] 	 dep: [brown]
+dep: [nn] 	 gov: [jumps] 	 dep: [fox]
+dep: [prep] 	 gov: [jumps] 	 dep: [over]
+dep: [det] 	 gov: [dog] 	 dep: [the]
+dep: [amod] 	 gov: [dog] 	 dep: [lazy]
+dep: [pobj] 	 gov: [over] 	 dep: [dog]
+dep: [punct] 	 gov: [jumps] 	 dep: [.]
 }}}
 
 = Comparison to Groovy scripts =
