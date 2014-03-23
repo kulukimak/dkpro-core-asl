@@ -14,6 +14,47 @@ Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file
 
 <wiki:toc max_depth="2" />
 
+= Installation =
+
+== Windows 7 ==
+
+=== Basic installation ===
+
+This part assumes that you already have Java installed and adds the basic requirements Jython and jip.
+
+   * Download the *traditional installer* from the [http://www.jython.org/downloads.html Jython downloads page]
+   * Double-click on the *jython-installer-2.7-b1.jar* to start the installer
+   * Install with all the default settings. This should install Jython to `C:\jython2.7b1`
+   * Replace the `jython.jar`with the [https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.7b1+ jar]
+   * Download *jip-0.7.tar.gz* from the [https://pypi.python.org/pypi/jip pypi]
+   * Unpack `jip-0.7.tar.gz` to `C:\` (you can use e.g. [http://www.7-zip.org 7zip] to unpack this archive)
+      * with 7zip installed, double-click on the file to open it and navigate, `dist\jib-07.tar\` and copy/drag the folder `jip-0.7` to `C:\`.
+   * Open a command line window
+      * Go to the jip folder: `cd C:\jip-0.7` 
+      * Install jip: `C:\jython2.7b1\jython setup.py install`
+      * Close the window
+      * Now you can delete the folder `C:\jip-0.7`and the file `jip-0.7.tar.gz` again
+
+=== Comfort installation ===
+
+This part assumes that you have completed the basic installation (above) and adds file type associations that allow you to run the Jython scripts directly without having to manually invoking the Jython interpreter every time. So instead of invoking a pipeline using
+
+{{{
+C:\jython2.7b1\jython pipeline.jpy text.txt en
+}}}
+
+you could simply use 
+
+{{{
+pipeline text.txt en
+}}}
+
+   * Press the *Start button* and search for *environment variable*
+   * In the *Environment variable editor* find *PATHEXT* in the *system variable* section and add `;.JPY`to the end
+   * Open a command line window
+   * Create a file type association for Jython files: `assoc .jpy=Jython`
+   * Create a file type for Jython files: `ftype Jython="C:\jython2.7b1\jython" "%1" %*
+
 = Recipes = 
 
 == OpenNLP Part-of-speech tagging pipeline with direct access to results ==
