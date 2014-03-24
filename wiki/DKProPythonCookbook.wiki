@@ -8,7 +8,7 @@ This assumes that you have installed *[http://www.jython.org Jython 2.7beta 1]* 
 
 Additionally, you must have *[https://pypi.python.org/pypi/jip jip 0.7]* installed. See the jip homepage for different options of installing it. Jip provides our scripts with the ability to automatically download dependencies from Maven repositories. 
 
-*Note:* jip 0.7 does *not work on Windows* - it corrupts the JARs that it downloads in an attempt to convert line endings. We provide a [https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jip-0.7-patched.zip patched jip 0.7 version] for Windows users. (See also: [https://github.com/sunng87/jip/issues/13 jip issue 13])
+*Note:* jip 0.7 does *not work on Windows* - it corrupts the JARs that it downloads in an attempt to convert line endings. We provide a *[https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jip-0.7-patched.zip patched jip 0.7 version]* for Windows users. (See also: [https://github.com/sunng87/jip/issues/13 jip issue 13])
 
 Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
 
