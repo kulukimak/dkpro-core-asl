@@ -34,7 +34,7 @@ This part assumes that you already have Java installed and adds the basic requir
       * Go to the jip folder: `cd C:\jip` 
       * Install jip: `C:\jython2.7b1\jython setup.py install`
       * Close the window
-      * Now you can delete the folder `C:\jip`and the file `jip-0.7-patched.zip` again
+      * Now you can delete the folder `C:\jip` and the file `jip-0.7-patched.zip` again
 
 === Comfort installation ===
 
@@ -54,7 +54,7 @@ pipeline text.txt en
    * In the *Environment variable editor* find *PATHEXT* in the *system variable* section and add `;.JPY` to the end
    * Open a command line window
    * Create a file type association for Jython files: `assoc .jpy=Jython`
-   * Create a file type for Jython files: `ftype Jython="C:\jython2.7b1\jython" "%1" %*
+   * Create a file type for Jython files: `ftype Jython="C:\jython2.7b1\jython" "%1" %*`
 
 = Recipes = 
 
