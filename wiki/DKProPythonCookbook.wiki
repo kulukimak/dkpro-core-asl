@@ -27,7 +27,7 @@ This part assumes that you already have Java installed and adds the basic requir
    * Download the *traditional installer* from the [http://www.jython.org/downloads.html Jython downloads page]
    * Double-click on the *jython-installer-2.7-b1.jar* to start the installer
    * Install with all the default settings. This should install Jython to `C:\jython2.7b1`
-   * Replace the `jython.jar`with the [https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.7b1+ jar]
+   * Replace the `jython.jar` with the [https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.7b1+ jar]
    * Download our [https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jip-0.7-patched.zip patched jip 0.7 version] for Windows
    * Unpack `jip-0.7-patched.zip` to `C:\`
    * Open a command line window
