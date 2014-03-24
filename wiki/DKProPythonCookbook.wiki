@@ -18,7 +18,7 @@ Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file
 
 == Windows 7 ==
 
-*Note: we are investigating bugs in Jython and potentially in jip which currently prevent our jip from working on Windows... please stand by...*
+*Note: we are investigating bugs in Jython and potentially in jip which currently prevent our jip from working on Windows... please stand by... MEANWHILE THE INSTRUCTIONS BELOW DO NOT WORK FOR WINDOWS*
 
 === Basic installation ===
 
