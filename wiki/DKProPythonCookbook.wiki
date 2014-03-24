@@ -51,7 +51,7 @@ pipeline text.txt en
 }}}
 
    * Press the *Start button* and search for *environment variable*
-   * In the *Environment variable editor* find *PATHEXT* in the *system variable* section and add `;.JPY`to the end
+   * In the *Environment variable editor* find *PATHEXT* in the *system variable* section and add `;.JPY` to the end
    * Open a command line window
    * Create a file type association for Jython files: `assoc .jpy=Jython`
    * Create a file type for Jython files: `ftype Jython="C:\jython2.7b1\jython" "%1" %*
