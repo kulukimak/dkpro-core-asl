@@ -18,6 +18,8 @@ Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file
 
 == Windows 7 ==
 
+*Note: we are investigating bugs in Jython and potentially in jip which currently prevent our jip from working on Windows... please stand by...*
+
 === Basic installation ===
 
 This part assumes that you already have Java installed and adds the basic requirements Jython and jip.
