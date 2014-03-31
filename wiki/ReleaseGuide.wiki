@@ -12,3 +12,14 @@
       1 accept the default scm tag
       1 and enter the next release such as *0.2.0-SNAPSHOT*
    1 Finally type the command *mvn release:perform* 
+
+= !JavaDoc =
+
+   * For every stable release, JavaDoc should be generated. To Generate JavaDoc
+   1 Check out the appropraite stable release from svn tags
+   2 from the command line in the root folder just checked out, type *mvn javadoc:aggregate* to generate the javadoc
+   3  remove the contents of the folder *apidocs* from the root folder and put in the contents of *target/site/apidocs* instead
+   4 commit your change in Eclipse (Eclipse should automatically delete files that are no longer part of the Javadoc)
+   4 in Eclipse, if already exist delete from the tags *latest-stable*
+   5 right click on the latest release in tags and copy it by clicking *Branch/Tag*
+   6 In the Copy to URL field add *tags/latest-stable*
