@@ -1,12 +1,43 @@
 #summary How to do a DKPro Core release
 
+= Versioning =
+
+== Versioning scheme ==
+
+We use a three-part versioning scheme.
+
+== Snapshots ==
+
+*Snapshot scheme*: `{Major}.{Minor}.{Maintenance}-SNAPSHOT`
+
+The snapshot version is only used in Subversion.
+
+== Major/Minor releases (from trunk) ==
+
+*Release scheme*: `{Major}.{Minor}.{Maintenance}`
+
+When a *major or minor release* from trunk is made, the Major and Minor components may be changed. The Maintenance component is set to 0.
+*Example*
+   * *Snapshot version*: 0.1.0-SNAPSHOT
+   * *Release version*: 0.1.0
+   * *New snapshot version*: 0.2.0-SNAPSHOT
+
+== Maintenance Releases (from branch) ==
+
+When a *maintenance release* is made from a branch, the Major and Minor components may not be changed. The Maintenance component is incremented by one. The final component is updated as for *major/minor releases*.
+
+*Example*
+   * *Snapshot version*: 0.1.0-SNAPSHOT
+   * *Release version*: 0.1.0
+   * *New snapshot version*: 0.1.1-SNAPSHOT
+
 = Release process =
 
 = Maven =
 
    1 commit all changes to the svn repository
    1 from the command line, type *mvn clean install* to test if the build works 
-   1 if this command is successful, type the command *mvn -DautoVersionSubmodules=true release:prepare* 
+   1 if this command is successful, type the command `mvn -DautoVersionSubmodules=true release:prepare`
    1 when prompted, 
       1 enter the current release, such as *0.1.0* for a full release
       1 accept the default scm tag
@@ -15,11 +46,12 @@
 
 = !JavaDoc =
 
-   * For every stable release, JavaDoc should be generated. To Generate JavaDoc
+For every stable release, Javadoc should be generated. To Generate Javadoc
+
    1 Check out the appropraite stable release from svn tags
-   2 from the command line in the root folder just checked out, type *mvn javadoc:aggregate* to generate the javadoc
-   3  remove the contents of the folder *apidocs* from the root folder and put in the contents of *target/site/apidocs* instead
-   4 commit your change in Eclipse (Eclipse should automatically delete files that are no longer part of the Javadoc)
-   4 in Eclipse, if already exist delete from the tags *latest-stable*
-   5 right click on the latest release in tags and copy it by clicking *Branch/Tag*
-   6 In the Copy to URL field add *tags/latest-stable*
+   1 from the command line in the root folder just checked out, type `mvn javadoc:aggregate` to generate the javadoc
+   1  remove the contents of the folder *apidocs* from the root folder and put in the contents of *target/site/apidocs* instead
+   1 commit your change in Eclipse (Eclipse should automatically delete files that are no longer part of the Javadoc)
+   1 in Eclipse, if already exist delete from the tags *latest-stable*
+   1 right click on the latest release in tags and copy it by clicking *Branch/Tag*
+   1 In the Copy to URL field add *tags/latest-stable*
