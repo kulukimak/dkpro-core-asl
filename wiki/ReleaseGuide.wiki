@@ -37,9 +37,8 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
 
    1 Update CHANGES file
    1 Issue tracker
-        1 Update default milestone
         1 Create next milestone
-        1 Move all bugs on the to-be-released milestone to the next milestone
+        1 Move all bugs on the to-be-released milestone which were not fixed to the next milestone
 
 = Maven =
 
