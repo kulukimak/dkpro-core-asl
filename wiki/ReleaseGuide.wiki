@@ -44,26 +44,7 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
    1 sign up on Sonatype if you do not have a user there: https://issues.sonatype.org/
    1 ask for a developer to add you in the users list for DKPro Core JIRA Ticket, if you are not there yet
    1 all project artifacts are signed using GPG, and the public key is distributed to hkp://pool.sks-keyservers.net/. For more information, please refer to [https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven How To Generate PGP Signatures With Maven]
-   1 configure your Maven settings.xml, typically located in your ~/.m2 directory:
-
-{{{
-<settings>
-  ...
-  <servers>
-    <server>
-      <id>sonatype-nexus-snapshots</id>
-      <username>your-jira-id</username>
-      <password>your-jira-pwd</password>
-    </server>
-    <server>
-      <id>sonatype-nexus-staging</id>
-      <username>your-jira-id</username>
-      <password>your-jira-pwd</password>
-    </server>
-  </servers>
-  ...
-</settings>
-}}}
+   1 configure your Maven settings.xml by adding your Sonatype user and password as [https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-Changesto%EF%BB%BF{{settings.xml}} described here]
 
 == Maven ==
 
