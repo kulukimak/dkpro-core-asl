@@ -36,13 +36,13 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
 = Maven =
 
    1 commit all changes to the svn repository
-   1 from the command line, type *mvn clean install* to test if the build works 
-   1 if this command is successful, type the command `mvn -DautoVersionSubmodules=true release:prepare`
+   1 from the command line, type *`mvn clean install`* to test if the build works 
+   1 if this command is successful, type the command *`mvn -DautoVersionSubmodules=true release:prepare`*
    1 when prompted, 
       1 enter the current release, such as *0.1.0* for a full release
       1 accept the default scm tag
       1 and enter the next release such as *0.2.0-SNAPSHOT*
-   1 Finally type the command *mvn release:perform* 
+   1 Finally type the command *`mvn release:perform`* 
 
 = !JavaDoc =
 
