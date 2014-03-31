@@ -59,7 +59,7 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
       1 and enter the next release such as *0.2.0-SNAPSHOT*
       1 enter the passphrase for your GnuPG key when prompted.
    1 if you run into problems creating accessing the SVN or creating the tag in SVN, try specificing your username, password and keyname like this. Mind that if you do that on a machine with other users, it may leak your password via the process list and shell history. So better do this on a private machine and clear your history afterwards:
-      * *mvn* -Dusername={SVN-USERNAME} -Dpassword={SVN-PASSWORD} *release:prepare*
+      * *`mvn -Dusername={SVN-USERNAME} -Dpassword={SVN-PASSWORD} -DautoVersionSubmodules=true release:prepare`*
    1 finally type the command *`mvn release:perform`* 
 
 == Staging phase ==
