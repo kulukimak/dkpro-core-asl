@@ -64,7 +64,7 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
 
 == Staging phase ==
    1 send an email to developers mailing list and ask developers to check if deployed artifacts are correct
-   1 release the staging repository as [https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-Changesto%EF%BB%BF{{settings.xml}} described here]
+   1 release the staging repository as [https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-8a.ReleaseIt described here]
 
 == !JavaDoc ==
 
