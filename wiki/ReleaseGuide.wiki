@@ -63,6 +63,7 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
    1 finally type the command *`mvn release:perform`* 
 
 == Staging phase ==
+   1 [https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-8a.ReleaseIt close the staging repository]
    1 send an email to developers mailing list and ask developers to check if deployed artifacts are correct
    1 release the staging repository as [https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-8a.ReleaseIt described here]
 
