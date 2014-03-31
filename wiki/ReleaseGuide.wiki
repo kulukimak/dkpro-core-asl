@@ -39,6 +39,7 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
    1 issue tracker
         1 create next milestone
         1 move all bugs on the to-be-released milestone which were not fixed to the next milestone
+   1 make sure all dependencies (except the models) are available on maven central
 
 == First-time preparation==
    1 sign up on Sonatype if you do not have a user there: https://issues.sonatype.org/
