@@ -40,9 +40,24 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
         1 Create next milestone
         1 Move all bugs on the to-be-released milestone which were not fixed to the next milestone
 
-= Maven =
+== Maven ==
 
+   1  make sure the version number in your POM is a -SNAPSHOT version. (This should always be the case for projects under version control.) 
    1 commit all changes to the svn repository
+   1 Sign up on Sonatype if you do not have a user there: https://issues.sonatype.org/
+   1 Ask for a developer to add you in the users list for DKPro Core JIRA Ticket, if you are not there yet
+   1 The project POM must have the following elements:
+    * <modelVersion>
+    * <groupId>
+    * <artifactId>
+    * <version>
+    * <packaging>
+    * <name>
+    * <description>
+    * <url>
+    * <scm><url>
+    * <scm><connection>
+   1 all project artifacts are signed using GPG, and the public key is distributed to hkp://pool.sks-keyservers.net/. For more information, please refer to [https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven How To Generate PGP Signatures With Maven]
    1 from the command line, type *`mvn clean install`* to test if the build works 
    1 if this command is successful, type the command *`mvn -DautoVersionSubmodules=true release:prepare`*
    1 when prompted, 
@@ -51,7 +66,7 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
       1 and enter the next release such as *0.2.0-SNAPSHOT*
    1 Finally type the command *`mvn release:perform`* 
 
-= !JavaDoc =
+== !JavaDoc ==
 
 For every stable release, Javadoc should be generated. To Generate Javadoc
 
