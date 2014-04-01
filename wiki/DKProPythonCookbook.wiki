@@ -6,7 +6,7 @@ This assumes that you have installed *[http://www.jython.org Jython 2.7beta 1]* 
 
 *Note:* Currently *Jython 2.7beta 1 is incompatible with uimaFIT and therefore with DKPro Core*. Jython uses a custom classloader (!SyspathJavaLoader) to load Java classes used be the scripts. However, this classloader currently does not support classpath scanning because the method findResources() has not been implemented. Get our *[https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.7b1+ jar]* and replace the _jython.jar_ file in your Jython installation folder with our file. After this, our recipes should work nicely. (See also: [http://bugs.jython.org/issue1896215 Jython issue 1896215])
 
-Additionally, you must have *[https://pypi.python.org/pypi/jip jip 0.8.2]* installed. Jip provides our scripts with the ability to automatically download dependencies from Maven repositories. 
+Additionally, you must have *[https://pypi.python.org/pypi/jip jip 0.8.3]* installed. Jip provides our scripts with the ability to automatically download dependencies from Maven repositories. 
 
 Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
 
@@ -26,13 +26,13 @@ This part assumes that you already have Java installed and adds the basic requir
    * Double-click on the *jython-installer-2.7-b1.jar* to start the installer
    * Install with all the default settings. This should install Jython to `C:\jython2.7b1`
    * Replace the `jython.jar` with the [https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.7b1+ jar]
-   * Download [https://pypi.python.org/pypi/jip/0.8.2 jip 0.8.2]
-   * Unpack `jip-0.8.2.zip ` to `C:\`
+   * Download [https://pypi.python.org/pypi/jip/0.8.3 jip 0.8.3]
+   * Unpack `jip-0.8.3.zip ` to `C:\`
    * Open a command line window
       * Go to the jip folder: `cd C:\jip` 
       * Install jip: `C:\jython2.7b1\jython setup.py install`
       * Close the window
-      * Now you can delete the folder `C:\jip` and the file `jip-0.8.2.zip ` again
+      * Now you can delete the folder `C:\jip` and the file `jip-0.8.3.zip ` again
 
 === Comfort installation ===
 
