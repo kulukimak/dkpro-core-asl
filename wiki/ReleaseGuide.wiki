@@ -51,7 +51,8 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
 
    1  make sure the version number in your POM is a -SNAPSHOT version. (This should always be the case for projects under version control.) 
    1 commit all changes to the svn repository
-   1 from the command line, type *`mvn clean install`* to test if the build works 
+   1 from the command line, type *`mvn clean install`* to test if the build works
+      1 if some of the unit tests fails due to the error *java.lang.OutOfMemoryError: GC overhead limit exceeded*, try the command *`mvn  -Dmaven.surefire.heap=4g clean install`*
    1 if this command is successful, type the command *`mvn -DautoVersionSubmodules=true release:prepare`*
    1 when prompted, 
       1 enter the current release, such as *0.1.0* for a full release
