@@ -10,7 +10,9 @@
     * Setup
       * [DeveloperSetup Developer Setup]
       * [EclipseMylynConfiguration Eclipse Mylyn]
-      * [CommitMessagesBestPractices Commit Messages]
+    *Development*
+      * [ReleaseGuide Release guide]
+      * [CommitMessagesBestPractices Commit Messages: Best Practices]
     * APIs
       * [ResourceProviderAPI Resource Providers]
       * [PackagingResources Packaging resources]
