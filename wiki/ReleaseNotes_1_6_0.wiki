@@ -26,7 +26,7 @@ Major upgrades:
    * clearnlp     - ClearNLP 2.0.2
    * stanfordnlp  - Stanford CoreNLP 3.3.1 including the new CVG models
    * treetagger   - TT4J 1.1.2
-   * languagetool - LanguageTool 2.5
+   * languagetool - !LanguageTool 2.5
 
 and many additional models are supported by various components.
 
