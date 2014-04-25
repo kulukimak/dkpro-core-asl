@@ -21,7 +21,7 @@ The release brings new modules to DKPro Core:
    * io.bliki         - Reader for Wikipedia 
    * io.tiger         - Writer for the Tiger XML format (also also supports semantic frame annotations) 
 
-Major upgrades:
+== Major upgrades ==
 
    * clearnlp     - ClearNLP 2.0.2
    * stanfordnlp  - Stanford CoreNLP 3.3.1 including the new CVG models
@@ -34,4 +34,5 @@ DKPro Core requires now Java 7. A more detailed overview of the changes in this 
 
 https://code.google.com/p/dkpro-core-asl/issues/list?can=1&q=label:Milestone-1.6.0
  
+
 When upgrading, please mind that you should not mix different versions of DKPro Core components in your projects - they may not be compatible with each other.
