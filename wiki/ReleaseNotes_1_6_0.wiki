@@ -1,0 +1,37 @@
+#summary Release notes for DKPro Core 1.6.0 (ASL & GPL)
+
+We are pleased to announce the release of 
+
+*DKPro Core, version 1.6.0 (ASL & GPL)*
+
+a collection of interoperable software components for natural language
+processing (NLP) based on the Apache UIMA framework. 
+
+   * http://code.google.com/p/dkpro-core-asl
+   * http://code.google.com/p/dkpro-core-gpl
+
+The release brings new modules to DKPro Core:
+
+== New components ==
+
+   * opennlp    - OpenNLP chunker component added
+
+== New I/O components ==
+
+   * io.bliki         - Reader for Wikipedia 
+   * io.tiger         - Writer for the Tiger XML format (also also supports semantic frame annotations) 
+
+Major upgrades:
+
+   * clearnlp     - ClearNLP 2.0.2
+   * stanfordnlp  - Stanford CoreNLP 3.3.1 including the new CVG models
+   * treetagger   - TT4J 1.1.2
+   * languagetool - LanguageTool 2.5
+
+and many additional models are supported by various components.
+
+DKPro Core requires now Java 7. A more detailed overview of the changes in this release can be found here
+
+https://code.google.com/p/dkpro-core-asl/issues/list?can=1&q=label:Milestone-1.6.0
+ 
+When upgrading, please mind that you should not mix different versions of DKPro Core components in your projects - they may not be compatible with each other.
