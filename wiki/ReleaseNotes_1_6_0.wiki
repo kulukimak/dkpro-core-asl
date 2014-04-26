@@ -28,7 +28,7 @@ The release brings new modules to DKPro Core:
    * treetagger   - TT4J 1.1.2
    * languagetool - !LanguageTool 2.5
 
-Also, this release supports many additional [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdGh2azY2ODMtZDRNczUySEZJUFpXM2c&single=true&gid=0&output=html models] for various components and brings the usual set of bug fixes and minor improvements.
+Also, this release supports many additional [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html models] for various components and brings the usual set of bug fixes and minor improvements.
 
 DKPro Core 1.6.0 requires Java 7. A more detailed overview of the changes in this release can be found [https://code.google.com/p/dkpro-core-asl/issues/list?can=1&q=label:Milestone-1.6.0 here].
  
