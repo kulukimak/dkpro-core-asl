@@ -18,8 +18,7 @@ For people who want to use a DKPro release version.
   * [ReleaseNotes_1_6_0 Release notes] (ASL/GPL)
   * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html API Docs] (ASL)
   * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html API Docs] (GPL)
-(ASL/GPL)
-  * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html Models]
+  * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html Models] (ASL/GPL)
 
 = Developer documentation =
 
@@ -61,7 +60,7 @@ The information on unreleased versions is updated continually. Individual links 
      * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_5_0 Release notes] (GPL)
      * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.5.0/apidocs/index.html API Docs] (ASL)
      * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.5.0/apidocs/index.html API Docs] (GPL)
-     * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdGh2azY2ODMtZDRNczUySEZJUFpXM2c&single=true&gid=0&output=html Models] 
+     * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdGh2azY2ODMtZDRNczUySEZJUFpXM2c&single=true&gid=0&output=html Models] (ASL/GPL)
 
   * *DKPro Core 1.4.0*
      * [ReleaseNotes_1_4_0 DKPro Release notes] (ASL) 
