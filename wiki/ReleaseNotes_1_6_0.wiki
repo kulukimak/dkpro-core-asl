@@ -14,7 +14,7 @@ The release brings new modules to DKPro Core:
 
 == New components ==
 
-   * opennlp    - OpenNLP chunker component added
+   * opennlp - OpenNLP chunker component added
 
 == New I/O components ==
 
@@ -28,11 +28,8 @@ The release brings new modules to DKPro Core:
    * treetagger   - TT4J 1.1.2
    * languagetool - !LanguageTool 2.5
 
-and many additional models are supported by various components.
+Also, this release supports many additional models for various components and brings the usual set of bug fixes and minor improvements.
 
-DKPro Core requires now Java 7. A more detailed overview of the changes in this release can be found here
-
-https://code.google.com/p/dkpro-core-asl/issues/list?can=1&q=label:Milestone-1.6.0
+DKPro Core 1.6.0 requires Java 7. A more detailed overview of the changes in this release can be found [https://code.google.com/p/dkpro-core-asl/issues/list?can=1&q=label:Milestone-1.6.0 here].
  
-
 When upgrading, please mind that you should not mix different versions of DKPro Core components in your projects - they may not be compatible with each other.
