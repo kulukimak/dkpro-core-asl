@@ -81,3 +81,13 @@ For every stable release, Javadoc should be generated. To Generate Javadoc
    1 in Eclipse, if already exist delete from the tags *latest-stable*
    1 right click on the latest release in tags and copy it by clicking *Branch/Tag*
    1 In the Copy to URL field add *tags/latest-stable*
+
+== !Annoucement ==
+
+   * Update Google Code website
+      * Update sidebar
+      * Update wiki start page
+   * Announce the release on mailing lists (Plaintext format, no HTML, max 70 chars wide):
+      * [https://groups.google.com/forum/?hl=de#!forum/dkpro-core-announce DKPro Core announcements]
+      * [https://groups.google.com/forum/?hl=de#!forum/dkpro-core-user DKPro Core users]
+      * [http://uima.apache.org/mail-lists.html Apache UIMA users]
