@@ -82,7 +82,7 @@ For every stable release, Javadoc should be generated. To Generate Javadoc
    1 right click on the latest release in tags and copy it by clicking *Branch/Tag*
    1 In the Copy to URL field add *tags/latest-stable*
 
-== !Annoucement ==
+== Annoucement ==
 
    * Update Google Code website
       * Update sidebar
