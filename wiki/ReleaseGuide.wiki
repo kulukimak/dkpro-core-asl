@@ -50,8 +50,36 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
    1 make sure all modules are listed in the following sections of the master POM: _modules_, _dependencyManagement_, _cobertura-report_
 
 == Maven ==
-
-   1  make sure the version number in your POM is a -SNAPSHOT version. (This should always be the case for projects under version control.) 
+   1 check for unnecessary dependencies
+      1 Fix dependencies
+         1 `mvn clean dependency:analyze > analysis.txt`
+         1 All dependencies that are detected "Used undeclared" must be added (observe scope)
+         1 All dependencies that are detected "Unused declared" must be removed or must be marked as used dependencies, e.g.:
+{{{
+<build>
+  <pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <usedDependencies>
+            <!-- Constants from this module are inlined -->
+            <usedDependency>de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.api.parameter-asl</usedDependency>
+            <!-- Models not detected by byte-code analysis -->
+            <usedDependency>de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-model-tagger-de-maxent</usedDependency>
+          </usedDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </pluginManagement>
+</build>
+}}} 
+      1 Fix scopes
+         1 `mvn clean compile dependency:analyze-only > analysis.txt`
+         1 `cat analysis.txt | grep "\(maven-dependency-plugin\|WARNING.*:.*\)" | grep -v ".*:test$" | less`
+         1 All dependencies that are detected "Unused declared" with scope "compile" must be changed into scope "test"
+   1 make sure the version number in your POM is a -SNAPSHOT version. (This should always be the case for projects under version control.) 
    1 commit all changes to the svn repository
    1 from the command line, type *`mvn clean install`* to test if the build works
       1 if some of the unit tests fails due to the error *java.lang.OutOfMemoryError: GC overhead limit exceeded*, try the command *`mvn  -Dmaven.surefire.heap=4g clean install`*
