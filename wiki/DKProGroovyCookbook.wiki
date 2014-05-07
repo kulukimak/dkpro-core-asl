@@ -749,7 +749,8 @@ Then flush the cache by deleting the folder `~/.groovy/grapes`. Mind that the ne
 When running our scripts within Groovy 2.3.0, uimaFIT's automatic type detection mechanism does not work. This leads to an error message like this:
 
 {{{
-JCas type "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token" used in Java code,  but was not declared in the XML type descriptor.
+JCas type "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token" used in Java code,  
+  but was not declared in the XML type descriptor.
 }}}
 
 This problem does not occur with Groovy versions 2.1.x or 2.2.x.
