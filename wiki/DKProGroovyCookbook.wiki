@@ -744,7 +744,7 @@ On some systems, Groovy per default re-uses artifacts that have already been dow
 
 Then flush the cache by deleting the folder `~/.groovy/grapes`. Mind that the next time you run a Groovy script, it will take some more time, because the cache needs to be repopulated.
 
-== Groovy 2.3.0 aka _JCas type used in Java code,  but was not declared in the XML type descriptor_==
+== Groovy 2.3.0 aka _"JCas type used in Java code,  but was not declared in the XML type descriptor"_==
 
 When running our scripts within Groovy 2.3.0, uimaFIT's automatic type detection mechanism does not work. This leads to an error message like this:
 
