@@ -4,6 +4,8 @@
 
 This assumes that you have installed [http://groovy.codehaus.org Groovy] and that you have the command `groovy` available in your path. On Debian/Ubuntu systems, installing Groovy should be as easy as `apt-get install groovy`.
 
+*Note: An [http://stackoverflow.com/questions/23504261/dkpro-groovy-usage-and-installation-with-uima incompatibility] has been reported with Groovy version 2.3.0. Please use a 2.1.x or 2.2.x version.*
+
 Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
 
 *Table of contents*
@@ -741,6 +743,18 @@ On some systems, Groovy per default re-uses artifacts that have already been dow
 }}}
 
 Then flush the cache by deleting the folder `~/.groovy/grapes`. Mind that the next time you run a Groovy script, it will take some more time, because the cache needs to be repopulated.
+
+== Groovy 2.3.0 ==
+
+When running our scripts within Groovy 2.3.0, uimaFIT's automatic type detection mechanism does not work. This leads to an error message like this:
+
+{{{
+JCas type "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token" used in Java code,  but was not declared in the XML type descriptor.
+}}}
+
+This problem does not occur with Groovy versions 2.1.x or 2.2.x.
+
+Thanks to Evan for [http://stackoverflow.com/questions/23504261/dkpro-groovy-usage-and-installation-with-uima reporting] this problem.
 
 == Using SNAPSHOT versions ==
 
