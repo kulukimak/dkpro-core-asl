@@ -140,7 +140,7 @@ Output:
 
 We notice that the NLTK examples are much shorter, even though they include the output of the commands. The NTLK examples are run in an interactive Python shell where we just have to hack in a couple of commands. The DKPro Core examples are comparatively longish scripts - nothing that one would want to hack into a shell to play around with and explore NLP tools. 
 
-With a single `import nltk`we get access to a lot of functionality in NLTK, e.g. a default tokenizer, tagger, named entity recognizer, etc. However, all of these are for English only. In DKPro Core we need to first add dependencies on all the modules using `@Grab`and then import the actual tools from the modules. We also need to add several unrelated imports to get access to necessary functions like `select`or `createEngineDescription`. 
+With a single `import nltk` we get access to a lot of functionality in NLTK, e.g. a default tokenizer, tagger, named entity recognizer, etc. However, all of these are for English only. In DKPro Core we need to first add dependencies on all the modules using `@Grab`and then import the actual tools from the modules. We also need to add several unrelated imports to get access to necessary functions like `select`or `createEngineDescription`. 
 
 In NLTK we only have convenient access to a few tools for English. The script does not know what version of NLTK it is supposed to run with. With DKPro Core, we have access to a wide array of integrated tools and we know exactly which version of each tool we use. Also most of the tools do not only support English, but also additional languages.
 
