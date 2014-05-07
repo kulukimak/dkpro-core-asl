@@ -4,7 +4,7 @@
 
 This assumes that you have installed [http://groovy.codehaus.org Groovy] and that you have the command `groovy` available in your path. On Debian/Ubuntu systems, installing Groovy should be as easy as `apt-get install groovy`.
 
-*Note: An [http://stackoverflow.com/questions/23504261/dkpro-groovy-usage-and-installation-with-uima incompatibility] has been reported with Groovy version 2.3.0. Please use a 2.1.x or 2.2.x version.*
+*Note: An [http://stackoverflow.com/questions/23504261/dkpro-groovy-usage-and-installation-with-uima incompatibility] has been reported with Groovy version 2.3.0. Please use a 2.1.x or 2.2.x version. (See also: [http://jira.codehaus.org/browse/GROOVY-6768 GROOVY-6768])*
 
 Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file executable (e.g. `chmod +x pipeline`). Then run it (e.g. `./pipeline`). The first time this will take quite long because libraries and models are automatically downloaded.
 
