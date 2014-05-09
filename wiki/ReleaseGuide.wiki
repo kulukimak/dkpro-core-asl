@@ -1,5 +1,7 @@
 #summary How to do a DKPro Core release
 
+<wiki:toc />
+
 = Versioning =
 
 == Versioning scheme ==
