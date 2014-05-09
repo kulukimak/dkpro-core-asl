@@ -50,8 +50,6 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
    1 make sure all dependencies (except the models) are available on Maven Central
    1 make sure all modules that should be part of the release are dependencies of the _distribution_ module
    1 make sure all modules are listed in the following sections of the master POM: _modules_, _dependencyManagement_, _cobertura-report_
-
-== Maven ==
    1 check for unnecessary dependencies
       1 Fix dependencies
          1 `mvn clean dependency:analyze > analysis.txt`
@@ -90,6 +88,8 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
          1 `mvn clean compile dependency:analyze-only > analysis.txt`
          1 `cat analysis.txt | grep "\(maven-dependency-plugin\|WARNING.*:.*\)" | grep -v ".*:test$" | less`
          1 All dependencies that are detected "Unused declared" with scope "compile" must be changed into scope "test"
+
+== Maven release ==
    1 make sure the version number in your POM is a -SNAPSHOT version. (This should always be the case for projects under version control.) 
    1 commit all changes to the svn repository
    1 from the command line, type *`mvn clean install`* to test if the build works
