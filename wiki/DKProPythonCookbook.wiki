@@ -235,7 +235,7 @@ dep: [punct] 	 gov: [jumps] 	 dep: [.]
 
 = Trouble shooting = 
 
-===Fixing classpath scanning in Jython===
+== Fixing classpath scanning in Jython ==
 
 Each Jython script require these commands at the beginning of the script to allow uimaFIT access to the dynamically imported dependencies (see below).
 
