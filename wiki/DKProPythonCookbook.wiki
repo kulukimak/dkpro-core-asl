@@ -247,6 +247,8 @@ from org.python.core.imp import *
 Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
 }}}
 
+A feature request to set the context classloader automatically when entering a Jython context has been filed upstream ([http://bugs.jython.org/issue2142 Jython issue 2142] ).
+
 ===Dependencies===
 
 <table>
