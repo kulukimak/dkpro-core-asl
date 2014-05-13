@@ -232,9 +232,8 @@ dep: [pobj] 	 gov: [over] 	 dep: [dog]
 dep: [punct] 	 gov: [jumps] 	 dep: [.]
 }}}
 
-= Comparison to Groovy scripts =
 
-The Python (Jython) scripts are very similar to the Groovy scripts. The main differences (except for the different syntax) are:
+= Trouble shooting = 
 
 ===Fixing classpath scanning in Jython===
 
@@ -247,27 +246,7 @@ from org.python.core.imp import *
 Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
 }}}
 
-A feature request to set the context classloader automatically when entering a Jython context has been filed upstream ([http://bugs.jython.org/issue2142 Jython issue 2142] ).
-
-===Dependencies===
-
-<table>
-<tr><th>Jython</th><td>
-{{{
-from jip.embed import require # only required once
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
-from de.tudarmstadt.ukp.dkpro.core.opennlp import *
-}}}
-</td></tr>
-<tr><th>Groovy</th><td>
-{{{
-@Grab(group='de.tudarmstadt.ukp.dkpro.core', module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', version='1.5.0')
-import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
-}}}
-</td></tr>
-</table>
-
-= Trouble shooting = 
+*Note:* A feature request to set the context classloader automatically when entering a Jython context has been filed upstream ([http://bugs.jython.org/issue2142 Jython issue 2142] ).
 
 == Out of memory ==
 
@@ -366,4 +345,26 @@ The produced exception is this:
 org.apache.uima.resource.ResourceInitializationException: org.apache.uima.resource.ResourceInitializationException: Annotator class "org.python.proxies.__main__$Writer$1" was not found. (Descriptor: <unknown>)
 }}}
 
-Relates issues: [https://issues.apache.org/jira/browse/UIMA-3692 UIMA-3692]
+Related issue: [https://issues.apache.org/jira/browse/UIMA-3692 UIMA-3692]
+
+= Comparison to Groovy scripts =
+
+The Python (Jython) scripts are very similar to the Groovy scripts. The main differences (except for the different syntax) are:
+
+===Dependencies===
+
+<table>
+<tr><th>Jython</th><td>
+{{{
+from jip.embed import require # only required once
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
+from de.tudarmstadt.ukp.dkpro.core.opennlp import *
+}}}
+</td></tr>
+<tr><th>Groovy</th><td>
+{{{
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', version='1.5.0')
+import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
+}}}
+</td></tr>
+</table>
