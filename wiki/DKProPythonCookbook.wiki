@@ -351,7 +351,7 @@ Related issue: [https://issues.apache.org/jira/browse/UIMA-3692 UIMA-3692]
 
 The Python (Jython) scripts are very similar to the Groovy scripts. The main differences (except for the different syntax) are:
 
-===Dependencies===
+=== Dependencies ===
 
 <table>
 <tr><th>Jython</th><td>
@@ -368,3 +368,7 @@ import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
 }}}
 </td></tr>
 </table>
+
+=== Custom UIMA components ===
+
+It is currently not possible to define custom UIMA components in Jython scripts. In Groovy scripts, this is possible.
