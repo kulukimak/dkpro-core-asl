@@ -171,6 +171,75 @@ test NN
 (ROOT (S (NP (DT This)) (VP (VBZ is) (NP (DT a) (NN test)))))
 }}}
 
+== !TreeTagger part-of-speech tagging and lemmatizing ==
+
+Reads files from the specified directory and prints the result to the console.
+
+This scripts expects the `tree-tagger` executable and the model file `english-par-linux-3.2-utf8.bin` in the directory in which the script is executed. You can download the !TreeTagger package for your system containing the executable and the model file from the [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger website]. Make sure to extract the `tree-tagger` executable from the the package and - if it is compressed - to uncompress the model file. Compressed model files end in `.gz` and can be uncompressed on Linux or OS X using the `gunzip` command or on Windows using e.g. [http://www.7-zip.org 7zip]. If you already have !TreeTagger installed on your system and or if you want to use another model file, you can also set `PARAM_EXECUTABLE_PATH` and `PARAM_MODEL_PATH` to their respective locations.
+
+Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+
+{{{
+#!/usr/bin/env jython
+# Fix classpath scanning - otherise uimaFIT will not find the UIMA types
+from java.lang import Thread
+from org.python.core.imp import *
+Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
+
+# Dependencies and imports for DKPro modules
+from jip.embed import require
+from jip.repository import repos_manager
+repos_manager.add_repos("ukp-oss-snapshots", "http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots", "remote")
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1-SNAPSHOT')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.treetagger-asl:1.6.1-SNAPSHOT')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.6.1-SNAPSHOT')
+from de.tudarmstadt.ukp.dkpro.core.opennlp import *
+from de.tudarmstadt.ukp.dkpro.core.treetagger import *
+from de.tudarmstadt.ukp.dkpro.core.io.text import *
+from de.tudarmstadt.ukp.dkpro.core.api.segmentation.type import *
+
+# uimaFIT imports
+from org.apache.uima.fit.util.JCasUtil import *
+from org.apache.uima.fit.pipeline.SimplePipeline import *
+from org.apache.uima.fit.factory.CollectionReaderFactory import *
+from org.apache.uima.fit.factory.AnalysisEngineFactory import *
+
+# Access to commandline arguments
+import sys
+
+# Assemble and run pipeline
+pipeline = iteratePipeline(
+  createReaderDescription(TextReader,
+    TextReader.PARAM_PATH, sys.argv[1],
+    TextReader.PARAM_LANGUAGE, sys.argv[2],
+    TextReader.PARAM_ENCODING, "ISO-8859-1",
+    TextReader.PARAM_PATTERNS, "*.txt"),
+  createEngineDescription(OpenNlpSegmenter),
+  createEngineDescription(TreeTaggerPosLemmaTT4J,
+    TreeTaggerPosLemmaTT4J.PARAM_EXECUTABLE_PATH, "tree-tagger",
+    TreeTaggerPosLemmaTT4J.PARAM_MODEL_PATH, "english-par-linux-3.2-utf8.bin",
+    TreeTaggerPosLemmaTT4J.PARAM_MODEL_ENCODING, "UTF-8"));
+
+for jcas in pipeline:
+  for token in select(jcas, Token):
+    print token.coveredText + " " + token.pos.posValue + " " + token.lemma.value
+}}}
+
+Example output:
+
+{{{
+The DT the
+quick JJ quick
+brown JJ brown
+fox NN fox
+jumps NNS jump
+over IN over
+the DT the
+lazy JJ lazy
+dog NN dog
+. SENT .
+}}}
+
 == !MaltParser dependency parsing pipeline with direct access to results ==
 
 Reads the specified file and prints dependencies, one per line. Multiple files can be specified using a wildcard, e.g. '*.txt' (the single quotes are part of the argument to avoid the shell expanding the wildcard!).
