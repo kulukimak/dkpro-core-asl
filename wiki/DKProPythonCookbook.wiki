@@ -179,6 +179,8 @@ This scripts expects the `tree-tagger` executable and the model file `english-pa
 
 Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
+*Note: this recipe uses DKPro Core 1.6.1-SNAPSHOT due to a bug in the !TreeTagger module of DKPro Core 1.5.0 producing an error when explicitly setting `PARAM_MODEL_PATH`.* 
+
 {{{
 #!/usr/bin/env jython
 # Fix classpath scanning - otherise uimaFIT will not find the UIMA types
@@ -186,10 +188,12 @@ from java.lang import Thread
 from org.python.core.imp import *
 Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
 
-# Dependencies and imports for DKPro modules
-from jip.embed import require
+# Enable snapshot dependencies
 from jip.repository import repos_manager
 repos_manager.add_repos("ukp-oss-snapshots", "http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots", "remote")
+
+# Dependencies and imports for DKPro modules
+from jip.embed import require
 require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1-SNAPSHOT')
 require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.treetagger-asl:1.6.1-SNAPSHOT')
 require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.6.1-SNAPSHOT')
@@ -352,6 +356,18 @@ Windows:  set JYTHON_OPTS="-Dgroovy.grape.report.downloads=true %JAVA_OPTS%"
 == Flush caches ==
 
 The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. Try deleting `~/.jip/cache`
+
+== Using SNAPSHOT versions ==
+
+To use SNAPSHOT versions of DKPro Core, add the following lines before the `require(...)` lines used to fetch the dependencies.
+
+{{{
+# Enable snapshot dependencies
+from jip.repository import repos_manager
+repos_manager.add_repos("ukp-oss-snapshots", "http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots", "remote")
+}}}
+
+Then change the versions of all DKPro Core components to the SNAPSHOT version that you wish to use. It is strongly recommended not to mix versions!
 
 = Known problems =
 
