@@ -39,6 +39,7 @@ rename lexmorph -> words
       * 12 universal tags (cf. issue 76)
    * Chunk
       * keep only coarse-grained types (cf. issue 79)
+      * add head information
    * Constituent
       * keep only coarse-grained types (cf. issue 79)
       * add head information (cf. issue 117)
@@ -60,3 +61,7 @@ rename srl -> semantics (issue 187)
    * _Coreference types_ (<- coref, redefine?)
 
 === Discourse ===
+   * add DiscourseRelation
+   * add Modality
+
+
