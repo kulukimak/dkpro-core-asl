@@ -123,7 +123,7 @@ dog NN
 == OpenNLP Part-of-speech tagging & parsing without reader ==
 In contrast to the previous script, this script is not using a reader. Instead the input is given as a Jython string (see `jcas.documentText`).
 
-For this string, the pipleline performs part-of-speech tagging and parses it, using the OpenNlpParser. The results are written to the console. 
+For this string, the pipleline performs part-of-speech tagging and parses it, using the !OpenNlpParser. The results are written to the console. 
 
 To execute the script, save it as `pos_parser.jpy` and run `C:\C:\jython2.7b1\jython pos_parser.jpy`. 
 
