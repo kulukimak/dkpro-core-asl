@@ -34,20 +34,22 @@ This part assumes that you already have Java installed and adds the basic requir
       * Close the window
       * Now you can delete the folder `C:\jip` and the file `jip-0.8.3.zip ` again
 
-=== Comfort installation ===
+=== Adding file type associations ===
+The following instructions are optional and are *not* required to execute any of the following scripts. These instructions are intended for advanced users, who would like to be able to execute the scripts directly from the command line. If you work for the first time with the command line, you might want to skip this section.
 
-This part assumes that you have completed the basic installation (above) and adds file type associations that allow you to run the Jython scripts directly without having to manually invoking the Jython interpreter every time. So instead of invoking a pipeline using
+After completing the basic installation (above), the this section covers how to add file type associations. This allows you to run the Jython scripts directly without having to manually invoking the Jython interpreter every time. So instead of invoking a pipeline using
 
 {{{
-C:\jython2.7b1\jython pipeline.jpy text.txt en
+C:\jython2.7b1\jython pipeline.jpy C:\example_folder\ en
 }}}
 
 you could simply use 
 
 {{{
-pipeline text.txt en
+pipeline C:\example_folder\ en
 }}}
 
+ 
    * Press the *Start button* and search for *environment variable*
    * In the *Environment variable editor* find *PATHEXT* in the *system variable* section and add `;.JPY` to the end
    * Open a command line window
@@ -58,9 +60,10 @@ pipeline text.txt en
 
 == OpenNLP Part-of-speech tagging pipeline with direct access to results ==
 
-Reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
+The following script reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
 
-Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+To execute the script, save it as pipeline.jpy. Then change in the command line to the folder where you saved the script and typ the command `C:\jython2.7b1\jython pipeline.jpy <foldername> <language>`, e.g. `C:\jython2.7b1\jython pipeline.jpy C:\example_folder\ en`. This will read all text files (`*.txt`) located in `C:\example_folder\` and assumes that the language in these files is English. Of course `C:\example_folder\` must exist on your file system and must contain at least one `.txt` file. 
+
 
 {{{
 #!/usr/bin/env jython
