@@ -181,9 +181,29 @@ test NN
 
 Reads files from the specified directory and prints the result to the console.
 
-This scripts expects the `tree-tagger` executable and the model file `english-par-linux-3.2-utf8.bin` in the directory in which the script is executed. You can download the !TreeTagger package for your system containing the executable and the model file from the [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger website]. Make sure to extract the `tree-tagger` executable from the package and - if it is compressed - uncompress the model file. Compressed model files end in `.gz` and can be uncompressed on Linux or OS X using the `gunzip` command or on Windows using e.g. [http://www.7-zip.org 7zip]. If you already have !TreeTagger installed on your system and or if you want to use another model file, you can also set `PARAM_EXECUTABLE_PATH` and `PARAM_MODEL_PATH` to their respective locations.
+=== !TreeTagger Installation for Linux ===
+ * Go to the [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger website]
+ * From the _download_ section, download the correct tagger package, i.e. _PC-Linux_
+    * Extract the .gz archive
+    * Copy the `tree-tagger-linux-3.2/bin/tree-tagger` file and place it in the same folder as the script `treetagger.py`
+ * From the _parameter file_ section, download the correct model. For the example below download _English parameter file_ (`english-par-linux-3.2-utf8.bin.gz`)
+    * Unzip the file (e.g. `gunzip english-par-linux-3.2-utf8.bin.gz`)
+    * Copy the file `english-par-linux-3.2-utf8.bin` into the same folder as the `treetagger.py` script. Ensure that the name for the model is `english-par-linux-3.2-utf8.bin`
 
-Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
+=== !TreeTagger Installation for Windows 7 ===
+ * Ensure that you have a program to unzip `.gz` files. For example you can use [http://www.7-zip.org 7zip]
+ * Go to the [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/ TreeTagger website]
+ * In the _Windows_ section, you find the download link for the `tree-tagger-windows-3.2.zip` file.
+    * Extract the zip-archive
+    * Copy the `tree-tagger-windows-3.2/bin/tree-tagger.exe` to your folder with with the `treetagger.py` script
+ * From the _parameter file_ section, download the correct model. For the example below download _English parameter file_ (`english-par-linux-3.2-utf8.bin.gz`)
+    * Unzip the file (e.g. by using [http://www.7-zip.org 7zip])
+    * Copy the file `english-par-linux-3.2-utf8.bin` into the same folder as the `treetagger.py` script. Ensure that the name for the model is `english-par-linux-3.2-utf8.bin`
+ * In the script below, you find a line `TreeTaggerPosLemmaTT4J.PARAM_EXECUTABLE_PATH, "tree-tagger"`, change the value `tree-tagger` to `tree-tagger.exe` 
+
+If you already have !TreeTagger installed on your system and or if you want to use another model file, you can also set in the script the parameters `PARAM_EXECUTABLE_PATH` and `PARAM_MODEL_PATH` to their respective locations.
+
+Call with `C:\jython-2.7b1\jython treetagger.py <foldername> <language>`, e.g. `C:\jython-2.7b1\jython treetagger.py  C:\example_folder\ en`.
 
 *Note: this recipe uses DKPro Core 1.6.1-SNAPSHOT due to a bug in the !TreeTagger module of DKPro Core 1.5.0 producing an error when explicitly setting `PARAM_MODEL_PATH`.* 
 
@@ -226,7 +246,7 @@ pipeline = iteratePipeline(
     TextReader.PARAM_PATTERNS, "*.txt"),
   createEngineDescription(OpenNlpSegmenter),
   createEngineDescription(TreeTaggerPosLemmaTT4J,
-    TreeTaggerPosLemmaTT4J.PARAM_EXECUTABLE_PATH, "tree-tagger",
+    TreeTaggerPosLemmaTT4J.PARAM_EXECUTABLE_PATH, "tree-tagger", #!! Change to "tree-tagger.exe" if the script is executed under windows !!
     TreeTaggerPosLemmaTT4J.PARAM_MODEL_PATH, "english-par-linux-3.2-utf8.bin",
     TreeTaggerPosLemmaTT4J.PARAM_MODEL_ENCODING, "UTF-8"));
 
