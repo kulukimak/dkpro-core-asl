@@ -22,7 +22,7 @@ Copy one of the scripts into a simple text file (e.g. `pipeline`). Make the file
 
 This adds the basic requirements Jython and jip.
    * Download and install the Java SE Development Kit 7 from the [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html Oracle Java Site]
-   * Download the *Jython 2.7beta 1* from the [http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7-b1/jython-standalone-2.7-b1.jar here]
+   * Download the *Jython 2.7beta 1* from [http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7-b1/jython-standalone-2.7-b1.jar here]
    * Double-click on the *jython-installer-2.7-b1.jar* to start the installer
    * Install with all the default settings. This should install Jython to `C:\jython2.7b1`
    * Replace the `jython.jar` with the [https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.7b1+ jar]
