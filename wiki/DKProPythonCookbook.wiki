@@ -62,7 +62,7 @@ pipeline C:\example_folder\ en
 
 The following script reads all text files (`*.txt`) in the specified folder and prints part-of-speech tags, one per line.
 
-To execute the script, save it as pipeline.jpy. Then change in the command line to the folder where you saved the script and typ the command `C:\jython2.7b1\jython pipeline.jpy <foldername> <language>`, e.g. `C:\jython2.7b1\jython pipeline.jpy C:\example_folder\ en`. This will read all text files (`*.txt`) located in `C:\example_folder\` and assumes that the language in these files is English. Of course `C:\example_folder\` must exist on your file system and must contain at least one `.txt` file. 
+To execute the script, save it as pos.jpy. Then change in the command line to the folder where you saved the script and typ the command `C:\jython2.7b1\jython pos.jpy <foldername> <language>`, e.g. `C:\jython2.7b1\jython pos.jpy C:\example_folder\ en`. This will read all text files (`*.txt`) located in `C:\example_folder\` and assumes that the language in these files is English. Of course `C:\example_folder\` must exist on your file system and must contain at least one `.txt` file. 
 
 
 {{{
@@ -121,10 +121,13 @@ dog NN
 }}}
 
 == OpenNLP Part-of-speech tagging & parsing without reader ==
+In contrast to the previous script, this script is not using a reader. Instead the input is given as a Jython string (see `jcas.documentText`).
 
-This pipeline internally creates data, processes it, and writes results to the console.
+For this string, the pipleline performs part-of-speech tagging and parses it, using the OpenNlpParser. The results are written to the console. 
 
-Mind to provide more memory to Groovy using the command `export JAVA_OPTS="-Xmx1g"` before trying to run this.
+To execute the script, save it as `pos_parser.jpy` and run `C:\C:\jython2.7b1\jython pos_parser.jpy`. 
+
+Parsing can require a lot of memory. To increase the available memory for your script, execute `set JAVA_OPTS="-Xmx1G"` in the command line and try to execute the script again.
 
 {{{
 #!/usr/bin/env jython
