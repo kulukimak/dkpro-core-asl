@@ -50,29 +50,29 @@ Further information on models for particular components can be found in the [htt
 
 == POS Tagging ==
   * !ArktweetTagger
-  * !ClearNlpPosTagger
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpPosTagger.html ClearNlpPosTagger]
   * !HunPosTagger
-  * !LbjPosTagger
+  * !LbjPosTagger (svn only)
   * !MatePosTagger
-  * !MeCabTagger
-  * !OpenNlpPosTagger
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/mecab/MeCabTagger.html MeCabTagger]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpPosTagger.html OpenNlpPosTagger]
   * !StanfordPosTagger
-  * TreeTaggerPosLemmaTT4J
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerPosLemmaTT4J.html TreeTaggerPosLemmaTT4J]
 
 == Segmentation / Tokenization ==
-  * !BreakIteratorSegmenter
-  * !ClearNlpSegmenter
-  * !LanguageToolSegmenter
-  * !OpenNlpSegmenter
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/tokit/BreakIteratorSegmenter.html BreakIteratorSegmenter]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpSegmenter.html ClearNlpSegmenter]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolSegmenter.html LanguageToolSegmenter]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpSegmenter.html OpenNlpSegmenter]
   * !StanfordSegmenter
 
 == Semantic Role Labelling ==
-  * !ClearNlpSemanticRoleLabeler
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpSemanticRoleLabeler.html ClearNlpSemanticRoleLabeler]
 
-== Spell Checking ==
-  * !LanguageToolChecker
-  * !NorvigSpellingCorrector
-  * !SpellChecker (Jazzy)
+== Spell/grammar Checking ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolChecker.html LanguageToolChecker]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/norvig/NorvigSpellingCorrector.html NorvigSpellingCorrector]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/jazzy/SpellChecker.html SpellChecker (Jazzy)]
 
 == Stemming ==
-  * !SnowballStemmer
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/snowball/SnowballStemmer.html SnowballStemmer]
