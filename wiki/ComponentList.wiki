@@ -29,7 +29,7 @@ Further information on models for particular components can be found in the [htt
   * !MateLemmatizer
   * !StanfordLemmatizer
   * !MorphaLemmatizer
-  * TreeTaggerPosLemmaTT4J
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerPosLemmaTT4J.html TreeTaggerPosLemmaTT4J]
 
 == Morphological Annotation ==
   * !MateMorphTagger
