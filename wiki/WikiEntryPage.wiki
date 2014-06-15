@@ -9,13 +9,13 @@ For people who want to use a DKPro release version.
   * [UkpMavenRepository Public UKP-OSS Maven repository]
   * [MyFirstDKProProject First Steps with DKPro Core]
   * [TypeSystem Type system]
-  * [ComponentList Component overview]
   * [ChoosingComponents How to choose components?]
   * [DKProGroovyCookbook Groovy scripts for DKPro Core pipelines]
   * [DKProPythonCookbook Python scripts for DKPro Core pipelines]
 
 ===Current release: DKPro Core 1.6.0===
   * [ReleaseNotes_1_6_0 Release notes] (ASL/GPL)
+  * [ComponentList_1_6_0 List of analysis components] (ASL/GPL)
   * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html API Docs] (ASL)
   * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html API Docs] (GPL)
   * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html Models] (ASL/GPL)
@@ -42,6 +42,7 @@ The information on unreleased versions is updated continually. Individual links 
 
   * *DKPro Core 1.7.0 (unreleased)*
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/lastSuccessfulBuild/artifact/de.tudarmstadt.ukp.dkpro.core.docbook-asl/target/site/d/dkpro.core.book.pdf DKPro Core Guide and Reference]
+    * [ComponentList_1_7_0 List of analysis components] (ASL/GPL)
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/? API Docs] (ASL)
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/? API Docs] (GPL)
     * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdFduOVpydHhURC1Bd0hpZ0c0NGJfMHc&single=true&gid=0&output=html Models] (ASL/GPL)
@@ -57,6 +58,7 @@ The information on unreleased versions is updated continually. Individual links 
 ===Old releases===
   * *DKPro Core 1.5.0*
      * [ReleaseNotes_1_5_0 DKPro Release notes] (ASL) 
+     * [ComponentList_1_5_0 List of analysis components] (ASL/GPL)
      * [http://code.google.com/p/dkpro-core-gpl/wiki/ReleaseNotes_1_5_0 Release notes] (GPL)
      * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.5.0/apidocs/index.html API Docs] (ASL)
      * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.5.0/apidocs/index.html API Docs] (GPL)

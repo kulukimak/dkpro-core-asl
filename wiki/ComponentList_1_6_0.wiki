@@ -1,0 +1,78 @@
+#summary List of components contained in DKPro Core 1.6.0 (ASL/GPL)
+
+<wiki:toc max_depth="2" />
+
+Further information on models for particular components can be found in the [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html list of models]
+
+== Coreference ==
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordCoreferenceResolver.html StanfordCoreferenceResolver]
+
+== Chunker ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpChunker.html OpenNlpChunker]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerChunkerTT4J.html TreeTaggerChunkerTT4J]
+
+== Decompounding ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/decompounding/uima/annotator/CompoundAnnotator.html CompoundAnnotator]
+
+== Dictionary Annotation ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/dictionaryannotator/DictionaryAnnotator.html DictionaryAnnotator]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/dictionaryannotator/semantictagging/SemanticFieldAnnotator.html SemanticFieldAnnotator]
+
+== Language Identification ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/langdect/LanguageDetector.html LangDect (Token ngram-based)]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/textcat/LanguageIdentifier.html LanguageIdentifier (TextCat)]
+
+== Lemmatization ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpLemmatizer.html ClearNlpLemmatizer]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/gate/GateLemmatizer.html GateLemmatizer]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolLemmatizer.html LanguageToolLemmatizer]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/matetools/MateLemmatizer.html MateLemmatizer]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordLemmatizer.html StanfordLemmatizer]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/morpha/MorphaStemmer.html MorphaLemmatizer]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerPosLemmaTT4J.html TreeTaggerPosLemmaTT4J]
+
+== Morphological Annotation ==
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/matetools/MateMorphTagger.html MateMorphTagger]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/sfst/SfstAnnotator.html SfstAnnotator]
+
+== Named Entity Recognition ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpNameFinder.html OpenNlpNameFinder]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordNamedEntityRecognizer.html StanfordNamedEntityRecognizer]
+
+== Parsing ==
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/berkeleyparser/BerkeleyParser.html BerkeleyParser (constituents)]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpDependencyParser.html ClearNlpDependencyParser (dependencies)]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpParser.html OpenNlpParser (constituents)]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/maltparser/MaltParser.html MaltParser (dependencies)]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/matetools/MateParser.html MateParser (dependencies)] 
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/mstparser/MstParser.html MstParser (dependencies)]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordParser.html StanfordParser (constituents, dependencies for some languages)]
+
+== POS Tagging ==
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/arktools/ArktweetTagger.html ArktweetTagger]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpPosTagger.html ClearNlpPosTagger]
+  * !HunPosTagger FIXME (only in 1.7.0)
+  * !LbjPosTagger FIXME (svn only)
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/matetools/MatePosTagger.html MatePosTagger]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/mecab/MeCabTagger.html MeCabTagger]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpPosTagger.html OpenNlpPosTagger]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordPosTagger.html StanfordPosTagger]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerPosLemmaTT4J.html TreeTaggerPosLemmaTT4J]
+
+== Segmentation / Tokenization ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/tokit/BreakIteratorSegmenter.html BreakIteratorSegmenter]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpSegmenter.html ClearNlpSegmenter]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolSegmenter.html LanguageToolSegmenter]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpSegmenter.html OpenNlpSegmenter]
+  * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordSegmenter.html StanfordSegmenter]
+
+== Semantic Role Labelling ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpSemanticRoleLabeler.html ClearNlpSemanticRoleLabeler]
+
+== Spell/grammar Checking ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolChecker.html LanguageToolChecker]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/norvig/NorvigSpellingCorrector.html NorvigSpellingCorrector]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/jazzy/SpellChecker.html SpellChecker (Jazzy)]
+
+== Stemming ==
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.0/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/snowball/SnowballStemmer.html SnowballStemmer]
