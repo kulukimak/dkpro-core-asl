@@ -12,23 +12,23 @@ Further information on models for particular components can be found in the [htt
   * TreeTaggerChunkerTT4J
 
 == Decompounding ==
-  * !CompoundAnnotator
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/decompounding/uima/annotator/CompoundAnnotator.html CompoundAnnotator]
 
 == Dictionary Annotation ==
   * !DictionaryAnnotator
   * !SemanticFieldAnnotator
 
 == Language Identification ==
-  * !LangDect (Token ngram-based )
-  * !TextCat
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/langdect/LanguageDetector.html LangDect (Token ngram-based)]
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/textcat/LanguageIdentifier.html LanguageIdentifier (TextCat)]
 
 == Lemmatization ==
   * !ClearNlpLemmatizer
   * !GateLemmatizer
-  * !LanguageToolLemmatizer
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolLemmatizer.html LanguageToolLemmatizer]
   * !MateLemmatizer
   * !StanfordLemmatizer
-  * !MorphaLemmatizer
+  * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/morpha/MorphaStemmer.html MorphaLemmatizer]
   * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerPosLemmaTT4J.html TreeTaggerPosLemmaTT4J]
 
 == Morphological Annotation ==
