@@ -114,7 +114,7 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
 
 For every stable release, Javadoc should be generated. To Generate Javadoc
 
-   1 Copy the "apidocs" folder from the previous stable release svn tag to the current release tag folder in svn
+   1 Copy the "apidocs" folder from the previous stable release svn tag to the current release tag folder in svn (this happens directly on the svn server using a branch/tag/copy operation, not on the local checkout)
    1 Check out the appropriate stable release from svn tags
    1 from the command line in the root folder just checked out, type `mvn javadoc:aggregate` to generate the javadoc
    1  remove the contents of the folder *apidocs* from the root folder and put in the contents of *target/site/apidocs* instead
