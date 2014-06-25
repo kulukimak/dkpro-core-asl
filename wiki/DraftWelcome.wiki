@@ -16,7 +16,10 @@ Many NLP tools are already freely available in the NLP research community. DKPro
 
 <tr>
 <td align="center">
+<wiki:comment>
 <img width="100" src="http://icons.iconarchive.com/icons/double-j-design/ravenna-3d/256/Components-icon.png"/>
+</wiki:comment>
+<img width="110" src="https://dl.dropboxusercontent.com/u/10679410/DKProCore_Components.png"/>
 </td>
 <td align="center">
 <img width="100" src="https://raw.githubusercontent.com/khellang/Hellang.Repository/master/Hellang.Repository.png"/>
@@ -160,9 +163,9 @@ Drop us a line on the [https://groups.google.com/forum/?fromgroups#!forum/dkpro-
 </tr>
 </table>
 
-==== How to cite ====
+<font size="3"> *How to cite* </font>
 
-*IMPORTANT NOTE FOR RESEARCHERS* - Many of the wrapped third-party components and the models used by them  should be cited individually. We currently do not provide a comprehensive overview over citable publications we would like to encourage you, to track down citable publications for these dependencies.
+*IMPORTANT NOTE FOR RESEARCHERS* - Many of the wrapped third-party components and the models used by them should be cited individually. We currently do not provide a comprehensive overview over citable publications. We encourage you to track down citable publications for these dependencies.
 
 Please cite DKPro Core using one of the following:
 
@@ -170,14 +173,14 @@ Please cite DKPro Core using one of the following:
    * Gurevych, I., Mühlhäuser, M., Müller, C., Steimle, J., Weimer, M, and Zesch, T. (2007). *Darmstadt Knowledge Processing Repository Based on UIMA*. In _Proceedings of the First Workshop on Unstructured Information Management Architecture at Biannual Conference of the Society for Computational Linguistics and Language Technology_, online, Tübingen, Germany. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2007/gldv-uima-ukp.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=GurevychEtal2007dkpro0 (bib)]
    * a simple URL reference, e.g. in a footnote to `http://code.google.com/p/dkpro-core-asl/`.
 
-==== License ====
+<font size="3" > *License* </font>
 
 All components in DKPro Core ASL are licensed under the Apache Software License (ASL) version 2 - but their dependencies may not be:
 
-*IMPORTANT LICENSE NOTE* - It must be pointed out that while the component's source code itself is licensed under the ASL, individual components might make use of third-party libraries or products that are *not* licensed under the ASL, such as LGPL libraries or libraries which are free for research but may not be used in commercial scenarios. Please make sure that you are aware of the third party licenses and respect them.
+*IMPORTANT LICENSE NOTE* - It must be pointed out that while the component's source code itself is licensed under the ASL, individual components might make use of third-party libraries or products that are *not* licensed under the ASL, such as LGPL libraries or libraries which are free for research but may not be used in commercial scenarios. Please be aware of the third party licenses and respect them.
 
 Additional components are available in the sister project [http://code.google.com/p/dkpro-core-gpl DKPro Core GPL].
 
-==== About DKPro Core ====
+<font size="3"> *About DKPro Core* </font>
 
 This project was initiated by the [http://www.ukp.tu-darmstadt.de/ Ubiquitous Knowledge Processing Lab] (UKP) at the Technische Universität Darmstadt, Germany under the auspices of Prof. Dr. Iryna Gurevych.
