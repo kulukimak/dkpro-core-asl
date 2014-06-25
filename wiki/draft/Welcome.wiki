@@ -1,0 +1,183 @@
+<table>
+<tr>
+<td valign="top" width="100%">
+<p>
+DKPro Core is a collection of software components for natural language processing (NLP) based on the Apache UIMA framework.
+</p>
+
+Many NLP tools are already freely available in the NLP research community. DKPro Core provides UIMA components wrapping these tools (and some original tools) so they can be used interchangeably in [http://uima.apache.org UIMA] processing pipelines. DKPro Core builds heavily on [http://uima.apache.org/uimafit uimaFIT] which allows for rapid and easy development of NLP processing pipelines, for wrapping existing tools and for creating original UIMA components.
+
+<table width="100%">
+<tr>
+<td align="center" colspan="4">
+<font size="5">*I want to see what DKPro Core has to offer...*</font>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img width="100" src="http://icons.iconarchive.com/icons/double-j-design/ravenna-3d/256/Components-icon.png"/>
+</td>
+<td align="center">
+<img width="100" src="https://raw.githubusercontent.com/khellang/Hellang.Repository/master/Hellang.Repository.png"/>
+</td>
+<td align="center">
+<img width="100" src="http://cdn.searchenginejournal.com/wp-content/uploads/2012/11/link-audit-file-formats.jpg"/>
+</td>
+<td align="center">
+<img width="100" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/DKProCoreTypeSystem.png"/>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+Components
+</td>
+<td align="center">
+Resources
+</td>
+<td align="center">
+Formats
+</td>
+<td align="center">
+Type system
+</td>
+</tr>
+</table>
+
+<table width="100%">
+<td align="center" colspan="4">
+<font size="4">*I want to use DKPro Core with...*</font>
+</td>
+<tr>
+<td align="center">
+<img width="140" src="https://www.cloudcms.com/images/drivers/java/java.png"/>
+</td>
+<td align="center">
+<img width="175" src="http://groovy.codehaus.org/images/groovy-logo-medium.png"/>
+</td>
+<td align="center">
+<img width="200" src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png"/>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+Java
+</td>
+<td align="center">
+Groovy
+</td>
+<td align="center">
+Python
+</td>
+</tr>
+</table>
+
+
+
+<table width="100%">
+<tr>
+<td align="center" colspan="6">
+<font size="3">*Other DKPro products...*</font>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
+</td>
+<td align="center">
+<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
+</td>
+<td align="center">
+<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
+</td>
+<td align="center">
+<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
+</td>
+<td align="center">
+<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
+</td>
+<td align="center">
+<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
+</td>
+</tr>
+
+<tr>
+<td align="center">DKPro TC</td>
+<td align="center">DKPro Similarity</td>
+<td align="center">DKPro Spelling</td>
+<td align="center">DKPro WSD</td>
+<td align="center">DKPro Lab</td>
+<td align="center">Uby</td>
+</tr>
+</table>
+
+</td>
+<td valign="top">
+<wiki:gadget url="http://www.ohloh.net/p/487652/widgets/project_factoids_stats.xml" width="400" height="270" border="1"/><br />
+<table>
+<tr>
+<td valign="middle"><wiki:gadget url="http://www.ohloh.net/p/487652/widgets/project_users_logo.xml" height="43" border="0"/>
+</td>
+</tr>
+</table>
+<p>
+<b>[http://scholar.google.de/scholar?q=%22DKPro+Core%22 Who cites DKPro Core?]</b> <br />
+<b>[http://code.ohloh.net/search?s=%22de.tudarmstadt.ukp.dkpro.core%22 Who uses DKPro Core?]</b>
+</p>
+<p>
+<table>
+<tr>
+<td><font size="3"> *News* </font></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li>DKPro Core 1.6.0 released ([ReleaseNotes_1_6_0 release notes])</li>
+<li> News item here</li>
+<li> Another news item here</li>
+</ul>
+</td>
+</tr>
+</table>
+</p>
+<p>
+<table>
+<tr>
+<td><font size="3"> *Contact us* </font></td>
+</tr>
+<tr>
+<td>
+Questions?  Comments?  Just want to tell us you use DKPro Core?  
+Drop us a line on the [https://groups.google.com/forum/?fromgroups#!forum/dkpro-core-user DKPro Core User Group]
+</td>
+</tr>
+</table>
+</p>
+</td>
+</tr>
+</table>
+
+==== How to cite ====
+
+*IMPORTANT NOTE FOR RESEARCHERS* - Many of the wrapped third-party components and the models used by them  should be cited individually. We currently do not provide a comprehensive overview over citable publications we would like to encourage you, to track down citable publications for these dependencies.
+
+Please cite DKPro Core using one of the following:
+
+   * Eckart de Castilho, R. and Gurevych, I. (2009). *A Flexible Data-Cleansing Approach to Processing User-Generated Discourse*. In _Proceedings of the First French-speaking meeting around the framework Apache UIMA_, online, Nantes, France. ACM. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2009/rmll-uima-fr-2009.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=TUD-CS-2009-0078&type=99&tx_bibtex_pi1%5Bbibtex%5D=yes (bib)]
+   * Gurevych, I., Mühlhäuser, M., Müller, C., Steimle, J., Weimer, M, and Zesch, T. (2007). *Darmstadt Knowledge Processing Repository Based on UIMA*. In _Proceedings of the First Workshop on Unstructured Information Management Architecture at Biannual Conference of the Society for Computational Linguistics and Language Technology_, online, Tübingen, Germany. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2007/gldv-uima-ukp.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=GurevychEtal2007dkpro0 (bib)]
+   * a simple URL reference, e.g. in a footnote to `http://code.google.com/p/dkpro-core-asl/`.
+
+==== License ====
+
+All components in DKPro Core ASL are licensed under the Apache Software License (ASL) version 2 - but their dependencies may not be:
+
+*IMPORTANT LICENSE NOTE* - It must be pointed out that while the component's source code itself is licensed under the ASL, individual components might make use of third-party libraries or products that are *not* licensed under the ASL, such as LGPL libraries or libraries which are free for research but may not be used in commercial scenarios. Please make sure that you are aware of the third party licenses and respect them.
+
+Additional components are available in the sister project [http://code.google.com/p/dkpro-core-gpl DKPro Core GPL].
+
+==== About DKPro Core ====
+
+This project was initiated by the [http://www.ukp.tu-darmstadt.de/ Ubiquitous Knowledge Processing Lab] (UKP) at the Technische Universität Darmstadt, Germany under the auspices of Prof. Dr. Iryna Gurevych.
