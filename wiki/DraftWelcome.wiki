@@ -31,16 +31,16 @@ Many NLP tools are already freely available in the NLP research community. DKPro
 
 <tr>
 <td align="center">
-Components
+[ComponentList_1_6_0 Components]
 </td>
 <td align="center">
-Resources
+[https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html Resources]
 </td>
 <td align="center">
 Formats
 </td>
 <td align="center">
-Type system
+[TypeSystem Type system]
 </td>
 </tr>
 </table>
@@ -63,13 +63,13 @@ Type system
 
 <tr>
 <td align="center">
-Java
+[DraftJavaIntro Java]
 </td>
 <td align="center">
-Groovy
+[DraftGroovyIntro Groovy]
 </td>
 <td align="center">
-Python
+[DraftPythonIntro Python]
 </td>
 </tr>
 </table>
