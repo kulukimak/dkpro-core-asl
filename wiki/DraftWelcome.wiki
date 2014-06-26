@@ -37,7 +37,7 @@ Many NLP tools are already freely available in the NLP research community. DKPro
 [ComponentList_1_6_0 Components]
 </td>
 <td align="center">
-[https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html Resources]
+[https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdHZXZDFSbC1XeTRiWXphdmo4NDBnc1E&single=true&gid=0&output=html Models]
 </td>
 <td align="center">
 Formats
