@@ -10,7 +10,7 @@ Many NLP tools are already freely available in the NLP research community. DKPro
 <table width="100%">
 <tr>
 <td align="center" colspan="4">
-<font size="5">*I want to see what DKPro Core has to offer...*</font>
+<font size="5">*What DKPro Core has to offer...*</font>
 </td>
 </tr>
 
