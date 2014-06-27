@@ -14,10 +14,10 @@ This small tutorial will show you how to build your first small application with
 
 This tutorial assumes that you have:
 
-   * Java 6 SDK or higher
+   * Java 7 SDK or higher
    * Eclipse 4.3.x
    * Maven Integration for Eclipse (M2E) plugin installed
-   * DKPro Core ASL 1.5.0 or higher
+   * DKPro Core ASL 1.6.1 or higher
 
 == Create a project ==
 
@@ -30,7 +30,7 @@ This tutorial assumes that you have:
 *Note*: If Eclipse fails to find the *de.tudarmstadt.ukp.dkpro.core-asl* POM when you search for it, enter the following fields manually:
    * *groupId:* de.tudarmstadt.ukp.dkpro.core
    * *artifactId:* de.tudarmstadt.ukp.dkpro.core-asl
-   * *version:* 1.5.0 (or higher)
+   * *version:* 1.6.1 (or higher)
 
 *Note*: If you do not wish to inherit from the *de.tudarmstadt.ukp.dkpro.core-asl* POM, you need to perform [UkpMavenRepository#Configuring_a_project_for_access_to_models an extra step] to be able to access the models (e.g. parser models, tagger models, etc.) from the public UKP Maven repository.
 
@@ -50,7 +50,7 @@ This tutorial assumes that you have:
 *Note*: If Eclipse fails to find the artifacts listed above when you search for it, enter the following fields manually:
    * *groupId:* de.tudarmstadt.ukp.dkpro.core
    * *artifactId:* _dependency name given above_
-   * *version:* 1.5.0, except for the tagger model which should be 20120616.0
+   * *version:* 1.6.1, except for the tagger model which should be 20120616.0
 
 == Create your first experiment ==
    
