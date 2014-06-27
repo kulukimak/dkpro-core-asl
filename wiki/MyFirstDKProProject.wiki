@@ -50,7 +50,7 @@ This tutorial assumes that you have:
 *Note*: If Eclipse fails to find the artifacts listed above when you search for it, enter the following fields manually:
    * *groupId:* de.tudarmstadt.ukp.dkpro.core
    * *artifactId:* _dependency name given above_
-   * *version:* 1.6.1, except for the tagger model which should be 20120616.0
+   * *version:* 1.6.1
 
 == Create your first experiment ==
    
