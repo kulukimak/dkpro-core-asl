@@ -1,6 +1,6 @@
 We are pleased to announce the release of
 
-  *DKPro Core, version 1.6.1 (ASL & GPL)*
+*DKPro Core, version 1.6.1 (ASL & GPL)*
 
 a collection of interoperable software components for natural language processing
 
