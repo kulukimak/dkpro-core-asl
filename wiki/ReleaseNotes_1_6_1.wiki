@@ -18,7 +18,7 @@ Changed requirements:
 
 Major improvements:
 
-   * Many writers can not write to ZIP files
+   * Many writers can now write to ZIP files
    * Better support for reading/writing binary CAS formats
 
 Major bug fixes:
