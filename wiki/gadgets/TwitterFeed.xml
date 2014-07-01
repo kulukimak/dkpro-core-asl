@@ -16,7 +16,7 @@
 	<UserPref name="query" display_name="query" required="true" />
 	<UserPref name="title" display_name="title" required="false" />
 	<UserPref name="caption" display_name="caption" required="false" />
-	<Content type="html" view="configuration" preferred_height="400"> 
+	<Content type="html" view="default, configuration" preferred_height="400"> 
 		<![CDATA[ 
 		<style type="text/css"> 
 			.config-options { 
