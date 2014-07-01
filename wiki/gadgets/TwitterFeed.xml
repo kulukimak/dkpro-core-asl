@@ -40,8 +40,8 @@
 					fullscreen: gadgets.views.getCurrentView().getName() == 'canvas', 
 					behavior: 'all' 
 				},
-				type = 'profile', 
-				rpp = 6
+				type: 'profile', 
+				rpp: 6
 			}; 
 
 			var userId = 'UKPLab';
