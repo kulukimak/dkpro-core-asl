@@ -87,6 +87,11 @@ Formats
 </tr>
 
 <tr>
+<td><wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/DKProProductFamilyGadget.xml" width="450" height="600" border="1"/><br /></td>
+</tr>
+
+<wiki:comment>
+<tr>
 <td align="center">
 <img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
 </td>
@@ -115,6 +120,7 @@ Formats
 <td align="center">DKPro Lab</td>
 <td align="center">Uby</td>
 </tr>
+</wiki:comment>
 </table>
 
 </td>
