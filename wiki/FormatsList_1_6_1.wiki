@@ -83,7 +83,7 @@
 
 <tr>
 <td>TEI</td>
-<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.1/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/tei/TeiReader.html TcfReader]</td>
+<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.1/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/tei/TeiReader.html TeiReader]</td>
 <td></td>
 <td></td>
 </tr>
