@@ -5,14 +5,14 @@
 	<![CDATA[
 		<img src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/DKProProductFamily.png" alt="DKPro Product Family" usemap="#products" />
 		<map name="products">
-			<area shape="rect" coords="321, 94, 428, 158" href="http://www.ukp.tu-darmstadt.de/uby" alt="UBY" />
-			<area shape="rect" coords="317, 428, 414, 527" href="https://code.google.com/p/dkpro-statistics/" alt="DKPro Statistics" />
-			<area shape="rect" coords="80, 471, 177, 570" href="https://code.google.com/p/dkpro-lab/" alt="DKPro Lab" />
-			<area shape="rect" coords="330, 280, 427, 379" href="https://code.google.com/p/dkpro-similarity-asl/" alt="DKPro Similarity" />
-			<area shape="rect" coords="225, 280, 322, 379" href="https://code.google.com/p/dkpro-spelling-asl/" alt="DKPro Spelling" />
-			<area shape="rect" coords="120, 280, 217, 379" href="https://code.google.com/p/dkpro-wsd/" alt="DKPro WSD" />
-			<area shape="rect" coords="15, 280, 112, 379" href="https://code.google.com/p/dkpro-tc/" alt="DKPro TC" />
-			<area shape="rect" coords="67, 92, 150, 175" href="https://code.google.com/p/dkpro-core-asl/" alt="DKPro Core" />
+			<area target="_blank" shape="rect" coords="321, 94, 428, 158" href="http://www.ukp.tu-darmstadt.de/uby" alt="UBY" />
+			<area target="_blank" shape="rect" coords="317, 428, 414, 527" href="https://code.google.com/p/dkpro-statistics/" alt="DKPro Statistics" />
+			<area target="_blank" shape="rect" coords="80, 471, 177, 570" href="https://code.google.com/p/dkpro-lab/" alt="DKPro Lab" />
+			<area target="_blank" shape="rect" coords="330, 280, 427, 379" href="https://code.google.com/p/dkpro-similarity-asl/" alt="DKPro Similarity" />
+			<area target="_blank" shape="rect" coords="225, 280, 322, 379" href="https://code.google.com/p/dkpro-spelling-asl/" alt="DKPro Spelling" />
+			<area target="_blank" shape="rect" coords="120, 280, 217, 379" href="https://code.google.com/p/dkpro-wsd/" alt="DKPro WSD" />
+			<area target="_blank" shape="rect" coords="15, 280, 112, 379" href="https://code.google.com/p/dkpro-tc/" alt="DKPro TC" />
+			<area target="_blank" shape="rect" coords="67, 92, 150, 175" href="https://code.google.com/p/dkpro-core-asl/" alt="DKPro Core" />
 		</map>
 	]]>
 	</Content>
