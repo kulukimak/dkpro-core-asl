@@ -16,6 +16,7 @@ For people who want to use a DKPro release version.
 ===Current release: DKPro Core 1.6.1===
   * [ReleaseNotes_1_6_1 Release notes] (ASL/GPL)
   * [ComponentList_1_6_1 List of analysis components] (ASL/GPL)
+  * [FormatsList_1_6_1 List of supported input/output formats] (ASL/GPL)
   * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.1/apidocs/index.html API Docs] (ASL)
   * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.1/apidocs/index.html API Docs] (GPL)
   * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdFNTREhKeFVEU1RsQzc0V0NKcE04b3c&single=true&gid=0&output=html Models] (ASL/GPL)
