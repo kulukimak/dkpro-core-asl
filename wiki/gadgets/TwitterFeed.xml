@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<ModulePrefs title="Follow me on Twitter">
+		title_url="https://www.twitter.com"
+		width="250"
+		height="400">
+		<Require feature="setprefs" />
+		<Require feature="dynamic-height" />
+		<Require feature="views" />
+	</ModulePrefs>
+	<UserPref name="type" display_name="Display" datatype="enum"
+		default_value="search" required="true">
+		<EnumValue value="search" display_value="Search" />
+		<EnumValue value="user" display_value="User" />
+	</UserPref>
+	<UserPref name="query" display_name="query" required="true" />
+	<UserPref name="title" display_name="title" required="false" />
+	<UserPref name="caption" display_name="caption" required="false" />
+	<Content type="html" view="configuration" preferred_height="400"> 
+		<![CDATA[ 
+		<style type="text/css"> 
+			.config-options { 
+				margin: 10px; 
+			} 
+			.label { 
+				font-weight: bold;
+			} 
+			.gray { 
+				color: #FFFFFF;
+			} 
+			.invalid-field { 
+				background-color: #4ED3FF;
+			} 
+			html { 
+				font-family:arial,sans-serif; 
+				font-size:0.81em; 
+				font-size-adjust:none; 
+				font-style:normal; 
+				font-variant:normal; 
+				font-weight:normal; 
+				line-height:1.5; 
+			} 
+			A:link, A:visited, A:active { text-decoration: none } 
+		</style> 
+		<table class="config-options"> 
+			<tr> 
+				<td align="left" class="label">Display:</td> 
+				<td align="left"> 
+					<select id="type" onchange="Update()"> 
+						<option value="profile">User Profile</option> 
+						<option value="search">Search</option> 
+					</select> 
+					</td> 
+				</tr> 
+				<tr id="user_detail"> 
+					<td align="left" class="label">Username:</td> 
+					<td align="left"> 
+						<input type="text" id="userid" onkeyup="Update()"/> 
+					</td> 
+				</tr> 
+				<tr id="query_detail"> 
+					<td align="left" class="label">Search query:</td> 
+					<td align="left"> 
+						<input type="text" id="query" onkeyup="Update()"/> 
+					</td> 
+				</tr> 
+				<tr id="title_detail"> 
+					<td align="left" class="label">Title:</td> 
+					<td align="left"> 
+						<input type="text" id="title" onkeyup="Update()"/> 
+					</td> 
+				</tr> 
+				<tr id="caption_detail"> 
+					<td align="left" class="label">Caption:</td> 
+					<td align="left"> 
+						<input type="text" id="caption" onkeyup="Update()"/> 
+					</td> 
+				</tr> 
+			</table> 
+		<script type="text/javascript"> 
+			var prefs = new gadgets.Prefs(); 
+
+			function Initialize() { 
+				var query = prefs.getString('query') || ''; 
+				switch (prefs.getString('type')) { 
+					default: 
+					case 'profile': 
+						document.getElementById('user_detail').style.display = ''; 
+						document.getElementById('userid').value = query; 
+						document.getElementById('query_detail').style.display = 'none'; 
+						document.getElementById('title_detail').style.display = 'none'; 
+						document.getElementById('caption_detail').style.display = 'none'; 
+						document.getElementById('type').value = 'profile'; 
+						break; 
+
+					case 'search': 
+						document.getElementById('user_detail').style.display = 'none'; 
+						document.getElementById('query_detail').style.display = ''; 
+						document.getElementById('title_detail').style.display = ''; 
+						document.getElementById('caption_detail').style.display = ''; 
+						document.getElementById('query').value = query; 
+						document.getElementById('title').value = 
+								prefs.getString('title') || ''; 
+						document.getElementById('caption').value = 
+								prefs.getString('caption') || ''; 
+						document.getElementById('type').value = 'search'; 
+						break; 
+				} 
+			}; 
+
+			function Update() { 
+				var type = document.getElementById('type').value; 
+
+				switch (type) { 
+					default: 
+					case 'profile': 
+						document.getElementById('user_detail').style.display = ''; 
+						document.getElementById('query_detail').style.display = 'none'; 
+						document.getElementById('title_detail').style.display = 'none'; 
+						document.getElementById('caption_detail').style.display = 'none'; 
+						prefs.set('query', document.getElementById('userid').value); 
+						prefs.set('type', 'profile'); 
+						break; 
+
+					case 'search': 
+						document.getElementById('user_detail').style.display = 'none'; 
+						document.getElementById('query_detail').style.display = ''; 
+						document.getElementById('title_detail').style.display = ''; 
+						document.getElementById('caption_detail').style.display = ''; 
+						prefs.set('title', document.getElementById('title').value); 
+						prefs.set('query', document.getElementById('query').value); 
+						prefs.set('caption', document.getElementById('caption').value); 
+						prefs.set('type', 'search'); 
+						break; 
+				} 
+				gadgets.window.adjustHeight(); 
+			}; 
+
+			gadgets.util.registerOnLoadHandler(Initialize); 
+		</script> 
+		]]>
+	</Content>
+	<Content type="html" view="home, canvas"> 
+		<![CDATA[ 
+		<script src="https://widgets.twimg.com/j/2/widget.js"></script> 
+		<script> 
+		function Initialize() { 
+			var dimensions = gadgets.window.getViewportDimensions(); 
+			var prefs = new gadgets.Prefs(); 
+			var settings = { 
+				version: 2, 
+				id: 'widget', 
+				interval: 6000, 
+				width: dimensions['width'], 
+				height: dimensions['height'], 
+				theme: { 
+					shell: { 
+						background: '#dadada', 
+						color: '#ffffff' 
+					}, 
+					tweets: { 
+						background: '#ffffff', 
+						color: '#000000', 
+						links: '#0762eb' 
+					} 
+				}, 
+				features: { 
+					scrollbar: true, 
+					loop: false, 
+					live: true, 
+					hashtags: true, 
+					timestamp: true, 
+					fullscreen: gadgets.views.getCurrentView().getName() == 'canvas', 
+					behavior: 'all' 
+				} 
+			}; 
+
+			var query = prefs.getString('query'); 
+			switch (prefs.getString('type')) { 
+				default: 
+				case 'profile': 
+					settings['type'] = 'profile'; 
+					settings['rpp'] = 6; 
+					new TWTR.Widget(settings).render().setUser(query).start(); 
+					break; 
+
+				case 'search': 
+					settings['type'] = 'search'; 
+					settings['search'] = query; 
+					settings['title'] = prefs.getString('title') || query; 
+					settings['subject'] = prefs.getString('caption') || ''; 
+					new TWTR.Widget(settings).render().start(); 
+					break; 
+			} 
+		}; 
+		gadgets.util.registerOnLoadHandler(Initialize); 
+		</script> 
+		<div id="widget" style="width:100%;height:100%"> 
+		</div> 
+		]]>
+	</Content>
+</Module>
