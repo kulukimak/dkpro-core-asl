@@ -126,8 +126,16 @@ For every stable release, Javadoc should be generated. To Generate Javadoc
 == Annoucement ==
 
    * Update Google Code website
+      * Create a page with release notes
+      * Update the DKPro Core version in the Create a Project section from the My First DKPro Project wiki page 
+      * Update the Project Home page linking the release notes page
       * Update sidebar
       * Update wiki start page
+         * Link the release notes page
+         * Link the java docs pages for asl and gpl
+         * Create the list of components and link it
+         * Create the list of models and link it
+         * Create the list of supported input/output formats and link it
    * Announce the release on mailing lists (Plaintext format, no HTML, max 70 chars wide):
       * [https://groups.google.com/forum/?hl=de#!forum/dkpro-core-announce DKPro Core announcements]
       * [https://groups.google.com/forum/?hl=de#!forum/dkpro-core-user DKPro Core users]
