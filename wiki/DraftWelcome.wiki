@@ -87,7 +87,7 @@ Formats
 </tr>
 
 <tr>
-<td><wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/DKProProductFamilyGadget.xml" width="450" height="600" border="1"/><br /></td>
+<td align="center" colspan="6"><wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/DKProProductFamilyGadget.xml" width="450" height="600" border="0" /><br /></td>
 </tr>
 
 <wiki:comment>
