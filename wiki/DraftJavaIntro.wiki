@@ -70,14 +70,22 @@ public class Pipeline {
 The result is written to a file called *document.txt.conll* and could look something like this:
 
 {{{
-1	The	the	DT	DT	_	5	det	_	_
-2	quick	quick	JJ	JJ	_	5	amod	_	_
-3	brown	brown	JJ	JJ	_	5	amod	_	_
-4	fox	fox	NN	NN	_	5	nn	_	_
-5	jumps	jump	NNS	NNS	_	0	_	_	_
-6	over	over	IN	IN	_	5	prep	_	_
-7	the	the	DT	DT	_	9	det	_	_
-8	lazy	lazy	JJ	JJ	_	9	amod	_	_
-9	dog	dog	NN	NN	_	6	pobj	_	_
-10	.	.	.	.	_	5	punct	_	_
+1	Pierre	Pierre	NNP	NNP	_	2	nn	_	_
+2	Vinken	Vinken	NNP	NNP	_	9	nsubj	_	_
+3	,	,	,	,	_	2	punct	_	_
+4	61	61	CD	CD	_	5	num	_	_
+5	years	year	NNS	NNS	_	6	measure	_	_
+6	old	old	JJ	JJ	_	2	amod	_	_
+7	,	,	,	,	_	2	punct	_	_
+8	will	will	MD	MD	_	9	aux	_	_
+9	join	join	VB	VB	_	0	_	_	_
+10	the	the	DT	DT	_	11	det	_	_
+11	board	board	NN	NN	_	9	dobj	_	_
+12	as	as	IN	IN	_	9	prep	_	_
+13	a	a	DT	DT	_	15	det	_	_
+14	nonexecutive	nonexecutive	JJ	JJ	_	15	amod	_	_
+15	director	director	NN	NN	_	12	pobj	_	_
+16	Nov.	Nov.	NNP	NNP	_	15	dep	_	_
+17	29	29	CD	CD	_	16	num	_	_
+18	.	.	.	.	_	9	punct	_	_
 }}}
