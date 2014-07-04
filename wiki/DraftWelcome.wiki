@@ -128,7 +128,7 @@ Formats
 <wiki:gadget url="http://www.ohloh.net/p/487652/widgets/project_factoids_stats.xml" width="400" height="270" border="1"/><br />
 <table>
 <tr>
-<td valign="middle"><wiki:gadget url="http://www.ohloh.net/p/487652/widgets/project_users_logo.xml" height="43" border="0"/>
+<td valign="middle"><wiki:gadget url="http://www.ohloh.net/p/487652/widgets/project_users_logo.xml" height="54" border="0"/>
 </td>
 </tr>
 </table>
