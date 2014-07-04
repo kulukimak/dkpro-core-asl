@@ -136,6 +136,7 @@ Formats
 <b>[http://scholar.google.de/scholar?q=%22DKPro+Core%22 Who cites DKPro Core?]</b> <br />
 <b>[http://code.ohloh.net/search?s=%22de.tudarmstadt.ukp.dkpro.core%22 Who uses DKPro Core?]</b>
 </p>
+<wiki:comment>
 <p>
 <table>
 <tr>
@@ -152,6 +153,17 @@ Formats
 </tr>
 </table>
 </p>
+</wiki:comment>
+
+<p>
+<table>
+<tr>
+<td valign="middle"><wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/TwitterFeedGadget.xml" width="400" height="300" border="1"/>
+</td>
+</tr>
+</table>
+</p>
+
 <p>
 <table>
 <tr>
