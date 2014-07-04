@@ -1,55 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-	<ModulePrefs title="Follow me on Twitter">
+	<ModulePrefs title="Follow us on Twitter"
 		title_url="https://www.twitter.com"
-		width="250"
-		height="400">
-		<Require feature="setprefs" />
-		<Require feature="dynamic-height" />
-	</ModulePrefs>
+		width="400"
+		height="300" />
 	<Content type="html"> 
 		<![CDATA[ 
-		<script src="https://widgets.twimg.com/j/2/widget.js"></script> 
-		<script> 
-		function Initialize() { 
-			var dimensions = gadgets.window.getViewportDimensions(); 
-			var settings = { 
-				version: 2, 
-				id: 'widget', 
-				interval: 6000, 
-				width: dimensions['width'], 
-				height: dimensions['height'], 
-				theme: { 
-					shell: { 
-						background: '#dadada', 
-						color: '#ffffff' 
-					}, 
-					tweets: { 
-						background: '#ffffff', 
-						color: '#000000', 
-						links: '#0762eb' 
-					} 
-				}, 
-				features: { 
-					scrollbar: true, 
-					loop: false, 
-					live: true, 
-					hashtags: true, 
-					timestamp: true, 
-					fullscreen: false, 
-					behavior: 'all' 
-				},
-				type: 'profile', 
-				rpp: 6
-			}; 
-
-			var userId = 'UKPLab';
-			new TWTR.Widget(settings).render().setUser(userId).start(); 
-		}; 
-		gadgets.util.registerOnLoadHandler(Initialize); 
-		</script> 
-		<div id="widget" style="width:100%;height:100%"> 
-		</div> 
+			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/UKPLab" data-widget-id="484705722169446400" width="400" height="300">Tweets by @UKPLab</a>
+    		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		]]>
 	</Content>
 </Module>
