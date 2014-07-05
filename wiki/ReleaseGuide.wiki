@@ -54,8 +54,8 @@ When a *maintenance release* is made from a branch, the Major and Minor componen
    1 check for unnecessary dependencies
       1 Fix dependencies
          1 `mvn clean dependency:analyze > analysis.txt`
-         1 All dependencies that are detected "Used undeclared" must be added (observe scope)
-         1 When api.parameter is detected as "Unused declared", it must be set to the scope "provided":
+         1 All dependencies that are detected "_Used undeclared_" must be added (mind to set the scope correctly to save you additional work later)
+         1 When *...api.parameter* (only for this dependency!) is detected as "_Unused declared_", it must be set to the scope "_provided_":
 {{{
 <dependency>
   <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
