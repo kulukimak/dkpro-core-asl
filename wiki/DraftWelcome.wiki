@@ -54,13 +54,13 @@ Formats
 </td>
 <tr>
 <td align="center">
-<img width="140" src="https://www.cloudcms.com/images/drivers/java/java.png"/>
+<img width="128" src="images/logo_java.png"/>
 </td>
 <td align="center">
-<img width="175" src="http://groovy.codehaus.org/images/groovy-logo-medium.png"/>
+<img width="128" src="images/logo_groovy.png"/>
 </td>
 <td align="center">
-<img width="200" src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png"/>
+<img width="128" src="images/logo_python.png"/>
 </td>
 </tr>
 
@@ -202,3 +202,6 @@ Additional components are available in the sister project [http://code.google.co
 <font size="3"> *About DKPro Core* </font>
 
 This project was initiated by the [http://www.ukp.tu-darmstadt.de/ Ubiquitous Knowledge Processing Lab] (UKP) at the Technische Universität Darmstadt, Germany under the auspices of Prof. Dr. Iryna Gurevych.
+
+<font color="gray">
+[https://www.iconfinder.com/icons/16890/java_icon#size=128 icon_java.png], by Christian F. Burprich, Creative Commons (Attribution-Noncommercial-Share Alike 3.0 Unported); [https://www.iconfinder.com/icons/282803/logo_python_icon#size=128 logo_python.png] by IFA, Free for commercial use; [http://findicons.com/icon/576242/pl_groovy_02?id=576242 logo_groovy.png] by pictonic.co, Freeware</font>
