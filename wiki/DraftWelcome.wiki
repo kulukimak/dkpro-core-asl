@@ -54,13 +54,13 @@ Formats
 </td>
 <tr>
 <td align="center">
-<img width="128" src="images/logo_java.png"/>
+<img width="128" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/LogoJava.png"/>
 </td>
 <td align="center">
-<img width="128" src="images/logo_groovy.png"/>
+<img width="128" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/LogoGroovy.png"/>
 </td>
 <td align="center">
-<img width="128" src="images/logo_python.png"/>
+<img width="128" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/LogoPython.png"/>
 </td>
 </tr>
 
@@ -204,4 +204,4 @@ Additional components are available in the sister project [http://code.google.co
 This project was initiated by the [http://www.ukp.tu-darmstadt.de/ Ubiquitous Knowledge Processing Lab] (UKP) at the Technische Universität Darmstadt, Germany under the auspices of Prof. Dr. Iryna Gurevych.
 
 <font color="gray">
-[https://www.iconfinder.com/icons/16890/java_icon#size=128 icon_java.png], by Christian F. Burprich, Creative Commons (Attribution-Noncommercial-Share Alike 3.0 Unported); [https://www.iconfinder.com/icons/282803/logo_python_icon#size=128 logo_python.png] by IFA, Free for commercial use; [http://findicons.com/icon/576242/pl_groovy_02?id=576242 logo_groovy.png] by pictonic.co, Freeware</font>
+[https://www.iconfinder.com/icons/16890/java_icon#size=128 LogoJava.png], by Christian F. Burprich, Creative Commons (Attribution-Noncommercial-Share Alike 3.0 Unported); [https://www.iconfinder.com/icons/282803/logo_python_icon#size=128 LogoPython.png] by IFA, Free for commercial use; [http://findicons.com/icon/576242/pl_groovy_02?id=576242 LogoGroovy.png] by pictonic.co, Freeware</font>
