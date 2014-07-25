@@ -1,0 +1,111 @@
+<table>
+<tr>
+<td valign="top" width="100%">
+<p>
+*News: DKPro Core 1.6.1 released ([ReleaseNotes_1_6_1 release notes])
+
+DKPro Core is a collection of software components for natural language processing (NLP) based on the Apache UIMA framework. This project was initiated by the [http://www.ukp.tu-darmstadt.de/ Ubiquitous Knowledge Processing Lab] (UKP) at the Technische Universität Darmstadt, Germany under the auspices of Prof. Dr. Iryna Gurevych. 
+</p>
+
+Many powerful and state-of-the-art NLP tools are already freely available in the NLP research community. New and improved tools are being developed and released continuously. The tools cover the whole range of NLP-related processing tasks. DKPro Core provides UIMA components wrapping these tools so they can be used interchangeably in processing pipelines. We also provide several original components. DKPro Core builds heavily on [http://code.google.com/p/uimafit/ uimaFIT] which allows for rapid and easy development of NLP processing pipelines, for wrapping existing tools and for creating original UIMA components. 
+
+This project contains those components of DKPro Core that are licensed under the Apache Software License (ASL) version 2. 
+Additional components are available in the sister project [http://code.google.com/p/dkpro-core-gpl DKPro Core GPL].
+
+==== To get a taste... ==== 
+
+... of the components types included in DKPro Core here is a brief (incomplete) list. Components marked with *†* are in [http://dkpro-core-gpl.googlecode.com DKPro Core GPL], the rest in ASL:
+
+   * tokenization/segmentation (!BreakIterator, OpenNLP, !LanguageTool, Stanford CoreNLP†)
+   * compound splitting (Banana Split, JWordSplitter, ASV Toolbox)
+   * stemming (Snowball)
+   * lemmatization (ClearNLP, !TreeTagger)
+   * part-of-speech tagging (ClearNLP, !TreeTagger, OpenNLP, Mecab, Stanford CoreNLP†)
+   * morphological analysis (SFST†)
+   * syntactic parsing (OpenNLP, Stanford CoreNLP†, Berkeley Parser†)
+   * dependency parsing (ClearNLP, !MaltParser, !MstParser, Stanford CoreNLP†)
+   * coreference resolution (Stanford CoreNLP†)
+   * language identification (!TextCat)
+   * spelling correction (Jazzy)
+   * grammar checking (!LanugageTool)
+   * IO support for various corpus formats (text, NEGRA, CONLL, TEI, TIGER-XML, BNC-XML, XML, PDF, Wikipedia Database, IMS Open Corpus Workbench...)
+   * [WorkingWithNGrams Working with n-grams]
+   * ...[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/apidocs/index.html JavaDocs] ...
+   * ... [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/latest-release/apidocs/index.html yet more components under the GPL license] ...
+</td>
+<td valign="top">
+<wiki:gadget url="http://www.ohloh.net/p/487652/widgets/project_factoids_stats.xml" width="400" height="270" border="1"/><br />
+<table>
+<tr>
+<td valign="middle"><wiki:gadget url="http://www.ohloh.net/p/487652/widgets/project_users_logo.xml" height="43" border="0"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+==== Who is using DKPro Core? ====
+
+   * [http://scholar.google.de/scholar?q=%22DKPro+Core%22 Search Google Scholar] to find publications referring "DKPro Core"
+   * [http://code.ohloh.net/search?s=%22de.tudarmstadt.ukp.dkpro.core%22 Search Ohloh Code] to find code referring to "de.tudarmstadt.ukp.dkpro.core"
+
+==== Other DKPro products ==== 
+   * [http://code.google.com/p/dkpro-keyphrases/ DKPro Keyphrases] - keyphrase extraction
+   * [http://code.google.com/p/dkpro-lab/ DKPro Lab] - experimental workflows
+   * [http://code.google.com/p/dkpro-similarity-asl/ DKPro Similarity] - text similarity
+   * [http://code.google.com/p/dkpro-spelling-asl/ DKPro Spelling] - real-world spelling errors
+   * [http://code.google.com/p/dkpro-wsd/ DKPro WSD] - word sense disambiguation
+
+==== Using DKPro Core ==== 
+
+To set up your development environment to use DKPro with Maven, please follow [UserSetup these instructions].
+
+==== Code example ====
+
+{{{
+CollectionReaderDescription reader = createReaderDescription(
+  TextReader.class,
+  TextReader.PARAM_PATH, "src/test/resources/text",
+  TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt", "[-]broken.txt" },
+  TextReader.PARAM_LANGUAGE, "en");
+
+AnalysisEngineDescription tokenizer = createEngineDescription(
+  BreakIteratorSegmenter.class);
+
+AnalysisEngineDescription nameFinder = createEngineDescription(
+  DictionaryAnnotator.class,
+  DictionaryAnnotator.PARAM_PHRASE_FILE, "src/test/resources/dictionaries/names.txt",
+  DictionaryAnnotator.PARAM_ANNOTATION_TYPE, Name.class);
+
+AnalysisEngineDescription writer = createEngineDescription(
+  CasDumpWriter.class,
+  CasDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
+
+SimplePipeline.runPipeline(reader, tokenizer, nameFinder, writer);
+}}}
+
+The full source code for this example can be found in our [https://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/latest-release/de.tudarmstadt.ukp.dkpro.core.examples-asl example project].
+
+Not all components are equally well documented and tested. This is being worked on. If you run into problems, please  [https://groups.google.com/forum/?fromgroups#!forum/dkpro-core-user tell us], so we learn where improvements need to be made.
+
+====How to cite?====
+
+*IMPORTANT NOTE FOR RESEARCHERS* - If you use DKPro components in your research and publish about it, please be aware that many of the wrapped third-party components and the models used by them can and should be cited individually. We currently do not provide a comprehensive overview over citable publications and may or may not do so in the future. For the time being we would like to encourage you, to track down citable publications yourself.
+
+Please do consider citing DKPro Core using one of the following references:
+
+   *  Eckart de Castilho, R. and Gurevych, I. (2014). *A broad-coverage collection of portable NLP components for building shareable analysis pipelines*. In _Proceedings of the Workshop on Open Infrastructures and Analysis Frameworks for HLT (OIAF4HLT) at COLING 2014_, Dublin, Ireland [https://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/OIAF4HLT2014DKProCore_cameraready.pdf (pdf)] [https://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=TUD-CS-2014-0864# (bib)]
+   *  Eckart de Castilho, R. and Gurevych, I. (2009). *A Flexible Data-Cleansing Approach to Processing User-Generated Discourse*. In _Proceedings of the First French-speaking meeting around the framework Apache UIMA_, online, Nantes, France. ACM. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2009/rmll-uima-fr-2009.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=TUD-CS-2009-0078&type=99&tx_bibtex_pi1%5Bbibtex%5D=yes (bib)]
+   *   Gurevych, I., Mühlhäuser, M., Müller, C., Steimle, J., Weimer, M, and Zesch, T. (2007). *Darmstadt Knowledge Processing Repository Based on UIMA*. In _Proceedings of the First Workshop on Unstructured Information Management Architecture at Biannual Conference of the Society for Computational Linguistics and Language Technology_, online, Tübingen, Germany. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2007/gldv-uima-ukp.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=GurevychEtal2007dkpro0 (bib)]
+   * a simple URL reference, e.g. in a footnote to `http://code.google.com/p/dkpro-core-asl/`.
+
+==== Feedback ====
+
+We would love to know if you use DKPro Core in your work or research. If you like DKPro Core, have questions, comments or just want to tell us that you use DKPro Core, please write us a small post to the [https://groups.google.com/forum/?fromgroups#!forum/dkpro-core-user DKPro Core User Group].
+
+==== License ====
+
+All components in DKPro Core ASL are licensed under the Apache Software License (ASL) version 2 - but their dependencies may not be:
+
+*IMPORTANT LICENSE NOTE* - It must be pointed out that while the component's source code itself is licensed under the ASL, individual components might make use of third-party libraries or products that are *not* licensed under the ASL, such as LGPL libraries or libraries which are free for research but may not be used in commercial scenarios. Please make sure that you are aware of the third party licenses and respect them.
