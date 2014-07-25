@@ -17,18 +17,18 @@ Many NLP tools are already freely available in the NLP research community. DKPro
 <tr>
 <td align="center">
 <wiki:comment>
-<img width="100" src="http://icons.iconarchive.com/icons/double-j-design/ravenna-3d/256/Components-icon.png"/>
-</wiki:comment>
 <img width="110" src="https://dl.dropboxusercontent.com/u/10679410/DKProCore_Components.png"/>
+</wiki:comment>
+<img width="128" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/IconComponents.png"/>
 </td>
 <td align="center">
-<img width="100" src="https://raw.githubusercontent.com/khellang/Hellang.Repository/master/Hellang.Repository.png"/>
+<img width="128" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/IconModels.png"/>
 </td>
 <td align="center">
-<img width="100" src="http://cdn.searchenginejournal.com/wp-content/uploads/2012/11/link-audit-file-formats.jpg"/>
+<img width="128" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/IconFormatBlank.png"/>
 </td>
 <td align="center">
-<img width="100" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/DKProCoreTypeSystem.png"/>
+<img width="128" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/IconTypeSystem.png"/>
 </td>
 </tr>
 
@@ -50,7 +50,7 @@ Formats
 
 <table width="100%">
 <td align="center" colspan="4">
-<font size="4">*Get started in 5 minutes using...*</font>
+<font size="4">*Get started using...*</font>
 </td>
 <tr>
 <td align="center">
@@ -63,6 +63,7 @@ Formats
 <img width="128" src="https://dkpro-core-asl.googlecode.com/svn/wiki/images/LogoPython.png"/>
 </td>
 </tr>
+
 
 <tr>
 <td align="center">
@@ -77,51 +78,25 @@ Formats
 </tr>
 </table>
 
+<font size="3"> *How to cite* </font>
 
+Many of the wrapped third-party components and the models used by them should be cited individually. We currently do not provide a comprehensive overview over citable publications. We encourage you to track down citable publications for these dependencies.
 
-<table width="100%">
-<tr>
-<td align="center" colspan="6">
-<font size="3">*Other DKPro products...*</font>
-</td>
-</tr>
+Please cite DKPro Core using one of the following:
 
-<tr>
-<td align="center" colspan="6"><wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/DKProProductFamilyGadget.xml" width="450" height="600" border="0" /><br /></td>
-</tr>
+   * Eckart de Castilho, R. and Gurevych, I. (2009). *A Flexible Data-Cleansing Approach to Processing User-Generated Discourse*. In _Proceedings of the First French-speaking meeting around the framework Apache UIMA_, online, Nantes, France. ACM. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2009/rmll-uima-fr-2009.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=TUD-CS-2009-0078&type=99&tx_bibtex_pi1%5Bbibtex%5D=yes (bib)]
+   * Gurevych, I., Mühlhäuser, M., Müller, C., Steimle, J., Weimer, M, and Zesch, T. (2007). *Darmstadt Knowledge Processing Repository Based on UIMA*. In _Proceedings of the First Workshop on Unstructured Information Management Architecture at Biannual Conference of the Society for Computational Linguistics and Language Technology_, online, Tübingen, Germany. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2007/gldv-uima-ukp.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=GurevychEtal2007dkpro0 (bib)]
+   * a simple URL reference, e.g. in a footnote to `http://code.google.com/p/dkpro-core-asl/`.
 
-<wiki:comment>
-<tr>
-<td align="center">
-<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
-</td>
-<td align="center">
-<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
-</td>
-<td align="center">
-<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
-</td>
-<td align="center">
-<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
-</td>
-<td align="center">
-<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
-</td>
-<td align="center">
-<img width="50" src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png"/>
-</td>
-</tr>
+<font size="3" > *License* </font>
 
-<tr>
-<td align="center">DKPro TC</td>
-<td align="center">DKPro Similarity</td>
-<td align="center">DKPro Spelling</td>
-<td align="center">DKPro WSD</td>
-<td align="center">DKPro Lab</td>
-<td align="center">Uby</td>
-</tr>
-</wiki:comment>
-</table>
+All components in DKPro Core ASL are licensed under the Apache Software License (ASL) version 2 - but their dependencies may not be:
+
+*IMPORTANT LICENSE NOTE* - It must be pointed out that while the component's source code itself is licensed under the ASL, individual components might make use of third-party libraries or products that are *not* licensed under the ASL, such as LGPL libraries or libraries which are free for research but may not be used in commercial scenarios. Please be aware of the third party licenses and respect them.
+
+<font size="3"> *About DKPro Core* </font>
+
+This project was initiated by the [http://www.ukp.tu-darmstadt.de/ Ubiquitous Knowledge Processing Lab] (UKP) at the Technische Universität Darmstadt, Germany under the auspices of Prof. Dr. Iryna Gurevych.
 
 </td>
 <td valign="top">
@@ -131,37 +106,15 @@ Formats
 <td valign="middle"><wiki:gadget url="http://www.ohloh.net/p/487652/widgets/project_users_logo.xml" height="54" border="0"/>
 </td>
 </tr>
-</table>
-<p>
-<b>[http://scholar.google.de/scholar?q=%22DKPro+Core%22 Who cites DKPro Core?]</b> <br />
-<b>[http://code.ohloh.net/search?s=%22de.tudarmstadt.ukp.dkpro.core%22 Who uses DKPro Core?]</b>
-</p>
-<wiki:comment>
-<p>
-<table>
-<tr>
-<td><font size="3"> *News* </font></td>
-</tr>
-<tr>
-<td>
-<ul>
-<li>DKPro Core 1.6.0 released ([ReleaseNotes_1_6_0 release notes])</li>
-<li> News item here</li>
-<li> Another news item here</li>
-</ul>
-</td>
-</tr>
-</table>
-</p>
-</wiki:comment>
-
-<p>
-<table>
 <tr>
 <td valign="middle"><wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/DKProTwitterFeedGadget.xml" width="400" height="300" border="1"/>
 </td>
 </tr>
 </table>
+
+<p>
+<b>[http://scholar.google.de/scholar?q=%22DKPro+Core%22 Who cites DKPro Core?]</b> <br />
+<b>[http://code.ohloh.net/search?s=%22de.tudarmstadt.ukp.dkpro.core%22 Who uses DKPro Core?]</b>
 </p>
 
 <p>
@@ -181,27 +134,16 @@ Drop us a line on the [https://groups.google.com/forum/?fromgroups#!forum/dkpro-
 </tr>
 </table>
 
-<font size="3"> *How to cite* </font>
+<wiki:comment>
+<wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/DKProProductFamilyGadget.xml" width="450" height="600" border="0" /><br />
+</wiki:comment>
 
-*IMPORTANT NOTE FOR RESEARCHERS* - Many of the wrapped third-party components and the models used by them should be cited individually. We currently do not provide a comprehensive overview over citable publications. We encourage you to track down citable publications for these dependencies.
-
-Please cite DKPro Core using one of the following:
-
-   * Eckart de Castilho, R. and Gurevych, I. (2009). *A Flexible Data-Cleansing Approach to Processing User-Generated Discourse*. In _Proceedings of the First French-speaking meeting around the framework Apache UIMA_, online, Nantes, France. ACM. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2009/rmll-uima-fr-2009.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=TUD-CS-2009-0078&type=99&tx_bibtex_pi1%5Bbibtex%5D=yes (bib)]
-   * Gurevych, I., Mühlhäuser, M., Müller, C., Steimle, J., Weimer, M, and Zesch, T. (2007). *Darmstadt Knowledge Processing Repository Based on UIMA*. In _Proceedings of the First Workshop on Unstructured Information Management Architecture at Biannual Conference of the Society for Computational Linguistics and Language Technology_, online, Tübingen, Germany. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2007/gldv-uima-ukp.pdf (pdf)] [http://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=GurevychEtal2007dkpro0 (bib)]
-   * a simple URL reference, e.g. in a footnote to `http://code.google.com/p/dkpro-core-asl/`.
-
-<font size="3" > *License* </font>
-
-All components in DKPro Core ASL are licensed under the Apache Software License (ASL) version 2 - but their dependencies may not be:
-
-*IMPORTANT LICENSE NOTE* - It must be pointed out that while the component's source code itself is licensed under the ASL, individual components might make use of third-party libraries or products that are *not* licensed under the ASL, such as LGPL libraries or libraries which are free for research but may not be used in commercial scenarios. Please be aware of the third party licenses and respect them.
-
-Additional components are available in the sister project [http://code.google.com/p/dkpro-core-gpl DKPro Core GPL].
-
-<font size="3"> *About DKPro Core* </font>
-
-This project was initiated by the [http://www.ukp.tu-darmstadt.de/ Ubiquitous Knowledge Processing Lab] (UKP) at the Technische Universität Darmstadt, Germany under the auspices of Prof. Dr. Iryna Gurevych.
 
 <font color="gray">
-[https://www.iconfinder.com/icons/16890/java_icon#size=128 LogoJava.png], by Christian F. Burprich, Creative Commons (Attribution-Noncommercial-Share Alike 3.0 Unported); [https://www.iconfinder.com/icons/282803/logo_python_icon#size=128 LogoPython.png] by IFA, Free for commercial use; [http://findicons.com/icon/576242/pl_groovy_02?id=576242 LogoGroovy.png] by pictonic.co, Freeware</font>
+[https://www.iconfinder.com/icons/16890/java_icon#size=128 LogoJava.png] by Christian F. Burprich, Creative Commons (Attribution-Noncommercial-Share Alike 3.0 Unported); 
+[https://www.iconfinder.com/icons/282803/logo_python_icon#size=128 LogoPython.png] by IFA; 
+[http://findicons.com/icon/576242/pl_groovy_02?id=576242 LogoGroovy.png] by pictonic.co;
+[https://www.iconfinder.com/icons/175334/services_icon#size=128 IconComponents.png], [https://www.iconfinder.com/icons/174880/database_icon#size=128 IconModels.png] by [http://icons8.com/ Visual Pharm];
+[https://www.iconfinder.com/icons/199323/extension_file_format_txt_icon#size=128 IconFormatText.png], [https://www.iconfinder.com/icons/199231/blank_extension_file_format_icon#size=128 IconFormatBlank.png] by [https://www.iconfinder.com/iconsets/lexter-flat-colorfull-file-formats Honza Dousek];
+[https://www.iconfinder.com/icons/115791/tag_icon#size=128 IconTypeSystem.png] by Designmodo
+</font>
