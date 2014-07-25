@@ -7,6 +7,7 @@ This graphics gives an overview of the most important types in the DKPro Core ty
 https://dkpro-core-asl.googlecode.com/svn/wiki/images/DKProCoreTypeSystem.png
 
 
+<wiki:comment>
 <h3>Segmentation</h3>
 
 <h4> Compound </h4>
@@ -48,3 +49,4 @@ A !CompoundPart represents one fragment from the compounding word. Besides that,
      )
 )
 }}}
+</wiki:comment>
