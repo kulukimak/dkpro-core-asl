@@ -158,7 +158,7 @@ Formats
 <p>
 <table>
 <tr>
-<td valign="middle"><wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/TwitterFeedGadget.xml" width="400" height="300" border="1"/>
+<td valign="middle"><wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/DKProTwitterFeedGadget.xml" width="400" height="300" border="1"/>
 </td>
 </tr>
 </table>
