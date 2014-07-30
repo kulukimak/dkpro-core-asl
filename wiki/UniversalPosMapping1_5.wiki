@@ -1,6 +1,6 @@
 #summary Mapping to Universal POS Tags
 
-|| Universal  || DKPro (1.5.0) || DKPro (future) ||  	Change || Description  || 
+|| Universal  || DKPro (< 2.0.0) || DKPro (>= 2.0.0) ||  	Change || Description  || 
 || ADJ || ADJ ||  ADJ ||  no ||  adjetives ||  
 || ADV ||  ADV ||  ADV ||  no ||  adverbs ||  
 || DET ||  ART ||  DET ||  rename ||  determiners ||  
