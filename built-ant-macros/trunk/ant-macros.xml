@@ -153,7 +153,7 @@
 		<attribute name="language"/>
 		<attribute name="variant"/>
 		<attribute name="extension"/>
-		<element name="metadata" optional="yes"/>
+		<element name="additionalContent" optional="yes"/>
 		<attribute name="prop.verify.md5" default="verify.md5.@{tool}.@{language}.@{variant}"/>
 		<attribute name="prop.verify.md5.actual" default="verify.md5.actual.@{tool}.@{language}.@{variant}"/>
 		<sequential>
@@ -163,6 +163,7 @@
 			
 			<copy file="@{file}" tofile="target/model-staging/${outputPackage}/@{tool}-@{language}-@{variant}.@{extension}"/>
 			<copy file="@{file}.props" tofile="target/model-staging/${outputPackage}/@{tool}-@{language}-@{variant}.@{extension}.props" failonerror="false"/>
+			<additionalContent/>
 			
 			<generate-pom version="@{version}" groupId="@{groupId}" 
 				artifactId="@{artifactIdBase}-upstream-@{tool}-@{language}-@{variant}"/>
@@ -181,8 +182,7 @@ Actual  : ${@{prop.verify.md5.actual}}
 
 			<jar destfile="target/@{artifactIdBase}-upstream-@{tool}-@{language}-@{variant}-@{version}.jar" compress="true">
 				<fileset dir="target/model-staging">
-					<include name="META-INF/**/*"/>
-					<include name="**/@{tool}-@{language}-@{variant}*"/>
+					<include name="**/*"/>
 				</fileset>
 			</jar>
 			
@@ -222,7 +222,6 @@ Actual  : ${@{prop.verify.md5.actual}}
 		<attribute name="tool"/>
 		<attribute name="language"/>
 		<attribute name="variant"/>
-		<element name="metadata" optional="yes"/>
 		<sequential>
 			<fail unless="outputPackage">No output package set.</fail>
 			<delete dir="target/model-staging"/>
@@ -250,147 +249,6 @@ Actual  : ${@{prop.verify.md5.actual}}
 			<delete dir="target/model-staging"/>
 		</sequential>
 	</macrodef>
-
-	<!--
-	 - Generate a JAR containing the model and the DKPro meta data.
-	 -
-	 - Arguments:
-	 -   file:              model file (needs to be present on the local file system)
-	 -   md5:               md5 checksum of the file
-	 -   groupId:           group id
-	 -   artifactIdBase:    base artifact id - model type, language and variante are appended
-	 -   extension          extension to use for the model file
-	 -   version:           model version
-	 -   tool:              kind of tool for which the model is made
-	 -   language:          model language
-	 -   variant:           model variant
-	 -   comment:           comment in the header of the generated model properties (optional)
-	 -   metadata:          extra meta data to add to the model properties file
-	 -
-	 - Proprties:
-	 -   outputPackage      package to put the model file and meta data (should end in /lib)
-	 -                      use folder notation (with / not .)
-	 -
-	 - Locations
-	 -   target/model-staging/${outputPackage}
-	 -   target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar
-	 -->
-	<macrodef name="install-model-file">
-		<attribute name="file"/>
-		<attribute name="md5"/>
-		<attribute name="groupId"/>
-		<attribute name="artifactIdBase"/>
-		<attribute name="extension"/>
-		<attribute name="variant"/>
-		<attribute name="tool"/>
-		<attribute name="language"/>
-		<attribute name="version"/>
-		<attribute name="comment" default=""/>
-		<element name="metadata" optional="yes"/>
-		<attribute name="prop.verify.md5" default="verify.md5.@{tool}.@{language}.@{variant}"/>
-		<attribute name="prop.verify.md5.actual" default="verify.md5.actual.@{tool}.@{language}.@{variant}"/>
-		<sequential>
-			<fail unless="outputPackage">No output package set.</fail>
-			<delete dir="target/model-staging"/>
-	    	<mkdir dir="target/model-staging/${outputPackage}"/>
-			
-			<copy file="@{file}" tofile="target/model-staging/${outputPackage}/@{tool}-@{language}-@{variant}.@{extension}"/>
-			<copy file="@{file}.props" tofile="target/model-staging/${outputPackage}/@{tool}-@{language}-@{variant}.@{extension}.props" failonerror="false"/>
-			
-			<generate-model-properties tool="@{tool}" language="@{language}" variant="@{variant}"
-				extension="@{extension}" version="@{version}" comment="@{comment}">
-				<metadata/>
-			</generate-model-properties>
-			<clean-pom/>
-			<generate-pom version="@{version}" groupId="@{groupId}" 
-				artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}"/>
-			
-			<checksum file="target/model-staging/${outputPackage}/@{tool}-@{language}-@{variant}.@{extension}" property="@{md5}" verifyproperty="@{prop.verify.md5}"/>
-			<checksum file="target/model-staging/${outputPackage}/@{tool}-@{language}-@{variant}.@{extension}" property="@{prop.verify.md5.actual}"/>
-			<condition property="checksum.mismatch">
-				<equals arg1="false" arg2="${@{prop.verify.md5}}"/>
-			</condition>
-			<fail if="checksum.mismatch">
-MD5 checksum mismatch for @{tool}-@{language}-@{variant}.@{extension}.
-Please verify the checksum and if necessary update this script.
-Expected: @{md5}
-Actual  : ${@{prop.verify.md5.actual}}
-			</fail>
-
-			<jar destfile="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar" compress="true">
-				<fileset dir="target/model-staging">
-					<include name="META-INF/**/*"/>
-					<include name="**/@{tool}-@{language}-@{variant}*"/>
-				</fileset>
-			</jar>
-			
-			<install-artifact file="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar"
-				groupId="@{groupId}" artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}" version="@{version}"/>
-			
-			<delete dir="target/model-staging"/>
-		</sequential>
-	</macrodef>
-
-	<!--
-	 - Generate a JAR containing the model and the DKPro meta data.
-	 -
-	 - Arguments:
-	 -   folder:            folder containing the model (needs to be on the local file system)
-	 -   groupId:           group id
-	 -   artifactIdBase:    base artifact id - model type, language and variante are appended
-	 -   version:           model version
-	 -   tool:              kind of tool for which the model is made
-	 -   language:          model language
-	 -   variant:           model variant
-	 -   comment:           comment in the header of the generated model properties (optional)
-	 -   metadata:          extra meta data to add to the model properties file
-	 -
-	 - Proprties:
-	 -   outputPackage      package to put the model file and meta data (should end in /lib)
-	 -                      use folder notation (with / not .)
-	 -
-	 - Locations
-	 -   target/model-staging/${outputPackage}
-	 -   target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar
-	 -->
-	<macrodef name="install-model-folder">
-        <attribute name="folder"/>
-        <attribute name="groupId"/>
-        <attribute name="artifactIdBase"/>
-        <attribute name="version"/>
-        <attribute name="tool"/>
-        <attribute name="language"/>
-        <attribute name="variant"/>
-        <attribute name="comment" default=""/>
-        <element name="metadata" optional="yes"/>
-        <sequential>
-			<fail unless="outputPackage">No output package set.</fail>
-			<delete dir="target/model-staging"/>
-	    	<mkdir dir="target/model-staging/${outputPackage}"/>
-        	
-            <copy todir="target/model-staging/${outputPackage}/@{tool}/@{language}/@{variant}">
-            	<fileset dir="@{folder}">
-                    <include name="**/*"/>
-            	</fileset>
-            </copy>
-            
-            <clean-pom/>
-            <generate-pom version="@{version}" groupId="@{groupId}" 
-                artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}"/>
-            
-            <jar destfile="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar" compress="true">
-                <fileset dir="target/model-staging">
-                    <include name="META-INF/**/*"/>
-                    <include name="**/lib/@{tool}/@{language}/@{variant}/**/*"/>
-                </fileset>
-            </jar>
-            
-            <install-artifact file="target/@{artifactIdBase}-model-@{tool}-@{language}-@{variant}-@{version}.jar"
-                groupId="@{groupId}" artifactId="@{artifactIdBase}-model-@{tool}-@{language}-@{variant}" version="@{version}"/>
-      
-			<delete dir="target/model-staging"/>
-        </sequential>
-    </macrodef>
 	
 	<!--
 	 - Generate two JARs, one with the meta data and another with the upstream model
@@ -429,7 +287,8 @@ Actual  : ${@{prop.verify.md5.actual}}
 		<attribute name="language"/>
 		<attribute name="variant"/>
 		<attribute name="comment" default=""/>
-		<element name="metadata" optional="yes" implicit="true"/>
+		<element name="metadata" optional="yes"/>
+		<element name="additionalUpstreamContent" optional="yes"/>
 		<attribute name="prop.verify.md5" default="verify.md5.@{tool}.@{language}.@{variant}"/>
 		<attribute name="prop.verify.md5.actual" default="verify.md5.actual.@{tool}.@{language}.@{variant}"/>
 		<sequential>
@@ -442,7 +301,11 @@ Actual  : ${@{prop.verify.md5.actual}}
 				tool="@{tool}" 
 				language="@{language}" 
 				version="@{upstreamVersion}" 
-				md5="@{md5}"/>
+				md5="@{md5}">
+				<additionalContent>
+					<additionalUpstreamContent/>
+				</additionalContent>
+			</install-upstream-file>
 			
 			<install-model-stub 
 				groupId="@{groupId}" 
@@ -494,7 +357,7 @@ Actual  : ${@{prop.verify.md5.actual}}
 		<attribute name="language"/>
 		<attribute name="variant"/>
 		<attribute name="comment" default=""/>
-		<element name="metadata" optional="yes" implicit="true"/>
+		<element name="metadata" optional="yes"/>
 		<sequential>
 			<install-upstream-folder 
 				folder="@{folder}" 
