@@ -379,7 +379,7 @@ Actual  : ${@{prop.verify.md5.actual}}
 				targetGroupId="@{groupId}" 
 				targetVersion="@{upstreamVersion}" 
 			    targetArtifactId="@{artifactIdBase}-upstream-@{tool}-@{language}-@{variant}"
-				targetLocation="classpath:/${outputPackage}/@{tool}-@{language}-@{variant}.@{extension}">
+				targetLocation="classpath:/${outputPackage}/@{tool}/@{language}/@{variant}">
 				<metadata/>
 			</install-model-stub>
 		</sequential>
