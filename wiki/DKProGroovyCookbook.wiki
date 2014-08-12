@@ -563,24 +563,25 @@ which runs the set of segmentation tests maintained [DKProSegmentationTestSuite 
 #!/usr/bin/env groovy
 @Grab(group='de.tudarmstadt.ukp.dkpro.core',
       module='de.tudarmstadt.ukp.dkpro.core.tokit-asl',
-      version='1.5.0')
+      version='1.6.1')
 import de.tudarmstadt.ukp.dkpro.core.tokit.*
 
 @Grab(group='de.tudarmstadt.ukp.dkpro.core',
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl',
-      version='1.5.0')
+      version='1.6.1')
 import de.tudarmstadt.ukp.dkpro.core.opennlp.*
 
 @Grab(group='de.tudarmstadt.ukp.dkpro.core',
       module='de.tudarmstadt.ukp.dkpro.core.languagetool-asl',
-      version='1.5.0')
+      version='1.6.1')
 import de.tudarmstadt.ukp.dkpro.core.languagetool.*
 
 @Grab(group='de.tudarmstadt.ukp.dkpro.core',
       module='de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl',
-      version='1.5.0')
+      version='1.6.1')
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.*
 
+import static org.apache.commons.lang.exception.ExceptionUtils.*;
 import static org.apache.uima.fit.util.JCasUtil.*
 import static org.apache.uima.fit.factory.JCasFactory.*
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*
@@ -591,7 +592,7 @@ def testSuite = new XmlSlurper().parse(args[0]) // Load tests
 def doc = createJCas() // Create empty reusable document
 
 // These are the segmenters to test
-def segmenters = [ BreakIteratorSegmenter, StanfordSegmenter, 
+def segmenters = [ BreakIteratorSegmenter, StanfordSegmenter,
   OpenNlpSegmenter, LanguageToolSegmenter ]
 
 def results = [:];
@@ -603,21 +604,31 @@ for (def tc : testSuite.tests.test) { // Run tests
     doc.reset()
     doc.documentText = tc.input
     doc.documentLanguage = tc.@language
-    createEngine(segmenter).process(doc)
 
-    // Construct comparable output
-    def output = select(doc, Sentence).collect {s ->
-      "◀" + selectCovered(Token, s).collect { "⁌${it.coveredText}⁍ " }.join("") + "▶ "
-    }.join("")
+    def output;
+    def diag;
+    try {
+      createEngine(segmenter).process(doc)
 
-    // Find output in test suite
-    def diag = "unknown"
-    for (def possibleOutput : tc.possibleOutputs.possibleOutput) {
-      if (output.trim() == possibleOutput.output.text().trim()) {
-        diag = possibleOutput.description
-        break
+      // Construct comparable output
+      output = select(doc, Sentence).collect {s ->
+        "◀" + selectCovered(Token, s).collect { "⁌${it.coveredText}⁍ " }.join("") + "▶ "
+      }.join("")
+
+      // Find output in test suite
+      diag = "unknown"
+      for (def possibleOutput : tc.possibleOutputs.possibleOutput) {
+        if (output.trim() == possibleOutput.output.text().trim()) {
+          diag = possibleOutput.description
+          break
+        }
       }
     }
+    catch(Exception e) {
+      diag = "ERROR: " + getRootCauseMessage(e);
+      output = "ERROR";
+    }
+
     
     // Print result for individual segmenter
     println "Segmenter : ${segmenter.simpleName}" 
@@ -633,8 +644,9 @@ for (def tc : testSuite.tests.test) { // Run tests
 // Print results overview
 for (def segmenter : segmenters) {
   println "${segmenter.simpleName}"
-  println "  GOOD: ${results[segmenter].grep(~/GOOD.*/).size()}"
-  println "  BAD : ${results[segmenter].grep(~/BAD.*/).size()}"
+  println "  GOOD  : ${results[segmenter].grep(~/GOOD.*/).size()}"
+  println "  BAD   : ${results[segmenter].grep(~/BAD.*/).size()}"
+  println "  ERROR : ${results[segmenter].grep(~/ERROR.*/).size()}"
 }
 }}}
 
@@ -682,17 +694,21 @@ Output    : ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ⁌x⁍ ⁌a
 Result    : BAD - version split into multiple tokens
 
 BreakIteratorSegmenter
-  GOOD: 0
-  BAD : 1
+  GOOD  : 0
+  BAD   : 1
+  ERROR : 0
 StanfordSegmenter
-  GOOD: 0
-  BAD : 0
+  GOOD  : 0
+  BAD   : 0
+  ERROR : 0
 OpenNlpSegmenter
-  GOOD: 0
-  BAD : 1
+  GOOD  : 0
+  BAD   : 1
+  ERROR : 0
 LanguageToolSegmenter
-  GOOD: 0
-  BAD : 1
+  GOOD  : 0
+  BAD   : 1
+  ERROR : 0
 }}}
 
 == Decompounding without a ranker resource ==
