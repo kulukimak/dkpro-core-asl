@@ -456,7 +456,8 @@ runPipeline(
 The produced exception is this:
 
 {{{
-org.apache.uima.resource.ResourceInitializationException: org.apache.uima.resource.ResourceInitializationException: Annotator class "org.python.proxies.__main__$Writer$1" was not found. (Descriptor: <unknown>)
+org.apache.uima.resource.ResourceInitializationException:
+Annotator class "org.python.proxies.__main__$Writer$1" was not found. (Descriptor: <unknown>)
 }}}
 
 Related issue: [https://issues.apache.org/jira/browse/UIMA-3692 UIMA-3692]
