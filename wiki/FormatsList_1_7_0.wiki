@@ -33,18 +33,36 @@
 </tr>
 
 <tr>
+<td>CoNLL 2000 format</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2000Reader.html Conll2000Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2000Writer.html Conll2000Writer]
+</td>
+<td>Chunking</td>
+</tr>
+
+<tr>
+<td>CoNLL 2002 format</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2002Reader.html Conll2002Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2002Writer.html Conll2002Writer]
+</td>
+<td>Named entities</td>
+</tr>
+
+<tr>
 <td>CoNLL 2006 format</td>
 <td>
-[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2000Reader.html Conll2000Reader]<br/>
-[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2002Reader.html Conll2002Reader]<br/>
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2006Reader.html Conll2006Reader]
 </td>
 <td>
-[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2000Writer.html Conll2000Writer]<br/>
-[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2002Writer.html Conll2002Writer]<br/>
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2006Writer.html Conll2006Writer]
 </td>
-<td></td>
+<td>Dependency parsing</td>
 </tr>
 
 <tr>
