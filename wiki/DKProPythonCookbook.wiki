@@ -74,8 +74,8 @@ Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
 
 # Dependencies and imports for DKPro modules
 from jip.embed import require
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.6.1')
 from de.tudarmstadt.ukp.dkpro.core.opennlp import *
 from de.tudarmstadt.ukp.dkpro.core.io.text import *
 from de.tudarmstadt.ukp.dkpro.core.api.segmentation.type import *
@@ -138,7 +138,7 @@ Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
 
 # Dependencies and imports for DKPro modules
 from jip.embed import require
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1')
 from de.tudarmstadt.ukp.dkpro.core.opennlp import *
 from de.tudarmstadt.ukp.dkpro.core.api.segmentation.type import *
 from de.tudarmstadt.ukp.dkpro.core.api.syntax.type import *
@@ -279,10 +279,10 @@ Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
 
 # Dependencies and imports for DKPro modules
 from jip.embed import require
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.maltparser-asl:1.5.0')
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.5.0')
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.conll-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.maltparser-asl:1.6.1')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.6.1')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.conll-asl:1.6.1')
 from de.tudarmstadt.ukp.dkpro.core.opennlp import *
 from de.tudarmstadt.ukp.dkpro.core.maltparser import *
 from de.tudarmstadt.ukp.dkpro.core.io.text import *
@@ -412,8 +412,8 @@ Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
 
 # Dependencies and imports for DKPro modules
 from jip.embed import require
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.6.1')
 from de.tudarmstadt.ukp.dkpro.core.opennlp import *
 from de.tudarmstadt.ukp.dkpro.core.io.text import *
 from de.tudarmstadt.ukp.dkpro.core.api.segmentation.type import *
@@ -470,13 +470,13 @@ The Python (Jython) scripts are very similar to the Groovy scripts. The main dif
 <tr><th>Jython</th><td>
 {{{
 from jip.embed import require # only required once
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.5.0')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1')
 from de.tudarmstadt.ukp.dkpro.core.opennlp import *
 }}}
 </td></tr>
 <tr><th>Groovy</th><td>
 {{{
-@Grab(group='de.tudarmstadt.ukp.dkpro.core', module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', version='1.5.0')
+@Grab(group='de.tudarmstadt.ukp.dkpro.core', module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl', version='1.6.1')
 import de.tudarmstadt.ukp.dkpro.core.opennlp.*;
 }}}
 </td></tr>
