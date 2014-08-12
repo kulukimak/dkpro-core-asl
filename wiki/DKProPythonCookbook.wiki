@@ -205,8 +205,6 @@ If you already have !TreeTagger installed on your system and or if you want to u
 
 Call with `C:\jython-2.7b1\jython treetagger.py <foldername> <language>`, e.g. `C:\jython-2.7b1\jython treetagger.py  C:\example_folder\ en`.
 
-*Note: this recipe uses DKPro Core 1.6.1-SNAPSHOT due to a bug in the !TreeTagger module of DKPro Core 1.5.0 producing an error when explicitly setting `PARAM_MODEL_PATH`.* 
-
 {{{
 #!/usr/bin/env jython
 # Fix classpath scanning - otherise uimaFIT will not find the UIMA types
@@ -214,15 +212,11 @@ from java.lang import Thread
 from org.python.core.imp import *
 Thread.currentThread().contextClassLoader = getSyspathJavaLoader()
 
-# Enable snapshot dependencies
-from jip.repository import repos_manager
-repos_manager.add_repos("ukp-oss-snapshots", "http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots", "remote")
-
 # Dependencies and imports for DKPro modules
 from jip.embed import require
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1-SNAPSHOT')
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.treetagger-asl:1.6.1-SNAPSHOT')
-require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.6.1-SNAPSHOT')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-asl:1.6.1')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.treetagger-asl:1.6.1')
+require('de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.text-asl:1.6.1')
 from de.tudarmstadt.ukp.dkpro.core.opennlp import *
 from de.tudarmstadt.ukp.dkpro.core.treetagger import *
 from de.tudarmstadt.ukp.dkpro.core.io.text import *
