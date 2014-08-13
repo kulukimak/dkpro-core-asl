@@ -137,7 +137,7 @@ Result    : BAD - version split into multiple tokens
 
 Segmenter : StanfordSegmenter
 Output    : ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ▶ ◀⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶
-Result    : unknown
+Result    : BAD - version separator misdetected as sentence separator
 
 Segmenter : OpenNlpSegmenter
 Output    : ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3.x⁍ ⁌and⁍ ⁌DOS.⁍ ▶
@@ -146,21 +146,4 @@ Result    : BAD - sentence marker is not a separate token
 Segmenter : LanguageToolSegmenter
 Output    : ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶
 Result    : BAD - version split into multiple tokens
-
-BreakIteratorSegmenter
-  GOOD  : 0
-  BAD   : 1
-  ERROR : 0
-StanfordSegmenter
-  GOOD  : 0
-  BAD   : 0
-  ERROR : 0
-OpenNlpSegmenter
-  GOOD  : 0
-  BAD   : 1
-  ERROR : 0
-LanguageToolSegmenter
-  GOOD  : 0
-  BAD   : 1
-  ERROR : 0
 }}}
