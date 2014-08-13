@@ -69,7 +69,7 @@ for (def tc : testSuite.tests.test) { // Run tests
       }.join("")
 
       // Find output in test suite
-      diag = "unknown"
+      diag = "UNKNOWN"
       for (def possibleOutput : tc.possibleOutputs.possibleOutput) {
         if (output.trim() == possibleOutput.output.text().trim()) {
           diag = possibleOutput.description
@@ -97,9 +97,10 @@ for (def tc : testSuite.tests.test) { // Run tests
 // Print results overview
 for (def segmenter : segmenters) {
   println "${segmenter.simpleName}"
-  println "  GOOD  : ${results[segmenter].grep(~/GOOD.*/).size()}"
-  println "  BAD   : ${results[segmenter].grep(~/BAD.*/).size()}"
-  println "  ERROR : ${results[segmenter].grep(~/ERROR.*/).size()}"
+  println "  GOOD    : ${results[segmenter].grep(~/GOOD.*/).size()}"
+  println "  BAD     : ${results[segmenter].grep(~/BAD.*/).size()}"
+  println "  ERROR   : ${results[segmenter].grep(~/ERROR.*/).size()}"
+  println "  UNKNOWN : ${results[segmenter].grep(~/UNKNOWN.*/).size()}"
 }
 }}}
 
@@ -163,4 +164,3 @@ LanguageToolSegmenter
   BAD   : 1
   ERROR : 0
 }}}
-
