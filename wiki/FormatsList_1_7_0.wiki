@@ -132,6 +132,13 @@
 </tr>
 
 <tr>
+<td>TüPP D/Z XML</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tuepp/TueppReader.html TueppReader]</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
 <td>UIMA XMI format</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xmi/XmiReader.html XmiReader]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xmi/XmiWriter.html XmiWriter]</td>
