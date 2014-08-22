@@ -18,17 +18,16 @@
 </tr>
 
 <tr>
-<td>Binary UIMA CAS formats</td>
-<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasReader.html BinaryCasReader]</td>
-<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasWriter.html BinaryCasWriter]</td>
-<td></td>
-</tr>
-
-
-<tr>
 <td>British National Corpus XML</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bnc/BncReader.html BncReader]</td>
 <td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://weblicht.sfs.uni-tuebingen.de/englisch/tutorials/html/index.html CLARIN WebLicht TCF]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfReader.html TcfReader]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfWriter.html TcfWriter]</td>
 <td></td>
 </tr>
 
@@ -73,14 +72,14 @@
 </tr>
 
 <tr>
-<td>IMS Corpus Workbench format</td>
+<td>[http://cwb.sourceforge.net IMS Corpus Workbench format]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/imscwb/ImsCwbReader.html ImsCwbReader]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/imscwb/ImsCwbWriter.html ImsCwbWriter]</td>
 <td>also for some [http://wacky.sslmit.unibo.it/doku.php?id=corpora WaCKy] corpora</td>
 </tr>
 
 <tr>
-<td>!NeGra Export Format</td>
+<td>[http://www.coli.uni-saarland.de/~thorsten/publications/Brants-CLAUS98.pdf NeGra Export Format]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/negra/NegraExportReader.html NegraExportReader]</td>
 <td></td>
 <td>supports format versions 3 and 4</td>
@@ -97,13 +96,6 @@
 <td>SQL Databases</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jdbc/JdbcReader.html JdbcReader]</td>
 <td></td>
-<td></td>
-</tr>
-
-<tr>
-<td>TCF</td>
-<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfReader.html TcfReader]</td>
-<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfWriter.html TcfWriter]</td>
 <td></td>
 </tr>
 
@@ -139,7 +131,14 @@
 </tr>
 
 <tr>
-<td>UIMA XMI format</td>
+<td>[http://uima.apache.org/d/uimaj-2.6.0/references.html#ugr.ref.compress UIMA  Binary formats]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasReader.html BinaryCasReader]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasWriter.html BinaryCasWriter]</td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://uima.apache.org/d/uimaj-2.6.0/references.html#ugr.ref.xmi UIMA XMI format]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xmi/XmiReader.html XmiReader]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xmi/XmiWriter.html XmiWriter]</td>
 <td></td>
