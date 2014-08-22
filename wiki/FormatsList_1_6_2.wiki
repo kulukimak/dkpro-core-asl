@@ -25,6 +25,14 @@
 </tr>
 
 <tr>
+<td>CLARIN !WebLicht TCF</td>
+<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfReader.html TcfReader]</td>
+<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfWriter.html TcfWriter]</td>
+<td></td>
+</tr>
+
+
+<tr>
 <td>CoNLL 2006 format</td>
 <td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2006Reader.html Conll2006Reader]</td>
 <td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2006Writer.html Conll2006Writer]</td>
@@ -63,13 +71,6 @@
 <td>SQL Databases</td>
 <td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/jdbc/JdbcReader.html JdbcReader]</td>
 <td></td>
-<td></td>
-</tr>
-
-<tr>
-<td>TCF</td>
-<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfReader.html TcfReader]</td>
-<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfWriter.html TcfWriter]</td>
 <td></td>
 </tr>
 
