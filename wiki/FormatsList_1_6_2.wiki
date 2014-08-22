@@ -18,14 +18,6 @@
 </tr>
 
 <tr>
-<td>Binary UIMA CAS formats</td>
-<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasReader.html BinaryCasReader]</td>
-<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasWriter.html BinaryCasWriter]</td>
-<td></td>
-</tr>
-
-
-<tr>
 <td>British National Corpus XML</td>
 <td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/bnc/BncReader.html BncReader]</td>
 <td></td>
@@ -109,6 +101,13 @@
 <td>Tiger XML</td>
 <td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/tiger/TigerXmlReader.html TigerXmlReader]</td>
 <td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.1/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/tiger/TigerXmlWriter.html TigerXmlWriter]</td>
+<td></td>
+</tr>
+
+<tr>
+<td>UIMA Binary CAS formats</td>
+<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasReader.html BinaryCasReader]</td>
+<td>[http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasWriter.html BinaryCasWriter]</td>
 <td></td>
 </tr>
 
