@@ -19,7 +19,7 @@ For people who want to use a DKPro release version.
   * [FormatsList_1_6_2 List of supported input/output formats] (ASL/GPL)
   * [http://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.6.2/apidocs/index.html API Docs] (ASL)
   * [http://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.6.2/apidocs/index.html API Docs] (GPL)
-  * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdFNTREhKeFVEU1RsQzc0V0NKcE04b3c&single=true&gid=0&output=html Models] (ASL/GPL)
+  * [https://docs.google.com/spreadsheet/ccc?key=0AlBshWmiIdq_dGxNbF92UXh3OTNXLVJTNm1mcVM0c1E&usp=sharing Models] (ASL/GPL)
 
 = Developer documentation =
 
