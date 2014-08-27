@@ -5,15 +5,14 @@
 These steps install the basis system requirements needed to implement DKPro Core pipelines  using the Python language. They need to be performed only once.
 
    * Download and install the Java SE Development Kit 7 from the [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html Oracle Java Site]
-   * Download the *Jython 2.7beta 1* traditional installer from [http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7-b1/jython-installer-2.7-b1.jar here]
-   * Double-click on the *jython-installer-2.7-b1.jar* to start the installer
-   * Install with all the default settings. This should install Jython to `C:\jython2.7b1`
-   * Replace the `jython.jar` with the [https://public.ukp.informatik.tu-darmstadt.de/dkpro_core/jython.jar fixed Jython 2.7b1+ jar]
+   * Download the *Jython 2.7beta 3* traditional installer from [http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7-b3/jython-installer-2.7-b3.jar here]
+   * Double-click on the *jython-installer-2.7-b3.jar* to start the installer
+   * Install with all the default settings. This should install Jython to `C:\jython2.7b3`  
    * Download [https://pypi.python.org/pypi/jip jip] (version 0.8.3 or higher)
    * Unpack `jip-0.8.3.zip ` to `C:\`
    * Open a command line window
       * Go to the jip folder: `cd C:\jip` 
-      * Install jip: `C:\jython2.7b1\jython setup.py install`
+      * Install jip: `C:\jython2.7b3\jython setup.py install`
       * Close the window
       * Now you can delete the folder `C:\jip` and the file `jip-0.8.3.zip ` again
 
