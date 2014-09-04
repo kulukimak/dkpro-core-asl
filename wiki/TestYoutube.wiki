@@ -1,0 +1,8 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Test for youtube integration. Plays all videos uploaded by one user, with a playlist button on the top left.
+This is also possible for a specific playlist. A bit more complicated would be to show the playlist at start, instead of the first video.
+
+<wiki:gadget url="https://dkpro-core-asl.googlecode.com/svn/wiki/gadgets/UkpYoutubeGadget.xml" width="400" height="225" border="1"/>
