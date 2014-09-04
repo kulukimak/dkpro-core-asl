@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs title="Watch our tutorials on Youtube!"
+		title_url="https://www.youtube.com"
+		width="400"
+		height="225" />
+	<Content type="html"> 
+		<![CDATA[
+			<iframe id="ytplayer" type="text/html" width="400" height="225"
+				src="https://www.youtube.com/embed/?listType=user_uploads&list=UKPLab&showinfo=1"
+				frameborder="0" allowfullscreen>
+			</iframe>
+		]]>
+	</Content>
+</Module>
