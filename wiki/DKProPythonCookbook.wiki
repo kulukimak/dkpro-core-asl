@@ -401,7 +401,7 @@ This is due fact that Jython is using JDK 6 instead of JDK 7. Ensure that JDK 7 
 
 == !UnicodeEncodeError: 'charmap' codec can't encode character .... ==
 
-You may get an exception like _UnicodeEncodeError: 'charmap' codec can't encode character ...._ when writing Unicode texts to the console on systems such as Windows where UTF-8 is not the default system encoding. To fix this, you can override the Jython console encoding:
+You may get an exception like _!UnicodeEncodeError: 'charmap' codec can't encode character ...._ when writing Unicode texts to the console on systems such as Windows where UTF-8 is not the default system encoding. To fix this, you can override the Jython console encoding:
 
 {{{
 Windows:  set JYTHON_OPTS="-Dpython.console.encoding=UTF8 %JAVA_OPTS%"
