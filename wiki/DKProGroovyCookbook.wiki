@@ -750,7 +750,12 @@ Windows:  set JAVA_OPTS="-Dgroovy.grape.report.downloads=true %JAVA_OPTS%"
 
 == Flush caches ==
 
-The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. Try deleting `~/.groovy/grapes` and `~/.ivy2/cache`. If you did not separate the Groovy cache from the Maven cache, you might also want to consider deleting `~/.m2/repository`. If you use Maven for software development, we recommend that you separate the caches.
+The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. There are two cache folders that you can clear to force re-downloading the dependencies:
+
+   * `~/.groovy/grapes` - dependencies referenced from the Groovy scripts are stored here
+   * `~/.ivy2/cache` - models and resources dynamically downloaded by DKPro Core components
+
+If you use Maven for software development, we recommend that you separate the caches (see below). If you did not separate the Groovy cache from the Maven cache, you might also want to consider deleting `~/.m2/repository`.
 
 == Separate Groovy Grape Cache from Maven Cache ==
 
