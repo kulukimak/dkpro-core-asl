@@ -11,14 +11,14 @@
 </tr>
 
 <tr>
-<td>ACL Anthology Corpus</td>
+<td>[http://acl-arc.comp.nus.edu.sg ACL Anthology Corpus]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/aclanthology/AclAnthologyReader.html AclAnthologyReader]</td>
 <td></td>
 <td></td>
 </tr>
 
 <tr>
-<td>British National Corpus XML</td>
+<td>[http://www.natcorp.ox.ac.uk British National Corpus XML]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bnc/BncReader.html BncReader]</td>
 <td></td>
 <td></td>
@@ -32,7 +32,7 @@
 </tr>
 
 <tr>
-<td>CoNLL 2000 format</td>
+<td>[http://www.clips.uantwerpen.be/conll2000/chunking/ CoNLL 2000 format]</td>
 <td>
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2000Reader.html Conll2000Reader]
 </td>
@@ -43,7 +43,7 @@
 </tr>
 
 <tr>
-<td>CoNLL 2002 format</td>
+<td>[http://www.clips.uantwerpen.be/conll2002/ner/ CoNLL 2002 format]</td>
 <td>
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2002Reader.html Conll2002Reader]
 </td>
@@ -54,7 +54,7 @@
 </tr>
 
 <tr>
-<td>CoNLL 2006 format</td>
+<td>[http://ilk.uvt.nl/conll/ CoNLL 2006 format]</td>
 <td>
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2006Reader.html Conll2006Reader]
 </td>
@@ -128,14 +128,14 @@
 </tr>
 
 <tr>
-<td>Tiger XML</td>
+<td>[http://www.ims.uni-stuttgart.de/forschung/ressourcen/werkzeuge/TIGERSearch/doc/html/TigerXML.html Tiger XML]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tiger/TigerXmlReader.html TigerXmlReader]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tiger/TigerXmlWriter.html TigerXmlWriter]</td>
-<td></td>
+<td>supports [http://www.coli.uni-saarland.de/projects/salsa/salto/doc/html/node55.html SALSA] frame information as well</td>
 </tr>
 
 <tr>
-<td>TüPP D/Z XML</td>
+<td>[http://www.sfs.uni-tuebingen.de/tupp/doc/markupmanual.pdf TüPP D/Z XML]</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tuepp/TueppReader.html TueppReader]</td>
 <td></td>
 <td></td>
