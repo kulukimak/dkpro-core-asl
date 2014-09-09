@@ -399,7 +399,7 @@ de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpSegmenter : Unsupported major.minor
 
 This is due fact that Jython is using JDK 6 instead of JDK 7. Ensure that JDK 7 is installed. For Linux systems, you might need to update the file `/usr/bin/jython`. In the 6th line you find `JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"`. Replace the `java-6` with `java-7` and it should work. To check the Java version that is used by Jython, execute `jython -J-version`
 
-== UnicodeEncodeError: 'charmap' codec can't encode character .... ==
+== !UnicodeEncodeError: 'charmap' codec can't encode character .... ==
 
 You may get an exception like _UnicodeEncodeError: 'charmap' codec can't encode character ...._ when writing Unicode texts to the console on systems such as Windows where UTF-8 is not the default system encoding. To fix this, you can override the Jython console encoding:
 
