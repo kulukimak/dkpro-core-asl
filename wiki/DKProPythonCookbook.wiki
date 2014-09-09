@@ -376,7 +376,10 @@ Windows:  set JYTHON_OPTS="-Dgroovy.grape.report.downloads=true %JAVA_OPTS%"
 
 == Flush caches ==
 
-The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. Try deleting `~/.jip/cache`
+The scripts download required models and libraries automatically. Sometimes it may be necessary to flush the cache folders. There are two cache folders that you can clear to force re-downloading the dependencies:
+
+   * `~/.jip/cache` - dependencies referenced from the Jython scripts are store here
+   * `~/.ivy2/cache` - models and resources dynamically downloaded by DKPro Core components
 
 == Using SNAPSHOT versions ==
 
