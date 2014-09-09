@@ -96,7 +96,7 @@
 <td>Penn Treebank</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankCombinedReader.html PennTreebankCombinedReader]
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankChunkedReader.html PennTreebankChunkedReader]</td>
-<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankCombinedWriter.html PennTreebankCombinedWriter</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankCombinedWriter.html PennTreebankCombinedWriter]</td>
 <td></td>
 </tr>
 
