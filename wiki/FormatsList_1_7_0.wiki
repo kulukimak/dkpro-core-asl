@@ -72,7 +72,7 @@
 <td>
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2009Writer.html Conll2009Writer]
 </td>
-<td>Dependency parsing</td>
+<td>Semantic dependencies</td>
 </tr>
 
 <tr>
