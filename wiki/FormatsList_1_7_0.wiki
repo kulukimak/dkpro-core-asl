@@ -65,6 +65,17 @@
 </tr>
 
 <tr>
+<td>[http://ufal.mff.cuni.cz/conll2009-st/task-description.html CoNLL 2009 format]</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2009Reader.html Conll2009Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2009Writer.html Conll2009Writer]
+</td>
+<td>Dependency parsing</td>
+</tr>
+
+<tr>
 <td>HTML</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/html/HtmlReader.html HtmlReader]</td>
 <td></td>
@@ -93,10 +104,19 @@
 </tr>
 
 <tr>
-<td valign="top">Penn Treebank</td>
+<td valign="top">Penn Treebank Chunked</td>
 <td valign="top">
-[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankCombinedReader.html PennTreebankCombinedReader]<br/>
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankChunkedReader.html PennTreebankChunkedReader]</td>
+<td valign="top">
+</td>
+<td valign="top">
+</td>
+</tr>
+
+<tr>
+<td valign="top">Penn Treebank Combined</td>
+<td valign="top">
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankCombinedReader.html PennTreebankCombinedReader]</td>
 <td valign="top">
 [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankCombinedWriter.html PennTreebankCombinedWriter]</td>
 <td valign="top">
