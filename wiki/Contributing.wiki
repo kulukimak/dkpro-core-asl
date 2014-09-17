@@ -16,8 +16,8 @@ _We ask that you discuss the topic of contribution with your employer even if yo
 
 === Contributor license agreements ===
 
-   * [https://dkpro-core-asl.googlecode.com/svn/wiki/clas/CCLA_1_0.pdf Individual Contributor License Agreement] (ICLA) - always required
-   * [https://dkpro-core-asl.googlecode.com/svn/wiki/clas/ICLA_1_0.pdf Corporate Contributor License Agreement] (CCLA) - required when contributor is employed
+   * [https://dkpro-core-asl.googlecode.com/svn/wiki/clas/icla.txt Individual Contributor License Agreement] (ICLA) - always required
+   * [https://dkpro-core-asl.googlecode.com/svn/wiki/clas/ccla.txt Corporate Contributor License Agreement] (CCLA) - required when contributor is employed
 
 === How to make contributions? ===
 
