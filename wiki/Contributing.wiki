@@ -1,0 +1,26 @@
+#summary How to contribute to DKPro?
+
+As DKPro is growing and being used more and more outside the UKP Lab, we are getting inquiries on how people can contribute to DKPro... and we are very happy to get these!
+
+=== Our model ===
+
+We chose to adopt a model similar to that of the Apache Foundation, which involves contributors signing and submitting a _contributor license agreement_. The license agreements represent a license that the contributor grants to the Technische Universität Darmstadt and *covers contributions to all of our projects*, e.g. is it not limited to DKPro Core, but also covers JWPL, Uby, and a growing set of additional projects that we govern at the UKP Lab.
+
+You may have noticed that some parts of DKPro are provided under the Apache License 2.0, while other parts are provided under the GNU Public License, due to dependencies on GPL libraries. The separate contributor license agreement allows us to integrate contributions within code that we then distribute under other licenses. It also allows us to freely move contributed code between modules having different licenses, such as it is required when refactoring the framework.
+
+To this end, we adapted the contributor agreements used at Apache for our purposes. In particular, we replaced mentions of the Foundation with mentions of the University (Technische Universität Darmstadt) and added a clause defining to be governed by German law. Please read the license agreements carefully before signing them.
+
+The primary contributor agreement is the *Individual Contributor License Agreement* which is submitted each individual contributing person. However, if that person is under contract, we ask that the employer signs and files an additional *Corporate Contributor License Agreement* which certifies the consent of the employer with the actions of the contributing person. 
+
+_We ask that you discuss the topic of contribution with your employer even if you plan to create your contributions in your spare time. Being open from the start will avoid problems later and certainly your employer will be happy to sign the corporate contributor license agreement after you have discussed the modalities._
+
+=== Contributor license agreements ===
+
+   * Individual Contributor License Agreement (ICLA) - always required
+   * Corporate Contributor License Agreement (CCLA) - required when contributor is employed
+
+=== How to make contributions? ===
+
+Contributions should be submitted by opening an issue on the Google Code issue tracker of the project to which you wish to contribute. Describe the bug you fix or the feature that you provide and attach your changes as a diff file.
+
+Prolific contributors may eventually be granted write access to the code repositories. Access to the repositories is granted on a per-project basis.
