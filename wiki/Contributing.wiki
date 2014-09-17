@@ -19,7 +19,7 @@ _We ask that you discuss the topic of contribution with your employer even if yo
    * [https://dkpro-core-asl.googlecode.com/svn/wiki/clas/icla.txt Individual Contributor License Agreement] (ICLA) - always required
    * [https://dkpro-core-asl.googlecode.com/svn/wiki/clas/ccla.txt Corporate Contributor License Agreement] (CCLA) - required when contributor is employed
 
-_Note: your browser may not correctly detect the UTF-8 encoding in the CLA files. In that case, please switch the encoding in your browser to UTF-8 or download do a right-click on the links and "save as", then open the files in a UTF-8-capable editor before printing and signing. The encoding is not properly detected when umlaut *"ä"* (an 'a' with two dots above) does not display properly in *Technische Universität Darmstadt*.
+_Note: your browser may not correctly detect the UTF-8 encoding in the CLA files. In that case, please switch the encoding in your browser to UTF-8 or right-click on the links and "save as", then open the files in a UTF-8-capable editor before printing and signing. The encoding is not properly detected when umlaut *"ä"* (an 'a' with two dots above) does not display properly in *Technische Universität Darmstadt*.
 
 === How to make contributions? ===
 
