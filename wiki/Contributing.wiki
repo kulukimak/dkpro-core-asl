@@ -16,6 +16,8 @@ The contributor license agreement represents a license that the contributor give
 
 === Contributor license agreements ===
 
+Details on how and where to submit the agreements are included in their respective text.
+
    * [https://dkpro-core-asl.googlecode.com/svn/wiki/clas/icla.txt Individual Contributor License Agreement] (ICLA) - always required
    * [https://dkpro-core-asl.googlecode.com/svn/wiki/clas/ccla.txt Corporate Contributor License Agreement] (CCLA) - required when contributor is employed
 
