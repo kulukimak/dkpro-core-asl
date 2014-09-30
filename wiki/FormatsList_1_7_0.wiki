@@ -76,6 +76,17 @@
 </tr>
 
 <tr>
+<td>[http://conll.cemantix.org/2012/data.html CoNLL 2012 format]</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2012Reader.html Conll2012Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2012Writer.html Conll2012Writer]
+</td>
+<td>Coreference</td>
+</tr>
+
+<tr>
 <td>HTML</td>
 <td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/html/HtmlReader.html HtmlReader]</td>
 <td></td>
