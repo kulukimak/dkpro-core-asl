@@ -5,3 +5,10 @@
   * Fix [http://code.google.com/p/dkpro-core-asl/issues/list?can=2&q=milestone%3D1.7.0&colspec=ID+Type+Status+Priority+DKPro+Module+Milestone+Owner+Summary&cells=tiles remaining issues] for 1.7.0;
   * Creation of a 1.7.x branch;
   * Revert code regarding mate-tools upgrade to anna 3.61 at 1.7.x branch.
+  * Consider deferring CoNLL 2012 support for 1.8.0 because word-sense is not yet read/written to/from prop file
+  * Drop !StanfordSentimentAnalyzer and remove dependency on official models jar from branch
+  * Drop auebtools module from branch
+  * Drop io.fangorn module from branch
+  * Drop io.graf module from branch
+  * Drop lbj module from branch (?)
+  * Check what other modules we did not release in 1.6.2 and which we might also want to remove from the branch
