@@ -1,3 +1,7 @@
 #summary Things that need to be done before 1.7.0 release.
 
-= TODO List for 1.7.0 Release =
+== TODO List for 1.7.0 Release ==
+
+  * Creation of a 1.7.x branch;
+  * Revert code regarding mate-tools upgrade to anna 3.61
+  * Fix [http://code.google.com/p/dkpro-core-asl/issues/list?can=2&q=milestone%3D1.7.0&colspec=ID+Type+Status+Priority+DKPro+Module+Milestone+Owner+Summary&cells=tiles remaining issues] for 1.7.0
