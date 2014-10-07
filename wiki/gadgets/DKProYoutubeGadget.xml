@@ -7,7 +7,7 @@
 	<Content type="html"> 
 		<![CDATA[
 			<iframe id="ytplayer" type="text/html" width="400" height="225"
-				src="https://www.youtube.com/embed/?listType=playlist&list=PLNP7ia8oWW-b0YkhWne_-Z9guDgtBzlTO&color=white&showinfo=1"
+				src=https://www.youtube.com/playlist?list=PLENWjbYveblcRX-mAt2PwimyVDDSIORny"
 				frameborder="0" allowfullscreen>
 			</iframe>
 		]]>
