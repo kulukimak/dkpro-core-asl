@@ -38,6 +38,7 @@ Further information on models for particular components can be found in the [htt
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/sfst/SfstAnnotator.html SfstAnnotator]
 
 == Named Entity Recognition ==
+  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/cogroo/CogrooNameFinder.html CogrooNameFinder]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpNameFinder.html OpenNlpNameFinder]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordNamedEntityRecognizer.html StanfordNamedEntityRecognizer]
 
