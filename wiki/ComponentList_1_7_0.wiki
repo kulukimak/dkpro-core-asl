@@ -24,6 +24,7 @@ Further information on models for particular components can be found in the [htt
 
 == Lemmatization ==
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/clearnlp/ClearNlpLemmatizer.html ClearNlpLemmatizer]
+  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/cogroo/CogrooLemmatizer.html CogrooLemmatizer]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/gate/GateLemmatizer.html GateLemmatizer]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolLemmatizer.html LanguageToolLemmatizer]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/matetools/MateLemmatizer.html MateLemmatizer]
@@ -32,6 +33,7 @@ Further information on models for particular components can be found in the [htt
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerPosTagger.html TreeTaggerPosTagger] (yes, the pos tagger does lemmatization as well!)
 
 == Morphological Annotation ==
+  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/cogroo/CogrooFeaturizer.html CogrooFeaturizer]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/matetools/MateMorphTagger.html MateMorphTagger]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/sfst/SfstAnnotator.html SfstAnnotator]
 
