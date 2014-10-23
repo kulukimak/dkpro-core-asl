@@ -195,7 +195,7 @@ public class NPNEWriter extends JCasConsumer_ImplBase {
         /* all Named Entities within that noun phrase */
         for (NamedEntity ne : JCasUtil.selectCovered(aJCas, NamedEntity.class, nounphrase)) {
 
-          System.out.println("NP " + nounphrase.getCoveredText() + "\tNE " + ne.getCoveredText());
+             System.out.println(String.format("NP: '%s'\tNE: '%s'", nounphrase.getCoveredText(), ne.getCoveredText()));
 
         } /* for each NamedEntity within the noun phrase */
       } /* for each noun phrase within the sentence */
