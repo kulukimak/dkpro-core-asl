@@ -50,7 +50,7 @@ This tutorial assumes that you have:
 *Note*: If Eclipse fails to find the artifacts listed above when you search for it, enter the following fields manually:
    * *groupId:* de.tudarmstadt.ukp.dkpro.core
    * *artifactId:* _dependency name given above_
-   * *version:* 1.6.1
+   * *version:* 1.6.2
 
 == Create your first experiment ==
    
@@ -69,9 +69,10 @@ This tutorial assumes that you have:
    import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
    import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
 
-   CollectionReaderDescription cr = createReader(
+   CollectionReaderDescription cr = createReaderDescription(
          TextReader.class,
-         TextReader.PARAM_PATH, "src/test/resources/*.txt",
+         TextReader.PARAM_SOURCE_LOCATION, "src/test/resources/",
+         TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
          TextReader.PARAM_LANGUAGE, "en");
    }}}
    * Next we want to analyze the documents. For this we need the description of the analysis engines we want to use, and they can be created like this:
