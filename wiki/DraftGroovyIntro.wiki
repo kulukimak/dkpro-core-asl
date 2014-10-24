@@ -1,5 +1,7 @@
 #summary Intro using Groovy
 
+<wiki:video url="https://www.youtube.com/watch?v=v51BJEQohoY"/>
+
 === Installing Java and Groovy ===
 
 These steps install the basis system requirements needed to implement DKPro Core pipelines using the [http://groovy.codehaus.org Groovy] language. They need to be performed only once.
