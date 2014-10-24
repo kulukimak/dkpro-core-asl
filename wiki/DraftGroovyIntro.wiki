@@ -1,6 +1,10 @@
 #summary Intro using Groovy
 
+<table>
+<tr align="center"><td>
 <wiki:video url="https://www.youtube.com/watch?v=v51BJEQohoY"/>
+</td>/tr>
+</table>
 
 === Installing Java and Groovy ===
 
