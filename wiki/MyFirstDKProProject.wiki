@@ -94,7 +94,7 @@ This tutorial assumes that you have:
    {{{
    import org.apache.uima.fit.component.CasDumpWriter;
    
-   AnalysisEngineDescription cc = createPrimitiveDescription(
+   AnalysisEngineDescription cc = createEngineDescription(
          CasDumpWriter.class,
          CasDumpWriter.PARAM_OUTPUT_FILE, "target/output.txt");
    }}}
