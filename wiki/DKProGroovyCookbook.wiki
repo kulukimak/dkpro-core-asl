@@ -818,7 +818,7 @@ JCas type "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token" used in Ja
   but was not declared in the XML type descriptor.
 }}}
 
-This problem does not occur with the latest stable version of Groovy.
+This problem does not occur with Groovy 2.1.x, 2.2.x or 2.3.1 and higher.
 
 Thanks to Evan for [http://stackoverflow.com/questions/23504261/dkpro-groovy-usage-and-installation-with-uima reporting] this problem.
 
