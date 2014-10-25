@@ -72,7 +72,7 @@ This tutorial assumes that you have:
    CollectionReaderDescription cr = createReaderDescription(
          TextReader.class,
          TextReader.PARAM_SOURCE_LOCATION, "src/test/resources/",
-         TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" });
+         TextReader.PARAM_PATTERNS, new String[] { "[+]*.txt" },
          TextReader.PARAM_LANGUAGE, "en");
    }}}
    * Next we want to analyze the documents. For this we need the description of the analysis engines we want to use, and they can be created like this:
