@@ -12,7 +12,8 @@
   * Drop io.fangorn module from branch; (DONE)
   * Drop io.graf module from branch; (DONE)
   * Drop lbj module from branch (?);
-  * Revise mallet code and check if everything is good to 1.7.0 release;
+  * Review mallet module code and check if everything is good to 1.7.0 release;
+  * Review io.ditop module code and check if everything is good to 1.7.0 release;
   * Check what other modules we did not release in 1.6.2 and which we might also want to remove from the branch;
   * Compile a list of upgrades, new modules and supported formats at 1.7.0 for announcement.
   * Check if the cogroo module should really go into the release - if not drop it and remove its stuff from the components list.
