@@ -18,7 +18,7 @@
   * Rename ldweb1t module adding -asl suffix; (DONE)
   * Review io.ditop module code and check if everything is good to 1.7.0 release; (DONE)
   * Review ark-tweet module;
-  * Copy mallet module from trunk into 1.7.x branch;
+  * Copy mallet module from trunk into 1.7.x branch; (DONE)
   * Check what other modules we did not release in 1.6.2 and which we might also want to remove from the branch;
   * Check pom files for unnecessary dependencies;
   * Update version of trunk;
