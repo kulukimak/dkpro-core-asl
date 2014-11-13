@@ -12,7 +12,7 @@
   * Drop auebtools module from branch; (DONE)
   * Drop io.fangorn module from branch; (DONE)
   * Drop io.graf module from branch; (DONE)
-  * Drop lbj module from branch;
+  * Drop lbj module from branch; (DONE)
   * Drop coogroo module from branch;
   * Review mallet module code and check if everything is good to 1.7.0 release;
   * Review io.ditop module code and check if everything is good to 1.7.0 release;
