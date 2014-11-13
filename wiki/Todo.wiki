@@ -15,7 +15,7 @@
   * Drop lbj module from branch; (DONE)
   * Drop coogroo module from branch; (DONE)
   * Review mallet module code and check if everything is good to 1.7.0 release; (DONE)
-  * Rename ldweb1t module adding -asl suffix;
+  * Rename ldweb1t module adding -asl suffix; (DONE)
   * Review io.ditop module code and check if everything is good to 1.7.0 release;
   * Review ark-tweet module;
   * Copy mallet module from trunk into 1.7.x branch;
