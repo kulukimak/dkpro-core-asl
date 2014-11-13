@@ -19,4 +19,5 @@
   * Review ark-tweet module;
   * Copy mallet module from trunk into 1.7.x branch;
   * Check what other modules we did not release in 1.6.2 and which we might also want to remove from the branch;
+  * Update version of trunk;
   * Compile a list of upgrades, new modules and supported formats at 1.7.0 for announcement.
