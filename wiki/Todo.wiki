@@ -9,7 +9,7 @@
   * Consider deferring CoNLL 2012 support for 1.8.0 because word-sense is not yet read/written to/from prop file; (INVALID - Support for CoNLL 2012 stays)
   * Drop !StanfordSentimentAnalyzer and remove dependency on official models jar from branch; (DONE)
   * Drop auebtools module from branch; (DONE)
-  * Drop io.fangorn module from branch;
+  * Drop io.fangorn module from branch; (DONE)
   * Drop io.graf module from branch;
   * Drop lbj module from branch (?);
   * Drop mallet module from branch; (DONE)
