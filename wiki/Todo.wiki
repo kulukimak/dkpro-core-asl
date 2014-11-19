@@ -23,3 +23,4 @@
   * Check pom files for unnecessary dependencies; (DONE)
   * Update version of trunk; (DONE)
   * Compile a list of upgrades, new modules and supported formats at 1.7.0 for announcement.
+  * Fix package names in ldweb1t module (Issue 527)
