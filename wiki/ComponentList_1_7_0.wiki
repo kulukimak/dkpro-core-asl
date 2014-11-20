@@ -28,8 +28,8 @@ Further information on models for particular components can be found in the [htt
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/gate/GateLemmatizer.html GateLemmatizer]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolLemmatizer.html LanguageToolLemmatizer]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/matetools/MateLemmatizer.html MateLemmatizer]
-  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordLemmatizer.html StanfordLemmatizer]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/morpha/MorphaStemmer.html MorphaLemmatizer]
+  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordLemmatizer.html StanfordLemmatizer]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerPosTagger.html TreeTaggerPosTagger] (yes, the pos tagger does lemmatization as well!)
 
 == Morphological Annotation ==
