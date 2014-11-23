@@ -42,13 +42,20 @@ For people who want to work on the DKPro source code or like to live on the blee
 The information on unreleased versions is updated continually. Individual links in this section my be broken from time to time.
 
   * *DKPro Core 1.7.0 (unreleased)*
-    * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/lastSuccessfulBuild/artifact/de.tudarmstadt.ukp.dkpro.core.docbook-asl/target/site/d/dkpro.core.book.pdf DKPro Core Guide and Reference]
+    * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%201.7.x%20%20(Google%20Code)/lastSuccessfulBuild/artifact/de.tudarmstadt.ukp.dkpro.core.docbook-asl/target/site/d/dkpro.core.book.pdf DKPro Core Guide and Reference]
     * [ComponentList_1_7_0 List of analysis components] (ASL/GPL)
     * [FormatsList_1_7_0 List of supported input/output formats] (ASL/GPL)
+    * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%201.7.x%20%20(Google%20Code)/javadoc API Docs] (ASL)
+    * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%201.7.x%20%20(Google%20Code)/javadoc API Docs] (GPL)
+    * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdFduOVpydHhURC1Bd0hpZ0c0NGJfMHc&single=true&gid=0&output=html Models] (ASL/GPL)
+    * [ReleasePlan_1_7_0 Release plan]
+  * *DKPro Core 1.8.0 (unreleased)*
+    * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/lastSuccessfulBuild/artifact/de.tudarmstadt.ukp.dkpro.core.docbook-asl/target/site/d/dkpro.core.book.pdf DKPro Core Guide and Reference]
+    * [ComponentList_1_8_0 List of analysis components] (ASL/GPL)
+    * [FormatsList_1_8_0 List of supported input/output formats] (ASL/GPL)
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/? API Docs] (ASL)
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/? API Docs] (GPL)
-    * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdFduOVpydHhURC1Bd0hpZ0c0NGJfMHc&single=true&gid=0&output=html Models] (ASL/GPL)
-    * [Todo Todo list]
+    * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdEhRUWFSUHFaMmE1aVJkMWpiaHpBc0E&single=true&gid=0&output=html Models] (ASL/GPL)
   * *DKPro Core 2.0.0 (unreleased)*
     * [TypeSystem2 Type system reorg]
 

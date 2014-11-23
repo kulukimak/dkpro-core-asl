@@ -1,0 +1,235 @@
+#summary List of components contained in DKPro Core 1.8.0 (ASL/GPL)
+
+== Data formats ==
+
+<table border="1" cellspacing="0" cellpadding="2">
+<tr>
+<th>Format</th>
+<th>Reader</th>
+<th>Writer</th>
+<th>Comments</th>
+</tr>
+
+<tr>
+<td>[http://acl-arc.comp.nus.edu.sg ACL Anthology Corpus]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/aclanthology/AclAnthologyReader.html AclAnthologyReader]</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://www.natcorp.ox.ac.uk British National Corpus XML]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bnc/BncReader.html BncReader]</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://weblicht.sfs.uni-tuebingen.de/englisch/tutorials/html/index.html CLARIN WebLicht TCF]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfReader.html TcfReader]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tcf/TcfWriter.html TcfWriter]</td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://www.clips.uantwerpen.be/conll2000/chunking/ CoNLL 2000 format]</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2000Reader.html Conll2000Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2000Writer.html Conll2000Writer]
+</td>
+<td>Chunking</td>
+</tr>
+
+<tr>
+<td>[http://www.clips.uantwerpen.be/conll2002/ner/ CoNLL 2002 format]</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2002Reader.html Conll2002Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2002Writer.html Conll2002Writer]
+</td>
+<td>Named entities</td>
+</tr>
+
+<tr>
+<td>[http://ilk.uvt.nl/conll/ CoNLL 2006 format]</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2006Reader.html Conll2006Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2006Writer.html Conll2006Writer]
+</td>
+<td>Dependency parsing</td>
+</tr>
+
+<tr>
+<td>[http://ufal.mff.cuni.cz/conll2009-st/task-description.html CoNLL 2009 format]</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2009Reader.html Conll2009Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2009Writer.html Conll2009Writer]
+</td>
+<td>Semantic dependencies</td>
+</tr>
+
+<tr>
+<td>[http://conll.cemantix.org/2012/data.html CoNLL 2012 format]</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2012Reader.html Conll2012Reader]
+</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/conll/Conll2012Writer.html Conll2012Writer]
+</td>
+<td>Coreference & Constituents</td>
+</tr>
+
+<tr>
+<td>HTML</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/html/HtmlReader.html HtmlReader]</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://cwb.sourceforge.net IMS Corpus Workbench format]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/imscwb/ImsCwbReader.html ImsCwbReader]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/imscwb/ImsCwbWriter.html ImsCwbWriter]</td>
+<td>also for some [http://wacky.sslmit.unibo.it/doku.php?id=corpora WaCKy] corpora</td>
+</tr>
+
+<tr>
+<td>[http://www.coli.uni-saarland.de/~thorsten/publications/Brants-CLAUS98.pdf NeGra Export Format]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/negra/NegraExportReader.html NegraExportReader]</td>
+<td></td>
+<td>supports format versions 3 and 4</td>
+</tr>
+
+<tr>
+<td>PDF</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/pdf/PdfReader.html PdfReader]</td>
+<td></td>
+<td>tries to detect heading and paragraph boundaries</td>
+</tr>
+
+<tr>
+<td valign="top">Penn Treebank Chunked</td>
+<td valign="top">
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankChunkedReader.html PennTreebankChunkedReader]</td>
+<td valign="top">
+</td>
+<td valign="top">
+</td>
+</tr>
+
+<tr>
+<td valign="top">Penn Treebank Combined</td>
+<td valign="top">
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankCombinedReader.html PennTreebankCombinedReader]</td>
+<td valign="top">
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/penntree/PennTreebankCombinedWriter.html PennTreebankCombinedWriter]</td>
+<td valign="top">
+</td>
+</tr>
+
+<tr>
+<td>SQL Databases</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jdbc/JdbcReader.html JdbcReader]</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>TEI</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tei/TeiReader.html TeiReader]</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td valign="top">Text</td>
+<td valign="top">
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/text/TextReader.html TextReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/text/StringReader.html StringReader]
+</td>
+<td valign="top">[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/text/TextWriter.html TextWriter]</td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://www.ims.uni-stuttgart.de/forschung/ressourcen/werkzeuge/TIGERSearch/doc/html/TigerXML.html Tiger XML]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tiger/TigerXmlReader.html TigerXmlReader]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tiger/TigerXmlWriter.html TigerXmlWriter]</td>
+<td>supports [http://www.coli.uni-saarland.de/projects/salsa/salto/doc/html/node55.html SALSA] frame information as well</td>
+</tr>
+
+<tr>
+<td>[http://www.sfs.uni-tuebingen.de/tupp/doc/markupmanual.pdf TüPP D/Z XML]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/tuepp/TueppReader.html TueppReader]</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://uima.apache.org/d/uimaj-2.6.0/references.html#ugr.ref.compress UIMA  Binary formats]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasReader.html BinaryCasReader]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bincas/BinaryCasWriter.html BinaryCasWriter]</td>
+<td></td>
+</tr>
+
+<tr>
+<td>[http://uima.apache.org/d/uimaj-2.6.0/references.html#ugr.ref.xmi UIMA XMI format]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xmi/XmiReader.html XmiReader]</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xmi/XmiWriter.html XmiWriter]</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Web1t n-gram frequencies</td>
+<td></td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/web1t/Web1TFormatWriter.html Web1TFormatWriter]</td>
+<td></td>
+</tr>
+
+
+<tr>
+<td>Wikipedia (online)</td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/bliki/BlikiWikipediaReader.html BlikiWikipediaReader]</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td valign="top">Wikipedia (offline via JWPL)</td>
+<td>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaArticleInfoReader.html WikipediaArticleInfoReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaArticleReader.html WikipediaArticleReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaDiscussionReader.html WikipediaDiscussionReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaLinkReader.html WikipediaLinkReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaPageReader.html WikipediaPageReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaQueryReader.html WikipediaQueryReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaRevisionPairReader.html WikipediaRevisionPairReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaRevisionReader.html WikipediaRevisionReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/jwpl/WikipediaTemplateFilteredArticleReader.html WikipediaTemplateFilteredArticleReader]
+</td>
+<td></td>
+<td></td>
+</tr>
+
+
+<tr>
+<td valign="top">XML (generic)</td>
+<td valign="top">
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xml/XmlReader.html XmlReader]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xml/XmlReaderText.html XmlReaderText]<br/>
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xml/XmlReaderXPath.html XmlReaderXPath]
+</td>
+<td valign="top">
+[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/xml/XmlWriterInline.html XmlWriterInline]
+</td>
+<td valign="top"></td>
+</tr>
+
+</table>
