@@ -188,8 +188,8 @@
 
 <tr>
 <td>Web1t n-gram frequencies</td>
-<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/web1t/Web1TFormatWriter.html Web1TFormatWriter]</td>
 <td></td>
+<td>[https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/io/web1t/Web1TFormatWriter.html Web1TFormatWriter]</td>
 <td></td>
 </tr>
 
