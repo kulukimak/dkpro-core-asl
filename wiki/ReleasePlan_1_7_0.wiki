@@ -14,7 +14,7 @@
   * Drop io.graf module from branch; (DONE)
   * Drop lbj module from branch; (DONE)
   * Drop coogroo module from branch; (DONE)
-  * Issue 534 - Drop io.annis from 1.7.0 release
+  * Issue 534 - Drop io.annis from 1.7.0 release (DONE)
   * Review mallet module code and check if everything is good to 1.7.0 release; (DONE)
   * Rename ldweb1t module adding -asl suffix; (DONE)
   * Review io.ditop module code and check if everything is good to 1.7.0 release; (DONE)
