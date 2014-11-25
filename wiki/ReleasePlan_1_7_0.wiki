@@ -23,5 +23,5 @@
   * Check what other modules we did not release in 1.6.2 and which we might also want to remove from the branch; 
   * Check pom files for unnecessary dependencies; (DONE)
   * Update version of trunk; (DONE)
-  * Compile a list of upgrades, new modules and supported formats at 1.7.0 for announcement.
+  * Compile a list of upgrades, new modules and supported formats at 1.7.0 for announcement. (DONE)
   * Issue 527 - Fix package names in ldweb1t module (DONE)
