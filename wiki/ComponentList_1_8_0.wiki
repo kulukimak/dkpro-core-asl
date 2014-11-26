@@ -73,7 +73,7 @@ Further information on models for particular components can be found in the [htt
 == Spell/grammar Checking ==
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/languagetool/LanguageToolChecker.html LanguageToolChecker]
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/norvig/NorvigSpellingCorrector.html NorvigSpellingCorrector]
-  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/jazzy/SpellChecker.html SpellChecker (Jazzy)]
+  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/jazzy/JazzyChecker.html JazzyChecker]
 
 == Stemming ==
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/snowball/SnowballStemmer.html SnowballStemmer]
