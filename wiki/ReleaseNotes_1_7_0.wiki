@@ -28,7 +28,7 @@ Further highlights in this release include:
 
    * Support to Stanford CoreNLP caseless models;
    * Upgrade to !LanguageTools 2.4;
-   * Upgrade to Stanford CoreNLP 3.4;
+   * Upgrade to Stanford CoreNLP 3.4.1;
    * Support for !MaltParser's Persian model;
    * Upgrade to UIMA 2.5.0;
    * Upgrade to Commons Compress 1.7;
