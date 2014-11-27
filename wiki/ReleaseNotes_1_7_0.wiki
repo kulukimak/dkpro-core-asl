@@ -21,13 +21,14 @@ processing (NLP) based on the Apache UIMA framework.
 
 == New I/O modules/components ==
 
-   * Support for CoNLL 2000 format;
+   * io.conll - support for CoNLL 2000 format;
+   * io.tueppdz - support for TüPP-D/Z format;
 
 Further highlights in this release include:
 
    * Support to Stanford CoreNLP caseless models;
    * Upgrade to !LanguageTools 2.4;
-   * Upgrade to Stanford CoreNLP 3.3.0;
+   * Upgrade to Stanford CoreNLP 3.4;
    * Support for !MaltParser's Persian model;
    * Upgrade to UIMA 2.5.0;
    * Upgrade to Commons Compress 1.7;
