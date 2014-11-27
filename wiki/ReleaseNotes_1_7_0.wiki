@@ -18,6 +18,7 @@ processing (NLP) based on the Apache UIMA framework.
 
    * hunpos - wrapper for hunpos, a HMM pos tagger;
    * langdetect - wrapper for language-detection, a language detection tool for java;
+   * mallet - wrapper for Mallet LDA;
    * textnormalizer - extension of umlautnormalizer module, having more components for text normalization;
 
 == New I/O modules/components ==
