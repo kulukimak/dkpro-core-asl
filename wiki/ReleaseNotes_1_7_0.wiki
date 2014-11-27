@@ -24,6 +24,7 @@ processing (NLP) based on the Apache UIMA framework.
 == New I/O modules/components ==
 
    * io.conll - support for CoNLL 2000, CoNLL 2002, CoNLL 2009 and CoNLL 2012 formats;
+   * io.ditop - support for DiTop format;
    * io.tueppdz - support for TüPP-D/Z format;
 
 Further highlights in this release include:
