@@ -33,3 +33,4 @@ Further highlights in this release include:
    * Upgrade to UIMA 2.5.0;
    * Upgrade to Commons Compress 1.7;
    * Support for MSTParser's Croatian model;
+   * Upgrade to !MaltParser 1.8;
