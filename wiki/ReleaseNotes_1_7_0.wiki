@@ -19,3 +19,5 @@ processing (NLP) based on the Apache UIMA framework.
 Further highlights in this release include:
 
    * Support to Stanford CoreNLP caseless models;
+   * Upgrade to LanguageTools 2.4;
+   * Upgrade to Stanford CoreNLP 3.3.0;
