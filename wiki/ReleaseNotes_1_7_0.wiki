@@ -30,4 +30,4 @@ Further highlights in this release include:
    * Support for !MaltParser's Persian model;
    * Upgrade to UIMA 2.5.0;
    * Upgrade to Commons Compress 1.7;
-   * Support for !MSTParser's Croatian model;
+   * Support for MSTParser's Croatian model;
