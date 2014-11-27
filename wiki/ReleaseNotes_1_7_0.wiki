@@ -12,7 +12,7 @@ processing (NLP) based on the Apache UIMA framework.
 
 == New API modules ==
 
-   * New IOB encoder;
+   * api.io - new IOB encoder;
 
 == New components ==
 
