@@ -16,6 +16,8 @@ processing (NLP) based on the Apache UIMA framework.
 
 == New components ==
 
+   * hunpos - wrapper for hunpos, a HMM pos tagger;
+
 == New I/O modules/components ==
 
    * Support for CoNLL 2000 format;
