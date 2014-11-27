@@ -28,3 +28,4 @@ Further highlights in this release include:
    * Upgrade to !LanguageTools 2.4;
    * Upgrade to Stanford CoreNLP 3.3.0;
    * Support for the persian model from !MaltParser;
+   * Upgrade to UIMA 2.5.0;
