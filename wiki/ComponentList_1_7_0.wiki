@@ -12,7 +12,7 @@ Further information on models for particular components can be found in the [htt
   * [https://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.7.0/apidocs/de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerChunker.html TreeTaggerChunker]
 
 == Decompounding ==
-  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/decompounding/uima/annotator/CompoundAnnotator.html CompoundAnnotator]
+  * [https://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.7.0/apidocs/de/tudarmstadt/ukp/dkpro/core/decompounding/uima/annotator/CompoundAnnotator.html CompoundAnnotator]
 
 == Dictionary Annotation ==
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/dictionaryannotator/DictionaryAnnotator.html DictionaryAnnotator]
