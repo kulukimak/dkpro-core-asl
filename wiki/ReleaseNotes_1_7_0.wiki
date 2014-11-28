@@ -30,7 +30,7 @@ Further highlights in this release include:
    * Upgrade [http://languagetool.org LanguageTools] to version 2.7
    * Upgrade [http://www.maltparser.org MaltParser] to version 1.8.
    * Upgrade [http://nlp.stanford.edu/software/corenlp.shtml Stanford CoreNLP]  to version 3.4.1
-   * Support additional [http://www.maltparser.org MaltParser] models: [http://www.isical.ac.in/~utpal/resources.php Bengali], [http://stp.lingfil.uu.se/~mojgan/UPC.html Farsi], and [http://zil.ipipan.waw.pl/Składnica Polish]
+   * Support additional [http://www.maltparser.org MaltParser] models: [http://www.isical.ac.in/~utpal/resources.php Bengali], [http://stp.lingfil.uu.se/~mojgan/UPC.html Farsi], [http://zil.ipipan.waw.pl/Składnica Polish]
    * Support additional [http://sourceforge.net/projects/mstparser/ MSTParser] models: [http://nlp.ffzg.hr/resources/models/dependency-parsing/ Croatian]
    * Support additional [http://opennlp.apache.org/ OpenNLP] models: [https://github.com/ixa-ehu/ixa-pipe-pos Spanish]
    * Support additional [http://nlp.stanford.edu/software/corenlp.shtml Stanford CoreNLP] models: Spanish, English caseless, shift-reduce parser models
