@@ -12,20 +12,20 @@ processing (NLP) based on the Apache UIMA framework.
 
 == New API modules ==
 
-   * api.io - new IOB encoder;
+   * api.io - new IOB encoder.
 
 == New components ==
 
    * hunpos - wrapper for hunpos, a HMM pos tagger;
    * langdetect - wrapper for language-detection, a language detection tool for java;
    * mallet - wrapper for Mallet LDA;
-   * textnormalizer - extension of umlautnormalizer module, having more components for text normalization;
+   * textnormalizer - extension of umlautnormalizer module, having more components for text normalization.
 
 == New I/O modules/components ==
 
    * io.conll - support for CoNLL 2000, CoNLL 2002, CoNLL 2009 and CoNLL 2012 formats;
    * io.ditop - support for !DiTop format;
-   * io.tueppdz - support for TüPP-D/Z format;
+   * io.tueppdz - support for TüPP-D/Z format.
 
 Further highlights in this release include:
 
@@ -36,4 +36,8 @@ Further highlights in this release include:
    * Upgrade to UIMA 2.5.0;
    * Upgrade to Commons Compress 1.7;
    * Support for MSTParser's Croatian model;
-   * Upgrade to !MaltParser 1.8;
+   * Upgrade to !MaltParser 1.8.
+
+A more detailed overview of the changes in this release can be found [https://code.google.com/p/dkpro-core-asl/issues/list?can=1&q=milestone%3D1.7.0&colspec=ID+Type+Status+Priority+DKPro+Module+Milestone+Owner+Summary&cells=tiles here].
+
+When upgrading, please mind that you should not mix different versions of DKPro Core components in your projects - they may not be compatible with each other.
