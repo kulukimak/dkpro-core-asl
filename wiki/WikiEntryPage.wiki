@@ -45,7 +45,7 @@ The information on unreleased versions is updated continually. Individual links 
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%201.7.x%20%20(Google%20Code)/lastSuccessfulBuild/artifact/de.tudarmstadt.ukp.dkpro.core.docbook-asl/target/site/d/dkpro.core.book.pdf DKPro Core Guide and Reference]
     * [ComponentList_1_7_0 List of analysis components] (ASL/GPL)
     * [FormatsList_1_7_0 List of supported input/output formats] (ASL/GPL)
-    * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20ASL%201.7.x%20%20(Google%20Code)/javadoc API Docs] (ASL)
+    * [https://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.7.0/apidocs/index.html API Docs] (ASL)
     * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%201.7.x%20%20(Google%20Code)/javadoc API Docs] (GPL)
     * [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdFduOVpydHhURC1Bd0hpZ0c0NGJfMHc&single=true&gid=0&output=html Models] (ASL/GPL)
     * [ReleasePlan_1_7_0 Release plan]
