@@ -1,0 +1,34 @@
+#summary DKPro Core 1.8.0 release notes
+
+We are pleased to announce the release of 
+
+*DKPro Core, version 1.8.0 (ASL & GPL)*
+
+a collection of interoperable software components for natural language
+processing (NLP) based on the Apache UIMA framework. 
+
+   * http://code.google.com/p/dkpro-core-asl
+   * http://code.google.com/p/dkpro-core-gpl
+
+== Major improvements ==
+
+   * Improved support for morphological analysis through new !MorphologicalFeatures type
+
+== Analysis components ==
+
+   * ...
+
+== Data formats ==
+
+   * ...
+
+Further highlights in this release include:
+
+   * Requires Java 8 (Issue 369)
+   * Upgrade to Apache UIMA 2.7.0 (Issue 533)
+   * Upgrade to Stanford CoreNLP 2.5.0 (Issue 508)
+   * Support additional [https://code.google.com/p/cistern/wiki/SFST SFST] models: [https://code.google.com/p/cistern/wiki/SMOR SMOR]
+
+A more detailed overview of the changes in this release can be found [https://code.google.com/p/dkpro-core-asl/issues/list?can=1&q=milestone%3D1.7.0&colspec=ID+Type+Status+Priority+DKPro+Module+Milestone+Owner+Summary&cells=tiles here].
+
+When upgrading, please mind that you should not mix different versions of DKPro Core components in your projects - they may not be compatible with each other.
