@@ -33,8 +33,8 @@ Further information on models for particular components can be found in the [htt
   * [https://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.7.0/apidocs/de/tudarmstadt/ukp/dkpro/core/treetagger/TreeTaggerPosTagger.html TreeTaggerPosTagger] (yes, the pos tagger does lemmatization as well!)
 
 == Morphological Annotation ==
-  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/matetools/MateMorphTagger.html MateMorphTagger]
-  * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/sfst/SfstAnnotator.html SfstAnnotator]
+  * [https://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.7.0/apidocs/de/tudarmstadt/ukp/dkpro/core/matetools/MateMorphTagger.html MateMorphTagger]
+  * [https://dkpro-core-gpl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-gpl/tags/de.tudarmstadt.ukp.dkpro.core-gpl-1.7.0/apidocs/de/tudarmstadt/ukp/dkpro/core/sfst/SfstAnnotator.html SfstAnnotator]
 
 == Named Entity Recognition ==
   * [https://dkpro-core-asl.googlecode.com/svn/de.tudarmstadt.ukp.dkpro.core-asl/tags/de.tudarmstadt.ukp.dkpro.core-asl-1.7.0/apidocs/de/tudarmstadt/ukp/dkpro/core/opennlp/OpenNlpNameFinder.html OpenNlpNameFinder]
