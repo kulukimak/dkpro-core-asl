@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-Further information on models for particular components can be found in the [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdFduOVpydHhURC1Bd0hpZ0c0NGJfMHc&single=true&gid=0&output=html list of models]
+Further information on models for particular components can be found in the [https://docs.google.com/spreadsheet/pub?key=0ApGcdapz0xSYdEhRUWFSUHFaMmE1aVJkMWpiaHpBc0E&single=true&gid=0&output=html list of models]
 
 == Coreference ==
   * [https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20GPL%20(Google%20Code)/javadoc/index.html?de/tudarmstadt/ukp/dkpro/core/stanfordnlp/StanfordCoreferenceResolver.html StanfordCoreferenceResolver]
