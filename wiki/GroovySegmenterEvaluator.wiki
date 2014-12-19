@@ -1,6 +1,6 @@
 #summary Groovy script to evaluate segmenters
 
-= Segmenter Evaluator =
+<h1>Segmenter Evaluator</h1>
 
 Reads a test suite from an XML file and tries it against several segmenters.
 
