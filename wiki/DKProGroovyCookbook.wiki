@@ -13,14 +13,35 @@ If you encounter problems, please refer to our [DKProGroovyTroubleShooting Groov
 = Recipes = 
 
   * [GroovyPortedNltkIntroExamples NLTK intro examples ported to DKPro Core]
+
+*Building pipelines:* four different approaches to running a simple part-of-speech pipeline
+
   * [GroovyOpenNlpPosTagWriteCwb OpenNLP Part-of-speech tagging pipeline writing to IMS Open Corpus Workbench format]
   * [GroovyOpenNlpPosTagWriteCustom OpenNLP Part-of-speech tagging pipeline using custom writer component]
   * [GroovyOpenNlpPosTagAccessDirect OpenNLP Part-of-speech tagging pipeline with direct access to results]
   * [GroovyOpenNlpPosTagNoReader OpenNLP Part-of-speech tagging & parsing without reader]
+
+*Dependency parsing*
+
   * [GroovyMaltParserAccessDirect MaltParser dependency parsing pipeline with direct access to results]
   * [GroovyMaltParserWriteConll2006 MaltParser dependency parsing pipeline writing to CONLL format]
+
+*Mixing components*
+
   * [GroovyFullyMixed Fully mixed pipeline]
-  * [GroovySegmenterEvaluator Script to evaluate segmenters]
+
+*Conversion between corpus formats*
+
   * [GroovyConvertConll2006To2009 Convert a corpus at CONLL 2006 format to CONLL 2009]
-  * [GroovyDecompounding Decompounding without a ranker resource]
+
+*Normalization*
+
   * [GroovyUmlautNormalization Normalizing a text with !UmlautNormalizer]
+
+*Evaluation*
+
+  * [GroovySegmenterEvaluator Script to evaluate segmenters]
+
+*Other*
+
+  * [GroovyDecompounding Decompounding without a ranker resource]
