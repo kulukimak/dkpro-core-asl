@@ -117,13 +117,30 @@ For every stable release, Javadoc should be generated. To Generate Javadoc
    1 Copy the "apidocs" folder from the previous stable release svn tag to the current release tag folder in svn (this happens directly on the svn server using a branch/tag/copy operation, not on the local checkout)
    1 Check out the appropriate stable release from svn tags
    1 from the command line in the root folder just checked out, type `mvn javadoc:aggregate` to generate the javadoc
-   1  remove the contents of the folder *apidocs* from the root folder and put in the contents of *target/site/apidocs* instead
+   1 replace the folder *apidocs* from the root folder with *target/site/apidocs*
+      * `rm apidocs`
+      * `cp -a target/site/apidocs .
    1 commit your change in Eclipse (Eclipse should automatically delete files that are no longer part of the Javadoc)
+
+== !Reference Guide ==
+
+   1 Copy the "book" folder from the previous stable release svn tag to the current release tag folder in svn (this happens directly on the svn server using a branch/tag/copy operation, not on the local checkout)
+   1 Check out the appropriate stable release from svn tags
+   1 change the active directory to the *de.tudarmstadt.ukp.dkpro.core.docbook-asl* module
+   1 on the command line type `mvn clean install` to compile the !DocBook format to HTML and PDF
+   1 change the active directory to the root of the checked out tag
+   1 replace the folder *book* with the *de.tudarmstadt.ukp.dkpro.core.docbook-asl/target/site/d*
+      * `rm book`
+      * `cp -a de.tudarmstadt.ukp.dkpro.core.docbook-asl/target/site/d book`
+   1 commit your change in Eclipse (Eclipse should automatically delete files that are no longer part of the book)
+
+== Tag latest release =
+
    1 in Eclipse, if already exist delete from the tags *latest-stable*
    1 right click on the latest release in tags and copy it by clicking *Branch/Tag*
    1 In the Copy to URL field add *tags/latest-stable*
 
-== Annoucement ==
+== Announcement ==
 
    * Update Google Code website
       * Create a page with release notes
