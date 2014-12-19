@@ -122,7 +122,7 @@ For every stable release, Javadoc should be generated. To Generate Javadoc
       * `cp -a target/site/apidocs .
    1 commit your change in Eclipse (Eclipse should automatically delete files that are no longer part of the Javadoc)
 
-== !Reference Guide ==
+== Reference Guide ==
 
    1 Copy the "book" folder from the previous stable release svn tag to the current release tag folder in svn (this happens directly on the svn server using a branch/tag/copy operation, not on the local checkout)
    1 Check out the appropriate stable release from svn tags
