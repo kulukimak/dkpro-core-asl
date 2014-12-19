@@ -36,7 +36,7 @@ If you encounter problems, please refer to our [DKProGroovyTroubleShooting Groov
 
 *Normalization*
 
-  * [GroovyUmlautNormalization Normalizing a text with !UmlautNormalizer]
+  * [GroovyUmlautNormalization Normalizing a text with UmlautNormalizer]
 
 *Evaluation*
 
