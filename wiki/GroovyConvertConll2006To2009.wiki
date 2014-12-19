@@ -6,14 +6,9 @@ Reads each CONLL 2006 file from the corpus in the specified folder and writes th
 
 {{{
 #!/usr/bin/env groovy
-
-@GrabResolver(name='ukp-oss-snapshots',
-     root='http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots')
-
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
       module='de.tudarmstadt.ukp.dkpro.core.io.conll-asl', 
-      version='1.7.0-SNAPSHOT')
-
+      version='1.7.0')
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.*
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*
