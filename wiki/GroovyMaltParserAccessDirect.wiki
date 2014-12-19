@@ -4,6 +4,8 @@
 
 Reads the specified file and prints dependencies, one per line. Multiple files can be specified using a wildcard, e.g. '*.txt' (the single quotes are part of the argument to avoid the shell expanding the wildcard!).
 
+This recipe was motivated by a [http://stackoverflow.com/questions/17392790/parse-raw-text-with-maltparser-in-java question on Stack Overflow] on how to parse raw text using the !MaltParser.
+
 Call with `pipeline <foldername> <language>`, e.g. `pipeline myFolder en`.
 
 {{{
