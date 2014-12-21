@@ -15,8 +15,15 @@ A Google Code commit message can contain up to three parts:
 
 == Sample Commit Messages ==
 
-
 _Commit Message #1_ 
+{{{
+Issue 554:	Organizing normalization module
+
+Update issue 554
+- Moving classes around
+}}}
+
+<wiki:comment>_Commit Message #1_ 
 {{{
 Change the validation routines to also accept unicode string. And,
 speeds up that O(N^2) comparison.
@@ -26,7 +33,9 @@ The performance and internationalization aspects of this issue have
 been handled.  The remaining part of the issue has a clear work-around
 and only affects a small number of users, so it is less important to fix.
 }}}
+</wiki:comment>
 
+<wiki:comment>
 _Commit Message #2_
 {{{
 Change the validation routines to also accept unicode string. And,
@@ -52,11 +61,19 @@ Status: Fixed
 Labels: Priority-Medium
 When stopword file is empty, an exception was thrown.  Instead, now, it creates an empty list.
 }}}
+</wiki:comment>
 
 == Shortcuts to close an Issue ==
 
-For just closing an issue (i.e., not otherwise modifying it), a "fixes" phrase can be used anywhere in the commit notes:
+For just closing an issue (i.e., not otherwise modifying it), a "fixes" phrase can be used:
 
+_Commit Message #2_
+{{{
+Fixes issue 553. Proplem with Clearnlp SRL
+- Attach all root nodes to the virtual root, not only the first one.
+}}}
+
+<wiki:comment>
 _Commit Message #4_
 {{{
 Change the validation routines to also accept unicode string. And,
@@ -77,3 +94,4 @@ _Commit Message #6_
 (Fixes issue 998)  Change the validation routines to also accept unicode string. And,
 speeds up that O(N^2) comparison.
 }}}
+</wiki:comment>
