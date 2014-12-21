@@ -17,7 +17,7 @@ A Google Code commit message can contain up to three parts:
 
 _Commit Message #1_ 
 {{{
-Issue 554:	Organizing normalization module
+Issue 554: Organizing normalization module
 
 Update issue 554
 - Moving classes around
