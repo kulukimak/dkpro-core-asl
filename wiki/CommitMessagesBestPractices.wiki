@@ -6,12 +6,17 @@ The following recommendations come from [http://code.google.com/p/support/wiki/I
 
 It is helpful if code revisions are linked with the Issue that they address.  You can easily create this link by the format of your Commit message.
 
+As general rules of thumb:
+
+   * The first line of the commit message should contain the issue number and issue title
+   * Multiple issues should not be merged into the same commit
+
+Following these rules make it easier for maintainers to merge changes into branches and for code reviewers to check all changes related to an issue.
+
 A Google Code commit message can contain up to three parts: 
    # the commit notes: a summary of the revision
    # (Newline, then) the Issue ID and any changes to the issue (update, fix/close, change of labels, etc.)
    # a message to be posted to the Issue
-
-
 
 == Sample Commit Messages ==
 
