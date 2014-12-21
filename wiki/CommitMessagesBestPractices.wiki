@@ -22,11 +22,13 @@ A Google Code commit message can contain up to three parts:
 
 _Commit Message #1_ 
 {{{
-Issue 554: Organizing normalization module
+Issue 554. Organizing normalization module
 
 Update issue 554
 - Moving classes around
 }}}
+
+_Note: the "Update issue XXX" section causes the commit and its message to be linked to the issue in the Google issue tracker.
 
 <wiki:comment>_Commit Message #1_ 
 {{{
@@ -77,6 +79,8 @@ _Commit Message #2_
 Fixes issue 553. Proplem with Clearnlp SRL
 - Attach all root nodes to the virtual root, not only the first one.
 }}}
+
+_Note: the "Fixes issue XXX" section also causes the commit and its message to be linked to the issue in the Google issue tracker. A separate "Update issue XXX" section is not required in this case.
 
 <wiki:comment>
 _Commit Message #4_
