@@ -1,6 +1,6 @@
 #summary Groovy scripts - TreeTagger Part-of-speech tagging & parsing without reader or writer
 
-<h1>TreeTagger Part-of-speech tagging & parsing without reader or writer</h1>
+<h1>!TreeTagger part-of-speech tagging & parsing without reader or writer</h1>
 
 This is an example of how to use the DKPro Core !TreeTaggerPosTagger component with a manually
 downloaded !TreeTagger executable and model.
