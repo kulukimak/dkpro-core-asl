@@ -45,3 +45,4 @@ If you encounter problems, please refer to our [DKProGroovyTroubleShooting Groov
 *Other*
 
   * [GroovyDecompounding Decompounding without a ranker resource]
+  * [GroovyTreeTaggerPosTagNoReaderAccessDirect TreeTagger using manually downloaded executable and model]
