@@ -94,3 +94,8 @@ The result is written to a file called *document.txt.conll* and could look somet
 17	29	29	CD	CD	_	16	num	_	_
 18	.	.	.	.	_	9	punct	_	_
 }}}
+
+
+=== Where to go from here? ===
+
+You can find many more examples of what you can do with DKPro Core and Python on our [DKProPythonCookbook Python scripts for DKPro Core pipelines] page
