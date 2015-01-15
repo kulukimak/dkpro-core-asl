@@ -8,6 +8,7 @@ For people who want to use a DKPro release version.
   * [UserSetup User Setup]
   * [UkpMavenRepository Public UKP-OSS Maven repository]
   * [MyFirstDKProProject First Steps with DKPro Core]
+  * [StanfordCoreComponents Using Stanford NLP components in DKPro Core]
   * [TypeSystem Type system]
   * [ChoosingComponents How to choose components?]
   * [DKProGroovyCookbook Groovy scripts for DKPro Core pipelines]
