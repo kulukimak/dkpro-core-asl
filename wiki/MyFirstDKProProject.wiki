@@ -127,7 +127,7 @@ This tutorial assumes that you have:
       {
          CollectionReaderDescription cr = createReaderDescription(
             TextReader.class,
-            TextReader.PARAM_PATH, "src/test/resources/*.txt",
+            TextReader.PARAM_SOURCE_LOCATION, "src/test/resources/*.txt",
             TextReader.PARAM_LANGUAGE, "en");
 		
          AnalysisEngineDescription seg = createEngineDescription(BreakIteratorSegmenter.class);
