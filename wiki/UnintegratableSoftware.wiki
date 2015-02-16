@@ -20,3 +20,4 @@ This page provides an overview over software that we will most likely not integr
 || [http://www.alchemyapi.com AlchemyAPI] || Service only || Commercial service ||
 || [http://www.opencalais.com OpenCalais] || Service only || Commercial service ||
 || [http://www.lsi.upc.edu/~nlp/SVMTool/ SVMTool] || Requires runtime (Perl) || ||
+|| [http://wing.comp.nus.edu.sg/~linzihen/parser/index.html PDTB Parser] || Loss of information || Tokenization, text normalization (but in principle can be integrated using JRuby quite easily) ||
