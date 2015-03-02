@@ -59,7 +59,7 @@ We have set up a Maven repository which provides third-party libraries that are 
       <repositories>
         <repository>
           <id>ukp-oss-snapshots</id>
-          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots</url>
+          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots/</url>
           <releases>
             <enabled>false</enabled>
           </releases>
