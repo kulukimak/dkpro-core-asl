@@ -28,6 +28,7 @@ Further highlights in this release include:
    * Upgrade [http://uima.apache.org Apache UIMA] to version 2.7.0 (Issue 533)
    * Upgrade [http://nlp.stanford.edu/software/corenlp.shtml Stanford CoreNLP] to version 3.5.0 (Issue 508)
    * Support additional [https://code.google.com/p/cistern/wiki/SFST SFST] models: [https://code.google.com/p/cistern/wiki/SMOR SMOR]
+   * Integration of MateTools SRL
 
 A more detailed overview of the changes in this release can be found [https://code.google.com/p/dkpro-core-asl/issues/list?can=1&q=milestone%3D1.8.0&colspec=ID+Type+Status+Priority+DKPro+Module+Milestone+Owner+Summary&cells=tiles here].
 
