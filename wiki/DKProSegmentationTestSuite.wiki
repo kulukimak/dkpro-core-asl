@@ -157,8 +157,12 @@
 					<description>BAD - sentence marker is not a separate token</description>
 				</possibleOutput>
 				<possibleOutput>
-					<output> ◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ▶ ◀⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶</output>
+					<output>◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3⁍ ⁌.⁍ ▶ ◀⁌x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶</output>
 					<description>BAD - version separator misdetected as sentence separator</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌John⁍ ⁌loves⁍ ⁌Windows⁍ ⁌3.x⁍ ⁌and⁍ ⁌DOS⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - underspecified version detected</description>
 				</possibleOutput>
 			</possibleOutputs>
 		</test>
@@ -384,6 +388,10 @@
 				<possibleOutput>
 					<output>◀⁌After⁍ ⁌seeing⁍ ⁌the⁍ ⁌list⁍ ⁌of⁍ ⁌what⁍ ⁌would⁍ ⁌not⁍ ⁌be⁍ ⁌open⁍ ⁌and/or⁍ ⁌on⁍ ⁌duty⁍ ⁌...⁍ ⁌which⁍ ⁌I⁍ ⁌'m⁍ ⁌also⁍ ⁌quite⁍ ⁌sure⁍ ⁌is⁍ ⁌not⁍ ⁌complete⁍ ⁌...⁍ ⁌I⁍ ⁌'ll⁍ ⁌go⁍ ⁌out⁍ ⁌on⁍ ⁌a⁍ ⁌limb⁍ ⁌....⁍ ⁌and⁍ ⁌predict⁍ ⁌...⁍ ⁌that⁍ ⁌this⁍ ⁌will⁍ ⁌not⁍ ⁌happen⁍ ⁌.⁍ ▶</output>
 					<description>GOOD - no ellipsis or sentence splitting</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌After⁍ ⁌seeing⁍ ⁌the⁍ ⁌list⁍ ⁌of⁍ ⁌what⁍ ⁌would⁍ ⁌not⁍ ⁌be⁍ ⁌open⁍ ⁌and/or⁍ ⁌on⁍ ⁌duty⁍ ⁌...⁍ ⁌which⁍ ⁌I⁍ ⁌'m⁍ ⁌also⁍ ⁌quite⁍ ⁌sure⁍ ⁌is⁍ ⁌not⁍ ⁌complete⁍ ⁌...⁍ ▶ ◀⁌I⁍ ⁌'ll⁍ ⁌go⁍ ⁌out⁍ ⁌on⁍ ⁌a⁍ ⁌limb....⁍ ⁌and⁍ ⁌predict⁍ ⁌...⁍ ⁌that⁍ ⁌this⁍ ⁌will⁍ ⁌not⁍ ⁌happen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - split after ellipsis before "I'm"</description>
 				</possibleOutput>
 				<possibleOutput>
 					<output>◀⁌After⁍ ⁌seeing⁍ ⁌the⁍ ⁌list⁍ ⁌of⁍ ⁌what⁍ ⁌would⁍ ⁌not⁍ ⁌be⁍ ⁌open⁍ ⁌and⁍ ⁌/⁍ ⁌or⁍ ⁌on⁍ ⁌duty⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌which⁍ ⁌I⁍ ⁌'⁍ ⁌m⁍ ⁌also⁍ ⁌quite⁍ ⁌sure⁍ ⁌is⁍ ⁌not⁍ ⁌complete⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ▶ ◀⁌I⁍ ⁌'⁍ ⁌ll⁍ ⁌go⁍ ⁌out⁍ ⁌on⁍ ⁌a⁍ ⁌limb⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌and⁍ ⁌predict⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌that⁍ ⁌this⁍ ⁌will⁍ ⁌not⁍ ⁌happen⁍ ⁌.⁍ ▶</output>
