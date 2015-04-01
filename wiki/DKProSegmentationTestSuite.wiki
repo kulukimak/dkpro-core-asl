@@ -275,5 +275,225 @@
 				</possibleOutput>
 			</possibleOutputs>
 		</test>
+		<test id="abbreviation.Ph_d_" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>At some schools, even professionals boasting Ph.D. degrees are coming back to school for Master's degrees.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌At⁍ ⁌some⁍ ⁌schools⁍ ⁌,⁍ ⁌even⁍ ⁌professionals⁍ ⁌boasting⁍ ⁌Ph.D⁍ ⁌.⁍ ⁌degrees⁍ ⁌are⁍ ⁌coming⁍ ⁌back⁍ ⁌to⁍ ⁌school⁍ ⁌for⁍ ⁌Master's⁍ ⁌degrees⁍ ⁌.⁍ ▶</output>
+					<description>BAD - last dot in abbreviation split off</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌At⁍ ⁌some⁍ ⁌schools⁍ ⁌,⁍ ⁌even⁍ ⁌professionals⁍ ⁌boasting⁍ ⁌Ph.D.⁍ ⁌degrees⁍ ⁌are⁍ ⁌coming⁍ ⁌back⁍ ⁌to⁍ ⁌school⁍ ⁌for⁍ ⁌Master⁍ ⁌'s⁍ ⁌degrees⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - abbreviation not split</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌At⁍ ⁌some⁍ ⁌schools⁍ ⁌,⁍ ⁌even⁍ ⁌professionals⁍ ⁌boasting⁍ ⁌Ph⁍ ⁌.⁍ ⁌D⁍ ⁌.⁍ ⁌degrees⁍ ⁌are⁍ ⁌coming⁍ ⁌back⁍ ⁌to⁍ ⁌school⁍ ⁌for⁍ ⁌Master⁍ ⁌'⁍ ⁌s⁍ ⁌degrees⁍ ⁌.⁍ ▶</output>
+					<description>BAD - overzealous split of abbreviation</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="spelling_mistake.small_after_full_stop" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>If Harvard doesn't come through, I 'll take the test to get into Yale. many parents set goals for their children, or maybe they don't set a goal.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌If⁍ ⁌Harvard⁍ ⁌doesn't⁍ ⁌come⁍ ⁌through⁍ ⁌,⁍ ⁌I⁍ ⁌'⁍ ⁌ll⁍ ⁌take⁍ ⁌the⁍ ⁌test⁍ ⁌to⁍ ⁌get⁍ ⁌into⁍ ⁌Yale⁍ ⁌.⁍ ⁌many⁍ ⁌parents⁍ ⁌set⁍ ⁌goals⁍ ⁌for⁍ ⁌their⁍ ⁌children⁍ ⁌,⁍ ⁌or⁍ ⁌maybe⁍ ⁌they⁍ ⁌don't⁍ ⁌set⁍ ⁌a⁍ ⁌goal⁍ ⁌.⁍ ▶</output>
+					<description>BAD - new sentence not detected</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌If⁍ ⁌Harvard⁍ ⁌does⁍ ⁌n't⁍ ⁌come⁍ ⁌through⁍ ⁌,⁍ ⁌I⁍ ⁌'ll⁍ ⁌take⁍ ⁌the⁍ ⁌test⁍ ⁌to⁍ ⁌get⁍ ⁌into⁍ ⁌Yale⁍ ⁌.⁍ ▶ ◀⁌many⁍ ⁌parents⁍ ⁌set⁍ ⁌goals⁍ ⁌for⁍ ⁌their⁍ ⁌children⁍ ⁌,⁍ ⁌or⁍ ⁌maybe⁍ ⁌they⁍ ⁌do⁍ ⁌n't⁍ ⁌set⁍ ⁌a⁍ ⁌goal⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - new sentence detected</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌If⁍ ⁌Harvard⁍ ⁌doesn⁍ ⁌'⁍ ⁌t⁍ ⁌come⁍ ⁌through⁍ ⁌,⁍ ⁌I⁍ ⁌'⁍ ⁌ll⁍ ⁌take⁍ ⁌the⁍ ⁌test⁍ ⁌to⁍ ⁌get⁍ ⁌into⁍ ⁌Yale⁍ ⁌.⁍ ▶ ◀⁌many⁍ ⁌parents⁍ ⁌set⁍ ⁌goals⁍ ⁌for⁍ ⁌their⁍ ⁌children⁍ ⁌,⁍ ⁌or⁍ ⁌maybe⁍ ⁌they⁍ ⁌don⁍ ⁌'⁍ ⁌t⁍ ⁌set⁍ ⁌a⁍ ⁌goal⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - new sentence detected</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="abbreviation.name_after_abbrev" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>He adds, in a far less amused tone, that the government has been talking about making Mt. Kuanyin a national park for a long time, and has banned construction or use of the mountain.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌He⁍ ⁌adds⁍ ⁌,⁍ ⁌in⁍ ⁌a⁍ ⁌far⁍ ⁌less⁍ ⁌amused⁍ ⁌tone⁍ ⁌,⁍ ⁌that⁍ ⁌the⁍ ⁌government⁍ ⁌has⁍ ⁌been⁍ ⁌talking⁍ ⁌about⁍ ⁌making⁍ ⁌Mt⁍ ⁌.⁍ ▶ ◀⁌Kuanyin⁍ ⁌a⁍ ⁌national⁍ ⁌park⁍ ⁌for⁍ ⁌a⁍ ⁌long⁍ ⁌time⁍ ⁌,⁍ ⁌and⁍ ⁌has⁍ ⁌banned⁍ ⁌construction⁍ ⁌or⁍ ⁌use⁍ ⁌of⁍ ⁌the⁍ ⁌mountain⁍ ⁌.⁍ ▶</output>
+					<description>BAD - abbreviation detected as sentence split</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌He⁍ ⁌adds⁍ ⁌,⁍ ⁌in⁍ ⁌a⁍ ⁌far⁍ ⁌less⁍ ⁌amused⁍ ⁌tone⁍ ⁌,⁍ ⁌that⁍ ⁌the⁍ ⁌government⁍ ⁌has⁍ ⁌been⁍ ⁌talking⁍ ⁌about⁍ ⁌making⁍ ⁌Mt⁍ ⁌.⁍ ▶ ◀⁌Kuanyin⁍ ⁌a⁍ ⁌national⁍ ⁌park⁍ ⁌for⁍ ⁌a⁍ ⁌long⁍ ⁌time⁍ ⁌,⁍ ⁌and⁍ ⁌has⁍ ⁌banned⁍ ⁌construction⁍ ⁌or⁍ ⁌use⁍ ⁌of⁍ ⁌the⁍ ⁌mountain⁍ ⁌.⁍ ▶</output>
+					<description>BAD - abbreviation detected as sentence split</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌He⁍ ⁌adds⁍ ⁌,⁍ ⁌in⁍ ⁌a⁍ ⁌far⁍ ⁌less⁍ ⁌amused⁍ ⁌tone⁍ ⁌,⁍ ⁌that⁍ ⁌the⁍ ⁌government⁍ ⁌has⁍ ⁌been⁍ ⁌talking⁍ ⁌about⁍ ⁌making⁍ ⁌Mt.⁍ ⁌Kuanyin⁍ ⁌a⁍ ⁌national⁍ ⁌park⁍ ⁌for⁍ ⁌a⁍ ⁌long⁍ ⁌time⁍ ⁌,⁍ ⁌and⁍ ⁌has⁍ ⁌banned⁍ ⁌construction⁍ ⁌or⁍ ⁌use⁍ ⁌of⁍ ⁌the⁍ ⁌mountain⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - abbreviation now detected as sentence split</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="abbreviation.name_after_abbrev_2" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>The luxury auto maker last year sold 1,214 cars in the U.S. Howard Mosher, president and chief executive officer, said he anticipates growth for the luxury auto maker in Britain and Europe, and in Far Eastern markets.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌luxury⁍ ⁌auto⁍ ⁌maker⁍ ⁌last⁍ ⁌year⁍ ⁌sold⁍ ⁌1,214⁍ ⁌cars⁍ ⁌in⁍ ⁌the⁍ ⁌U.S⁍ ⁌.⁍ ▶ ◀⁌Howard⁍ ⁌Mosher⁍ ⁌,⁍ ⁌president⁍ ⁌and⁍ ⁌chief⁍ ⁌executive⁍ ⁌officer⁍ ⁌,⁍ ⁌said⁍ ⁌he⁍ ⁌anticipates⁍ ⁌growth⁍ ⁌for⁍ ⁌the⁍ ⁌luxury⁍ ⁌auto⁍ ⁌maker⁍ ⁌in⁍ ⁌Britain⁍ ⁌and⁍ ⁌Europe⁍ ⁌,⁍ ⁌and⁍ ⁌in⁍ ⁌Far⁍ ⁌Eastern⁍ ⁌markets⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - sentence split after abbreviation</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌luxury⁍ ⁌auto⁍ ⁌maker⁍ ⁌last⁍ ⁌year⁍ ⁌sold⁍ ⁌1,214⁍ ⁌cars⁍ ⁌in⁍ ⁌the⁍ ⁌U.S.⁍ ▶ ◀⁌Howard⁍ ⁌Mosher⁍ ⁌,⁍ ⁌president⁍ ⁌and⁍ ⁌chief⁍ ⁌executive⁍ ⁌officer⁍ ⁌,⁍ ⁌said⁍ ⁌he⁍ ⁌anticipates⁍ ⁌growth⁍ ⁌for⁍ ⁌the⁍ ⁌luxury⁍ ⁌auto⁍ ⁌maker⁍ ⁌in⁍ ⁌Britain⁍ ⁌and⁍ ⁌Europe⁍ ⁌,⁍ ⁌and⁍ ⁌in⁍ ⁌Far⁍ ⁌Eastern⁍ ⁌markets⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - sentence split after abbreviation</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌luxury⁍ ⁌auto⁍ ⁌maker⁍ ⁌last⁍ ⁌year⁍ ⁌sold⁍ ⁌1,214⁍ ⁌cars⁍ ⁌in⁍ ⁌the⁍ ⁌U.S.⁍ ⁌Howard⁍ ⁌Mosher⁍ ⁌,⁍ ⁌president⁍ ⁌and⁍ ⁌chief⁍ ⁌executive⁍ ⁌officer⁍ ⁌,⁍ ⁌said⁍ ⁌he⁍ ⁌anticipates⁍ ⁌growth⁍ ⁌for⁍ ⁌the⁍ ⁌luxury⁍ ⁌auto⁍ ⁌maker⁍ ⁌in⁍ ⁌Britain⁍ ⁌and⁍ ⁌Europe⁍ ⁌,⁍ ⁌and⁍ ⁌in⁍ ⁌Far⁍ ⁌Eastern⁍ ⁌markets⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence not split when ended by abbreviation followed by name</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌luxury⁍ ⁌auto⁍ ⁌maker⁍ ⁌last⁍ ⁌year⁍ ⁌sold⁍ ⁌1⁍ ⁌,⁍ ⁌214⁍ ⁌cars⁍ ⁌in⁍ ⁌the⁍ ⁌U⁍ ⁌.⁍ ⁌S⁍ ⁌.⁍ ⁌Howard⁍ ⁌Mosher⁍ ⁌,⁍ ⁌president⁍ ⁌and⁍ ⁌chief⁍ ⁌executive⁍ ⁌officer⁍ ⁌,⁍ ⁌said⁍ ⁌he⁍ ⁌anticipates⁍ ⁌growth⁍ ⁌for⁍ ⁌the⁍ ⁌luxury⁍ ⁌auto⁍ ⁌maker⁍ ⁌in⁍ ⁌Britain⁍ ⁌and⁍ ⁌Europe⁍ ⁌,⁍ ⁌and⁍ ⁌in⁍ ⁌Far⁍ ⁌Eastern⁍ ⁌markets⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence not split when ended by abbreviation followed by name</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="ellipsis.simple" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>No, to my mind, the Journal did not "defend sleaze, fraud, waste, embezzlement, influence-peddling and abuse of the public trust..." it defended appropriate constitutional safeguards and practical common sense.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌No⁍ ⁌,⁍ ⁌to⁍ ⁌my⁍ ⁌mind⁍ ⁌,⁍ ⁌the⁍ ⁌Journal⁍ ⁌did⁍ ⁌not⁍ ⁌"⁍ ⁌defend⁍ ⁌sleaze⁍ ⁌,⁍ ⁌fraud⁍ ⁌,⁍ ⁌waste⁍ ⁌,⁍ ⁌embezzlement⁍ ⁌,⁍ ⁌influence-peddling⁍ ⁌and⁍ ⁌abuse⁍ ⁌of⁍ ⁌the⁍ ⁌public⁍ ⁌trust⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌"⁍ ⁌it⁍ ⁌defended⁍ ⁌appropriate⁍ ⁌constitutional⁍ ⁌safeguards⁍ ⁌and⁍ ⁌practical⁍ ⁌common⁍ ⁌sense⁍ ⁌.⁍ ▶</output>
+					<description>BAD - ellipsis split</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌No,⁍ ⁌to⁍ ⁌my⁍ ⁌mind⁍ ⁌,⁍ ⁌the⁍ ⁌Journal⁍ ⁌did⁍ ⁌not⁍ ⁌"defend⁍ ⁌sleaze⁍ ⁌,⁍ ⁌fraud⁍ ⁌,⁍ ⁌waste⁍ ⁌,⁍ ⁌embezzlement⁍ ⁌,⁍ ⁌influence-peddling⁍ ⁌and⁍ ⁌abuse⁍ ⁌of⁍ ⁌the⁍ ⁌public⁍ ⁌trust⁍ ⁌..⁍ ⁌.⁍ ⁌"⁍ ⁌it⁍ ⁌defended⁍ ⁌appropriate⁍ ⁌constitutional⁍ ⁌safeguards⁍ ⁌and⁍ ⁌practical⁍ ⁌common⁍ ⁌sense⁍ ⁌.⁍ ▶</output>
+					<description>BAD - ellipsis split</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌No⁍ ⁌,⁍ ⁌to⁍ ⁌my⁍ ⁌mind⁍ ⁌,⁍ ⁌the⁍ ⁌Journal⁍ ⁌did⁍ ⁌not⁍ ⁌"⁍ ⁌defend⁍ ⁌sleaze⁍ ⁌,⁍ ⁌fraud⁍ ⁌,⁍ ⁌waste⁍ ⁌,⁍ ⁌embezzlement⁍ ⁌,⁍ ⁌influence-peddling⁍ ⁌and⁍ ⁌abuse⁍ ⁌of⁍ ⁌the⁍ ⁌public⁍ ⁌trust⁍ ⁌...⁍ ⁌"⁍ ⁌it⁍ ⁌defended⁍ ⁌appropriate⁍ ⁌constitutional⁍ ⁌safeguards⁍ ⁌and⁍ ⁌practical⁍ ⁌common⁍ ⁌sense⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - ellipsis not split</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌No⁍ ⁌,⁍ ⁌to⁍ ⁌my⁍ ⁌mind⁍ ⁌,⁍ ⁌the⁍ ⁌Journal⁍ ⁌did⁍ ⁌not⁍ ⁌"⁍ ⁌defend⁍ ⁌sleaze⁍ ⁌,⁍ ⁌fraud⁍ ⁌,⁍ ⁌waste⁍ ⁌,⁍ ⁌embezzlement⁍ ⁌,⁍ ⁌influence-peddling⁍ ⁌and⁍ ⁌abuse⁍ ⁌of⁍ ⁌the⁍ ⁌public⁍ ⁌trust⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌"⁍ ⁌it⁍ ⁌defended⁍ ⁌appropriate⁍ ⁌constitutional⁍ ⁌safeguards⁍ ⁌and⁍ ⁌practical⁍ ⁌common⁍ ⁌sense⁍ ⁌.⁍ ▶</output>
+					<description>BAD - ellipsis split</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="ellipsis.2" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>After seeing the list of what would not be open and/or on duty... which I'm also quite sure is not complete... I 'll go out on a limb.... and predict... that this will not happen.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌After⁍ ⁌seeing⁍ ⁌the⁍ ⁌list⁍ ⁌of⁍ ⁌what⁍ ⁌would⁍ ⁌not⁍ ⁌be⁍ ⁌open⁍ ⁌and⁍ ⁌/⁍ ⁌or⁍ ⁌on⁍ ⁌duty⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌which⁍ ⁌I'm⁍ ⁌also⁍ ⁌quite⁍ ⁌sure⁍ ⁌is⁍ ⁌not⁍ ⁌complete⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ▶ ◀⁌I⁍ ⁌'⁍ ⁌ll⁍ ⁌go⁍ ⁌out⁍ ⁌on⁍ ⁌a⁍ ⁌limb⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌and⁍ ⁌predict⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌that⁍ ⁌this⁍ ⁌will⁍ ⁌not⁍ ⁌happen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - overzealous splitting</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌After⁍ ⁌seeing⁍ ⁌the⁍ ⁌list⁍ ⁌of⁍ ⁌what⁍ ⁌would⁍ ⁌not⁍ ⁌be⁍ ⁌open⁍ ⁌and/or⁍ ⁌on⁍ ⁌duty⁍ ⁌...⁍ ⁌which⁍ ⁌I⁍ ⁌'m⁍ ⁌also⁍ ⁌quite⁍ ⁌sure⁍ ⁌is⁍ ⁌not⁍ ⁌complete⁍ ⁌...⁍ ⁌I⁍ ⁌'ll⁍ ⁌go⁍ ⁌out⁍ ⁌on⁍ ⁌a⁍ ⁌limb⁍ ⁌....⁍ ⁌and⁍ ⁌predict⁍ ⁌...⁍ ⁌that⁍ ⁌this⁍ ⁌will⁍ ⁌not⁍ ⁌happen⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - no ellipsis or sentence splitting</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌After⁍ ⁌seeing⁍ ⁌the⁍ ⁌list⁍ ⁌of⁍ ⁌what⁍ ⁌would⁍ ⁌not⁍ ⁌be⁍ ⁌open⁍ ⁌and⁍ ⁌/⁍ ⁌or⁍ ⁌on⁍ ⁌duty⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌which⁍ ⁌I⁍ ⁌'⁍ ⁌m⁍ ⁌also⁍ ⁌quite⁍ ⁌sure⁍ ⁌is⁍ ⁌not⁍ ⁌complete⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ▶ ◀⁌I⁍ ⁌'⁍ ⁌ll⁍ ⁌go⁍ ⁌out⁍ ⁌on⁍ ⁌a⁍ ⁌limb⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌and⁍ ⁌predict⁍ ⁌.⁍ ⁌.⁍ ⁌.⁍ ⁌that⁍ ⁌this⁍ ⁌will⁍ ⁌not⁍ ⁌happen⁍ ⁌.⁍ ▶</output>
+					<description>BAD - overzealous splitting</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="initials" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>Bharat Ratna Avul Pakir Jainulabdeen Abdul Kalam is also called as Dr. A.P.J Abdul Kalam.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Bharat⁍ ⁌Ratna⁍ ⁌Avul⁍ ⁌Pakir⁍ ⁌Jainulabdeen⁍ ⁌Abdul⁍ ⁌Kalam⁍ ⁌is⁍ ⁌also⁍ ⁌called⁍ ⁌as⁍ ⁌Dr⁍ ⁌.⁍ ▶ ◀⁌A.P.J⁍ ⁌Abdul⁍ ⁌Kalam⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence split after abbreviation</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Bharat⁍ ⁌Ratna⁍ ⁌Avul⁍ ⁌Pakir⁍ ⁌Jainulabdeen⁍ ⁌Abdul⁍ ⁌Kalam⁍ ⁌is⁍ ⁌also⁍ ⁌called⁍ ⁌as⁍ ⁌Dr⁍ ⁌.⁍ ⁌A⁍ ⁌.⁍ ⁌P⁍ ⁌.⁍ ▶ ◀⁌J⁍ ⁌Abdul⁍ ⁌Kalam⁍ ⁌.⁍ ▶</output>
+					<description>BAD - overzealous splitting</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Bharat⁍ ⁌Ratna⁍ ⁌Avul⁍ ⁌Pakir⁍ ⁌Jainulabdeen⁍ ⁌Abdul⁍ ⁌Kalam⁍ ⁌is⁍ ⁌also⁍ ⁌called⁍ ⁌as⁍ ⁌Dr.⁍ ⁌A.P.J⁍ ⁌Abdul⁍ ⁌Kalam⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - sentence not split after abbreviation</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="initials.lookalike" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>The agency said it confirmed American Continental's preferred stock rating at C. American Continental's thrift unit, Los Angeles-based Lincoln Savings &amp; Loan Association, is in receivership and the parent company has filed for protection from creditor lawsuits under Chapter 11 of the federal Bankruptcy Code.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌agency⁍ ⁌said⁍ ⁌it⁍ ⁌confirmed⁍ ⁌American⁍ ⁌Continental's⁍ ⁌preferred⁍ ⁌stock⁍ ⁌rating⁍ ⁌at⁍ ⁌C⁍ ⁌.⁍ ▶ ◀⁌American⁍ ⁌Continental's⁍ ⁌thrift⁍ ⁌unit⁍ ⁌,⁍ ⁌Los⁍ ⁌Angeles-based⁍ ⁌Lincoln⁍ ⁌Savings⁍ ⁌&amp;⁍ ⁌Loan⁍ ⁌Association⁍ ⁌,⁍ ⁌is⁍ ⁌in⁍ ⁌receivership⁍ ⁌and⁍ ⁌the⁍ ⁌parent⁍ ⁌company⁍ ⁌has⁍ ⁌filed⁍ ⁌for⁍ ⁌protection⁍ ⁌from⁍ ⁌creditor⁍ ⁌lawsuits⁍ ⁌under⁍ ⁌Chapter⁍ ⁌11⁍ ⁌of⁍ ⁌the⁍ ⁌federal⁍ ⁌Bankruptcy⁍ ⁌Code⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - sentence split after initial-lookalike</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌agency⁍ ⁌said⁍ ⁌it⁍ ⁌confirmed⁍ ⁌American⁍ ⁌Continental⁍ ⁌'s⁍ ⁌preferred⁍ ⁌stock⁍ ⁌rating⁍ ⁌at⁍ ⁌C.⁍ ⁌American⁍ ⁌Continental⁍ ⁌'s⁍ ⁌thrift⁍ ⁌unit⁍ ⁌,⁍ ⁌Los⁍ ⁌Angeles-based⁍ ⁌Lincoln⁍ ⁌Savings⁍ ⁌&amp;⁍ ⁌Loan⁍ ⁌Association⁍ ⁌,⁍ ⁌is⁍ ⁌in⁍ ⁌receivership⁍ ⁌and⁍ ⁌the⁍ ⁌parent⁍ ⁌company⁍ ⁌has⁍ ⁌filed⁍ ⁌for⁍ ⁌protection⁍ ⁌from⁍ ⁌creditor⁍ ⁌lawsuits⁍ ⁌under⁍ ⁌Chapter⁍ ⁌11⁍ ⁌of⁍ ⁌the⁍ ⁌federal⁍ ⁌Bankruptcy⁍ ⁌Code⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence not split after initial-lookalike</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌agency⁍ ⁌said⁍ ⁌it⁍ ⁌confirmed⁍ ⁌American⁍ ⁌Continental⁍ ⁌'⁍ ⁌s⁍ ⁌preferred⁍ ⁌stock⁍ ⁌rating⁍ ⁌at⁍ ⁌C⁍ ⁌.⁍ ⁌American⁍ ⁌Continental⁍ ⁌'⁍ ⁌s⁍ ⁌thrift⁍ ⁌unit⁍ ⁌,⁍ ⁌Los⁍ ⁌Angeles-based⁍ ⁌Lincoln⁍ ⁌Savings⁍ ⁌&amp;⁍ ⁌Loan⁍ ⁌Association⁍ ⁌,⁍ ⁌is⁍ ⁌in⁍ ⁌receivership⁍ ⁌and⁍ ⁌the⁍ ⁌parent⁍ ⁌company⁍ ⁌has⁍ ⁌filed⁍ ⁌for⁍ ⁌protection⁍ ⁌from⁍ ⁌creditor⁍ ⁌lawsuits⁍ ⁌under⁍ ⁌Chapter⁍ ⁌11⁍ ⁌of⁍ ⁌the⁍ ⁌federal⁍ ⁌Bankruptcy⁍ ⁌Code⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence not split after initial-lookalike and overzealous splitting</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="directspeech.question" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>Wang first asked: "Are you sure you want the original inscription ground off?" Without thinking twice about it, Huang said yes.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Wang⁍ ⁌first⁍ ⁌asked⁍ ⁌:⁍ ⁌"⁍ ⁌Are⁍ ⁌you⁍ ⁌sure⁍ ⁌you⁍ ⁌want⁍ ⁌the⁍ ⁌original⁍ ⁌inscription⁍ ⁌ground⁍ ⁌off⁍ ⁌?⁍ ⁌"⁍ ▶ ◀⁌Without⁍ ⁌thinking⁍ ⁌twice⁍ ⁌about⁍ ⁌it⁍ ⁌,⁍ ⁌Huang⁍ ⁌said⁍ ⁌yes⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - sentence split after direct speech</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Wang⁍ ⁌first⁍ ⁌asked⁍ ⁌:⁍ ⁌"⁍ ⁌Are⁍ ⁌you⁍ ⁌sure⁍ ⁌you⁍ ⁌want⁍ ⁌the⁍ ⁌original⁍ ⁌inscription⁍ ⁌ground⁍ ⁌off⁍ ⁌?⁍ ⁌"⁍ ⁌Without⁍ ⁌thinking⁍ ⁌twice⁍ ⁌about⁍ ⁌it⁍ ⁌,⁍ ⁌Huang⁍ ⁌said⁍ ⁌yes⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence not split after direct speech</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="directspeech.apostrophes" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>"It's too much, there's only us two, how are we going to eat this?" I asked young Zhao as I looked at him in surprise.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌"⁍ ⁌It's⁍ ⁌too⁍ ⁌much⁍ ⁌,⁍ ⁌there's⁍ ⁌only⁍ ⁌us⁍ ⁌two⁍ ⁌,⁍ ⁌how⁍ ⁌are⁍ ⁌we⁍ ⁌going⁍ ⁌to⁍ ⁌eat⁍ ⁌this⁍ ⁌?⁍ ⁌"⁍ ▶ ◀⁌I⁍ ⁌asked⁍ ⁌young⁍ ⁌Zhao⁍ ⁌as⁍ ⁌I⁍ ⁌looked⁍ ⁌at⁍ ⁌him⁍ ⁌in⁍ ⁌surprise⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence split after direct speech end but before sentence end</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌"⁍ ⁌It⁍ ⁌'s⁍ ⁌too⁍ ⁌much⁍ ⁌,⁍ ⁌there⁍ ⁌'s⁍ ⁌only⁍ ⁌us⁍ ⁌two⁍ ⁌,⁍ ⁌how⁍ ⁌are⁍ ⁌we⁍ ⁌going⁍ ⁌to⁍ ⁌eat⁍ ⁌this⁍ ⁌?⁍ ⁌"⁍ ▶ ◀⁌I⁍ ⁌asked⁍ ⁌young⁍ ⁌Zhao⁍ ⁌as⁍ ⁌I⁍ ⁌looked⁍ ⁌at⁍ ⁌him⁍ ⁌in⁍ ⁌surprise⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence split after direct speech end but before sentence end</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌"⁍ ⁌It⁍ ⁌'⁍ ⁌s⁍ ⁌too⁍ ⁌much⁍ ⁌,⁍ ⁌there⁍ ⁌'⁍ ⁌s⁍ ⁌only⁍ ⁌us⁍ ⁌two⁍ ⁌,⁍ ⁌how⁍ ⁌are⁍ ⁌we⁍ ⁌going⁍ ⁌to⁍ ⁌eat⁍ ⁌this⁍ ⁌?⁍ ⁌"⁍ ▶ ◀⁌I⁍ ⁌asked⁍ ⁌young⁍ ⁌Zhao⁍ ⁌as⁍ ⁌I⁍ ⁌looked⁍ ⁌at⁍ ⁌him⁍ ⁌in⁍ ⁌surprise⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence split after direct speech end but before sentence end</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="sentence.non_standard_end" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>The JW considers itself THE kingdom of God on earth. ('Kindom Hall') So it is only to be expected that they do not see a reason to run to and report everything to the government.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌JW⁍ ⁌considers⁍ ⁌itself⁍ ⁌THE⁍ ⁌kingdom⁍ ⁌of⁍ ⁌God⁍ ⁌on⁍ ⁌earth⁍ ⁌.⁍ ▶ ◀⁌(⁍ ⁌'⁍ ⁌Kindom⁍ ⁌Hall⁍ ⁌'⁍ ⁌)⁍ ⁌So⁍ ⁌it⁍ ⁌is⁍ ⁌only⁍ ⁌to⁍ ⁌be⁍ ⁌expected⁍ ⁌that⁍ ⁌they⁍ ⁌do⁍ ⁌not⁍ ⁌see⁍ ⁌a⁍ ⁌reason⁍ ⁌to⁍ ⁌run⁍ ⁌to⁍ ⁌and⁍ ⁌report⁍ ⁌everything⁍ ⁌to⁍ ⁌the⁍ ⁌government⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence split before non-standard end</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌JW⁍ ⁌considers⁍ ⁌itself⁍ ⁌THE⁍ ⁌kingdom⁍ ⁌of⁍ ⁌God⁍ ⁌on⁍ ⁌earth⁍ ⁌.⁍ ▶ ◀⁌(⁍ ⁌'Kindom⁍ ⁌Hall⁍ ⁌'⁍ ⁌)⁍ ⁌So⁍ ⁌it⁍ ⁌is⁍ ⁌only⁍ ⁌to⁍ ⁌be⁍ ⁌expected⁍ ⁌that⁍ ⁌they⁍ ⁌do⁍ ⁌not⁍ ⁌see⁍ ⁌a⁍ ⁌reason⁍ ⁌to⁍ ⁌run⁍ ⁌to⁍ ⁌and⁍ ⁌report⁍ ⁌everything⁍ ⁌to⁍ ⁌the⁍ ⁌government⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence split before non-standard end</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌The⁍ ⁌JW⁍ ⁌considers⁍ ⁌itself⁍ ⁌THE⁍ ⁌kingdom⁍ ⁌of⁍ ⁌God⁍ ⁌on⁍ ⁌earth⁍ ⁌.⁍ ▶ ◀⁌(⁍ ⁌'⁍ ⁌Kindom⁍ ⁌Hall⁍ ⁌'⁍ ⁌)⁍ ⁌So⁍ ⁌it⁍ ⁌is⁍ ⁌only⁍ ⁌to⁍ ⁌be⁍ ⁌expected⁍ ⁌that⁍ ⁌they⁍ ⁌do⁍ ⁌not⁍ ⁌see⁍ ⁌a⁍ ⁌reason⁍ ⁌to⁍ ⁌run⁍ ⁌to⁍ ⁌and⁍ ⁌report⁍ ⁌everything⁍ ⁌to⁍ ⁌the⁍ ⁌government⁍ ⁌.⁍ ▶</output>
+					<description>BAD - sentence split before non-standard end</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
+		<test id="url" language="en">
+			<source>http://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html</source>
+			<input>Everyone please note my blog on Donews http://blog.donews.com/pangshengdong. What I say is not necessarily right, but I am confident that if you read it carefully it should give you a start.</input>
+			<possibleOutputs>
+				<possibleOutput>
+					<output>◀⁌Everyone⁍ ⁌please⁍ ⁌note⁍ ⁌my⁍ ⁌blog⁍ ⁌on⁍ ⁌Donews⁍ ⁌http⁍ ⁌:⁍ ⁌/⁍ ⁌/⁍ ⁌blog.donews.com⁍ ⁌/⁍ ⁌pangshengdong⁍ ⁌.⁍ ▶ ◀⁌What⁍ ⁌I⁍ ⁌say⁍ ⁌is⁍ ⁌not⁍ ⁌necessarily⁍ ⁌right⁍ ⁌,⁍ ⁌but⁍ ⁌I⁍ ⁌am⁍ ⁌confident⁍ ⁌that⁍ ⁌if⁍ ⁌you⁍ ⁌read⁍ ⁌it⁍ ⁌carefully⁍ ⁌it⁍ ⁌should⁍ ⁌give⁍ ⁌you⁍ ⁌a⁍ ⁌start⁍ ⁌.⁍ ▶</output>
+					<description>BAD - URL split into pieces</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Everyone⁍ ⁌please⁍ ⁌note⁍ ⁌my⁍ ⁌blog⁍ ⁌on⁍ ⁌Donews⁍ ⁌http://blog.donews.com/pangshengdong⁍ ⁌.⁍ ▶ ◀⁌What⁍ ⁌I⁍ ⁌say⁍ ⁌is⁍ ⁌not⁍ ⁌necessarily⁍ ⁌right⁍ ⁌,⁍ ⁌but⁍ ⁌I⁍ ⁌am⁍ ⁌confident⁍ ⁌that⁍ ⁌if⁍ ⁌you⁍ ⁌read⁍ ⁌it⁍ ⁌carefully⁍ ⁌it⁍ ⁌should⁍ ⁌give⁍ ⁌you⁍ ⁌a⁍ ⁌start⁍ ⁌.⁍ ▶</output>
+					<description>GOOD - URL remains one piece and full stop splits sentence</description>
+				</possibleOutput>
+				<possibleOutput>
+					<output>◀⁌Everyone⁍ ⁌please⁍ ⁌note⁍ ⁌my⁍ ⁌blog⁍ ⁌on⁍ ⁌Donews⁍ ⁌http⁍ ⁌://blog.donews.com/pangshengdong⁍ ⁌.⁍ ▶ ◀⁌What⁍ ⁌I⁍ ⁌say⁍ ⁌is⁍ ⁌not⁍ ⁌necessarily⁍ ⁌right⁍ ⁌,⁍ ⁌but⁍ ⁌I⁍ ⁌am⁍ ⁌confident⁍ ⁌that⁍ ⁌if⁍ ⁌you⁍ ⁌read⁍ ⁌it⁍ ⁌carefully⁍ ⁌it⁍ ⁌should⁍ ⁌give⁍ ⁌you⁍ ⁌a⁍ ⁌start⁍ ⁌.⁍ ▶</output>
+					<description>BAD - URL protocol split off</description>
+				</possibleOutput>
+			</possibleOutputs>
+		</test>
 	</tests>
 </testSuite>
