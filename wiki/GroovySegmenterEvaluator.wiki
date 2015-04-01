@@ -4,7 +4,7 @@
 
 Reads a test suite from an XML file and tries it against several segmenters.
 
-Call with `pipeline <filename>`, e.g. `pipeline testsuite.xml`.
+Call with `pipeline <filename> [<language>]`, e.g. `pipeline testsuite.xml`.
 
 Instead of specifying a filename, it is also possible to use an URL, e.g.:
 
@@ -12,27 +12,34 @@ Instead of specifying a filename, it is also possible to use an URL, e.g.:
 
 which runs the set of segmentation tests maintained [DKProSegmentationTestSuite here].
 
+The *language* parameter is optional. If given, only the tests for the specified language will be run.
+
 {{{
 #!/usr/bin/env groovy
 @Grab(group='de.tudarmstadt.ukp.dkpro.core',
       module='de.tudarmstadt.ukp.dkpro.core.tokit-asl',
-      version='1.6.1')
+      version='1.7.0')
 import de.tudarmstadt.ukp.dkpro.core.tokit.*
 
 @Grab(group='de.tudarmstadt.ukp.dkpro.core',
       module='de.tudarmstadt.ukp.dkpro.core.opennlp-asl',
-      version='1.6.1')
+      version='1.7.0')
 import de.tudarmstadt.ukp.dkpro.core.opennlp.*
 
 @Grab(group='de.tudarmstadt.ukp.dkpro.core',
       module='de.tudarmstadt.ukp.dkpro.core.languagetool-asl',
-      version='1.6.1')
+      version='1.7.0')
 import de.tudarmstadt.ukp.dkpro.core.languagetool.*
 
 @Grab(group='de.tudarmstadt.ukp.dkpro.core',
       module='de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl',
-      version='1.6.1')
+      version='1.7.0')
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.*
+
+// Avoid NoClassDefFoundError for "Messages"
+@Grab(group='de.tudarmstadt.ukp.dkpro.core',
+      module='de.tudarmstadt.ukp.dkpro.core.api.parameter-asl',
+      version='1.7.0')
 
 import static org.apache.commons.lang.exception.ExceptionUtils.*;
 import static org.apache.uima.fit.util.JCasUtil.*
@@ -44,12 +51,21 @@ java.util.logging.LogManager.logManager.reset(); // Disable logging
 def testSuite = new XmlSlurper().parse(args[0]) // Load tests
 def doc = createJCas() // Create empty reusable document
 
+// See if optional language argument is given
+def lang = args.length >=2 ? args[1] : null
+println "Running tests for ${lang ? lang : 'all languages'}"
+
 // These are the segmenters to test
 def segmenters = [ BreakIteratorSegmenter, StanfordSegmenter,
   OpenNlpSegmenter, LanguageToolSegmenter ]
 
 def results = [:];
 for (def tc : testSuite.tests.test) { // Run tests
+  if (lang && tc.@language != lang) {
+    println "Skipping test for unselected language ${tc.@language}"
+    continue    
+  }
+
   println "=== ${tc.@id} ===\n"
 
   for (def segmenter : segmenters) { // Test each segmenter in turn
