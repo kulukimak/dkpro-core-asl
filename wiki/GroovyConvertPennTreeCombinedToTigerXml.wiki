@@ -12,9 +12,6 @@ Reads each Penn Treebank bracketed format file from the corpus in the specified 
 @Grab(group='de.tudarmstadt.ukp.dkpro.core', 
   module='de.tudarmstadt.ukp.dkpro.core.io.penntree-asl', 
   version='1.7.0')
-@Grab(group='de.tudarmstadt.ukp.dkpro.core', 
-  module='de.tudarmstadt.ukp.dkpro.core.languagetool-asl', 
-  version='1.7.0')
  
 import static org.apache.uima.fit.pipeline.SimplePipeline.*;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.*;
