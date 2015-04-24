@@ -34,7 +34,7 @@ runPipeline(
 
 *Known issues*
 
-   * If the Penn Treebank file is malformed, a EmptyStackException will be thrown (Issue 613)
+   * If the Penn Treebank file is malformed, a !EmptyStackException will be thrown (Issue 613)
    * A file is malformed e.g.:
       * if the brackets do not balance
       * if the tree is not properly indented, in particular, if a line that is not indented is not the start of a tree (Issue 612)
