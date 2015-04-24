@@ -32,7 +32,8 @@ If you encounter problems, please refer to our [DKProGroovyTroubleShooting Groov
 
 *Conversion between corpus formats*
 
-  * [GroovyConvertConll2006To2009 Convert a corpus at CONLL 2006 format to CONLL 2009]
+  * [GroovyConvertConll2006To2009 Convert a corpus in CONLL 2006 format to CONLL 2009]
+  * [GroovyConvertPennTreeCombinedToTigerXml Convert a corpus in Penn Treebank bracketed format to Tiger XML]
 
 *Normalization*
 
