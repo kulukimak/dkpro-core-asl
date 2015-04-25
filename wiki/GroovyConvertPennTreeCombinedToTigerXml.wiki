@@ -31,6 +31,8 @@ runPipeline(
     TigerXmlWriter.PARAM_STRIP_EXTENSION, true))
 }}}
 
+*Note:* If the script fails, check that any line that does not start a sentence is indented. If necessary, add a space at the beginning of a line.
+
 *Note:* This script uses DKPro Core 1.7.1-SNAPSHOT because of the following two issues present in version 1.7.0.
 
    * If the Penn Treebank file is malformed, an !EmptyStackException will be thrown (Issue 613)
